@@ -1,0 +1,76 @@
+{
+  "id": "u24",
+  "kind": "life",
+  "title": "退换货、商店投诉",
+  "titleEn": "I want to return this",
+  "goal": "买的东西有问题，能说清楚要退货、换货还是退款。",
+  "chunks": [
+    { "id": "u24.c01", "en": "I want to return this.", "zh": "我想退这个。" },
+    { "id": "u24.c02", "en": "It doesn't work.", "zh": "它不能用。", "accept": ["It does not work."] },
+    { "id": "u24.c03", "en": "I bought it yesterday.", "zh": "我昨天买的。", "note": "buy（买）的过去是 bought。" },
+    { "id": "u24.c04", "en": "Here is the receipt.", "zh": "这是收据。", "note": "退换东西一定要带 receipt（收据）。" },
+    { "id": "u24.c05", "en": "This is the wrong size.", "zh": "尺码不对。" },
+    { "id": "u24.c06", "en": "Can I change it for a bigger size?", "zh": "可以换大一号的吗？" },
+    { "id": "u24.c07", "en": "Can I get a refund?", "zh": "可以退款吗？", "note": "refund = 退钱。" },
+    { "id": "u24.c08", "en": "Can I speak to the manager?", "zh": "我可以和经理谈谈吗？", "note": "店员解决不了时，礼貌又坚定地这样说。" },
+    { "id": "u24.c09", "en": "Thank you for your help.", "zh": "谢谢你的帮忙。" }
+  ],
+  "words": ["return", "work", "bought", "receipt", "wrong", "size", "bigger", "refund", "speak", "manager", "help"],
+  "drill": {
+    "pattern": "Can I change it for ___?",
+    "zh": "可以换成……吗？",
+    "fills": [
+      { "en": "a bigger size", "zh": "大一号的" },
+      { "en": "a smaller size", "zh": "小一号的" },
+      { "en": "another colour", "zh": "另一个颜色" },
+      { "en": "a new one", "zh": "一个新的" }
+    ]
+  },
+  "phonics": "p22",
+  "dialogue": {
+    "title": "去商店退换东西",
+    "setting": "你昨天买的东西有问题，今天拿回商店。",
+    "npcName": "Ravi",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, can I help you?", "zh": "你好，需要帮忙吗？" },
+        "replies": [
+          { "en": "I want to return this.", "zh": "我想退这个。", "next": "n2" },
+          { "en": "This is the wrong size.", "zh": "尺码不对。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "What's the problem?", "zh": "有什么问题？" },
+        "replies": [{ "en": "It doesn't work. I bought it yesterday.", "zh": "它不能用。我昨天买的。", "next": "n4" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "No problem. Do you want to change it?", "zh": "没问题。你要换吗？" },
+        "replies": [{ "en": "Can I change it for a bigger size?", "zh": "可以换大一号的吗？", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Sure. Do you have the receipt?", "zh": "可以。你有收据吗？" },
+        "replies": [{ "en": "Yes, here is the receipt.", "zh": "有，这是收据。", "next": "n5" }]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Thank you. You can take a new one, or get a refund.", "zh": "谢谢。你可以拿一个新的，或者退款。" },
+        "replies": [
+          { "en": "Can I get a refund?", "zh": "可以退款吗？", "next": "end" },
+          { "en": "A new one, please. Thank you for your help.", "zh": "请给我一个新的。谢谢你的帮忙。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Sure, give me a moment.", "zh": "好的，请稍等。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "下次去商店退换东西前，先用英语练一遍：I want to return this. Here is the receipt."
+}

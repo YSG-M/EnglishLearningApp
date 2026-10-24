@@ -1,0 +1,81 @@
+{
+  "id": "u02",
+  "kind": "life",
+  "title": "听不懂、请稍等",
+  "titleEn": "Sorry, can you say that again?",
+  "goal": "听不懂的时候不慌：会请对方再说一遍、说慢一点，或者请对方稍等。",
+  "chunks": [
+    { "id": "u02.c01", "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "note": "这是最有用的一句！听不懂就说，一点都不丢脸。", "accept": ["Sorry, can you say again?", "Can you say that again?"] },
+    { "id": "u02.c02", "en": "Slowly, please.", "zh": "请说慢一点。", "accept": ["Slowly please.", "Please speak slowly."] },
+    { "id": "u02.c03", "en": "One moment, please.", "zh": "请稍等。", "note": "需要时间想、查东西或者找人时说。" },
+    { "id": "u02.c04", "en": "Sorry, I don't understand.", "zh": "不好意思，我听不懂。", "accept": ["I don't understand.", "Sorry, I do not understand."] },
+    { "id": "u02.c05", "en": "What does it mean?", "zh": "这是什么意思？" },
+    { "id": "u02.c06", "en": "Can you write it down?", "zh": "你可以写下来吗？", "note": "听不懂名字、地址、电话号码时特别好用。" },
+    { "id": "u02.c07", "en": "My English is not very good.", "zh": "我的英语不太好。", "note": "先说这句，对方一般会说慢一点、说简单一点。" },
+    { "id": "u02.c08", "en": "Let me check.", "zh": "我查一下。", "note": "需要去问人、看电脑、看课表时说。" },
+    { "id": "u02.c09", "en": "Thank you for waiting.", "zh": "谢谢你的耐心等待。" }
+  ],
+  "words": ["sorry", "again", "slowly", "please", "moment", "understand", "mean", "write", "check", "english"],
+  "drill": {
+    "pattern": "Can you ___, please?",
+    "zh": "请对方帮忙做一件事",
+    "fills": [
+      { "en": "say that again", "zh": "可以请你再说一遍吗？" },
+      { "en": "speak slowly", "zh": "可以请你说慢一点吗？" },
+      { "en": "write it down", "zh": "可以请你写下来吗？" },
+      { "en": "spell it", "zh": "可以请你拼一下吗？" }
+    ]
+  },
+  "grammar": {
+    "title": "don't 就是 do not",
+    "body": "说\"我不……\"的时候，在动作前面加 don't：I don't understand（我不明白）。don't 就是 do not 的简写，说话时用 don't 更自然。",
+    "examples": [
+      { "en": "I don't understand.", "zh": "我不明白。" },
+      { "en": "I don't know.", "zh": "我不知道。" }
+    ]
+  },
+  "dialogue": {
+    "title": "家长说得太快了",
+    "setting": "一位家长来到前台，说话很快，你没听清楚。",
+    "npcName": "Mrs Lim",
+    "npcVoice": "bf_isabella",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, I want to ask about the Saturday class for my son, the P3 one, is there still a slot?", "zh": "你好，我想问一下我儿子小三的星期六课，还有位子吗？" },
+        "replies": [
+          { "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n2" },
+          { "en": "Slowly, please.", "zh": "请说慢一点。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Sure. The Saturday Chinese class. For Primary 3. Any place left?", "zh": "好的。星期六的华文课，小三的。还有位子吗？" },
+        "replies": [
+          { "en": "One moment, please.", "zh": "请稍等。", "next": "n3" },
+          { "en": "Let me check.", "zh": "我查一下。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Okay, no rush.", "zh": "好的，不急。" },
+        "replies": [{ "en": "Thank you for waiting.", "zh": "谢谢你的耐心等待。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "So, is there a place for him?", "zh": "那么，还有他的位子吗？" },
+        "replies": [
+          { "en": "Yes, we have a place.", "zh": "有的，我们还有位子。", "next": "end" },
+          { "en": "Sorry, I don't understand.", "zh": "不好意思，我听不懂。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Great, thank you so much!", "zh": "太好了，非常感谢！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天遇到听不懂的英语时，勇敢地说一句：Sorry, can you say that again?"
+}

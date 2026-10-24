@@ -1,0 +1,76 @@
+{
+  "id": "u16",
+  "kind": "life",
+  "title": "HDB、修理师傅、物业",
+  "titleEn": "My aircon is not working",
+  "goal": "家里东西坏了，能打电话说清楚问题，约好修理时间、问价钱。",
+  "chunks": [
+    { "id": "u16.c01", "en": "My aircon is not working.", "zh": "我的空调坏了。", "note": "新加坡说 aircon（空调）。not working = 坏了、不工作。", "accept": ["My aircon isn't working."] },
+    { "id": "u16.c02", "en": "The water is leaking.", "zh": "漏水了。" },
+    { "id": "u16.c03", "en": "The light is broken.", "zh": "灯坏了。" },
+    { "id": "u16.c04", "en": "When can you come?", "zh": "你什么时候能来？" },
+    { "id": "u16.c05", "en": "Can you come tomorrow morning?", "zh": "你明天早上能来吗？" },
+    { "id": "u16.c06", "en": "How much will it cost?", "zh": "要多少钱？" },
+    { "id": "u16.c07", "en": "I live in Block 123.", "zh": "我住在 123 座。", "note": "HDB 组屋用 Block（座）。数字可以一个一个读：one two three。" },
+    { "id": "u16.c08", "en": "Please call me before you come.", "zh": "来之前请给我打电话。" },
+    { "id": "u16.c09", "en": "Thank you for fixing it.", "zh": "谢谢你帮我修好。" }
+  ],
+  "words": ["aircon", "working", "water", "leaking", "broken", "light", "come", "cost", "live", "block", "before", "fixing"],
+  "drill": {
+    "pattern": "My ___ is not working.",
+    "zh": "我的……坏了",
+    "fills": [
+      { "en": "aircon", "zh": "空调" },
+      { "en": "fridge", "zh": "冰箱" },
+      { "en": "washing machine", "zh": "洗衣机" },
+      { "en": "fan", "zh": "风扇" }
+    ]
+  },
+  "phonics": "p14",
+  "dialogue": {
+    "title": "打电话叫空调师傅",
+    "setting": "家里的空调不冷了，你打电话给空调维修公司。",
+    "npcName": "Uncle Lim",
+    "npcVoice": "bm_lewis",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hello, aircon service. How can I help?", "zh": "你好，空调维修。有什么可以帮你？" },
+        "replies": [{ "en": "Hi, my aircon is not working.", "zh": "你好，我的空调坏了。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "OK. What's your address?", "zh": "好的。你的地址是？" },
+        "replies": [{ "en": "I live in Block 123.", "zh": "我住在 123 座。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "I can come on Friday afternoon.", "zh": "我星期五下午可以来。" },
+        "replies": [
+          { "en": "Can you come tomorrow morning?", "zh": "你明天早上能来吗？", "next": "n4" },
+          { "en": "OK, Friday afternoon is fine.", "zh": "好的，星期五下午可以。", "next": "n5" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Tomorrow morning, ten o'clock. Can?", "zh": "明天早上十点，可以吗？" },
+        "replies": [{ "en": "Yes, thank you.", "zh": "可以，谢谢。", "next": "n5" }]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Checking is fifty dollars first.", "zh": "先检查要五十块。" },
+        "replies": [
+          { "en": "OK. Please call me before you come.", "zh": "好的。来之前请给我打电话。", "next": "end" },
+          { "en": "How much will it cost?", "zh": "（修好）一共要多少钱？", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "I check first, then I tell you. No problem. Bye!", "zh": "我先检查，再告诉你。没问题。拜拜！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "看看家里有什么东西坏了或者有点旧，用英语说一句：My ___ is not working."
+}

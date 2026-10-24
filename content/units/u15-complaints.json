@@ -1,0 +1,74 @@
+{
+  "id": "u15",
+  "kind": "work",
+  "title": "家长投诉与道歉",
+  "titleEn": "I'm sorry about that",
+  "goal": "家长不满意时，能先道歉、表示理解，再说你会怎么处理。",
+  "chunks": [
+    { "id": "u15.c01", "en": "I'm sorry about that.", "zh": "这件事真抱歉。", "note": "家长不高兴时，第一句先道歉。" },
+    { "id": "u15.c02", "en": "I understand.", "zh": "我明白。", "note": "让对方觉得你在听、你理解，很能让人消气。" },
+    { "id": "u15.c03", "en": "Let me check for you.", "zh": "我帮您查一下。" },
+    { "id": "u15.c04", "en": "Can you tell me what happened?", "zh": "能告诉我发生了什么吗？" },
+    { "id": "u15.c05", "en": "I'll tell the teacher.", "zh": "我会告诉老师。", "note": "I'll = I will，意思是\"我会……\"\"我来……\"。", "accept": ["I will tell the teacher."] },
+    { "id": "u15.c06", "en": "We will call you back today.", "zh": "我们今天会给您回电话。" },
+    { "id": "u15.c07", "en": "It won't happen again.", "zh": "不会再发生了。", "note": "won't = will not（不会）。", "accept": ["It will not happen again."] },
+    { "id": "u15.c08", "en": "Thank you for telling us.", "zh": "谢谢您告诉我们。", "note": "结束时说，家长会觉得被尊重。" },
+    { "id": "u15.c09", "en": "Please wait a moment.", "zh": "请稍等。" }
+  ],
+  "words": ["sorry", "understand", "check", "happened", "tell", "teacher", "call", "back", "again", "wait"],
+  "drill": {
+    "pattern": "I'll ___.",
+    "zh": "我会/我来……（告诉对方你接下来会做什么）",
+    "fills": [
+      { "en": "tell the teacher", "zh": "告诉老师" },
+      { "en": "check for you", "zh": "帮您查一下" },
+      { "en": "call you back", "zh": "给您回电话" },
+      { "en": "ask the manager", "zh": "问一下经理" }
+    ]
+  },
+  "phonics": "p13",
+  "dialogue": {
+    "title": "作业没有批改",
+    "setting": "一位家长来到前台，说她儿子的作业上周没有被批改，有点不高兴。",
+    "npcName": "Mrs Lim",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, my son's homework was not marked last week.", "zh": "你好，我儿子上周的作业没有批改。" },
+        "replies": [
+          { "en": "I'm sorry about that.", "zh": "这件事真抱歉。", "next": "n2" },
+          { "en": "I understand. Let me check for you.", "zh": "我明白，我帮您查一下。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "His name is Ethan. He is in the Primary 3 class.", "zh": "他叫 Ethan，在小学三年级的班。" },
+        "replies": [{ "en": "Thank you. Please wait a moment.", "zh": "谢谢，请稍等。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "This is the second time, you know.", "zh": "这已经是第二次了。" },
+        "replies": [
+          { "en": "I'm sorry. It won't happen again.", "zh": "对不起，不会再发生了。", "next": "n4" },
+          { "en": "I understand. I'll tell the teacher.", "zh": "我明白，我会告诉老师。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Can the teacher call me?", "zh": "老师能给我打个电话吗？" },
+        "replies": [
+          { "en": "Yes, we will call you back today.", "zh": "可以，我们今天会给您回电话。", "next": "end" },
+          { "en": "Yes. Thank you for telling us.", "zh": "可以。谢谢您告诉我们。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "OK, thank you. I'll wait for the call.", "zh": "好的，谢谢。我等电话。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天如果有家长来问问题或者不满意，先说一句 I understand. 或者 Let me check for you."
+}

@@ -1,0 +1,83 @@
+{
+  "id": "u22",
+  "kind": "life",
+  "title": "说说喜欢什么、简单意见",
+  "titleEn": "I like spicy food",
+  "goal": "能说出自己喜欢和不喜欢什么，简单表达\"我觉得……\"。",
+  "chunks": [
+    { "id": "u22.c01", "en": "I like spicy food.", "zh": "我喜欢辣的食物。" },
+    { "id": "u22.c02", "en": "I don't like durian.", "zh": "我不喜欢榴莲。", "accept": ["I do not like durian."] },
+    { "id": "u22.c03", "en": "What do you like to do?", "zh": "你喜欢做什么？" },
+    { "id": "u22.c04", "en": "I like watching dramas.", "zh": "我喜欢看电视剧。", "note": "喜欢做某事：like 后面的动词加 ing。" },
+    { "id": "u22.c05", "en": "I prefer tea.", "zh": "我更喜欢茶。", "note": "prefer = 比起别的更喜欢。" },
+    { "id": "u22.c06", "en": "I think it's very good.", "zh": "我觉得很好。", "note": "I think…… = 我觉得……，后面直接说你的看法。" },
+    { "id": "u22.c07", "en": "I think it's too expensive.", "zh": "我觉得太贵了。" },
+    { "id": "u22.c08", "en": "Me too!", "zh": "我也是！" },
+    { "id": "u22.c09", "en": "It's OK, but not my favourite.", "zh": "还行，但不是我最喜欢的。", "note": "favourite 是英式拼写（美式 favorite），意思是\"最喜欢的\"。" }
+  ],
+  "words": ["like", "spicy", "food", "durian", "watching", "dramas", "prefer", "think", "too", "expensive", "favourite"],
+  "drill": {
+    "pattern": "I like ___.",
+    "zh": "我喜欢……",
+    "fills": [
+      { "en": "spicy food", "zh": "辣的食物" },
+      { "en": "Korean dramas", "zh": "韩剧" },
+      { "en": "bubble tea", "zh": "珍珠奶茶" },
+      { "en": "walking in the park", "zh": "在公园散步" }
+    ]
+  },
+  "grammar": {
+    "title": "喜欢做某事：like + 动词ing",
+    "body": "说\"喜欢做某事\"时，动词后面加 ing。中文说\"我喜欢看电视\"，英语不能说 I like watch TV，要说 I like watching TV。",
+    "examples": [
+      { "en": "I like watching TV.", "zh": "我喜欢看电视。" },
+      { "en": "I like cooking.", "zh": "我喜欢做饭。" },
+      { "en": "She likes walking in the park.", "zh": "她喜欢在公园散步。" }
+    ]
+  },
+  "phonics": "p20",
+  "dialogue": {
+    "title": "和同事聊爱好",
+    "setting": "休息时间，同事 Mei Ling 和你聊天。",
+    "npcName": "Mei Ling",
+    "npcVoice": "bf_isabella",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Amy, do you like durian?", "zh": "Amy，你喜欢榴莲吗？" },
+        "replies": [
+          { "en": "No, I don't like durian.", "zh": "不，我不喜欢榴莲。", "next": "n2" },
+          { "en": "Yes! I like durian.", "zh": "喜欢！我喜欢榴莲。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Haha. What food do you like?", "zh": "哈哈。那你喜欢吃什么？" },
+        "replies": [{ "en": "I like spicy food.", "zh": "我喜欢辣的食物。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Me too! What do you like to do after work?", "zh": "我也是！下班后你喜欢做什么？" },
+        "replies": [
+          { "en": "I like watching dramas.", "zh": "我喜欢看电视剧。", "next": "n4" },
+          { "en": "I like walking in the park.", "zh": "我喜欢在公园散步。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Nice. Have you tried the new bubble tea shop? It's eight dollars a cup!", "zh": "不错。你去过新开的那家珍珠奶茶店吗？一杯八块！" },
+        "replies": [
+          { "en": "I think it's too expensive.", "zh": "我觉得太贵了。", "next": "end" },
+          { "en": "I prefer tea.", "zh": "我更喜欢喝茶。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Haha, you're right!", "zh": "哈哈，你说得对！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天用英语说出三样你喜欢的东西：I like ___. 再说一样不喜欢的：I don't like ___."
+}

@@ -1,0 +1,86 @@
+{
+  "id": "u10",
+  "kind": "life",
+  "title": "超市购物、PayNow 付款",
+  "titleEn": "Can I pay by PayNow?",
+  "goal": "在超市能问东西在哪里、有没有，结账时能说用什么方式付款、要不要袋子。",
+  "chunks": [
+    { "id": "u10.c01", "en": "Excuse me, where is the milk?", "zh": "请问，牛奶在哪里？" },
+    { "id": "u10.c02", "en": "Do you have eggs?", "zh": "你们有鸡蛋吗？", "note": "问\"有没有\"时，东西一般用复数：eggs。" },
+    { "id": "u10.c03", "en": "I'm looking for bread.", "zh": "我在找面包。" },
+    { "id": "u10.c04", "en": "Is this on sale?", "zh": "这个在打折吗？" },
+    { "id": "u10.c05", "en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付款吗？", "note": "PayNow 是新加坡的手机转账。" },
+    { "id": "u10.c06", "en": "Can I pay by card?", "zh": "可以刷卡吗？" },
+    { "id": "u10.c07", "en": "I don't need a bag.", "zh": "我不要袋子。", "note": "新加坡超市的塑料袋要收费，自己带袋子就说这句。" },
+    { "id": "u10.c08", "en": "Can I have a receipt?", "zh": "可以给我收据吗？" },
+    { "id": "u10.c09", "en": "That's all, thank you.", "zh": "就这些，谢谢。", "accept": ["That is all, thank you."] }
+  ],
+  "words": ["milk", "eggs", "looking", "bread", "sale", "pay", "paynow", "card", "need", "bag", "receipt"],
+  "drill": {
+    "pattern": "Where is the ___?",
+    "zh": "问东西在哪里",
+    "fills": [
+      { "en": "milk", "zh": "牛奶在哪里？" },
+      { "en": "bread", "zh": "面包在哪里？" },
+      { "en": "rice", "zh": "米在哪里？" },
+      { "en": "toilet", "zh": "洗手间在哪里？" },
+      { "en": "cashier", "zh": "收银台在哪里？" }
+    ]
+  },
+  "grammar": {
+    "title": "两个以上要加 s",
+    "body": "中文说\"两个鸡蛋\"，\"鸡蛋\"不变；英语超过一个，后面要加 s：one egg，two eggs。",
+    "examples": [
+      { "en": "one egg, two eggs", "zh": "一个鸡蛋，两个鸡蛋" },
+      { "en": "one bag, three bags", "zh": "一个袋子，三个袋子" }
+    ]
+  },
+  "phonics": "p08",
+  "dialogue": {
+    "title": "在 NTUC 结账",
+    "setting": "你在 NTUC FairPrice 买完东西，到收银台结账。",
+    "npcName": "Cashier",
+    "npcVoice": "bf_isabella",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, do you have a membership card?", "zh": "你好，有会员卡吗？" },
+        "replies": [
+          { "en": "No, sorry.", "zh": "没有，不好意思。", "next": "n2" },
+          { "en": "Yes.", "zh": "有。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Okay. Do you need a bag?", "zh": "好的。需要袋子吗？" },
+        "replies": [
+          { "en": "I don't need a bag.", "zh": "我不要袋子。", "next": "n3" },
+          { "en": "Yes, one bag, please.", "zh": "要，一个袋子，谢谢。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Your total is 23 dollars 50.", "zh": "一共 23 块 5。" },
+        "replies": [
+          { "en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付款吗？", "next": "n4" },
+          { "en": "Can I pay by card?", "zh": "可以刷卡吗？", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Sure, go ahead.", "zh": "可以，请。" },
+        "replies": [
+          { "en": "Can I have a receipt?", "zh": "可以给我收据吗？", "next": "end" },
+          { "en": "That's all, thank you.", "zh": "就这些，谢谢。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Here's your receipt. Thank you!", "zh": "这是你的收据。谢谢！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天去超市（NTUC、FairPrice、Sheng Siong）结账时，用英语说一句：Can I pay by PayNow?"
+}

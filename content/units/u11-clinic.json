@@ -1,0 +1,92 @@
+{
+  "id": "u11",
+  "kind": "life",
+  "title": "诊所看病",
+  "titleEn": "I have a fever",
+  "goal": "在诊所能说出哪里不舒服、从什么时候开始，会问吃药的方法，会要病假单（MC）。",
+  "chunks": [
+    { "id": "u11.c01", "en": "I have a fever.", "zh": "我发烧了。" },
+    { "id": "u11.c02", "en": "I have a cough.", "zh": "我咳嗽。" },
+    { "id": "u11.c03", "en": "I have a sore throat.", "zh": "我喉咙痛。" },
+    { "id": "u11.c04", "en": "My head hurts.", "zh": "我头痛。", "accept": ["I have a headache."] },
+    { "id": "u11.c05", "en": "Since yesterday.", "zh": "从昨天开始。", "accept": ["From yesterday."] },
+    { "id": "u11.c06", "en": "I need an MC, please.", "zh": "我需要病假单。", "note": "MC = medical certificate，病假单。新加坡请病假要交给公司。" },
+    { "id": "u11.c07", "en": "How many times a day?", "zh": "一天吃几次？" },
+    { "id": "u11.c08", "en": "Before or after food?", "zh": "饭前还是饭后吃？" },
+    { "id": "u11.c09", "en": "Is it serious?", "zh": "严重吗？" }
+  ],
+  "words": ["fever", "cough", "sore", "throat", "head", "hurts", "since", "yesterday", "mc", "times", "food", "serious"],
+  "drill": {
+    "pattern": "I have a ___.",
+    "zh": "说哪里不舒服",
+    "fills": [
+      { "en": "fever", "zh": "我发烧了" },
+      { "en": "cough", "zh": "我咳嗽" },
+      { "en": "sore throat", "zh": "我喉咙痛" },
+      { "en": "headache", "zh": "我头痛" },
+      { "en": "stomachache", "zh": "我肚子痛" },
+      { "en": "runny nose", "zh": "我流鼻涕" }
+    ]
+  },
+  "grammar": {
+    "title": "不舒服用 I have a ...",
+    "body": "中文说\"我发烧\"\"我咳嗽\"，英语要说\"我有一个……\"：I have a fever，I have a cough。大部分小病都可以用 I have a ... 来说。",
+    "examples": [
+      { "en": "I have a fever.", "zh": "我发烧了。" },
+      { "en": "I have a headache.", "zh": "我头痛。" }
+    ]
+  },
+  "phonics": "p09",
+  "dialogue": {
+    "title": "在诊所看医生",
+    "setting": "你感冒了，去家附近的诊所看医生。",
+    "npcName": "Doctor",
+    "npcVoice": "bm_george",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hello, what's the problem today?", "zh": "你好，今天哪里不舒服？" },
+        "replies": [
+          { "en": "I have a fever.", "zh": "我发烧了。", "next": "n2" },
+          { "en": "I have a sore throat.", "zh": "我喉咙痛。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "I see. Since when?", "zh": "明白了。从什么时候开始的？" },
+        "replies": [{ "en": "Since yesterday.", "zh": "从昨天开始。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Any cough?", "zh": "有咳嗽吗？" },
+        "replies": [
+          { "en": "Yes, I have a cough.", "zh": "有，我咳嗽。", "next": "n4" },
+          { "en": "No.", "zh": "没有。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Okay, I'll give you some medicine. Take it three times a day.", "zh": "好，我给你开一些药，一天吃三次。" },
+        "replies": [
+          { "en": "Before or after food?", "zh": "饭前还是饭后吃？", "next": "n5" },
+          { "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "After food. Do you need an MC?", "zh": "饭后吃。你需要病假单吗？" },
+        "replies": [
+          { "en": "Yes, I need an MC, please.", "zh": "需要，请给我病假单。", "next": "end" },
+          { "en": "No, thank you.", "zh": "不用，谢谢。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Okay. Rest well and drink more water.", "zh": "好的。好好休息，多喝水。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "把 I have a fever. 和 I have a cough. 各读三遍，再把它们记在手机备忘录里，下次去诊所就用得上。"
+}

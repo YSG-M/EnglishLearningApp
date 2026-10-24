@@ -1,0 +1,75 @@
+{
+  "id": "u19",
+  "kind": "work",
+  "title": "解释课程安排、教材、作业",
+  "titleEn": "Class is every Saturday",
+  "goal": "能向新家长说清楚上课时间、每节课多长、要带什么书、作业怎么做。",
+  "chunks": [
+    { "id": "u19.c01", "en": "Class is every Saturday at 10am.", "zh": "每周六上午 10 点上课。", "note": "10am 读 ten a.m.，下午用 pm。" },
+    { "id": "u19.c02", "en": "Each class is one and a half hours.", "zh": "每节课一个半小时。", "note": "one and a half hours = 一个半小时；one hour = 一小时。" },
+    { "id": "u19.c03", "en": "Please bring this book to class.", "zh": "请带这本书来上课。" },
+    { "id": "u19.c04", "en": "The book costs 25 dollars.", "zh": "这本书 25 块。" },
+    { "id": "u19.c05", "en": "The homework is on page 12.", "zh": "作业在第 12 页。" },
+    { "id": "u19.c06", "en": "Your child needs to practise at home.", "zh": "您的孩子需要在家练习。", "note": "practise 是英式拼写（做动词时），读音和 practice 一样。" },
+    { "id": "u19.c07", "en": "We have a test at the end of the term.", "zh": "学期末有一次测验。" },
+    { "id": "u19.c08", "en": "Do you have any questions?", "zh": "您还有什么问题吗？", "note": "说明完以后问这一句，很专业。" }
+  ],
+  "words": ["every", "class", "each", "hours", "bring", "book", "homework", "page", "practise", "test", "term", "questions"],
+  "drill": {
+    "pattern": "Class is every ___.",
+    "zh": "每……上课",
+    "fills": [
+      { "en": "Monday", "zh": "星期一" },
+      { "en": "Wednesday", "zh": "星期三" },
+      { "en": "Saturday morning", "zh": "星期六上午" },
+      { "en": "Sunday afternoon", "zh": "星期天下午" }
+    ]
+  },
+  "phonics": "p17",
+  "dialogue": {
+    "title": "新家长问课程",
+    "setting": "一位新家长的女儿刚报了二年级的班，她来前台问课程安排。",
+    "npcName": "Mrs Wong",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, my daughter just joined the P2 class. When is the class?", "zh": "你好，我女儿刚报了二年级的班。什么时候上课？" },
+        "replies": [{ "en": "Class is every Saturday at 10am.", "zh": "每周六上午 10 点上课。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "How long is each class?", "zh": "每节课多长时间？" },
+        "replies": [{ "en": "Each class is one and a half hours.", "zh": "每节课一个半小时。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Does she need any books?", "zh": "她需要买书吗？" },
+        "replies": [
+          { "en": "Yes, please bring this book to class.", "zh": "需要，请带这本书来上课。", "next": "n4" },
+          { "en": "Yes. The book costs 25 dollars.", "zh": "需要。这本书 25 块。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "What about homework?", "zh": "那作业呢？" },
+        "replies": [
+          { "en": "The homework is on page 12.", "zh": "作业在第 12 页。", "next": "n5" },
+          { "en": "Your child needs to practise at home.", "zh": "您的孩子需要在家练习。", "next": "n5" }
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "OK, I see.", "zh": "好的，我明白了。" },
+        "replies": [{ "en": "Do you have any questions?", "zh": "您还有什么问题吗？", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "No, that's all. Thank you so much!", "zh": "没有了，就这些。非常感谢！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "用英语把你们中心一个班的上课时间读三遍：Class is every ___ at ___."
+}

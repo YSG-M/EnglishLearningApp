@@ -1,0 +1,73 @@
+{
+  "id": "u12",
+  "kind": "work",
+  "title": "前台④：WhatsApp 消息和学费提醒",
+  "titleEn": "This is a friendly reminder",
+  "goal": "能用简短、礼貌的英语和家长沟通：学费提醒、停课通知、回复\"收到\"。",
+  "chunks": [
+    { "id": "u12.c01", "en": "Good morning, this is Amy from Bright Learning Centre.", "zh": "早上好，我是 Bright 补习中心的 Amy。", "note": "给家长发消息或打电话时，先说你是谁、来自哪里。" },
+    { "id": "u12.c02", "en": "This is a friendly reminder.", "zh": "这是一个温馨提醒。", "note": "催学费时用这句开头，很客气。" },
+    { "id": "u12.c03", "en": "Please pay the fee by Friday.", "zh": "请在星期五前交学费。", "note": "by Friday = 在星期五之前。" },
+    { "id": "u12.c04", "en": "There is no class this Saturday.", "zh": "这个星期六没有课。" },
+    { "id": "u12.c05", "en": "The class is cancelled today.", "zh": "今天的课取消了。" },
+    { "id": "u12.c06", "en": "Sorry for the late reply.", "zh": "不好意思，回复晚了。" },
+    { "id": "u12.c07", "en": "Noted, thank you.", "zh": "收到，谢谢。", "note": "新加坡人回消息常说 Noted，意思是\"知道了、收到\"。" },
+    { "id": "u12.c08", "en": "Please let me know.", "zh": "请告诉我一声。" },
+    { "id": "u12.c09", "en": "Have a good weekend!", "zh": "周末愉快！" }
+  ],
+  "words": ["friendly", "reminder", "there", "this", "cancelled", "late", "reply", "noted", "let", "weekend"],
+  "drill": {
+    "pattern": "Please pay the fee by ___.",
+    "zh": "提醒家长在什么时候前交学费",
+    "fills": [
+      { "en": "Friday", "zh": "请在星期五前交学费" },
+      { "en": "this week", "zh": "请在这个星期内交学费" },
+      { "en": "the 5th", "zh": "请在五号前交学费" },
+      { "en": "next Monday", "zh": "请在下星期一前交学费" }
+    ]
+  },
+  "phonics": "p10",
+  "dialogue": {
+    "title": "家长发消息问课",
+    "setting": "一位家长在 WhatsApp 上问你星期六有没有课。你用语音消息回复她。",
+    "npcName": "Ethan's mum",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, is there class this Saturday?", "zh": "你好，这个星期六有课吗？" },
+        "replies": [{ "en": "There is no class this Saturday.", "zh": "这个星期六没有课。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Oh okay. Why?", "zh": "哦，好的。为什么呢？" },
+        "replies": [{ "en": "Sorry, the teacher is sick.", "zh": "不好意思，老师生病了。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Okay, noted. What about the fee?", "zh": "好的，知道了。那学费呢？" },
+        "replies": [{ "en": "Please pay the fee by Friday.", "zh": "请在星期五前交学费。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付吗？" },
+        "replies": [{ "en": "Yes, you can.", "zh": "可以的。", "next": "n5" }]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Okay, will do. Thanks!", "zh": "好的，我会付的。谢谢！" },
+        "replies": [
+          { "en": "Thank you. Have a good weekend!", "zh": "谢谢，周末愉快！", "next": "end" },
+          { "en": "Noted, thank you.", "zh": "收到，谢谢。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "You too!", "zh": "你也是！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天给一位家长或同事发一条英文 WhatsApp，比如：Noted, thank you. 或 Have a good weekend!"
+}

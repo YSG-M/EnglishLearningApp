@@ -1,0 +1,21 @@
+{
+  "id": "p14",
+  "title": "ar 和 or：长长的\"啊～\"和\"哦～\"",
+  "rule": "新加坡英语偏英式，ar 读长音 /ɑː/，像拼音\"啊\"拉长，r 基本不卷舌：car、park、card。or 读长音 /ɔː/，像拼音\"哦\"拉长，嘴巴圆：for、morning、short。",
+  "mouth": "ar：嘴巴张大，舌头放低，拉长。or：嘴巴收圆，拉长。",
+  "examples": [
+    { "en": "car", "zh": "汽车" },
+    { "en": "park", "zh": "公园；停车" },
+    { "en": "card", "zh": "卡" },
+    { "en": "start", "zh": "开始" },
+    { "en": "for", "zh": "为了" },
+    { "en": "morning", "zh": "早上" },
+    { "en": "short", "zh": "短的" }
+  ],
+  "pairs": [
+    { "id": "p14.m01", "a": { "en": "card", "zh": "卡" }, "b": { "en": "cod", "zh": "鳕鱼" } },
+    { "id": "p14.m02", "a": { "en": "heart", "zh": "心" }, "b": { "en": "hot", "zh": "热的" } },
+    { "id": "p14.m03", "a": { "en": "port", "zh": "港口" }, "b": { "en": "pot", "zh": "锅" } },
+    { "id": "p14.m04", "a": { "en": "short", "zh": "短的" }, "b": { "en": "shot", "zh": "射击；打针" } }
+  ]
+}

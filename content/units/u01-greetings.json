@@ -1,0 +1,81 @@
+{
+  "id": "u01",
+  "kind": "life",
+  "title": "打招呼、自我介绍",
+  "titleEn": "Hello, I'm Amy",
+  "goal": "能和新同事、邻居、家长打招呼，简单介绍自己。",
+  "chunks": [
+    { "id": "u01.c01", "en": "Hi, I'm Amy.", "zh": "你好，我是 Amy。", "note": "把 Amy 换成你自己的英文名。I'm 就是 I am 的简写。", "accept": ["Hi, I am Amy.", "Hello, I'm Amy."] },
+    { "id": "u01.c02", "en": "Nice to meet you.", "zh": "很高兴认识你。", "note": "第一次见面时说。对方说完，你可以回 Nice to meet you too." },
+    { "id": "u01.c03", "en": "Good morning!", "zh": "早上好！", "note": "中午 12 点以前用。下午说 Good afternoon，晚上说 Good evening。" },
+    { "id": "u01.c04", "en": "How are you?", "zh": "你好吗？", "note": "熟人见面最常用的问候，不是真的在问你的身体。" },
+    { "id": "u01.c05", "en": "I'm fine, thank you.", "zh": "我很好，谢谢。", "accept": ["I am fine, thank you.", "Fine, thank you.", "I'm good, thank you."] },
+    { "id": "u01.c06", "en": "I'm from China.", "zh": "我来自中国。", "accept": ["I am from China."] },
+    { "id": "u01.c07", "en": "I work at a learning centre.", "zh": "我在一家补习中心工作。", "note": "新加坡用英式拼写 centre（美式是 center），读音一样。" },
+    { "id": "u01.c08", "en": "See you tomorrow!", "zh": "明天见！" },
+    { "id": "u01.c09", "en": "Have a nice day!", "zh": "祝你今天愉快！", "note": "分开时说，很礼貌。对方说了，你可以回 You too!" }
+  ],
+  "words": ["hi", "hello", "nice", "meet", "good", "morning", "fine", "thank", "from", "work", "tomorrow", "day"],
+  "drill": {
+    "pattern": "Good ___!",
+    "zh": "不同时间的问候",
+    "fills": [
+      { "en": "morning", "zh": "早上好" },
+      { "en": "afternoon", "zh": "下午好" },
+      { "en": "evening", "zh": "晚上好" },
+      { "en": "night", "zh": "晚安（睡前或者晚上分开时）" }
+    ]
+  },
+  "grammar": {
+    "title": "I'm 就是 I am",
+    "body": "英语里经常把两个词缩成一个：I am → I'm。说话时用 I'm 更自然，两个都对。",
+    "examples": [
+      { "en": "I am Amy. = I'm Amy.", "zh": "我是 Amy。" },
+      { "en": "I am fine. = I'm fine.", "zh": "我很好。" }
+    ]
+  },
+  "dialogue": {
+    "title": "认识新同事",
+    "setting": "补习中心来了一位新老师 Jason，他过来和你打招呼。",
+    "npcName": "Jason",
+    "npcVoice": "bm_george",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi! I'm Jason. I'm the new teacher.", "zh": "嗨！我是 Jason，我是新来的老师。" },
+        "replies": [
+          { "en": "Hi, I'm Amy. Nice to meet you.", "zh": "你好，我是 Amy，很高兴认识你。", "next": "n2" },
+          { "en": "Hello! Nice to meet you.", "zh": "你好！很高兴认识你。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Nice to meet you too. Where are you from?", "zh": "我也很高兴认识你。你是哪里人？" },
+        "replies": [{ "en": "I'm from China.", "zh": "我来自中国。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Oh, nice! How long have you been in Singapore?", "zh": "哦，不错！你来新加坡多久了？" },
+        "replies": [
+          { "en": "Two years.", "zh": "两年。", "next": "n4" },
+          { "en": "Three years.", "zh": "三年。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Great. Welcome to the team! See you around.", "zh": "太好了。欢迎加入！回头见。" },
+        "replies": [
+          { "en": "See you tomorrow!", "zh": "明天见！", "next": "end" },
+          { "en": "Bye! Have a nice day!", "zh": "拜拜！祝你今天愉快！", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "You too. Bye!", "zh": "你也是。拜拜！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天对一位同事、邻居或者来接孩子的家长说一句 Good morning! 或 Good afternoon!"
+}

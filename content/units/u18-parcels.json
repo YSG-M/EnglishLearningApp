@@ -1,0 +1,75 @@
+{
+  "id": "u18",
+  "kind": "life",
+  "title": "快递、包裹",
+  "titleEn": "Is there a parcel for me?",
+  "goal": "能和快递员沟通：不在家时怎么放、改时间送、去取包裹。",
+  "chunks": [
+    { "id": "u18.c01", "en": "Is there a parcel for me?", "zh": "有我的包裹吗？" },
+    { "id": "u18.c02", "en": "I'm here to collect a parcel.", "zh": "我来取包裹。" },
+    { "id": "u18.c03", "en": "My parcel has not arrived.", "zh": "我的包裹还没到。", "accept": ["My parcel hasn't arrived."] },
+    { "id": "u18.c04", "en": "Here is my tracking number.", "zh": "这是我的快递单号。" },
+    { "id": "u18.c05", "en": "Sorry, I'm not at home now.", "zh": "不好意思，我现在不在家。" },
+    { "id": "u18.c06", "en": "Can you leave it at the door?", "zh": "可以放在门口吗？" },
+    { "id": "u18.c07", "en": "Can you deliver it tomorrow?", "zh": "可以明天送吗？" },
+    { "id": "u18.c08", "en": "I'll come down now.", "zh": "我现在下来。", "note": "住组屋或公寓时，快递员在楼下等你，就这样说。" }
+  ],
+  "words": ["parcel", "collect", "arrived", "tracking", "number", "home", "now", "leave", "door", "deliver"],
+  "drill": {
+    "pattern": "Can you leave it ___?",
+    "zh": "可以把它放在……吗？",
+    "fills": [
+      { "en": "at the door", "zh": "门口" },
+      { "en": "at the lobby", "zh": "大堂" },
+      { "en": "with my neighbour", "zh": "交给我的邻居" },
+      { "en": "in the locker", "zh": "快递柜里" }
+    ]
+  },
+  "phonics": "p16",
+  "dialogue": {
+    "title": "快递员打电话来",
+    "setting": "你在上班，快递员打电话说要给你送包裹。",
+    "npcName": "Driver",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hello, I'm delivering your parcel. Are you at home?", "zh": "你好，我在给你送包裹。你在家吗？" },
+        "replies": [
+          { "en": "Sorry, I'm not at home now.", "zh": "不好意思，我现在不在家。", "next": "n2" },
+          { "en": "Yes, I'll come down now.", "zh": "在，我现在下来。", "next": "down" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Can I leave it at the door?", "zh": "我可以放在门口吗？" },
+        "replies": [
+          { "en": "Yes, you can leave it at the door.", "zh": "可以，你放在门口吧。", "next": "n3" },
+          { "en": "Can you deliver it tomorrow?", "zh": "可以明天送吗？", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "OK, I'll take a photo for you.", "zh": "好的，我会拍张照片给你。" },
+        "replies": [{ "en": "Thank you very much!", "zh": "非常感谢！", "next": "end" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Tomorrow I'm not in this area. Can I leave it at the lobby?", "zh": "我明天不在这一区。可以放在大堂吗？" },
+        "replies": [{ "en": "OK, please leave it at the lobby.", "zh": "好的，请放在大堂。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Done. Have a nice day!", "zh": "好了。祝你今天愉快！" },
+        "replies": []
+      },
+      {
+        "id": "down",
+        "npc": { "en": "OK, I'm waiting at the lobby. See you!", "zh": "好的，我在大堂等你。待会见！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "下次收快递时，用英语说一句 Can you leave it at the door? 或者 I'll come down now."
+}

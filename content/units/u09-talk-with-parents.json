@@ -1,0 +1,87 @@
+{
+  "id": "u09",
+  "kind": "work",
+  "title": "老师：和家长谈孩子的情况",
+  "titleEn": "She did very well today",
+  "goal": "下课时能用简单英语告诉家长孩子今天的表现、哪里需要多练习。",
+  "chunks": [
+    { "id": "u09.c01", "en": "She did very well today.", "zh": "她今天表现很好。", "note": "did 是\"做了\"（过去的事）。男孩就说 He did very well today." },
+    { "id": "u09.c02", "en": "He is very hardworking.", "zh": "他很努力。" },
+    { "id": "u09.c03", "en": "He needs more practice.", "zh": "他需要多练习。", "note": "说别人\"需要\"，need 后面要加 s：he needs、she needs。" },
+    { "id": "u09.c04", "en": "Please check his homework.", "zh": "请检查一下他的作业。" },
+    { "id": "u09.c05", "en": "Her reading is getting better.", "zh": "她的阅读越来越好了。" },
+    { "id": "u09.c06", "en": "He talks a lot in class.", "zh": "他上课话很多。" },
+    { "id": "u09.c07", "en": "She is very smart.", "zh": "她很聪明。" },
+    { "id": "u09.c08", "en": "Don't worry.", "zh": "别担心。" },
+    { "id": "u09.c09", "en": "Let's work together.", "zh": "我们一起努力。", "note": "Let's = let us，\"我们一起……吧\"。" }
+  ],
+  "words": ["well", "today", "hardworking", "needs", "more", "practice", "homework", "reading", "better", "smart", "worry"],
+  "drill": {
+    "pattern": "He needs more ___.",
+    "zh": "说孩子需要多练什么",
+    "fills": [
+      { "en": "practice", "zh": "他需要多练习" },
+      { "en": "reading", "zh": "他需要多阅读" },
+      { "en": "writing", "zh": "他需要多写" },
+      { "en": "speaking", "zh": "他需要多说" }
+    ]
+  },
+  "grammar": {
+    "title": "he / his 和 she / her",
+    "body": "说孩子的时候：男孩用 he（他）和 his（他的），女孩用 she（她）和 her（她的）。中文\"他的 / 她的\"读音一样，英语一定要分开。",
+    "examples": [
+      { "en": "He is hardworking. Please check his homework.", "zh": "他很努力。请检查他的作业。" },
+      { "en": "She is smart. Her reading is getting better.", "zh": "她很聪明。她的阅读越来越好了。" }
+    ]
+  },
+  "phonics": "p07",
+  "dialogue": {
+    "title": "妈妈来问孩子的情况",
+    "setting": "下课后，Ryan 的妈妈来接他，顺便问你 Ryan 最近的表现。",
+    "npcName": "Mrs Chen",
+    "npcVoice": "bf_isabella",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi teacher, how is Ryan doing?", "zh": "老师你好，Ryan 最近怎么样？" },
+        "replies": [
+          { "en": "He is very hardworking.", "zh": "他很努力。", "next": "n2" },
+          { "en": "He did very well today.", "zh": "他今天表现很好。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Oh, that's good to hear. Any problems?", "zh": "哦，听到真高兴。有什么问题吗？" },
+        "replies": [
+          { "en": "He needs more practice.", "zh": "他需要多练习。", "next": "n3" },
+          { "en": "He talks a lot in class.", "zh": "他上课话很多。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "I see. What can I do at home?", "zh": "明白了。我在家可以做什么？" },
+        "replies": [{ "en": "Please check his homework.", "zh": "请检查一下他的作业。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Okay, I will. I'm a bit worried about his exam.", "zh": "好的，我会的。我有点担心他的考试。" },
+        "replies": [
+          { "en": "Don't worry.", "zh": "别担心。", "next": "n5" },
+          { "en": "Don't worry. Let's work together.", "zh": "别担心，我们一起努力。", "next": "n5" }
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Thank you so much, teacher.", "zh": "非常感谢你，老师。" },
+        "replies": [{ "en": "You're welcome.", "zh": "不客气。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "See you next week!", "zh": "下星期见！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天下课时，用英语和一位家长说一句孩子的情况，比如：She did very well today."
+}

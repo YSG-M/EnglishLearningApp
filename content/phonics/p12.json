@@ -1,0 +1,21 @@
+{
+  "id": "p12",
+  "title": "oa 和 ow：字母 O 的音",
+  "rule": "oa（在词中间）和很多词结尾的 ow 读 /əʊ/，像拼音\"欧\"(ou)。boat、road、slow、know 都是这个音。注意：ow 有时也读\"奥\"(how、now)，遇到时听原音确认。",
+  "mouth": "从\"呃\"滑到\"乌\"，嘴巴慢慢收圆。",
+  "examples": [
+    { "en": "boat", "zh": "船" },
+    { "en": "road", "zh": "路" },
+    { "en": "coat", "zh": "外套" },
+    { "en": "slow", "zh": "慢的" },
+    { "en": "know", "zh": "知道" },
+    { "en": "show", "zh": "展示" },
+    { "en": "tomorrow", "zh": "明天" }
+  ],
+  "pairs": [
+    { "id": "p12.m01", "a": { "en": "coat", "zh": "外套" }, "b": { "en": "cot", "zh": "婴儿床" } },
+    { "id": "p12.m02", "a": { "en": "road", "zh": "路" }, "b": { "en": "rod", "zh": "杆子" } },
+    { "id": "p12.m03", "a": { "en": "note", "zh": "便条" }, "b": { "en": "not", "zh": "不" } },
+    { "id": "p12.m04", "a": { "en": "low", "zh": "低的" }, "b": { "en": "law", "zh": "法律" } }
+  ]
+}

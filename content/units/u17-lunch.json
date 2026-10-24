@@ -1,0 +1,79 @@
+{
+  "id": "u17",
+  "kind": "work",
+  "title": "同事闲聊、一起吃午饭",
+  "titleEn": "Have you eaten?",
+  "goal": "能约同事一起吃饭、聊几句轻松的话题，也能礼貌地拒绝。",
+  "chunks": [
+    { "id": "u17.c01", "en": "Have you eaten?", "zh": "你吃了吗？", "note": "和中文\"吃了吗\"一样，新加坡同事之间常用来打招呼。" },
+    { "id": "u17.c02", "en": "I'm hungry.", "zh": "我饿了。" },
+    { "id": "u17.c03", "en": "Do you want to have lunch together?", "zh": "要一起吃午饭吗？" },
+    { "id": "u17.c04", "en": "What do you want to eat?", "zh": "你想吃什么？" },
+    { "id": "u17.c05", "en": "Let's go to the coffee shop.", "zh": "我们去咖啡店吧。", "note": "新加坡的 coffee shop 就是 kopitiam，有很多小吃摊。" },
+    { "id": "u17.c06", "en": "How was your weekend?", "zh": "周末过得怎么样？" },
+    { "id": "u17.c07", "en": "That sounds fun!", "zh": "听起来很好玩！", "note": "别人说完一件开心的事，这样回应就很自然。" },
+    { "id": "u17.c08", "en": "Sorry, I'm busy today.", "zh": "不好意思，我今天很忙。" },
+    { "id": "u17.c09", "en": "Maybe next time.", "zh": "下次吧。", "note": "委婉地拒绝邀请，对方不会不高兴。" }
+  ],
+  "words": ["eaten", "hungry", "lunch", "together", "eat", "coffee", "shop", "weekend", "fun", "maybe", "next", "time"],
+  "drill": {
+    "pattern": "Let's go to the ___.",
+    "zh": "我们去……吧",
+    "fills": [
+      { "en": "coffee shop", "zh": "咖啡店（kopitiam）" },
+      { "en": "hawker centre", "zh": "小贩中心" },
+      { "en": "food court", "zh": "美食广场" },
+      { "en": "mall", "zh": "商场" }
+    ]
+  },
+  "phonics": "p15",
+  "dialogue": {
+    "title": "约同事吃午饭",
+    "setting": "快到中午了，同事 Jason 走到前台和你聊天。",
+    "npcName": "Jason",
+    "npcVoice": "bm_george",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Amy, have you eaten?", "zh": "Amy，吃了吗？" },
+        "replies": [
+          { "en": "Not yet. I'm hungry.", "zh": "还没有。我饿了。", "next": "n2" },
+          { "en": "Not yet.", "zh": "还没有。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Do you want to have lunch together?", "zh": "要一起吃午饭吗？" },
+        "replies": [
+          { "en": "Sure! What do you want to eat?", "zh": "好啊！你想吃什么？", "next": "n3" },
+          { "en": "Sorry, I'm busy today. Maybe next time.", "zh": "不好意思，我今天很忙。下次吧。", "next": "later" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Chicken rice? There's a good stall downstairs.", "zh": "鸡饭怎么样？楼下有一家很好吃。" },
+        "replies": [{ "en": "OK! Let's go to the coffee shop.", "zh": "好！我们去咖啡店吧。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "So, how was your weekend?", "zh": "那么，你周末过得怎么样？" },
+        "replies": [
+          { "en": "It was good. I went to the park.", "zh": "挺好的。我去了公园。", "next": "end" },
+          { "en": "I stayed at home.", "zh": "我待在家里。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Nice. OK, let's order!", "zh": "不错。好了，我们点菜吧！" },
+        "replies": []
+      },
+      {
+        "id": "later",
+        "npc": { "en": "No problem. Next time!", "zh": "没关系，下次吧！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天问一位同事：Have you eaten? 或者 Do you want to have lunch together?"
+}

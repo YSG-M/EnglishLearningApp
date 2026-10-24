@@ -1,0 +1,74 @@
+{
+  "id": "u06",
+  "kind": "life",
+  "title": "小贩中心、咖啡店点餐",
+  "titleEn": "Kopi O, less sugar",
+  "goal": "能在小贩中心和咖啡店点饮料、点餐，说清楚少糖、不辣、在这里吃还是打包。",
+  "chunks": [
+    { "id": "u06.c01", "en": "Can I have a kopi, please?", "zh": "我要一杯咖啡（加炼奶），谢谢。", "note": "kopi = 咖啡加炼奶；kopi O = 黑咖啡加糖；kopi C = 加淡奶和糖；teh = 奶茶。" },
+    { "id": "u06.c02", "en": "Kopi O, less sugar.", "zh": "黑咖啡，少糖。", "note": "O 读作\"欧\"。少糖说 less sugar，在咖啡店也常听到 siu dai（少甜）。" },
+    { "id": "u06.c03", "en": "No sugar, please.", "zh": "不要糖。", "note": "咖啡店里也说 kosong（不加糖）。" },
+    { "id": "u06.c04", "en": "Dine in.", "zh": "在这里吃。", "accept": ["Eat here."] },
+    { "id": "u06.c05", "en": "Take away, please.", "zh": "打包，谢谢。", "note": "新加坡也常说 tapao（打包），摊主都听得懂。" },
+    { "id": "u06.c06", "en": "One chicken rice, please.", "zh": "一份鸡饭，谢谢。" },
+    { "id": "u06.c07", "en": "Not spicy, please.", "zh": "不要辣，谢谢。", "accept": ["No chilli, please."] },
+    { "id": "u06.c08", "en": "How much altogether?", "zh": "一共多少钱？" },
+    { "id": "u06.c09", "en": "Thank you, uncle!", "zh": "谢谢阿叔！", "note": "新加坡对摊主常叫 uncle（阿叔）、auntie（阿姨），很亲切。" }
+  ],
+  "words": ["kopi", "teh", "sugar", "less", "take", "away", "chicken", "rice", "spicy", "altogether"],
+  "drill": {
+    "pattern": "Can I have ___, please?",
+    "zh": "点吃的喝的",
+    "fills": [
+      { "en": "a kopi", "zh": "一杯咖啡" },
+      { "en": "a teh", "zh": "一杯奶茶" },
+      { "en": "a chicken rice", "zh": "一份鸡饭" },
+      { "en": "some water", "zh": "一些水" }
+    ]
+  },
+  "phonics": "p04",
+  "dialogue": {
+    "title": "在咖啡店点饮料",
+    "setting": "早上，你在组屋楼下的咖啡店买咖啡，摊主阿叔问你要什么。",
+    "npcName": "Uncle",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Yes, what you want?", "zh": "要什么？" },
+        "replies": [
+          { "en": "Can I have a kopi, please?", "zh": "我要一杯咖啡，谢谢。", "next": "n2" },
+          { "en": "Kopi O, less sugar.", "zh": "黑咖啡，少糖。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Kopi. Sugar normal?", "zh": "咖啡。糖正常吗？" },
+        "replies": [
+          { "en": "Less sugar, please.", "zh": "少糖，谢谢。", "next": "n3" },
+          { "en": "No sugar, please.", "zh": "不要糖，谢谢。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Dine in or take away?", "zh": "在这里喝还是打包？" },
+        "replies": [
+          { "en": "Dine in.", "zh": "在这里喝。", "next": "n4" },
+          { "en": "Take away, please.", "zh": "打包，谢谢。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Okay, one eighty.", "zh": "好，一块八。" },
+        "replies": [{ "en": "Thank you, uncle!", "zh": "谢谢阿叔！", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Okay, wait ah.", "zh": "好，等一下哦。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天去咖啡店或小贩中心，用英语点一次饮料，比如：Kopi O, less sugar."
+}

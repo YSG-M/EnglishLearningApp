@@ -1,0 +1,82 @@
+{
+  "id": "u13",
+  "kind": "work",
+  "title": "调课、补课、孩子请假",
+  "titleEn": "We can arrange a make-up class",
+  "goal": "家长说孩子要请假或者想换上课时间时，能用英语安排补课、确认时间。",
+  "chunks": [
+    { "id": "u13.c01", "en": "Can we change the class to Friday?", "zh": "可以把课改到星期五吗？" },
+    { "id": "u13.c02", "en": "He can't come today.", "zh": "他今天不能来。", "note": "can't = can not，\"不能\"。" },
+    { "id": "u13.c03", "en": "She is sick today.", "zh": "她今天生病了。" },
+    { "id": "u13.c04", "en": "We can arrange a make-up class.", "zh": "我们可以安排补课。", "note": "make-up class = 补课。" },
+    { "id": "u13.c05", "en": "Is Friday okay for you?", "zh": "星期五你方便吗？" },
+    { "id": "u13.c06", "en": "What time is good for you?", "zh": "你什么时间方便？" },
+    { "id": "u13.c07", "en": "I will check the timetable.", "zh": "我查一下课表。" },
+    { "id": "u13.c08", "en": "No problem.", "zh": "没问题。" },
+    { "id": "u13.c09", "en": "Thank you for letting me know.", "zh": "谢谢你告诉我。", "note": "家长请假、通知事情时，用这句回复很礼貌。" }
+  ],
+  "words": ["change", "can't", "come", "sick", "arrange", "make-up", "okay", "timetable", "problem", "letting"],
+  "drill": {
+    "pattern": "Can we change the class to ___?",
+    "zh": "问能不能换到别的时间",
+    "fills": [
+      { "en": "Friday", "zh": "可以改到星期五吗？" },
+      { "en": "next week", "zh": "可以改到下星期吗？" },
+      { "en": "4pm", "zh": "可以改到下午四点吗？" },
+      { "en": "Sunday morning", "zh": "可以改到星期天早上吗？" }
+    ]
+  },
+  "grammar": {
+    "title": "can 和 can't",
+    "body": "can 是\"能、可以\"，can't 是\"不能\"。两个词很像：can't 的 a 读得更开、更长，结尾还有一个轻轻的 t。听不清时，可以问 Can or cannot?",
+    "examples": [
+      { "en": "He can come on Friday.", "zh": "他星期五能来。" },
+      { "en": "He can't come today.", "zh": "他今天不能来。" }
+    ]
+  },
+  "phonics": "p11",
+  "dialogue": {
+    "title": "爸爸打电话给孩子请假",
+    "setting": "Jayden 的爸爸打电话到补习中心，说 Jayden 今天不能来上课。",
+    "npcName": "Mr Goh",
+    "npcVoice": "bm_lewis",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, this is Jayden's father. Jayden can't come for class today.", "zh": "你好，我是 Jayden 的爸爸。Jayden 今天不能来上课。" },
+        "replies": [
+          { "en": "Okay. Thank you for letting me know.", "zh": "好的，谢谢你告诉我。", "next": "n2" },
+          { "en": "Is he sick today?", "zh": "他今天生病了吗？", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Yes, he has a fever. Can he do a make-up class?", "zh": "是的，他发烧了。他可以补课吗？" },
+        "replies": [
+          { "en": "We can arrange a make-up class.", "zh": "我们可以安排补课。", "next": "n3" },
+          { "en": "No problem.", "zh": "没问题。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "That's great. When can he come?", "zh": "太好了。他什么时候可以来？" },
+        "replies": [
+          { "en": "Is Friday okay for you?", "zh": "星期五你方便吗？", "next": "n4" },
+          { "en": "What time is good for you?", "zh": "你什么时间方便？", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Friday at 5pm is good for us.", "zh": "星期五下午五点我们可以。" },
+        "replies": [{ "en": "No problem. I will check the timetable.", "zh": "没问题，我查一下课表。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Thank you so much. Bye!", "zh": "非常感谢，再见！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天如果有家长请假或通知你什么事，用英语回一句：Thank you for letting me know."
+}

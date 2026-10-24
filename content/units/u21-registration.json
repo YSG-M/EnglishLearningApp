@@ -1,0 +1,73 @@
+{
+  "id": "u21",
+  "kind": "work",
+  "title": "新学期报名、活动通知",
+  "titleEn": "Registration is open now",
+  "goal": "能告诉家长新学期什么时候开始、怎么报名、有什么优惠和活动。",
+  "chunks": [
+    { "id": "u21.c01", "en": "The new term starts in January.", "zh": "新学期一月开始。" },
+    { "id": "u21.c02", "en": "Registration is open now.", "zh": "现在开始报名了。" },
+    { "id": "u21.c03", "en": "Would you like to sign up?", "zh": "您想报名吗？", "note": "Would you like……? 比 Do you want……? 更礼貌，对家长用这个。" },
+    { "id": "u21.c04", "en": "Please fill in this form.", "zh": "请填写这张表格。" },
+    { "id": "u21.c05", "en": "There is a 10% discount for early sign-up.", "zh": "提早报名有九折优惠。", "note": "10% discount 是便宜 10%，也就是中文说的\"九折\"。别搞反了！" },
+    { "id": "u21.c06", "en": "The last day to register is 15 December.", "zh": "报名截止日期是 12 月 15 日。" },
+    { "id": "u21.c07", "en": "We have a Chinese New Year event on 25 January.", "zh": "我们 1 月 25 日有新年活动。" },
+    { "id": "u21.c08", "en": "Parents are welcome to join.", "zh": "欢迎家长一起参加。" },
+    { "id": "u21.c09", "en": "I'll send you the details on WhatsApp.", "zh": "我会在 WhatsApp 上把详情发给您。" }
+  ],
+  "words": ["new", "starts", "registration", "sign", "fill", "form", "discount", "early", "register", "event", "welcome", "details"],
+  "drill": {
+    "pattern": "The new term starts in ___.",
+    "zh": "新学期……开始",
+    "fills": [
+      { "en": "January", "zh": "一月" },
+      { "en": "March", "zh": "三月" },
+      { "en": "June", "zh": "六月" },
+      { "en": "September", "zh": "九月" }
+    ]
+  },
+  "phonics": "p19",
+  "dialogue": {
+    "title": "家长来问下学期报名",
+    "setting": "一位爸爸来前台问下个学期的报名情况。",
+    "npcName": "Mr Tan",
+    "npcVoice": "bm_lewis",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, is registration open for next term?", "zh": "你好，下学期开始报名了吗？" },
+        "replies": [{ "en": "Yes, registration is open now.", "zh": "是的，现在开始报名了。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "When does the new term start?", "zh": "新学期什么时候开始？" },
+        "replies": [{ "en": "The new term starts in January.", "zh": "新学期一月开始。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Any discount?", "zh": "有优惠吗？" },
+        "replies": [{ "en": "There is a 10% discount for early sign-up.", "zh": "提早报名有九折优惠。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "OK, I want to sign up my son.", "zh": "好，我想给我儿子报名。" },
+        "replies": [{ "en": "Great! Please fill in this form.", "zh": "太好了！请填写这张表格。", "next": "n5" }]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Done. Anything else I should know?", "zh": "填好了。还有什么我需要知道的吗？" },
+        "replies": [
+          { "en": "We have a Chinese New Year event on 25 January.", "zh": "我们 1 月 25 日有新年活动。", "next": "end" },
+          { "en": "I'll send you the details on WhatsApp.", "zh": "我会在 WhatsApp 上把详情发给您。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Wonderful, thank you!", "zh": "太好了，谢谢！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "把你们中心下学期的开学时间用英语说一遍：The new term starts in ___. 然后试着告诉一位家长。"
+}

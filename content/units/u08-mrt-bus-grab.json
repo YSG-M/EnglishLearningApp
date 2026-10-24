@@ -1,0 +1,68 @@
+{
+  "id": "u08",
+  "kind": "life",
+  "title": "MRT、巴士、Grab",
+  "titleEn": "How do I get to the MRT station?",
+  "goal": "能问路、问坐哪路巴士，打 Grab 时能告诉司机你在哪里。",
+  "chunks": [
+    { "id": "u08.c01", "en": "Excuse me, where is the MRT station?", "zh": "请问，地铁站在哪里？", "note": "Excuse me 是向陌生人开口时的礼貌开头。MRT 就是新加坡的地铁。" },
+    { "id": "u08.c02", "en": "How do I get to Orchard?", "zh": "去乌节路怎么走？", "note": "把 Orchard 换成你要去的地方。" },
+    { "id": "u08.c03", "en": "Which bus should I take?", "zh": "我应该坐哪路巴士？" },
+    { "id": "u08.c04", "en": "Is this the right way?", "zh": "这个方向对吗？" },
+    { "id": "u08.c05", "en": "Is it far?", "zh": "远吗？" },
+    { "id": "u08.c06", "en": "How long does it take?", "zh": "要多久？" },
+    { "id": "u08.c07", "en": "I'm at the lobby.", "zh": "我在大堂。", "note": "打 Grab 时告诉司机你在哪里。组屋楼下也可以说 void deck。" },
+    { "id": "u08.c08", "en": "Please stop here.", "zh": "请在这里停。" },
+    { "id": "u08.c09", "en": "Okay, I'm coming.", "zh": "好的，我马上来。" }
+  ],
+  "words": ["excuse", "mrt", "station", "bus", "right", "way", "far", "long", "lobby", "stop"],
+  "drill": {
+    "pattern": "How do I get to ___?",
+    "zh": "问去某个地方怎么走",
+    "fills": [
+      { "en": "the MRT station", "zh": "去地铁站怎么走？" },
+      { "en": "Orchard", "zh": "去乌节路怎么走？" },
+      { "en": "the bus stop", "zh": "去巴士站怎么走？" },
+      { "en": "the clinic", "zh": "去诊所怎么走？" }
+    ]
+  },
+  "phonics": "p06",
+  "dialogue": {
+    "title": "Grab 司机打电话找你",
+    "setting": "你叫了 Grab，司机打电话来问你在哪里。",
+    "npcName": "Grab driver",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hello, I'm your Grab driver. Where are you now?", "zh": "你好，我是你的 Grab 司机。你现在在哪里？" },
+        "replies": [
+          { "en": "I'm at the lobby.", "zh": "我在大堂。", "next": "n2" },
+          { "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n1b" }
+        ]
+      },
+      {
+        "id": "n1b",
+        "npc": { "en": "Sure. Where. Are. You?", "zh": "好的。你——在——哪里？" },
+        "replies": [{ "en": "I'm at the lobby.", "zh": "我在大堂。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Block 123, right?", "zh": "123 座，对吗？" },
+        "replies": [{ "en": "Yes, block 123.", "zh": "对，123 座。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Okay, I'm here already. Silver car.", "zh": "好的，我已经到了。银色的车。" },
+        "replies": [{ "en": "Okay, I'm coming.", "zh": "好的，我马上来。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "No problem. See you.", "zh": "没问题，待会见。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天坐 MRT、巴士或 Grab 时，用英语说一遍你要去哪里：How do I get to ...?"
+}

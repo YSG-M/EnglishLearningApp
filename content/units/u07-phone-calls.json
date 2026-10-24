@@ -1,0 +1,81 @@
+{
+  "id": "u07",
+  "kind": "work",
+  "title": "前台③：接电话",
+  "titleEn": "Hello, Bright Learning Centre",
+  "goal": "能用英语接补习中心的电话：报中心名字、问对方是谁、帮忙留言。",
+  "chunks": [
+    { "id": "u07.c01", "en": "Hello, Bright Learning Centre.", "zh": "你好，这里是 Bright 补习中心。", "note": "把 Bright 换成你们中心的名字。接电话第一句就报名字，很专业。" },
+    { "id": "u07.c02", "en": "May I know who is calling?", "zh": "请问您是哪位？", "note": "非常礼貌的问法，新加坡办公室里很常用。" },
+    { "id": "u07.c03", "en": "Sorry, she is in class now.", "zh": "不好意思，她现在在上课。", "note": "男老师就说 he is in class now。" },
+    { "id": "u07.c04", "en": "Can I take a message?", "zh": "我可以帮您留言吗？" },
+    { "id": "u07.c05", "en": "Can you spell your name?", "zh": "可以拼一下您的名字吗？" },
+    { "id": "u07.c06", "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。", "note": "call you back = 回电话给你。" },
+    { "id": "u07.c07", "en": "Sorry, the line is not clear.", "zh": "不好意思，信号不太好。" },
+    { "id": "u07.c08", "en": "Please hold on.", "zh": "请别挂断，稍等。" },
+    { "id": "u07.c09", "en": "Thank you for calling.", "zh": "谢谢您的来电。" }
+  ],
+  "words": ["may", "know", "calling", "message", "spell", "call", "back", "line", "clear", "hold"],
+  "drill": {
+    "pattern": "I will ask her to ___.",
+    "zh": "答应家长会让老师做什么",
+    "fills": [
+      { "en": "call you back", "zh": "我会让她回电话给您" },
+      { "en": "WhatsApp you", "zh": "我会让她发 WhatsApp 给您" },
+      { "en": "send you the timetable", "zh": "我会让她把课表发给您" },
+      { "en": "check the time", "zh": "我会让她确认一下时间" }
+    ]
+  },
+  "grammar": {
+    "title": "him 和 her",
+    "body": "说\"让他 / 让她……\"的时候：男的用 him，女的用 her。和 he / she 一样，开口前先想一想是男是女。",
+    "examples": [
+      { "en": "I will ask him to call you back.", "zh": "我会让他回电话给您。" },
+      { "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。" }
+    ]
+  },
+  "phonics": "p05",
+  "dialogue": {
+    "title": "家长打电话找老师",
+    "setting": "前台电话响了，一位妈妈想找王老师，可是王老师正在上课。",
+    "npcName": "Mrs Lee",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hello? Is this Bright Learning Centre?", "zh": "喂？是 Bright 补习中心吗？" },
+        "replies": [{ "en": "Hello, Bright Learning Centre.", "zh": "你好，这里是 Bright 补习中心。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Hi, can I speak to Teacher Wang?", "zh": "你好，我可以找王老师吗？" },
+        "replies": [{ "en": "May I know who is calling?", "zh": "请问您是哪位？", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "I'm Ethan's mother.", "zh": "我是 Ethan 的妈妈。" },
+        "replies": [{ "en": "Sorry, she is in class now.", "zh": "不好意思，她现在在上课。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Oh, I see.", "zh": "哦，这样啊。" },
+        "replies": [
+          { "en": "Can I take a message?", "zh": "我可以帮您留言吗？", "next": "n5" },
+          { "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。", "next": "n5" }
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Yes, please ask her to call me back after class.", "zh": "好的，请她下课后回电话给我。" },
+        "replies": [{ "en": "Okay. Thank you for calling.", "zh": "好的，谢谢您的来电。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Thank you. Bye.", "zh": "谢谢，再见。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天接电话时，第一句试着用英语说：Hello, ___ Learning Centre.（换成你们中心的名字）"
+}

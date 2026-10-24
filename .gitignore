@@ -1,0 +1,27 @@
+node_modules/
+out/
+dist/
+release/
+coverage/
+*.log
+
+# Downloaded speech models (fetched by `npm run models:download`)
+.models/
+resources/models/
+
+# Generated build artefacts (rebuilt by `npm run content:build` / `npm run content:audio`)
+resources/content/
+resources/audio/
+
+# Never commit learner data
+userdata/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+.env
+.DS_Store
+Thumbs.db
+
+# Agent wiki and agent summaries (local only, see global rules)
+.agent-wiki/

@@ -1,0 +1,86 @@
+{
+  "id": "u05",
+  "kind": "work",
+  "title": "前台②：课程咨询",
+  "titleEn": "We have a free trial class",
+  "goal": "家长来问课程时，能问孩子的年龄和年级，介绍试听课、上课时间和学费。",
+  "chunks": [
+    { "id": "u05.c01", "en": "How old is your child?", "zh": "你的孩子几岁？" },
+    { "id": "u05.c02", "en": "Which level is she in?", "zh": "她读几年级？", "note": "新加坡说 Primary 1（小一）、P1。男孩就说 Which level is he in?" },
+    { "id": "u05.c03", "en": "We have a free trial class.", "zh": "我们有免费试听课。", "note": "trial class = 试听课，free = 免费。" },
+    { "id": "u05.c04", "en": "The class is on Saturday at 10am.", "zh": "课在星期六早上十点。" },
+    { "id": "u05.c05", "en": "Each class is 90 minutes.", "zh": "每节课 90 分钟。" },
+    { "id": "u05.c06", "en": "The fee is $280 a month.", "zh": "学费每个月 280 块。", "note": "$280 读作 two hundred and eighty dollars。" },
+    { "id": "u05.c07", "en": "Do you want to try?", "zh": "你想试一下吗？" },
+    { "id": "u05.c08", "en": "Can I have your phone number?", "zh": "可以给我你的电话号码吗？" },
+    { "id": "u05.c09", "en": "I will WhatsApp you.", "zh": "我会发 WhatsApp 给你。", "note": "新加坡人常常把 WhatsApp 当动词用，意思是\"发 WhatsApp 消息\"。" }
+  ],
+  "words": ["old", "level", "free", "trial", "each", "minutes", "fee", "month", "want", "try"],
+  "drill": {
+    "pattern": "We have ___.",
+    "zh": "介绍你们有什么课",
+    "fills": [
+      { "en": "a free trial class", "zh": "免费试听课" },
+      { "en": "classes on Saturday", "zh": "星期六的课" },
+      { "en": "small classes", "zh": "小班课" },
+      { "en": "holiday classes", "zh": "假期班" }
+    ]
+  },
+  "grammar": {
+    "title": "$280 a month 就是\"每个月 280\"",
+    "body": "价格或者次数后面加 a month / a week，意思是\"每个月 / 每星期\"。这里的 a 不是\"一个\"，而是\"每\"。",
+    "examples": [
+      { "en": "The fee is $280 a month.", "zh": "学费每个月 280 块。" },
+      { "en": "Two classes a week.", "zh": "每星期两节课。" }
+    ]
+  },
+  "phonics": "p03",
+  "dialogue": {
+    "title": "家长来问华文课",
+    "setting": "一位妈妈走进补习中心，想给女儿报华文课。",
+    "npcName": "Mrs Wong",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, I want to ask about Chinese classes for my daughter.", "zh": "你好，我想问一下我女儿的华文课。" },
+        "replies": [
+          { "en": "How old is your child?", "zh": "你的孩子几岁？", "next": "n2" },
+          { "en": "Which level is she in?", "zh": "她读几年级？", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "She's seven. Primary 1 this year.", "zh": "她七岁，今年小一。" },
+        "replies": [{ "en": "We have a free trial class.", "zh": "我们有免费试听课。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Oh good. When is the class?", "zh": "哦，太好了。什么时候上课？" },
+        "replies": [{ "en": "The class is on Saturday at 10am.", "zh": "课在星期六早上十点。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "How much is the fee?", "zh": "学费多少？" },
+        "replies": [{ "en": "The fee is $280 a month.", "zh": "学费每个月 280 块。", "next": "n5" }]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Okay, I think we can try.", "zh": "好，我想我们可以试试。" },
+        "replies": [{ "en": "Can I have your phone number?", "zh": "可以给我你的电话号码吗？", "next": "n6" }]
+      },
+      {
+        "id": "n6",
+        "npc": { "en": "Sure, it's 9876 5432.", "zh": "好的，9876 5432。" },
+        "replies": [{ "en": "Thank you. I will WhatsApp you.", "zh": "谢谢，我会发 WhatsApp 给你。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Thank you, see you on Saturday!", "zh": "谢谢，星期六见！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天有家长来问课程时，试着用英语说一句 We have a free trial class."
+}

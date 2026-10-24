@@ -1,0 +1,78 @@
+{
+  "id": "u25",
+  "kind": "work",
+  "title": "孩子不舒服、接送与安全",
+  "titleEn": "Who is picking him up?",
+  "goal": "孩子不舒服或受伤时能通知家长；能确认谁来接孩子。",
+  "chunks": [
+    { "id": "u25.c01", "en": "Your child is not feeling well.", "zh": "您的孩子不太舒服。" },
+    { "id": "u25.c02", "en": "She has a fever.", "zh": "她发烧了。", "note": "女孩用 she，男孩用 he，不要搞混。" },
+    { "id": "u25.c03", "en": "He hurt his knee.", "zh": "他磕到膝盖了。", "note": "男孩：he（他）、his（他的）。" },
+    { "id": "u25.c04", "en": "Don't worry, she is OK now.", "zh": "别担心，她现在没事了。", "accept": ["Don't worry, she's OK now."] },
+    { "id": "u25.c05", "en": "Can you come to pick her up?", "zh": "您可以来接她吗？", "note": "pick up = 接（人）。接女孩是 pick her up，接男孩是 pick him up。" },
+    { "id": "u25.c06", "en": "Who is picking him up today?", "zh": "今天谁来接他？" },
+    { "id": "u25.c07", "en": "He is waiting at the front desk.", "zh": "他在前台等着。" },
+    { "id": "u25.c08", "en": "Please call us if you are late.", "zh": "如果您会迟到，请给我们打电话。" },
+    { "id": "u25.c09", "en": "Only parents can pick up the children.", "zh": "只有家长可以接孩子。", "note": "安全规定：陌生人来接，要先打电话问家长。" }
+  ],
+  "words": ["child", "fever", "hurt", "knee", "worry", "pick", "waiting", "late", "only", "children", "he", "she"],
+  "drill": {
+    "pattern": "___ is waiting at the front desk.",
+    "zh": "……在前台等着（注意男孩女孩）",
+    "fills": [
+      { "en": "He", "zh": "他（男孩）" },
+      { "en": "She", "zh": "她（女孩）" },
+      { "en": "Your son", "zh": "您的儿子" },
+      { "en": "Your daughter", "zh": "您的女儿" }
+    ]
+  },
+  "grammar": {
+    "title": "he 和 she 不能混",
+    "body": "中文\"他\"和\"她\"读音一样，英语要分开说：男孩用 he / his / him，女孩用 she / her。说错的话，家长可能以为你在说别的孩子！",
+    "examples": [
+      { "en": "He is waiting.", "zh": "他（男孩）在等。" },
+      { "en": "She is waiting.", "zh": "她（女孩）在等。" },
+      { "en": "Can you pick him up?", "zh": "您可以接他（男孩）吗？" },
+      { "en": "Can you pick her up?", "zh": "您可以接她（女孩）吗？" }
+    ]
+  },
+  "phonics": "p23",
+  "dialogue": {
+    "title": "打电话通知家长",
+    "setting": "一个女孩上课时发烧了，你打电话给她妈妈 Mrs Lim。",
+    "npcName": "Mrs Lim",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hello?", "zh": "喂？" },
+        "replies": [{ "en": "Hi, Mrs Lim. This is Amy from the learning centre.", "zh": "您好，林太太。我是补习中心的 Amy。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Hi Amy. Is everything OK?", "zh": "你好 Amy。没什么事吧？" },
+        "replies": [{ "en": "Your child is not feeling well. She has a fever.", "zh": "您的孩子不太舒服，她发烧了。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Oh no! Is she OK?", "zh": "哎呀！她还好吗？" },
+        "replies": [{ "en": "Don't worry, she is OK now.", "zh": "别担心，她现在没事了。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "I'm at work now. Her grandmother will come. Is that OK?", "zh": "我在上班。她奶奶会过来接，可以吗？" },
+        "replies": [
+          { "en": "Yes, no problem. She is waiting at the front desk.", "zh": "可以，没问题。她在前台等着。", "next": "end" },
+          { "en": "OK. Please call us if you are late.", "zh": "好的。如果晚到请给我们打电话。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Thank you, Amy. She will be there in twenty minutes.", "zh": "谢谢你，Amy。她二十分钟后到。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天看到孩子时，在心里用英语说一句：He is waiting. 或 She is waiting. 练习不把\"他\"和\"她\"搞混。"
+}

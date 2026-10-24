@@ -1,0 +1,68 @@
+{
+  "id": "u23",
+  "kind": "work",
+  "title": "请假、和老板沟通",
+  "titleEn": "Can I take leave on Friday?",
+  "goal": "能礼貌地向老板请假、说明身体不舒服、安排人代课。",
+  "chunks": [
+    { "id": "u23.c01", "en": "Can I take leave on Friday?", "zh": "我周五可以请假吗？", "note": "take leave = 请假。" },
+    { "id": "u23.c02", "en": "I'm not feeling well today.", "zh": "我今天不太舒服。" },
+    { "id": "u23.c03", "en": "I need to see a doctor.", "zh": "我需要去看医生。" },
+    { "id": "u23.c04", "en": "Can I leave early today?", "zh": "我今天可以早点走吗？" },
+    { "id": "u23.c05", "en": "I will send you my MC.", "zh": "我会把病假单发给你。", "note": "MC = medical certificate，新加坡的病假单。看医生后记得要一张。" },
+    { "id": "u23.c06", "en": "Jason can cover my class.", "zh": "Jason 可以代我的课。", "note": "cover my class = 代我上课。" },
+    { "id": "u23.c07", "en": "I have called all the parents.", "zh": "我已经给所有家长打过电话了。", "note": "have + 做完的动作 = \"已经……了\"。" },
+    { "id": "u23.c08", "en": "Sorry, I will be late today.", "zh": "抱歉，我今天会迟到。" },
+    { "id": "u23.c09", "en": "Is there anything else?", "zh": "还有别的事吗？" }
+  ],
+  "words": ["take", "leave", "feeling", "well", "need", "doctor", "early", "cover", "called", "parents", "late", "anything"],
+  "drill": {
+    "pattern": "Can I take leave on ___?",
+    "zh": "我……可以请假吗？",
+    "fills": [
+      { "en": "Friday", "zh": "星期五" },
+      { "en": "next Monday", "zh": "下星期一" },
+      { "en": "the 20th", "zh": "20 号" },
+      { "en": "Christmas Eve", "zh": "平安夜" }
+    ]
+  },
+  "phonics": "p21",
+  "dialogue": {
+    "title": "身体不舒服，跟老板请假",
+    "setting": "早上你觉得不舒服，中心负责人 Mr Lee 看到你。",
+    "npcName": "Mr Lee",
+    "npcVoice": "bm_george",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Morning, Amy. You look tired.", "zh": "早上好，Amy。你看起来很累。" },
+        "replies": [{ "en": "I'm not feeling well today.", "zh": "我今天不太舒服。", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Oh no. Do you want to go home?", "zh": "哎呀。你要回家吗？" },
+        "replies": [
+          { "en": "Can I leave early today?", "zh": "我今天可以早点走吗？", "next": "n3" },
+          { "en": "I need to see a doctor.", "zh": "我需要去看医生。", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Sure. But who can take your four o'clock class?", "zh": "当然可以。不过四点那节课谁来上？" },
+        "replies": [{ "en": "Jason can cover my class.", "zh": "Jason 可以代我的课。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "OK, I'll ask him. Go and rest.", "zh": "好，我去问他。你去休息吧。" },
+        "replies": [{ "en": "Thank you. I will send you my MC.", "zh": "谢谢。我会把病假单发给你。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "No problem. Take care!", "zh": "没问题。保重！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "想一想：如果明天要请假，你会怎么用英语跟老板说？用手机录下来听一遍。"
+}

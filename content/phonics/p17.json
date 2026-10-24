@@ -1,0 +1,21 @@
+{
+  "id": "p17",
+  "title": "th（清音）：think、thank 要咬舌",
+  "rule": "th 是中文里没有的音。清音 th /θ/ 只吹气、喉咙不振动：think、thank、three。中国人最常读成 s（sink、sank），或者 f。这个音要靠口型练出来，不能用谐音代替。",
+  "mouth": "舌尖轻轻伸出来，放在上下牙齿之间（露出一点点舌尖），然后往外吹气。照镜子能看到舌尖就对了。",
+  "examples": [
+    { "en": "think", "zh": "想" },
+    { "en": "thank", "zh": "谢谢" },
+    { "en": "three", "zh": "三" },
+    { "en": "Thursday", "zh": "星期四" },
+    { "en": "month", "zh": "月" },
+    { "en": "bath", "zh": "洗澡" }
+  ],
+  "pairs": [
+    { "id": "p17.m01", "a": { "en": "think", "zh": "想" }, "b": { "en": "sink", "zh": "水槽" } },
+    { "id": "p17.m02", "a": { "en": "thank", "zh": "谢谢" }, "b": { "en": "sank", "zh": "沉没了" } },
+    { "id": "p17.m03", "a": { "en": "three", "zh": "三" }, "b": { "en": "free", "zh": "免费" } },
+    { "id": "p17.m04", "a": { "en": "thick", "zh": "厚的" }, "b": { "en": "sick", "zh": "生病的" } },
+    { "id": "p17.m05", "a": { "en": "mouth", "zh": "嘴" }, "b": { "en": "mouse", "zh": "老鼠" } }
+  ]
+}

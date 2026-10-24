@@ -1,0 +1,75 @@
+{
+  "id": "u20",
+  "kind": "life",
+  "title": "银行、手机卡",
+  "titleEn": "I want to top up my phone",
+  "goal": "能在银行或手机店说出要办什么，听不懂时请对方写下来。",
+  "chunks": [
+    { "id": "u20.c01", "en": "I want to open a bank account.", "zh": "我想开一个银行账户。" },
+    { "id": "u20.c02", "en": "I want to top up my phone.", "zh": "我想给手机充值。", "note": "新加坡说 top up（充值），交通卡充值也这样说。" },
+    { "id": "u20.c03", "en": "Can I change my phone plan?", "zh": "我可以换手机套餐吗？" },
+    { "id": "u20.c04", "en": "How much is this plan?", "zh": "这个套餐多少钱？" },
+    { "id": "u20.c05", "en": "Here is my work pass.", "zh": "这是我的工作准证。", "note": "在新加坡办事常要出示 work pass（工作准证）或 passport（护照）。" },
+    { "id": "u20.c06", "en": "I lost my card.", "zh": "我的卡丢了。", "note": "lose（丢）的过去是 lost。" },
+    { "id": "u20.c07", "en": "Where do I sign?", "zh": "我在哪里签名？" },
+    { "id": "u20.c08", "en": "Can you write it down for me?", "zh": "能帮我写下来吗？", "note": "听不清数字或者长单词时特别有用，不用不好意思。" }
+  ],
+  "words": ["open", "bank", "account", "top", "phone", "change", "plan", "pass", "lost", "card", "sign", "write"],
+  "drill": {
+    "pattern": "I want to ___.",
+    "zh": "我想……（办事时说出你要做什么）",
+    "fills": [
+      { "en": "open a bank account", "zh": "开银行账户" },
+      { "en": "top up my phone", "zh": "给手机充值" },
+      { "en": "change my plan", "zh": "换套餐" },
+      { "en": "pay my bill", "zh": "交账单" }
+    ]
+  },
+  "phonics": "p18",
+  "dialogue": {
+    "title": "在手机店",
+    "setting": "你走进一家手机店，店员 Ryan 过来招呼你。",
+    "npcName": "Ryan",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？" },
+        "replies": [
+          { "en": "I want to top up my phone.", "zh": "我想给手机充值。", "next": "n2" },
+          { "en": "Can I change my phone plan?", "zh": "我可以换手机套餐吗？", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "Sure. How much do you want to top up?", "zh": "好的。你想充多少？" },
+        "replies": [{ "en": "Twenty dollars, please.", "zh": "二十块，谢谢。", "next": "end" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "OK. This plan is thirty dollars a month, with 100 gigabytes of data.", "zh": "好的。这个套餐每月三十块，有 100G 流量。" },
+        "replies": [
+          { "en": "Can you write it down for me?", "zh": "能帮我写下来吗？", "next": "n4" },
+          { "en": "OK, I want this plan.", "zh": "好，我要这个套餐。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Sure. Can I see your work pass?", "zh": "好的。可以看一下你的工作准证吗？" },
+        "replies": [{ "en": "Here is my work pass.", "zh": "这是我的工作准证。", "next": "n5" }]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Thank you. Please sign here.", "zh": "谢谢。请在这里签名。" },
+        "replies": [{ "en": "Where do I sign?", "zh": "我在哪里签？", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Right here. All done, thank you!", "zh": "就在这里。都办好了，谢谢！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "下次去银行或者手机店，试着先说一句 I want to ___. 听不懂时就说 Can you write it down for me?"
+}

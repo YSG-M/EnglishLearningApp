@@ -1,0 +1,84 @@
+{
+  "id": "u03",
+  "kind": "work",
+  "title": "前台①：接待家长",
+  "titleEn": "How can I help you?",
+  "goal": "能在前台用英语接待来接送孩子的家长：问好、请坐、请稍等、问孩子名字。",
+  "chunks": [
+    { "id": "u03.c01", "en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？", "note": "前台最常用的第一句话。", "accept": ["Hello, how can I help you?", "How can I help you?"] },
+    { "id": "u03.c02", "en": "Please take a seat.", "zh": "请坐。", "note": "take a seat 是\"坐下\"的礼貌说法。" },
+    { "id": "u03.c03", "en": "Please wait a moment.", "zh": "请稍等一下。", "accept": ["Please wait a moment, please."] },
+    { "id": "u03.c04", "en": "What is your child's name?", "zh": "你孩子叫什么名字？", "note": "child's 就是\"孩子的\"。", "accept": ["What's your child's name?"] },
+    { "id": "u03.c05", "en": "Which class is he in?", "zh": "他在哪个班？", "note": "男孩用 he，女孩用 she：Which class is she in?" },
+    { "id": "u03.c06", "en": "The class is upstairs.", "zh": "教室在楼上。" },
+    { "id": "u03.c07", "en": "The class ends at 5pm.", "zh": "课下午 5 点结束。", "note": "5pm 读作 five p m。" },
+    { "id": "u03.c08", "en": "Please sign here.", "zh": "请在这里签名。" },
+    { "id": "u03.c09", "en": "She is coming now.", "zh": "她马上就来。", "note": "孩子是男孩就说 He is coming now." }
+  ],
+  "words": ["help", "seat", "wait", "child's", "name", "class", "upstairs", "sign", "here", "now"],
+  "drill": {
+    "pattern": "Please ___.",
+    "zh": "礼貌地请家长做一件事",
+    "fills": [
+      { "en": "take a seat", "zh": "请坐" },
+      { "en": "wait a moment", "zh": "请稍等" },
+      { "en": "sign here", "zh": "请在这里签名" },
+      { "en": "come in", "zh": "请进" }
+    ]
+  },
+  "grammar": {
+    "title": "he 和 she 一定要分清",
+    "body": "中文\"他\"和\"她\"读音一样，英语却完全不同：男孩用 he，女孩用 she。前台说到孩子时最容易说错，开口前先想一下：是男孩还是女孩？",
+    "examples": [
+      { "en": "He is in Class A.", "zh": "他（男孩）在 A 班。" },
+      { "en": "She is in Class B.", "zh": "她（女孩）在 B 班。" }
+    ]
+  },
+  "phonics": "p01",
+  "dialogue": {
+    "title": "家长来接孩子",
+    "setting": "下午，一位爸爸来补习中心接女儿。",
+    "npcName": "Mr Tan",
+    "npcVoice": "bm_lewis",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hi, good afternoon.", "zh": "你好，下午好。" },
+        "replies": [
+          { "en": "Good afternoon! How can I help you?", "zh": "下午好！有什么可以帮你？", "next": "n2" },
+          { "en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "I'm here to pick up my daughter.", "zh": "我来接我女儿。" },
+        "replies": [{ "en": "What is your child's name?", "zh": "你孩子叫什么名字？", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Her name is Chloe. Chloe Tan.", "zh": "她叫 Chloe，Chloe Tan。" },
+        "replies": [{ "en": "Which class is she in?", "zh": "她在哪个班？", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "The P2 class, I think.", "zh": "我想是小二的班。" },
+        "replies": [
+          { "en": "Okay. Please take a seat.", "zh": "好的，请坐。", "next": "n5" },
+          { "en": "Please wait a moment.", "zh": "请稍等一下。", "next": "n5" }
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": { "en": "Sure, thanks.", "zh": "好的，谢谢。" },
+        "replies": [{ "en": "She is coming now.", "zh": "她马上就来。", "next": "end" }]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Oh, there she is. Thank you!", "zh": "哦，她来了。谢谢！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天上班时，对来的家长说一句 Hi, how can I help you? 或 Please take a seat."
+}

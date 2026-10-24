@@ -1,0 +1,20 @@
+{
+  "id": "p18",
+  "title": "th（浊音）：this、they 也要咬舌",
+  "rule": "浊音 th /ð/ 口型和上一课一样，但喉咙要振动：this、that、they、the、mother。中国人常读成 d 或 z（day、zis）。the、this、that 天天都用，练好了效果最明显。",
+  "mouth": "舌尖放在上下牙齿之间，一边送气一边让喉咙振动（摸着喉咙能感觉到嗡嗡的）。",
+  "examples": [
+    { "en": "this", "zh": "这个" },
+    { "en": "that", "zh": "那个" },
+    { "en": "they", "zh": "他们" },
+    { "en": "the", "zh": "这；那（定冠词）" },
+    { "en": "mother", "zh": "妈妈" },
+    { "en": "together", "zh": "一起" }
+  ],
+  "pairs": [
+    { "id": "p18.m01", "a": { "en": "they", "zh": "他们" }, "b": { "en": "day", "zh": "天" } },
+    { "id": "p18.m02", "a": { "en": "then", "zh": "然后" }, "b": { "en": "den", "zh": "小窝" } },
+    { "id": "p18.m03", "a": { "en": "though", "zh": "虽然" }, "b": { "en": "dough", "zh": "面团" } },
+    { "id": "p18.m04", "a": { "en": "breathe", "zh": "呼吸" }, "b": { "en": "breeze", "zh": "微风" } }
+  ]
+}

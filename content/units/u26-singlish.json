@@ -1,0 +1,70 @@
+{
+  "id": "u26",
+  "kind": "life",
+  "title": "听懂新加坡式英语 Singlish",
+  "titleEn": "Can or not?",
+  "goal": "能听懂新加坡人常说的 Singlish，用标准、礼貌的英语回答。",
+  "chunks": [
+    { "id": "u26.c01", "en": "Yes, I can.", "zh": "可以。", "note": "你会常听到 \"Can or not?\"，意思是\"可以吗？\"。回答 Yes, I can. 就行，本地人也常直接说 \"Can!\"。" },
+    { "id": "u26.c02", "en": "I have finished already.", "zh": "我已经做完了。", "note": "你会听到 \"Finish already?\"（做完了吗？）。already 在 Singlish 里就像中文的\"了\"。" },
+    { "id": "u26.c03", "en": "Do you have a pen?", "zh": "你有笔吗？", "note": "你会听到 \"Got pen or not?\"。Singlish 的 got 就是 have（有）。" },
+    { "id": "u26.c04", "en": "Let's go and eat.", "zh": "我们去吃饭吧。", "note": "你会听到 \"Let's go makan!\"。makan 是马来语的\"吃饭\"，新加坡人都这样说。" },
+    { "id": "u26.c05", "en": "Is this seat taken?", "zh": "这个位子有人吗？", "note": "小贩中心桌上放了纸巾包，表示已经 \"chope\"（占座）了，就不要坐了。" },
+    { "id": "u26.c06", "en": "No problem.", "zh": "没问题。", "note": "句尾的 lah、leh、lor，就像中文的\"啦、咧、咯\"，只是语气，听到不用管它。比如 \"Can lah!\" 就是\"可以啦！\"。" },
+    { "id": "u26.c07", "en": "It's very crowded.", "zh": "人好多。", "note": "你会听到 \"Wah, so packed!\"。wah 表示惊讶，packed 就是很挤、人很多。" },
+    { "id": "u26.c08", "en": "See you later.", "zh": "待会见。" }
+  ],
+  "words": ["can", "already", "finished", "pen", "eat", "seat", "taken", "problem", "crowded", "later"],
+  "drill": {
+    "pattern": "Do you have ___?",
+    "zh": "你有……吗？（听到 Got …… or not? 也是这个意思）",
+    "fills": [
+      { "en": "a pen", "zh": "笔" },
+      { "en": "a tissue", "zh": "纸巾" },
+      { "en": "a plastic bag", "zh": "塑料袋" },
+      { "en": "some change", "zh": "零钱" }
+    ]
+  },
+  "phonics": "p24",
+  "dialogue": {
+    "title": "和本地同事去吃饭",
+    "setting": "同事 Ah Hock 说话很有新加坡味道，试着听懂他，用你学过的英语回答。",
+    "npcName": "Ah Hock",
+    "npcVoice": "bm_lewis",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Amy, the attendance list, you finish already or not?", "zh": "Amy，那个点名表，你做完了没有？" },
+        "replies": [
+          { "en": "Yes, I have finished already.", "zh": "做完了，我已经做完了。", "next": "n2" },
+          { "en": "Not yet. Sorry.", "zh": "还没有，不好意思。", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "OK, can lah. Eh, got pen or not? Mine no more ink.", "zh": "好，没事啦。诶，有笔吗？我的没水了。" },
+        "replies": [{ "en": "Yes, I have a pen.", "zh": "有，我有笔。", "next": "n3" }]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "Thanks ah. Lunch time already. Let's go makan!", "zh": "谢啦。到午饭时间了，走，去吃饭！" },
+        "replies": [{ "en": "OK! Let's go and eat.", "zh": "好！我们去吃饭吧。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Wah, so packed today. That table people chope already.", "zh": "哇，今天好多人。那张桌子已经有人占了。" },
+        "replies": [
+          { "en": "It's very crowded.", "zh": "人好多啊。", "next": "end" },
+          { "en": "Is this seat taken?", "zh": "（问旁边的人）这个位子有人吗？", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Never mind, we try the other side lah.", "zh": "没关系，我们去那边看看啦。" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天留意身边新加坡人说话，听到 lah、can、already、makan、chope 中的任何一个，就在心里给自己加一分！"
+}

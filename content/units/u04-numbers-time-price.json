@@ -1,0 +1,80 @@
+{
+  "id": "u04",
+  "kind": "life",
+  "title": "数字、时间、价格",
+  "titleEn": "How much is it?",
+  "goal": "能问价格、说时间、报电话号码、说星期几。",
+  "chunks": [
+    { "id": "u04.c01", "en": "How much is it?", "zh": "多少钱？", "accept": ["How much?", "How much is this?"] },
+    { "id": "u04.c02", "en": "It's $5.", "zh": "五块钱。", "note": "$5 读作 five dollars。It's 就是 It is。", "accept": ["It is $5.", "5 dollars."] },
+    { "id": "u04.c03", "en": "What time is it?", "zh": "现在几点？" },
+    { "id": "u04.c04", "en": "It's 3pm.", "zh": "现在下午三点。", "note": "3pm 读作 three p m；早上是 am，下午和晚上是 pm。", "accept": ["It is 3pm."] },
+    { "id": "u04.c05", "en": "My phone number is 9123 4567.", "zh": "我的电话号码是 9123 4567。", "note": "电话号码一个数字一个数字地读：nine one two three……" },
+    { "id": "u04.c06", "en": "Monday to Friday.", "zh": "星期一到星期五。" },
+    { "id": "u04.c07", "en": "See you on Saturday.", "zh": "星期六见。" },
+    { "id": "u04.c08", "en": "Is it open on Sunday?", "zh": "星期天开门吗？" },
+    { "id": "u04.c09", "en": "Can you give me a discount?", "zh": "可以便宜一点吗？", "note": "在小店、市场可以试试；大超市一般不讲价。" }
+  ],
+  "words": ["much", "time", "phone", "number", "monday", "friday", "saturday", "sunday", "open", "discount"],
+  "drill": {
+    "pattern": "See you on ___.",
+    "zh": "星期几见",
+    "fills": [
+      { "en": "Monday", "zh": "星期一见" },
+      { "en": "Wednesday", "zh": "星期三见" },
+      { "en": "Friday", "zh": "星期五见" },
+      { "en": "Saturday", "zh": "星期六见" },
+      { "en": "Sunday", "zh": "星期天见" }
+    ]
+  },
+  "grammar": {
+    "title": "星期几用 on，几点钟用 at",
+    "body": "说\"在星期几\"，前面加 on：on Monday、on Saturday。说\"在几点\"，前面加 at：at 3pm。",
+    "examples": [
+      { "en": "See you on Monday.", "zh": "星期一见。" },
+      { "en": "The class starts at 4pm.", "zh": "课下午四点开始。" }
+    ]
+  },
+  "phonics": "p02",
+  "dialogue": {
+    "title": "在手机店问价格",
+    "setting": "你在商场的手机配件店，想买一个手机壳。",
+    "npcName": "Shop assistant",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "en": "Hello! Looking for something?", "zh": "你好！想找什么？" },
+        "replies": [{ "en": "How much is it?", "zh": "这个多少钱？", "next": "n2" }]
+      },
+      {
+        "id": "n2",
+        "npc": { "en": "This one? It's 25 dollars.", "zh": "这个吗？25 块。" },
+        "replies": [
+          { "en": "Can you give me a discount?", "zh": "可以便宜一点吗？", "next": "n3" },
+          { "en": "Okay.", "zh": "好的。", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "en": "For you, 20 dollars. Okay?", "zh": "给你 20 块，可以吗？" },
+        "replies": [{ "en": "Okay, thank you.", "zh": "好的，谢谢。", "next": "n4" }]
+      },
+      {
+        "id": "n4",
+        "npc": { "en": "Cash or card?", "zh": "付现金还是刷卡？" },
+        "replies": [
+          { "en": "Card, please.", "zh": "刷卡，谢谢。", "next": "end" },
+          { "en": "Cash.", "zh": "现金。", "next": "end" }
+        ]
+      },
+      {
+        "id": "end",
+        "npc": { "en": "Here you go. Thank you, have a nice day!", "zh": "给你。谢谢，祝你今天愉快！" },
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天看一次手机上的时间，用英语说出来，比如 It's 3pm.；再把你的手机号码用英语读三遍。"
+}
