@@ -1,0 +1,46 @@
+{
+  "week": 13,
+  "stories": {
+    "narrative": {
+      "title": "Amy 帮朋友带孩子",
+      "lines": [
+        {"en": "My friend is busy on Saturday.", "zh": "朋友星期六很忙。"},
+        {"en": "I pick up her son for her.", "zh": "我替她去接她儿子。"},
+        {"en": "We take the bus. It's packed!", "zh": "我们坐巴士，好挤！"},
+        {"en": "We go to a hawker centre.", "zh": "我们去 hawker centre。"},
+        {"en": "\"Is this seat taken?\" I ask an auntie.", "zh": "\"这个位子有人吗？\"我问一位阿姨。"},
+        {"en": "The auntie is very funny.", "zh": "那位阿姨很风趣。"},
+        {"en": "He is thirsty. We get a drink.", "zh": "他渴了，我们去买喝的。"},
+        {"en": "He fell down and cut his knee.", "zh": "他摔倒了，膝盖破了。"},
+        {"en": "\"Don't cry. Don't be scared.\"", "zh": "\"别哭，别怕。\""},
+        {"en": "I have a plaster in my bag.", "zh": "我包里有创可贴。"},
+        {"en": "We wash our hands and go to the playground.", "zh": "我们洗了手，去游乐场玩。"},
+        {"en": "Later, my friend is here.", "zh": "后来，朋友来接他了。"}
+      ]
+    },
+    "dialogue": {
+      "title": "舅舅来接他",
+      "setting": "下午，林太太的儿子在补习中心摔了一跤。Amy 先打电话给林太太，后来孩子的舅舅来接他。舅舅说话很有新加坡味道。",
+      "cast": [
+        {"name": "Mrs Lim", "voice": "af_sarah"},
+        {"name": "Uncle", "voice": "bm_lewis"}
+      ],
+      "lines": [
+        {"speaker": "Amy", "en": "Hello, Mrs Lim. This is Amy from the learning centre.", "zh": "您好，林太太。我是补习中心的 Amy。"},
+        {"speaker": "Mrs Lim", "en": "Hi Amy. Is my son OK?", "zh": "你好 Amy。我儿子没事吧？"},
+        {"speaker": "Amy", "en": "He fell down and hurt his knee.", "zh": "他摔倒了，磕到了膝盖。"},
+        {"speaker": "Mrs Lim", "en": "Is he OK?", "zh": "他还好吗？"},
+        {"speaker": "Amy", "en": "Don't worry, he is OK now. He has a plaster.", "zh": "别担心，他现在没事了，已经贴了创可贴。"},
+        {"speaker": "Mrs Lim", "en": "Thank you. His uncle will pick him up.", "zh": "谢谢。他舅舅会来接他。"},
+        {"speaker": "Amy", "en": "OK. Please call us if he is late.", "zh": "好的。如果他会晚到，请给我们打电话。"},
+        {"speaker": "Uncle", "en": "Hi! Mrs Lim called me. Can I pick up her son?", "zh": "你好！林太太给我打了电话。我来接她儿子，可以吗？"},
+        {"speaker": "Amy", "en": "Yes. He is waiting at the front desk.", "zh": "可以。他在前台等着。"},
+        {"speaker": "Uncle", "en": "His knee OK or not?", "zh": "他的膝盖没事吧？"},
+        {"speaker": "Amy", "en": "Yes, he is OK now. Don't worry.", "zh": "没事，他现在好了。别担心。"},
+        {"speaker": "Uncle", "en": "OK, can! Thank you.", "zh": "好，可以！谢谢。"},
+        {"speaker": "Amy", "en": "No problem. Be careful on the road!", "zh": "不客气。路上小心！"},
+        {"speaker": "Uncle", "en": "OK, see you later!", "zh": "好，回头见！"}
+      ]
+    }
+  }
+}

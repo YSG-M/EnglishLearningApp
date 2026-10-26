@@ -12,15 +12,16 @@ import { zh } from '../i18n/zh';
 import { useApp } from '../state/AppContext';
 import { partById } from '../state/content';
 
-export function PartPage({ partId }: { partId: string }) {
+export function PartPage({ partId, from = 'today' }: { partId: string; from?: 'today' | 'course' }) {
   const { bundle, navigate } = useApp();
   const part = partById(bundle, partId);
   const time = useActiveTime(true);
-  const [finished, setFinished] = useState<{ cards: number } | null>(null);
+  const [finished, setFinished] = useState<{ cards: number; firstTime: boolean } | null>(null);
   const [saving, setSaving] = useState(false);
   const [saveFailed, setSaveFailed] = useState(false);
   useStopAudioOnUnmount();
 
+  const back = () => navigate({ name: from });
   if (!part) return <Notice tone="warn">{zh.errors.generic}</Notice>;
   const units = part.unitIds.map((id) => bundle.units[id]).filter((u) => u !== undefined);
 
@@ -31,7 +32,7 @@ export function PartPage({ partId }: { partId: string }) {
       // Earlier time already went through addActiveTime; parts.complete adds whatever is left.
       const activeMs = time.takeUnsent();
       const res = await api.parts.complete({ partId: part.id, activeMs });
-      setFinished({ cards: res.cardsIntroduced });
+      setFinished({ cards: res.cardsIntroduced, firstTime: res.firstTime });
     } catch (err) {
       logError('parts.complete', err);
       setSaveFailed(true);
@@ -44,11 +45,37 @@ export function PartPage({ partId }: { partId: string }) {
     return (
       <div className="page part-finish">
         <Card className="finish-card">
-          <h1>🎉 {zh.part.finishTitle}</h1>
-          <p className="lead">{zh.part.finishBody(finished.cards)}</p>
-          <Button variant="primary" size="lg" onClick={() => navigate({ name: 'today' })}>
-            {zh.common.backToToday}
-          </Button>
+          <h1>🎉 {finished.firstTime ? zh.part.finishTitle : zh.part.repeatTitle}</h1>
+          <p className="lead">
+            {finished.firstTime || finished.cards > 0
+              ? zh.part.finishBody(finished.cards)
+              : zh.part.repeatBody}
+          </p>
+          <div className="row center">
+            {part.kind === 'apply' && part.unitIds[0] ? (
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() =>
+                  navigate({ name: 'unitSummary', unitId: part.unitIds[0]!, from: { name: from } })
+                }
+              >
+                📄 {zh.part.openUnitSummary}
+              </Button>
+            ) : null}
+            {part.kind === 'review' && bundle.weeks[String(part.week)] ? (
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => navigate({ name: 'weekSummary', week: part.week, from: { name: from } })}
+              >
+                📄 {zh.part.openWeekSummary}
+              </Button>
+            ) : null}
+            <Button size="lg" onClick={back}>
+              {from === 'course' ? zh.part.backToCourse : zh.common.backToToday}
+            </Button>
+          </div>
         </Card>
       </div>
     );
@@ -74,7 +101,7 @@ export function PartPage({ partId }: { partId: string }) {
   return (
     <div className="page part">
       <div className="part-topbar">
-        <Button size="sm" variant="ghost" onClick={() => navigate({ name: 'today' })}>
+        <Button size="sm" variant="ghost" onClick={back}>
           ← {zh.common.back}
         </Button>
         <span className="muted small">

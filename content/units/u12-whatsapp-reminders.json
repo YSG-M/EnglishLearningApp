@@ -5,26 +5,89 @@
   "titleEn": "This is a friendly reminder",
   "goal": "能用简短、礼貌的英语和家长沟通：学费提醒、停课通知、回复\"收到\"。",
   "chunks": [
-    { "id": "u12.c01", "en": "Good morning, this is Amy from Bright Learning Centre.", "zh": "早上好，我是 Bright 补习中心的 Amy。", "note": "给家长发消息或打电话时，先说你是谁、来自哪里。" },
-    { "id": "u12.c02", "en": "This is a friendly reminder.", "zh": "这是一个温馨提醒。", "note": "催学费时用这句开头，很客气。" },
-    { "id": "u12.c03", "en": "Please pay the fee by Friday.", "zh": "请在星期五前交学费。", "note": "by Friday = 在星期五之前。" },
-    { "id": "u12.c04", "en": "There is no class this Saturday.", "zh": "这个星期六没有课。" },
-    { "id": "u12.c05", "en": "The class is cancelled today.", "zh": "今天的课取消了。" },
-    { "id": "u12.c06", "en": "Sorry for the late reply.", "zh": "不好意思，回复晚了。" },
-    { "id": "u12.c07", "en": "Noted, thank you.", "zh": "收到，谢谢。", "note": "新加坡人回消息常说 Noted，意思是\"知道了、收到\"。" },
-    { "id": "u12.c08", "en": "Please let me know.", "zh": "请告诉我一声。" },
-    { "id": "u12.c09", "en": "Have a good weekend!", "zh": "周末愉快！" }
+    {"id": "u12.c01", "en": "Good morning, this is Amy from Bright Learning Centre.", "zh": "早上好，我是 Bright 补习中心的 Amy。", "note": "给家长发消息或打电话时，先说你是谁、来自哪里。"},
+    {"id": "u12.c02", "en": "This is a friendly reminder.", "zh": "这是一个温馨提醒。", "note": "催学费时用这句开头，很客气。"},
+    {"id": "u12.c03", "en": "Please pay the fee by Friday.", "zh": "请在星期五前交学费。", "note": "by Friday = 在星期五之前。"},
+    {"id": "u12.c04", "en": "There is no class this Saturday.", "zh": "这个星期六没有课。"},
+    {"id": "u12.c05", "en": "The class is cancelled today.", "zh": "今天的课取消了。"},
+    {"id": "u12.c06", "en": "Sorry for the late reply.", "zh": "不好意思，回复晚了。"},
+    {"id": "u12.c07", "en": "Noted, thank you.", "zh": "收到，谢谢。", "note": "新加坡人回消息常说 Noted，意思是\"知道了、收到\"。"},
+    {"id": "u12.c08", "en": "Please let me know.", "zh": "请告诉我一声。"},
+    {"id": "u12.c09", "en": "Have a good weekend!", "zh": "周末愉快！"}
   ],
   "words": ["friendly", "reminder", "there", "this", "cancelled", "late", "reply", "noted", "let", "weekend"],
-  "drill": {
-    "pattern": "Please pay the fee by ___.",
-    "zh": "提醒家长在什么时候前交学费",
-    "fills": [
-      { "en": "Friday", "zh": "请在星期五前交学费" },
-      { "en": "this week", "zh": "请在这个星期内交学费" },
-      { "en": "the 5th", "zh": "请在五号前交学费" },
-      { "en": "next Monday", "zh": "请在下星期一前交学费" }
+  "patterns": {
+    "frames": [
+      {"frame": "There is ___.", "zh": "有……", "usage": "告诉别人\"某个地方有什么、有什么事\"：有包裹、有新学生、有家长在等。框不变，只换 ___。"},
+      {"frame": "There is no ___.", "zh": "没有……", "usage": "告诉别人\"没有什么\"：没有课、没有水。在 There is 后面加 no 就行。"}
+    ],
+    "examples": [
+      {"id": "u12.e01", "scene": "家里水龙头突然没水了，你打电话给 town council。", "en": "There is no water.", "zh": "（家里）没有水了。"},
+      {"id": "u12.e02", "scene": "周末和朋友在 hawker centre，朋友想买那家鸡饭，可是排了很长的队。", "en": "There is a long queue.", "zh": "那里排了很长的队。", "note": "a long queue = 排很长的队"},
+      {"id": "u12.e03", "scene": "周末在朋友家，洗手间没有厕纸了，你小声告诉朋友。", "en": "There is no toilet paper.", "zh": "没有厕纸了。", "note": "toilet paper = 厕纸、卫生纸"},
+      {"id": "u12.e04", "scene": "邻居不在家，快递员把她的包裹放在你家，你发 WhatsApp 告诉她。", "en": "There is a parcel for you.", "zh": "有你的一个包裹。"},
+      {"id": "u12.e05", "scene": "星期一是公共假期，你发 WhatsApp 通知家长。", "en": "There is no class on Monday.", "zh": "星期一没有课。"},
+      {"id": "u12.e06", "scene": "早上上班，你告诉老师同事今天班上来了一个新学生。", "en": "There is a new student today.", "zh": "今天有一个新学生。"},
+      {"id": "u12.e07", "scene": "在 hawker centre，鸡饭卖完了，你回去告诉家人。", "en": "There is no more chicken rice.", "zh": "鸡饭卖完了。", "note": "no more = 没有了、卖完了"},
+      {"id": "u12.e08", "scene": "你发 WhatsApp 通知全班家长，下星期五开家长会。", "en": "There is a parent meeting next Friday.", "zh": "下星期五有家长会。", "note": "parent meeting = 家长会"},
+      {"id": "u12.e09", "scene": "在诊所付钱时，你发现账单多算了一项。", "en": "There is a mistake on the bill.", "zh": "账单上有一个错。", "note": "on the bill = 在账单上"},
+      {"id": "u12.e10", "scene": "一位家长在前台等 Mr Lim 老师，你去教室告诉他。", "en": "There is a parent waiting for you.", "zh": "有一位家长在等你。", "note": "a parent waiting for you = 一位在等你的家长"}
     ]
+  },
+  "daily": [
+    {"id": "u12.d01", "word": "voice", "scene": "在 MRT 上，打字太慢，你跟朋友说。", "en": "I will send you a voice message.", "zh": "我给你发语音。", "note": "voice message = 语音消息", "accept": ["I'll send you a voice message."]},
+    {"id": "u12.d02", "word": "location", "scene": "朋友约你去她家，你找不到地方。", "en": "Can you send me your location?", "zh": "可以把你的位置发给我吗？", "note": "location = 位置（WhatsApp 里的定位）"},
+    {"id": "u12.d03", "word": "link", "scene": "朋友说网上有一家店很好吃，你想看看。", "en": "Please send me the link.", "zh": "请把链接发给我。", "note": "link = 链接"},
+    {"id": "u12.d04", "word": "delete", "scene": "你在家人群里发错了一张照片。", "en": "Sorry, wrong photo. Please delete it.", "zh": "不好意思，发错照片了，请删掉。", "note": "delete = 删除"},
+    {"id": "u12.d05", "word": "download", "scene": "教妈妈用新手机，你让她装一个软件。", "en": "Please download this app.", "zh": "请下载这个软件。", "note": "app = 手机软件"},
+    {"id": "u12.d06", "word": "arrived", "scene": "到了朋友家楼下，你发 WhatsApp 告诉她。", "en": "I have arrived.", "zh": "我到了。", "note": "I have arrived = 我到了"},
+    {"id": "u12.d07", "word": "plan", "scene": "星期五晚上，你发信息问朋友周末想做什么。", "en": "What is your plan for Sunday?", "zh": "你星期天有什么安排？", "note": "plan = 计划、安排"},
+    {"id": "u12.d08", "word": "pick", "scene": "下雨了，你发 WhatsApp 告诉在 MRT 站的家人你去接她。", "en": "I will pick you up.", "zh": "我去接你。", "note": "pick you up = 去接你", "accept": ["I'll pick you up."]},
+    {"id": "u12.d09", "word": "news", "scene": "你发信息给妈妈，想告诉她一件开心的事。", "en": "I have good news.", "zh": "我有个好消息。", "note": "news = 消息、新闻"},
+    {"id": "u12.d10", "word": "picture", "scene": "朋友在群里发了一张周末去公园拍的照片。", "en": "Nice picture!", "zh": "照片拍得真好！", "note": "picture = 照片、图片（和 photo 一样）"},
+    {"id": "u12.d11", "word": "sticker", "scene": "朋友发来一个很可爱的表情贴图。", "en": "I like this sticker.", "zh": "我喜欢这个贴图。", "note": "sticker = WhatsApp 表情贴图；也是贴纸"},
+    {"id": "u12.d12", "word": "selfie", "scene": "和朋友在 hawker centre 吃饭，你拿出手机。", "en": "Let's take a selfie!", "zh": "我们来自拍吧！", "note": "take a selfie = 自拍"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的周末约饭",
+      "lines": [
+        {"en": "It's Saturday. I have a message from my friend.", "zh": "今天是星期六，朋友发来了信息。"},
+        {"en": "\"Are you free tonight?\"", "zh": "\"你今晚有空吗？\""},
+        {"en": "\"Yes! What is your plan?\"", "zh": "\"有！你有什么安排？\""},
+        {"en": "\"There is a new hawker centre near the MRT.\"", "zh": "\"MRT 站附近开了一家新的 hawker centre。\""},
+        {"en": "\"Please send me the location.\"", "zh": "\"请把位置发给我。\""},
+        {"en": "At night, I take the MRT.", "zh": "晚上，我坐 MRT 过去。"},
+        {"en": "\"Sorry, I will be 5 minutes late.\"", "zh": "\"不好意思，我会晚到 5 分钟。\""},
+        {"en": "\"I have arrived. Where are you?\"", "zh": "\"我到了。你在哪里？\""},
+        {"en": "There is a long queue.", "zh": "那里排着很长的队。"},
+        {"en": "Oh no, there is no more chicken rice!", "zh": "糟糕，鸡饭卖完了！"},
+        {"en": "\"Let's take a selfie!\"", "zh": "\"我们来自拍吧！\""},
+        {"en": "\"Nice picture! Have a good weekend!\"", "zh": "\"照片拍得真好！周末愉快！\""}
+      ]
+    },
+    "dialogue": {
+      "title": "星期六停课",
+      "setting": "星期四下午，同事 Jason 来前台找 Amy，商量怎么通知家长。",
+      "cast": [
+        {"name": "Jason", "voice": "bm_george"}
+      ],
+      "lines": [
+        {"speaker": "Jason", "en": "Amy, is there class this Saturday?", "zh": "Amy，这个星期六有课吗？"},
+        {"speaker": "Amy", "en": "No. There is no class this Saturday.", "zh": "没有。这个星期六没有课。"},
+        {"speaker": "Jason", "en": "Can you tell the parents?", "zh": "你可以通知家长吗？"},
+        {"speaker": "Amy", "en": "Okay. I will send a WhatsApp message.", "zh": "好的。我发 WhatsApp 消息。"},
+        {"speaker": "Jason", "en": "Thank you. And the fee?", "zh": "谢谢。那学费呢？"},
+        {"speaker": "Amy", "en": "This is a friendly reminder.", "zh": "这是一个温馨提醒。"},
+        {"speaker": "Amy", "en": "Please pay the fee by Friday.", "zh": "请在星期五前交学费。"},
+        {"speaker": "Jason", "en": "Good. There is a parent waiting for you.", "zh": "很好。有位家长在等你。"},
+        {"speaker": "Amy", "en": "Okay, thank you.", "zh": "好的，谢谢。"},
+        {"speaker": "Jason", "en": "She needs the PayNow number.", "zh": "她要 PayNow 的号码。"},
+        {"speaker": "Amy", "en": "Okay. I will send it to her.", "zh": "好的，我发给她。"},
+        {"speaker": "Jason", "en": "Thank you, Amy. Have a good weekend!", "zh": "谢谢你，Amy。周末愉快！"},
+        {"speaker": "Amy", "en": "You too!", "zh": "你也是！"}
+      ]
+    }
   },
   "phonics": "p10",
   "dialogue": {
@@ -36,35 +99,45 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi, is there class this Saturday?", "zh": "你好，这个星期六有课吗？" },
-        "replies": [{ "en": "There is no class this Saturday.", "zh": "这个星期六没有课。", "next": "n2" }]
+        "npc": {"en": "Hi, is there class this Saturday?", "zh": "你好，这个星期六有课吗？"},
+        "replies": [
+          {"en": "There is no class this Saturday.", "zh": "这个星期六没有课。", "next": "n2"},
+          {"en": "Sorry, there is no class this week.", "zh": "不好意思，这个星期都没有课。", "next": "n2"}
+        ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Oh okay. Why?", "zh": "哦，好的。为什么呢？" },
-        "replies": [{ "en": "Sorry, the teacher is sick.", "zh": "不好意思，老师生病了。", "next": "n3" }]
+        "npc": {"en": "Oh okay. Why?", "zh": "哦，好的。为什么呢？"},
+        "replies": [
+          {"en": "Sorry, the teacher is sick.", "zh": "不好意思，老师生病了。", "next": "n3"},
+          {"en": "Sorry, there is a school event that day.", "zh": "不好意思，那天中心有活动。", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "Okay, noted. What about the fee?", "zh": "好的，知道了。那学费呢？" },
-        "replies": [{ "en": "Please pay the fee by Friday.", "zh": "请在星期五前交学费。", "next": "n4" }]
+        "npc": {"en": "Okay, noted. What about the fee?", "zh": "好的，知道了。那学费呢？"},
+        "replies": [
+          {"en": "Please pay the fee by Friday.", "zh": "请在星期五前交学费。", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付吗？" },
-        "replies": [{ "en": "Yes, you can.", "zh": "可以的。", "next": "n5" }]
+        "npc": {"en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付吗？"},
+        "replies": [
+          {"en": "Yes, you can.", "zh": "可以的。", "next": "n5"}
+        ]
       },
       {
         "id": "n5",
-        "npc": { "en": "Okay, will do. Thanks!", "zh": "好的，我会付的。谢谢！" },
+        "npc": {"en": "Okay, will do. Thanks!", "zh": "好的，我会付的。谢谢！"},
         "replies": [
-          { "en": "Thank you. Have a good weekend!", "zh": "谢谢，周末愉快！", "next": "end" },
-          { "en": "Noted, thank you.", "zh": "收到，谢谢。", "next": "end" }
+          {"en": "Thank you. Have a good weekend!", "zh": "谢谢，周末愉快！", "next": "end"},
+          {"en": "Noted, thank you.", "zh": "收到，谢谢。", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "You too!", "zh": "你也是！" },
+        "npc": {"en": "You too!", "zh": "你也是！"},
         "replies": []
       }
     ]

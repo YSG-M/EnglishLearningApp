@@ -5,26 +5,90 @@
   "titleEn": "I want to return this",
   "goal": "买的东西有问题，能说清楚要退货、换货还是退款。",
   "chunks": [
-    { "id": "u24.c01", "en": "I want to return this.", "zh": "我想退这个。" },
-    { "id": "u24.c02", "en": "It doesn't work.", "zh": "它不能用。", "accept": ["It does not work."] },
-    { "id": "u24.c03", "en": "I bought it yesterday.", "zh": "我昨天买的。", "note": "buy（买）的过去是 bought。" },
-    { "id": "u24.c04", "en": "Here is the receipt.", "zh": "这是收据。", "note": "退换东西一定要带 receipt（收据）。" },
-    { "id": "u24.c05", "en": "This is the wrong size.", "zh": "尺码不对。" },
-    { "id": "u24.c06", "en": "Can I change it for a bigger size?", "zh": "可以换大一号的吗？" },
-    { "id": "u24.c07", "en": "Can I get a refund?", "zh": "可以退款吗？", "note": "refund = 退钱。" },
-    { "id": "u24.c08", "en": "Can I speak to the manager?", "zh": "我可以和经理谈谈吗？", "note": "店员解决不了时，礼貌又坚定地这样说。" },
-    { "id": "u24.c09", "en": "Thank you for your help.", "zh": "谢谢你的帮忙。" }
+    {"id": "u24.c01", "en": "I want to return this.", "zh": "我想退这个。"},
+    {"id": "u24.c02", "en": "It doesn't work.", "zh": "它不能用。", "accept": ["It does not work."]},
+    {"id": "u24.c03", "en": "I bought it yesterday.", "zh": "我昨天买的。", "note": "buy（买）的过去是 bought。"},
+    {"id": "u24.c04", "en": "Here is the receipt.", "zh": "这是收据。", "note": "退换东西一定要带 receipt（收据）。"},
+    {"id": "u24.c05", "en": "This is the wrong size.", "zh": "尺码不对。"},
+    {"id": "u24.c06", "en": "Can I change it for a bigger size?", "zh": "可以换大一号的吗？"},
+    {"id": "u24.c07", "en": "Can I get a refund?", "zh": "可以退款吗？", "note": "refund = 退钱。"},
+    {"id": "u24.c08", "en": "Can I speak to the manager?", "zh": "我可以和经理谈谈吗？", "note": "店员解决不了时，礼貌又坚定地这样说。"},
+    {"id": "u24.c09", "en": "Thank you for your help.", "zh": "谢谢你的帮忙。"}
   ],
   "words": ["return", "work", "bought", "receipt", "wrong", "size", "bigger", "refund", "speak", "manager", "help"],
-  "drill": {
-    "pattern": "Can I change it for ___?",
-    "zh": "可以换成……吗？",
-    "fills": [
-      { "en": "a bigger size", "zh": "大一号的" },
-      { "en": "a smaller size", "zh": "小一号的" },
-      { "en": "another colour", "zh": "另一个颜色" },
-      { "en": "a new one", "zh": "一个新的" }
+  "patterns": {
+    "frames": [
+      {"frame": "It's too ___.", "zh": "它太……了。", "usage": "说东西或情况\"太……了\"，所以不合适、不想要。too 是\"太过头、不好\"的意思；夸东西好要说 very（very good），不要说 too good。"}
+    ],
+    "examples": [
+      {"id": "u24.e01", "scene": "在商场试穿一双鞋，走两步就掉。", "en": "It's too big.", "zh": "太大了。", "accept": ["It is too big."]},
+      {"id": "u24.e02", "scene": "在 hawker centre，刚端来的汤你喝了一口。", "en": "It's too hot.", "zh": "太烫了。", "note": "hot 可以是\"热、烫\"，也可以是\"辣\"，这里是烫", "accept": ["It is too hot."]},
+      {"id": "u24.e03", "scene": "孩子们在教室里发抖，你去跟同事说空调的事。", "en": "It's too cold.", "zh": "太冷了。", "accept": ["It is too cold."]},
+      {"id": "u24.e04", "scene": "试穿一条裤子，裤脚拖到地上，店员问你怎么样。", "en": "It's too long.", "zh": "太长了。", "accept": ["It is too long."]},
+      {"id": "u24.e05", "scene": "在 mall 看中一个包，一看价钱是 $300。", "en": "It's too expensive.", "zh": "太贵了。", "accept": ["It is too expensive."]},
+      {"id": "u24.e06", "scene": "星期六的 NTUC 排了很长的队，你跟家人说换个时间再来。", "en": "It's too crowded today.", "zh": "今天人太多了。"},
+      {"id": "u24.e07", "scene": "老板想让你星期六早上七点就来开门。", "en": "It's too early for me.", "zh": "对我来说太早了。"},
+      {"id": "u24.e08", "scene": "你拿着昨天买的衣服回店里，店员问为什么要换。", "en": "Sorry, it's too small for me.", "zh": "不好意思，我穿太小了。", "accept": ["It's too small for me."]},
+      {"id": "u24.e09", "scene": "同事推荐一家诊所，可是离你家很远。", "en": "It's too far from my home.", "zh": "离我家太远了。", "note": "far from = 离……远"},
+      {"id": "u24.e10", "scene": "家长想让八岁的孩子上晚上九点的课。", "en": "It's too late for the children.", "zh": "对孩子来说太晚了。"}
     ]
+  },
+  "daily": [
+    {"id": "u24.d01", "word": "shirt", "scene": "在商场给老公买衣服，他穿上有点紧。", "en": "This shirt is too small.", "zh": "这件衬衫太小了。"},
+    {"id": "u24.d02", "word": "dress", "scene": "和朋友逛街，看到一条很漂亮的裙子。", "en": "I like this dress.", "zh": "我喜欢这条裙子。", "note": "dress = 连衣裙"},
+    {"id": "u24.d03", "word": "black", "scene": "店里那双鞋只摆了白色的，你想要黑色的。", "en": "Do you have it in black?", "zh": "有黑色的吗？", "note": "in black = 黑色的那款"},
+    {"id": "u24.d04", "word": "fit", "scene": "网上买的鞋子到了，穿上去不合脚。", "en": "It doesn't fit me.", "zh": "我穿着不合适。", "note": "fit = （大小）合身", "accept": ["It does not fit me."]},
+    {"id": "u24.d05", "word": "exchange", "scene": "昨天买的 T 恤颜色不喜欢，你拿回店里。", "en": "Can I exchange it?", "zh": "可以换吗？", "note": "exchange = 换（东西），和 change it 意思差不多"},
+    {"id": "u24.d06", "word": "hole", "scene": "回家才发现新买的袜子破了个洞，拿回店里给店员看。", "en": "There is a hole here.", "zh": "这里有个洞。"},
+    {"id": "u24.d07", "word": "cup", "scene": "在 hawker centre 拿到的杯子不干净。", "en": "Excuse me, this cup is dirty.", "zh": "不好意思，这个杯子是脏的。"},
+    {"id": "u24.d08", "word": "price", "scene": "在 NTUC 结账，价钱和货架上写的不一样。", "en": "The price is wrong.", "zh": "价钱不对。"},
+    {"id": "u24.d09", "word": "pair", "scene": "周末逛完街回家，老公问你买了什么。", "en": "I bought a new pair of shoes.", "zh": "我买了一双新鞋。", "note": "a pair of = 一双、一对"},
+    {"id": "u24.d10", "word": "wrap", "scene": "在商场给朋友买生日礼物。", "en": "Can you wrap it, please?", "zh": "可以帮我包起来吗？", "note": "wrap = 包装（礼物）"},
+    {"id": "u24.d11", "word": "kettle", "scene": "早上想烧水泡茶，可是电水壶一直不热。", "en": "The kettle doesn't work.", "zh": "电水壶坏了。", "note": "kettle = 烧水的壶"},
+    {"id": "u24.d12", "word": "keep", "scene": "店员说可以退，可是你想了想，还是喜欢它。", "en": "It's OK. I want to keep it.", "zh": "没关系，我想留着它。"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 去商场换裙子",
+      "lines": [
+        {"en": "On Saturday, I go back to the shop.", "zh": "星期六，我回到那家店。"},
+        {"en": "I bought a dress there yesterday.", "zh": "我昨天在那里买了一条裙子。"},
+        {"en": "It doesn't fit me.", "zh": "我穿着不合适。"},
+        {"en": "It's too small for me.", "zh": "我穿太小了。"},
+        {"en": "I bring the dress and the receipt.", "zh": "我带上裙子和收据。"},
+        {"en": "\"I want to return this. Here is the receipt.\"", "zh": "\"我想退这个。这是收据。\""},
+        {"en": "\"Sorry, no refund. You can exchange it.\"", "zh": "\"不好意思，不能退款。你可以换。\""},
+        {"en": "I try a bigger size.", "zh": "我试了大一号的。"},
+        {"en": "Now the size is right.", "zh": "这次尺码刚好。"},
+        {"en": "I see a black shirt for my husband.", "zh": "我还看到一件黑衬衫，想买给老公。"},
+        {"en": "It's too expensive.", "zh": "可是太贵了。"},
+        {"en": "I keep my money and go home.", "zh": "我把钱留着，回家了。"}
+      ]
+    },
+    "dialogue": {
+      "title": "电水壶坏了",
+      "setting": "Amy 昨天在商场的电器店买了一个电水壶，回家发现不能用，今天拿回店里。",
+      "cast": [
+        {"name": "Staff", "voice": "am_michael"},
+        {"name": "Manager", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Staff", "en": "Hi, can I help you?", "zh": "你好，需要帮忙吗？"},
+        {"speaker": "Amy", "en": "Hi. I want to return this kettle.", "zh": "你好。我想退这个电水壶。"},
+        {"speaker": "Staff", "en": "What is the problem?", "zh": "有什么问题？"},
+        {"speaker": "Amy", "en": "It doesn't work. I bought it yesterday.", "zh": "它不能用。我昨天买的。"},
+        {"speaker": "Staff", "en": "Do you have the receipt?", "zh": "你有收据吗？"},
+        {"speaker": "Amy", "en": "Yes, here is the receipt.", "zh": "有，这是收据。"},
+        {"speaker": "Staff", "en": "Sorry, no refund. We can change it.", "zh": "不好意思，不能退款。我们可以给你换。"},
+        {"speaker": "Amy", "en": "It's broken. Can I speak to the manager?", "zh": "它是坏的。我可以和经理谈谈吗？"},
+        {"speaker": "Manager", "en": "Hello, I'm the manager. Let me check.", "zh": "你好，我是经理。我看一下。"},
+        {"speaker": "Manager", "en": "Sorry. You can get a refund.", "zh": "很抱歉。你可以退款。"},
+        {"speaker": "Amy", "en": "Thank you for your help.", "zh": "谢谢你的帮忙。"},
+        {"speaker": "Manager", "en": "Do you want a new kettle, too?", "zh": "你还要买一个新的电水壶吗？"},
+        {"speaker": "Amy", "en": "No, thank you. A refund, please.", "zh": "不用了，谢谢。请给我退款。"},
+        {"speaker": "Manager", "en": "OK. Have a nice day!", "zh": "好的。祝你今天愉快！"}
+      ]
+    }
   },
   "phonics": "p22",
   "dialogue": {
@@ -36,38 +100,45 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi, can I help you?", "zh": "你好，需要帮忙吗？" },
+        "npc": {"en": "Hi, can I help you?", "zh": "你好，需要帮忙吗？"},
         "replies": [
-          { "en": "I want to return this.", "zh": "我想退这个。", "next": "n2" },
-          { "en": "This is the wrong size.", "zh": "尺码不对。", "next": "n3" }
+          {"en": "I want to return this.", "zh": "我想退这个。", "next": "n2"},
+          {"en": "This is the wrong size. It's too small.", "zh": "尺码不对，太小了。", "next": "n3"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "What's the problem?", "zh": "有什么问题？" },
-        "replies": [{ "en": "It doesn't work. I bought it yesterday.", "zh": "它不能用。我昨天买的。", "next": "n4" }]
+        "npc": {"en": "What's the problem?", "zh": "有什么问题？"},
+        "replies": [
+          {"en": "It doesn't work. I bought it yesterday.", "zh": "它不能用。我昨天买的。", "next": "n4"},
+          {"en": "It's too small. I bought it yesterday.", "zh": "太小了。我昨天买的。", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "No problem. Do you want to change it?", "zh": "没问题。你要换吗？" },
-        "replies": [{ "en": "Can I change it for a bigger size?", "zh": "可以换大一号的吗？", "next": "n4" }]
+        "npc": {"en": "No problem. Do you want to change it?", "zh": "没问题。你要换吗？"},
+        "replies": [
+          {"en": "Can I change it for a bigger size?", "zh": "可以换大一号的吗？", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Sure. Do you have the receipt?", "zh": "可以。你有收据吗？" },
-        "replies": [{ "en": "Yes, here is the receipt.", "zh": "有，这是收据。", "next": "n5" }]
+        "npc": {"en": "Sure. Do you have the receipt?", "zh": "可以。你有收据吗？"},
+        "replies": [
+          {"en": "Yes, here is the receipt.", "zh": "有，这是收据。", "next": "n5"}
+        ]
       },
       {
         "id": "n5",
-        "npc": { "en": "Thank you. You can take a new one, or get a refund.", "zh": "谢谢。你可以拿一个新的，或者退款。" },
+        "npc": {"en": "Thank you. You can take a new one, or get a refund.", "zh": "谢谢。你可以拿一个新的，或者退款。"},
         "replies": [
-          { "en": "Can I get a refund?", "zh": "可以退款吗？", "next": "end" },
-          { "en": "A new one, please. Thank you for your help.", "zh": "请给我一个新的。谢谢你的帮忙。", "next": "end" }
+          {"en": "Can I get a refund?", "zh": "可以退款吗？", "next": "end"},
+          {"en": "A new one, please. Thank you for your help.", "zh": "请给我一个新的。谢谢你的帮忙。", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "Sure, give me a moment.", "zh": "好的，请稍等。" },
+        "npc": {"en": "Sure, give me a moment.", "zh": "好的，请稍等。"},
         "replies": []
       }
     ]

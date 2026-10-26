@@ -41,18 +41,19 @@ describe('<TokenLine>', () => {
       />,
     );
 
-  it('renders the 谐音 under each word', () => {
+  it('renders the pinyin 谐音 under each word, without the 汉字', () => {
     draw("Hi, I'm Amy.");
-    expect(screen.getByText('嗨')).toBeInTheDocument();
+    expect(screen.getByText('hāi')).toBeInTheDocument();
     expect(screen.getByText('ài(m)')).toBeInTheDocument();
+    expect(screen.queryByText('嗨')).not.toBeInTheDocument();
     expect(screen.getByText('Hi,')).toBeInTheDocument();
   });
 
   it('hides a faded hint until the word is tapped', () => {
     draw("Hi, I'm Amy.", { hi: HINT_FADE_AFTER });
-    expect(screen.queryByText('嗨')).not.toBeInTheDocument();
+    expect(screen.queryByText('hāi')).not.toBeInTheDocument();
     fireEvent.click(screen.getByText('Hi,'));
-    expect(screen.getByText('嗨')).toBeInTheDocument();
+    expect(screen.getByText('hāi')).toBeInTheDocument();
   });
 
   it('shows only a marker for red words and the mouth note on tap', () => {
@@ -65,6 +66,29 @@ describe('<TokenLine>', () => {
 
   it('shows no 谐音 when hints are switched off', () => {
     draw("Hi, I'm Amy.", {}, false);
-    expect(screen.queryByText('嗨')).not.toBeInTheDocument();
+    expect(screen.queryByText('hāi')).not.toBeInTheDocument();
+  });
+
+  it('shows the meaning of any tapped word', () => {
+    draw("Hi, I'm Amy.");
+    expect(screen.queryByRole('note')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByText('Hi,'));
+    expect(screen.getByRole('note')).toHaveTextContent(lexicon['hi']!.zh);
+  });
+
+  it('shows every meaning when glosses are on, and marks the pattern slot', () => {
+    renderWithApp(
+      <TokenLine
+        tokens={tokenize("Hi, I'm Amy.")}
+        lexicon={lexicon}
+        hintProgress={{}}
+        showHints
+        showGlosses
+        slot={[2, 3]}
+      />,
+    );
+    expect(screen.getByText(lexicon['hi']!.zh)).toHaveClass('token-gloss');
+    expect(screen.getByText('Amy.').closest('.token')).toHaveClass('slot');
+    expect(screen.getByText('Hi,').closest('.token')).toHaveClass('frame');
   });
 });

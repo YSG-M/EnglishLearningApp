@@ -49,6 +49,8 @@
 
 - 主进程实现 `AppApi`，preload 按 `API_CHANNELS` 逐个转发为 `ipcRenderer.invoke('<ns>.<method>', ...args)`，界面通过 `window.api.<ns>.<method>()` 调用。
 - 所有方法都是 async。主进程用 zod 校验来自界面的输入。
+- 内容包新增 `UnitItem.daily`、`UnitItem.stories` 和 `ContentBundle.weeks`（来自 `content/weeks/wNN.json`）。日常用词在学新句子那天建 `word` 卡片；故事不建卡片。
+- `review.getPracticeSet(scope)`：额外练习，`scope` 为 `recent`（最近 7 天第一次完成的课）、`unit` 或 `random`；不改变复习安排。`parts.complete` 返回 `firstTime`，再上一次时只补缺少的卡片。
 - 主进程抛出的错误统一包装为 `{ code: AppErrorCode, message }`，界面按 `code` 显示中文提示。
 
 ### 3.2 内容：`src/shared/content/`
@@ -80,17 +82,17 @@
 
 `node:sqlite`（`DatabaseSync`），WAL 模式。用 `PRAGMA user_version` 做版本迁移；迁移前先把旧数据库文件备份到 `<userData>/data/backups/`。
 
-| 表               | 用途                                                      |
-| ---------------- | --------------------------------------------------------- |
-| `cards`          | 复习卡片（`StoredCard` 的字段）                           |
-| `review_logs`    | 每次复习：卡片、题型、评分、是否正确、用时、时间          |
-| `part_progress`  | 已完成的课程部分                                          |
-| `daily_activity` | 每天的学习时长、复习数、完成部分数、是否算学习日          |
-| `streak`         | 连续天数状态（单行 JSON）                                 |
-| `hint_progress`  | 每个单词说对的次数（谐音 3 次后隐藏）                     |
-| `recordings`     | 录音文件、对应内容、时长、分数、识别文字                  |
-| `settings`       | 设置（单行 JSON，用 `Settings` zod 解析，缺省值自动补齐） |
-| `app_events`     | 迁移、崩溃恢复等事件记录，方便排查问题                    |
+| 表               | 用途                                                                |
+| ---------------- | ------------------------------------------------------------------- |
+| `cards`          | 复习卡片（`StoredCard` 的字段）；类型 chunk / word / pair / example |
+| `review_logs`    | 每次复习：卡片、题型、评分、是否正确、用时、时间                    |
+| `part_progress`  | 已完成的课程部分                                                    |
+| `daily_activity` | 每天的学习时长、复习数、完成部分数、是否算学习日                    |
+| `streak`         | 连续天数状态（单行 JSON）                                           |
+| `hint_progress`  | 每个单词说对的次数（谐音 3 次后隐藏）                               |
+| `recordings`     | 录音文件、对应内容、时长、分数、识别文字                            |
+| `settings`       | 设置（单行 JSON，用 `Settings` zod 解析，缺省值自动补齐）           |
+| `app_events`     | 迁移、崩溃恢复等事件记录，方便排查问题                              |
 
 ## 5. 语音
 

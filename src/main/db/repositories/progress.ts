@@ -25,6 +25,13 @@ export class PartProgressRepository {
       .map((r) => r.part_id);
   }
 
+  /** Parts first completed on or after `day`. */
+  listIdsSince(day: DayString): string[] {
+    return this.db
+      .all<{ part_id: string }>('SELECT part_id FROM part_progress WHERE day >= ? ORDER BY completed_at', day)
+      .map((r) => r.part_id);
+  }
+
   countOnDay(day: DayString): number {
     return Number(
       this.db.get<{ n: number }>('SELECT COUNT(*) AS n FROM part_progress WHERE day = ?', day)?.n ?? 0,

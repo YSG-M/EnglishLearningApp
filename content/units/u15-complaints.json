@@ -5,26 +5,87 @@
   "titleEn": "I'm sorry about that",
   "goal": "家长不满意时，能先道歉、表示理解，再说你会怎么处理。",
   "chunks": [
-    { "id": "u15.c01", "en": "I'm sorry about that.", "zh": "这件事真抱歉。", "note": "家长不高兴时，第一句先道歉。" },
-    { "id": "u15.c02", "en": "I understand.", "zh": "我明白。", "note": "让对方觉得你在听、你理解，很能让人消气。" },
-    { "id": "u15.c03", "en": "Let me check for you.", "zh": "我帮您查一下。" },
-    { "id": "u15.c04", "en": "Can you tell me what happened?", "zh": "能告诉我发生了什么吗？" },
-    { "id": "u15.c05", "en": "I'll tell the teacher.", "zh": "我会告诉老师。", "note": "I'll = I will，意思是\"我会……\"\"我来……\"。", "accept": ["I will tell the teacher."] },
-    { "id": "u15.c06", "en": "We will call you back today.", "zh": "我们今天会给您回电话。" },
-    { "id": "u15.c07", "en": "It won't happen again.", "zh": "不会再发生了。", "note": "won't = will not（不会）。", "accept": ["It will not happen again."] },
-    { "id": "u15.c08", "en": "Thank you for telling us.", "zh": "谢谢您告诉我们。", "note": "结束时说，家长会觉得被尊重。" },
-    { "id": "u15.c09", "en": "Please wait a moment.", "zh": "请稍等。" }
+    {"id": "u15.c01", "en": "I'm sorry about that.", "zh": "这件事真抱歉。", "note": "家长不高兴时，第一句先道歉。"},
+    {"id": "u15.c02", "en": "I understand.", "zh": "我明白。", "note": "让对方觉得你在听、你理解，很能让人消气。"},
+    {"id": "u15.c03", "en": "Let me check for you.", "zh": "我帮您查一下。"},
+    {"id": "u15.c04", "en": "Can you tell me what happened?", "zh": "能告诉我发生了什么吗？"},
+    {"id": "u15.c05", "en": "I'll tell the teacher.", "zh": "我会告诉老师。", "note": "I'll = I will，意思是\"我会……\"\"我来……\"。", "accept": ["I will tell the teacher."]},
+    {"id": "u15.c06", "en": "We will call you back today.", "zh": "我们今天会给您回电话。"},
+    {"id": "u15.c07", "en": "It won't happen again.", "zh": "不会再发生了。", "note": "won't = will not（不会）。", "accept": ["It will not happen again."]},
+    {"id": "u15.c08", "en": "Thank you for telling us.", "zh": "谢谢您告诉我们。", "note": "结束时说，家长会觉得被尊重。"},
+    {"id": "u15.c09", "en": "Please wait a moment.", "zh": "请稍等。"}
   ],
   "words": ["sorry", "understand", "check", "happened", "tell", "teacher", "call", "back", "again", "wait"],
-  "drill": {
-    "pattern": "I'll ___.",
-    "zh": "我会/我来……（告诉对方你接下来会做什么）",
-    "fills": [
-      { "en": "tell the teacher", "zh": "告诉老师" },
-      { "en": "check for you", "zh": "帮您查一下" },
-      { "en": "call you back", "zh": "给您回电话" },
-      { "en": "ask the manager", "zh": "问一下经理" }
+  "patterns": {
+    "frames": [
+      {"frame": "Let me ___.", "zh": "让我来……／我来……一下", "usage": "主动说\"我来做这件事\"，马上就做。家长不高兴、别人需要帮忙、你要查东西或想一想的时候都能用。框不变，只把你要做的事放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u15.e01", "scene": "在诊所，护士问你带了预约单没有，你开始翻包找。", "en": "Let me see.", "zh": "我看看。", "note": "Let me see = 我看看／让我想想"},
+      {"id": "u15.e02", "scene": "在家里，妈妈一个人在厨房忙着做饭。", "en": "Let me help you.", "zh": "我来帮你。"},
+      {"id": "u15.e03", "scene": "家长说孩子的测验分数算错了，你不确定，要问老师。", "en": "Let me ask the teacher.", "zh": "我问一下老师。"},
+      {"id": "u15.e04", "scene": "在 hawker centre，朋友帮你买了午饭，你想自己付钱。", "en": "Let me pay for this.", "zh": "这个我来付。", "note": "pay for this = 付这个的钱"},
+      {"id": "u15.e05", "scene": "家长在电话里投诉，你要先去查一下记录。", "en": "Let me call you back.", "zh": "我等一下给您回电话。", "note": "call you back = 给你回电话"},
+      {"id": "u15.e06", "scene": "在商场，店员一直推荐你买一件很贵的东西，你还不想决定。", "en": "Let me think about it.", "zh": "我考虑一下。", "note": "think about it = 考虑一下（委婉地说\"先不买\"）"},
+      {"id": "u15.e07", "scene": "在 NTUC 门口，邻居阿姨提着很重的袋子。", "en": "Let me carry that for you.", "zh": "我帮你拿吧。", "note": "carry = 拿着、提着（重的东西）", "accept": ["Let me carry it for you."]},
+      {"id": "u15.e08", "scene": "在 MRT 站，一位老人家问你巴士站在哪里。", "en": "Let me show you the way.", "zh": "我带您过去。", "note": "show you the way = 给你带路"},
+      {"id": "u15.e09", "scene": "家长生气地在前台等了很久，你想先让她喝点水。", "en": "Let me get you some water.", "zh": "我给您倒杯水。", "note": "get you some water = 给你拿点水"},
+      {"id": "u15.e10", "scene": "家长打电话来投诉，你要记下她的电话，好让老师回电。", "en": "Let me write down your number.", "zh": "我记一下您的电话号码。", "note": "write down = 写下来、记下来"}
     ]
+  },
+  "daily": [
+    {"id": "u15.d01", "word": "noisy", "scene": "晚上楼上一直咚咚响，你跟老公抱怨。", "en": "The neighbour upstairs is very noisy.", "zh": "楼上的邻居好吵。"},
+    {"id": "u15.d02", "word": "messy", "scene": "周末朋友要来你家，你看看客厅。", "en": "The house is very messy.", "zh": "家里好乱。"},
+    {"id": "u15.d03", "word": "dirty", "scene": "在 hawker centre，你拿到的勺子不干净，跟摊主说。", "en": "Excuse me, this spoon is dirty.", "zh": "不好意思，这个勺子是脏的。"},
+    {"id": "u15.d04", "word": "angry", "scene": "你忘了交水电费，老公有点不高兴。", "en": "Please don't be angry.", "zh": "别生气嘛。"},
+    {"id": "u15.d05", "word": "smell", "scene": "一进家门，你闻到奇怪的味道。", "en": "What is that smell?", "zh": "那是什么味道？", "accept": ["What's that smell?"]},
+    {"id": "u15.d06", "word": "rubbish", "scene": "晚上厨房的垃圾满了，你请家人拿下去扔。", "en": "Can you take out the rubbish?", "zh": "你可以把垃圾拿去倒吗？", "note": "take out the rubbish = 倒垃圾"},
+    {"id": "u15.d07", "word": "careful", "scene": "你端着一碗热汤，孩子跑了过来。", "en": "Be careful, it's hot!", "zh": "小心，很烫！"},
+    {"id": "u15.d08", "word": "smoke", "scene": "在 HDB 走廊，有人在你家门口抽烟。", "en": "Please don't smoke here.", "zh": "请不要在这里抽烟。"},
+    {"id": "u15.d09", "word": "cold", "scene": "在 coffee shop，咖啡端上来已经凉了，你跟店员说。", "en": "Excuse me, my coffee is cold.", "zh": "不好意思，我的咖啡是凉的。"},
+    {"id": "u15.d10", "word": "fault", "scene": "朋友不小心打破了你的杯子，一直跟你道歉。", "en": "It's not your fault.", "zh": "不是你的错。", "note": "fault = 错（过错）"},
+    {"id": "u15.d11", "word": "forgot", "scene": "老公问你有没有买牛奶，你忘了。", "en": "Sorry, I forgot the milk.", "zh": "对不起，我忘了买牛奶。", "note": "forgot = forget（忘记）的过去"},
+    {"id": "u15.d12", "word": "rude", "scene": "在巴士上，有人插队还大声骂人，下车后你跟朋友说。", "en": "He was very rude.", "zh": "他很没礼貌。", "note": "rude = 没礼貌、粗鲁"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 和楼上的邻居",
+      "lines": [
+        {"en": "Last night, my neighbour upstairs was very noisy.", "zh": "昨晚，我楼上的邻居很吵。"},
+        {"en": "I didn't sleep well.", "zh": "我没睡好。"},
+        {"en": "This morning, I went upstairs.", "zh": "今天早上，我上了楼。"},
+        {"en": "\"Hi, I'm Amy. I live downstairs.\"", "zh": "\"你好，我是 Amy，我住在楼下。\""},
+        {"en": "My neighbour was very nice.", "zh": "我的邻居人很好。"},
+        {"en": "\"I'm sorry about that. It won't happen again.\"", "zh": "\"真不好意思，不会再这样了。\""},
+        {"en": "After work, I went home.", "zh": "下班后，我回到家。"},
+        {"en": "The house was very messy.", "zh": "家里很乱。"},
+        {"en": "The kitchen had a bad smell.", "zh": "厨房有一股难闻的味道。"},
+        {"en": "I took out the rubbish.", "zh": "我把垃圾拿去倒了。"},
+        {"en": "I cleaned the house.", "zh": "我打扫了房子。"},
+        {"en": "Tonight, I will sleep well!", "zh": "今晚我会睡个好觉！"}
+      ]
+    },
+    "dialogue": {
+      "title": "咖啡凉了",
+      "setting": "星期六早上，Amy 在 kopitiam 买了一杯咖啡，发现咖啡是凉的。",
+      "cast": [
+        {"name": "Uncle", "voice": "bm_george"}
+      ],
+      "lines": [
+        {"speaker": "Amy", "en": "Excuse me, Uncle. My coffee is cold.", "zh": "不好意思，Uncle，我的咖啡是凉的。"},
+        {"speaker": "Uncle", "en": "Sorry! Let me make a new one.", "zh": "不好意思！我给你重新做一杯。"},
+        {"speaker": "Amy", "en": "Thank you. And this spoon is dirty.", "zh": "谢谢。还有，这个勺子是脏的。"},
+        {"speaker": "Uncle", "en": "Sorry about that. Let me get you a new spoon.", "zh": "真不好意思。我给你拿一个新勺子。"},
+        {"speaker": "Amy", "en": "No problem. It's not your fault.", "zh": "没关系，不是你的错。"},
+        {"speaker": "Uncle", "en": "Here is your coffee. Careful, it's hot!", "zh": "你的咖啡来了。小心，很烫！"},
+        {"speaker": "Amy", "en": "Thank you, Uncle.", "zh": "谢谢你，Uncle。"},
+        {"speaker": "Uncle", "en": "Is it okay now?", "zh": "现在可以了吗？"},
+        {"speaker": "Amy", "en": "Yes, very good. Let me pay for this.", "zh": "可以，很好。我来付钱。"},
+        {"speaker": "Uncle", "en": "Two dollars, please.", "zh": "两块钱，谢谢。"},
+        {"speaker": "Amy", "en": "Here you are.", "zh": "给你。"},
+        {"speaker": "Uncle", "en": "Thank you! Have a nice day!", "zh": "谢谢！祝你今天愉快！"}
+      ]
+    }
   },
   "phonics": "p13",
   "dialogue": {
@@ -36,36 +97,40 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi, my son's homework was not marked last week.", "zh": "你好，我儿子上周的作业没有批改。" },
+        "npc": {"en": "Hi, my son's homework was not marked last week.", "zh": "你好，我儿子上周的作业没有批改。"},
         "replies": [
-          { "en": "I'm sorry about that.", "zh": "这件事真抱歉。", "next": "n2" },
-          { "en": "I understand. Let me check for you.", "zh": "我明白，我帮您查一下。", "next": "n2" }
+          {"en": "I'm sorry about that.", "zh": "这件事真抱歉。", "next": "n2"},
+          {"en": "I understand. Let me check for you.", "zh": "我明白，我帮您查一下。", "next": "n2"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "His name is Ethan. He is in the Primary 3 class.", "zh": "他叫 Ethan，在小学三年级的班。" },
-        "replies": [{ "en": "Thank you. Please wait a moment.", "zh": "谢谢，请稍等。", "next": "n3" }]
+        "npc": {"en": "His name is Ethan. He is in the Primary 3 class.", "zh": "他叫 Ethan，在小学三年级的班。"},
+        "replies": [
+          {"en": "Thank you. Please wait a moment.", "zh": "谢谢，请稍等。", "next": "n3"},
+          {"en": "Thank you. Let me check his homework.", "zh": "谢谢，我查一下他的作业。", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "This is the second time, you know.", "zh": "这已经是第二次了。" },
+        "npc": {"en": "This is the second time, you know.", "zh": "这已经是第二次了。"},
         "replies": [
-          { "en": "I'm sorry. It won't happen again.", "zh": "对不起，不会再发生了。", "next": "n4" },
-          { "en": "I understand. I'll tell the teacher.", "zh": "我明白，我会告诉老师。", "next": "n4" }
+          {"en": "I'm sorry. It won't happen again.", "zh": "对不起，不会再发生了。", "next": "n4"},
+          {"en": "I understand. I'll tell the teacher.", "zh": "我明白，我会告诉老师。", "next": "n4"},
+          {"en": "I'm sorry. Let me ask the teacher.", "zh": "对不起，我去问一下老师。", "next": "n4"}
         ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Can the teacher call me?", "zh": "老师能给我打个电话吗？" },
+        "npc": {"en": "Can the teacher call me?", "zh": "老师能给我打个电话吗？"},
         "replies": [
-          { "en": "Yes, we will call you back today.", "zh": "可以，我们今天会给您回电话。", "next": "end" },
-          { "en": "Yes. Thank you for telling us.", "zh": "可以。谢谢您告诉我们。", "next": "end" }
+          {"en": "Yes, we will call you back today.", "zh": "可以，我们今天会给您回电话。", "next": "end"},
+          {"en": "Yes. Thank you for telling us.", "zh": "可以。谢谢您告诉我们。", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "OK, thank you. I'll wait for the call.", "zh": "好的，谢谢。我等电话。" },
+        "npc": {"en": "OK, thank you. I'll wait for the call.", "zh": "好的，谢谢。我等电话。"},
         "replies": []
       }
     ]

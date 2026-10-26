@@ -5,35 +5,98 @@
   "titleEn": "Who is picking him up?",
   "goal": "孩子不舒服或受伤时能通知家长；能确认谁来接孩子。",
   "chunks": [
-    { "id": "u25.c01", "en": "Your child is not feeling well.", "zh": "您的孩子不太舒服。" },
-    { "id": "u25.c02", "en": "She has a fever.", "zh": "她发烧了。", "note": "女孩用 she，男孩用 he，不要搞混。" },
-    { "id": "u25.c03", "en": "He hurt his knee.", "zh": "他磕到膝盖了。", "note": "男孩：he（他）、his（他的）。" },
-    { "id": "u25.c04", "en": "Don't worry, she is OK now.", "zh": "别担心，她现在没事了。", "accept": ["Don't worry, she's OK now."] },
-    { "id": "u25.c05", "en": "Can you come to pick her up?", "zh": "您可以来接她吗？", "note": "pick up = 接（人）。接女孩是 pick her up，接男孩是 pick him up。" },
-    { "id": "u25.c06", "en": "Who is picking him up today?", "zh": "今天谁来接他？" },
-    { "id": "u25.c07", "en": "He is waiting at the front desk.", "zh": "他在前台等着。" },
-    { "id": "u25.c08", "en": "Please call us if you are late.", "zh": "如果您会迟到，请给我们打电话。" },
-    { "id": "u25.c09", "en": "Only parents can pick up the children.", "zh": "只有家长可以接孩子。", "note": "安全规定：陌生人来接，要先打电话问家长。" }
+    {"id": "u25.c01", "en": "Your child is not feeling well.", "zh": "您的孩子不太舒服。"},
+    {"id": "u25.c02", "en": "She has a fever.", "zh": "她发烧了。", "note": "女孩用 she，男孩用 he，不要搞混。"},
+    {"id": "u25.c03", "en": "He hurt his knee.", "zh": "他磕到膝盖了。", "note": "男孩：he（他）、his（他的）。"},
+    {"id": "u25.c04", "en": "Don't worry, she is OK now.", "zh": "别担心，她现在没事了。", "accept": ["Don't worry, she's OK now."]},
+    {"id": "u25.c05", "en": "Can you come to pick her up?", "zh": "您可以来接她吗？", "note": "pick up = 接（人）。接女孩是 pick her up，接男孩是 pick him up。"},
+    {"id": "u25.c06", "en": "Who is picking him up today?", "zh": "今天谁来接他？"},
+    {"id": "u25.c07", "en": "He is waiting at the front desk.", "zh": "他在前台等着。"},
+    {"id": "u25.c08", "en": "Please call us if you are late.", "zh": "如果您会迟到，请给我们打电话。"},
+    {"id": "u25.c09", "en": "Only parents can pick up the children.", "zh": "只有家长可以接孩子。", "note": "安全规定：陌生人来接，要先打电话问家长。"}
   ],
   "words": ["child", "fever", "hurt", "knee", "worry", "pick", "waiting", "late", "only", "children", "he", "she"],
-  "drill": {
-    "pattern": "___ is waiting at the front desk.",
-    "zh": "……在前台等着（注意男孩女孩）",
-    "fills": [
-      { "en": "He", "zh": "他（男孩）" },
-      { "en": "She", "zh": "她（女孩）" },
-      { "en": "Your son", "zh": "您的儿子" },
-      { "en": "Your daughter", "zh": "您的女儿" }
+  "patterns": {
+    "frames": [
+      {"frame": "Who is ___?", "zh": "……是谁？/ 谁在……？", "usage": "问\"是谁\"。框不变，后面放你想知道的人（the doctor），或者正在做的事（picking him up = 谁来接他）。"}
+    ],
+    "examples": [
+      {"id": "u25.e01", "scene": "晚上有人敲你家的门。", "en": "Who is it?", "zh": "谁呀？", "note": "敲门、按门铃时问\"谁呀\"就说 Who is it?", "accept": ["Who's it?"]},
+      {"id": "u25.e02", "scene": "前台排着几位家长，你刚办完一位。", "en": "Who is next?", "zh": "下一位是谁？", "note": "next = 下一个", "accept": ["Who's next?"]},
+      {"id": "u25.e03", "scene": "家里的电话响了，对方没有说自己是谁。", "en": "Who is calling, please?", "zh": "请问您是哪位？", "note": "接电话时问\"您是哪位\"，就说 Who is calling?", "accept": ["Who is calling?"]},
+      {"id": "u25.e04", "scene": "一个新来的孩子在大厅里走来走去，好像迷路了。", "en": "Who is your teacher?", "zh": "你的老师是谁？"},
+      {"id": "u25.e05", "scene": "在家里，厕所的门锁着，你等了很久。", "en": "Who is in the toilet?", "zh": "谁在厕所里？"},
+      {"id": "u25.e06", "scene": "打电话到诊所，想知道今天是哪位医生看诊。", "en": "Who is the doctor today?", "zh": "今天是哪位医生？"},
+      {"id": "u25.e07", "scene": "在商店退东西，店员说他做不了主。", "en": "Who is the manager here?", "zh": "这里的经理是谁？"},
+      {"id": "u25.e08", "scene": "一个女孩下课了，可是还没看到她妈妈。", "en": "Who is picking her up today?", "zh": "今天谁来接她？", "note": "pick her up = 接她（女孩）；接男孩是 pick him up"},
+      {"id": "u25.e09", "scene": "星期五家里请客，你问家人谁会来。", "en": "Who is coming to dinner on Friday?", "zh": "星期五谁来吃晚饭？", "note": "come to dinner = 来吃晚饭"},
+      {"id": "u25.e10", "scene": "一位不认识的 uncle 站在教室门口，你问孩子他是谁。", "en": "Who is that uncle at the door?", "zh": "门口那位 uncle 是谁？", "note": "uncle = 新加坡人对年长男士的礼貌叫法，不一定是亲戚"}
     ]
+  },
+  "daily": [
+    {"id": "u25.d01", "word": "plaster", "scene": "朋友的孩子在公园摔了一跤，你问朋友带没带创可贴。", "en": "Do you have a plaster?", "zh": "你有创可贴吗？", "note": "plaster = 创可贴（新加坡的说法）"},
+    {"id": "u25.d02", "word": "cut", "scene": "在家切菜，不小心切到手指，老公问你怎么了。", "en": "I cut my finger.", "zh": "我切到手指了。", "note": "cut 的过去也是 cut；finger = 手指"},
+    {"id": "u25.d03", "word": "fell", "scene": "邻居的儿子在楼下哭，你告诉他妈妈发生了什么。", "en": "Your son fell down.", "zh": "您儿子摔倒了。", "note": "fall down = 摔倒；fell 是 fall 的过去"},
+    {"id": "u25.d04", "word": "run", "scene": "朋友的孩子在 HDB 楼梯上跑来跑去。", "en": "Don't run! Be careful!", "zh": "别跑！小心！"},
+    {"id": "u25.d05", "word": "road", "scene": "周末带朋友的孩子去公园，要过一条大马路。", "en": "Be careful on the road.", "zh": "过马路要小心。"},
+    {"id": "u25.d06", "word": "hand", "scene": "过马路的时候，你拉住朋友家的孩子。", "en": "Hold my hand, please.", "zh": "请拉着我的手。"},
+    {"id": "u25.d07", "word": "cry", "scene": "在 MRT 上，旁边的小朋友找不到妈妈，哭了起来。", "en": "Don't cry. It's OK.", "zh": "别哭，没事的。"},
+    {"id": "u25.d08", "word": "scared", "scene": "晚上打雷，家里的小朋友躲在被子里。", "en": "Don't be scared.", "zh": "别怕。"},
+    {"id": "u25.d09", "word": "wash", "scene": "孩子们从公园回来，准备吃饭。", "en": "Please wash your hands.", "zh": "请洗手。", "note": "hands = （两只）手"},
+    {"id": "u25.d10", "word": "kids", "scene": "周末去朋友家，一进门没看到她的孩子。", "en": "Where are the kids?", "zh": "孩子们在哪里？", "note": "kids = 孩子们，口语里和 children 一样"},
+    {"id": "u25.d11", "word": "playground", "scene": "楼下有个游乐场，孩子们吵着要下去玩。", "en": "Let's go to the playground.", "zh": "我们去游乐场吧。"},
+    {"id": "u25.d12", "word": "safe", "scene": "朋友说她家附近的公园晚上也很多人。", "en": "Is it safe at night?", "zh": "晚上安全吗？"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 带孩子去游乐场",
+      "lines": [
+        {"en": "On Sunday, my friend and her son come to my home.", "zh": "星期天，朋友带着儿子来我家。"},
+        {"en": "We walk to the playground near my home.", "zh": "我们走路去我家附近的游乐场。"},
+        {"en": "On the road, I hold his hand.", "zh": "过马路的时候，我拉着他的手。"},
+        {"en": "At the playground, he fell down.", "zh": "在游乐场，他摔倒了。"},
+        {"en": "He hurt his knee.", "zh": "他磕到膝盖了。"},
+        {"en": "He is scared. He doesn't cry.", "zh": "他吓到了，可是没有哭。"},
+        {"en": "I have a plaster in my bag.", "zh": "我包里有创可贴。"},
+        {"en": "\"Don't worry, he is OK now.\"", "zh": "\"别担心，他现在没事了。\""},
+        {"en": "We go home and wash our hands.", "zh": "我们回家洗了手。"},
+        {"en": "I cook chicken rice for my friend.", "zh": "我给朋友做了鸡饭。"},
+        {"en": "It's a long day and a nice day.", "zh": "这一天很长，也很开心。"}
+      ]
+    },
+    "dialogue": {
+      "title": "谁来接他？",
+      "setting": "傍晚六点，一位 Amy 不认识的太太来补习中心，说要接林太太的儿子。Amy 先给林太太打电话。",
+      "cast": [
+        {"name": "Mrs Tan", "voice": "bf_isabella"},
+        {"name": "Mrs Lim", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Tan", "en": "Hi. I'm Mrs Tan. I'm a neighbour of Mrs Lim.", "zh": "你好。我是陈太太，林太太的邻居。"},
+        {"speaker": "Amy", "en": "Hi, Mrs Tan. Can I help you?", "zh": "你好，陈太太。有什么可以帮您？"},
+        {"speaker": "Mrs Tan", "en": "Mrs Lim is late today. Can I pick up her son?", "zh": "林太太今天会晚到。我可以接她儿子吗？"},
+        {"speaker": "Amy", "en": "Sorry, only parents can pick up the children.", "zh": "不好意思，只有家长可以接孩子。"},
+        {"speaker": "Mrs Tan", "en": "OK, no problem.", "zh": "好的，没问题。"},
+        {"speaker": "Amy", "en": "Hello, Mrs Lim. This is Amy from the learning centre.", "zh": "您好，林太太。我是补习中心的 Amy。"},
+        {"speaker": "Mrs Lim", "en": "Hi Amy. Is my son OK?", "zh": "你好 Amy。我儿子没事吧？"},
+        {"speaker": "Amy", "en": "He is OK. Mrs Tan is here for him.", "zh": "他没事。陈太太来接他了。"},
+        {"speaker": "Mrs Lim", "en": "Yes, she is my neighbour. She can pick him up.", "zh": "对，她是我的邻居，她可以接他。"},
+        {"speaker": "Amy", "en": "OK, thank you. Please call us if you are late.", "zh": "好的，谢谢。如果您会晚到，请给我们打电话。"},
+        {"speaker": "Mrs Lim", "en": "Sorry! Thank you, Amy.", "zh": "不好意思！谢谢你，Amy。"},
+        {"speaker": "Amy", "en": "He is coming. Please wait a moment.", "zh": "他马上出来，请稍等。"},
+        {"speaker": "Mrs Tan", "en": "Thank you. Have a nice evening!", "zh": "谢谢。晚上愉快！"},
+        {"speaker": "Amy", "en": "You too. See you!", "zh": "您也是。再见！"}
+      ]
+    }
   },
   "grammar": {
     "title": "he 和 she 不能混",
     "body": "中文\"他\"和\"她\"读音一样，英语要分开说：男孩用 he / his / him，女孩用 she / her。说错的话，家长可能以为你在说别的孩子！",
     "examples": [
-      { "en": "He is waiting.", "zh": "他（男孩）在等。" },
-      { "en": "She is waiting.", "zh": "她（女孩）在等。" },
-      { "en": "Can you pick him up?", "zh": "您可以接他（男孩）吗？" },
-      { "en": "Can you pick her up?", "zh": "您可以接她（女孩）吗？" }
+      {"en": "He is waiting.", "zh": "他（男孩）在等。"},
+      {"en": "She is waiting.", "zh": "她（女孩）在等。"},
+      {"en": "Can you pick him up?", "zh": "您可以接他（男孩）吗？"},
+      {"en": "Can you pick her up?", "zh": "您可以接她（女孩）吗？"}
     ]
   },
   "phonics": "p23",
@@ -46,30 +109,45 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hello?", "zh": "喂？" },
-        "replies": [{ "en": "Hi, Mrs Lim. This is Amy from the learning centre.", "zh": "您好，林太太。我是补习中心的 Amy。", "next": "n2" }]
+        "npc": {"en": "Hello?", "zh": "喂？"},
+        "replies": [
+          {"en": "Hi, Mrs Lim. This is Amy from the learning centre.", "zh": "您好，林太太。我是补习中心的 Amy。", "next": "n2"}
+        ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Hi Amy. Is everything OK?", "zh": "你好 Amy。没什么事吧？" },
-        "replies": [{ "en": "Your child is not feeling well. She has a fever.", "zh": "您的孩子不太舒服，她发烧了。", "next": "n3" }]
+        "npc": {"en": "Hi Amy. Is everything OK?", "zh": "你好 Amy。没什么事吧？"},
+        "replies": [
+          {"en": "Your child is not feeling well. She has a fever.", "zh": "您的孩子不太舒服，她发烧了。", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "Oh no! Is she OK?", "zh": "哎呀！她还好吗？" },
-        "replies": [{ "en": "Don't worry, she is OK now.", "zh": "别担心，她现在没事了。", "next": "n4" }]
+        "npc": {"en": "Oh no! Is she OK?", "zh": "哎呀！她还好吗？"},
+        "replies": [
+          {"en": "Don't worry, she is OK now.", "zh": "别担心，她现在没事了。", "next": "n3b"},
+          {"en": "Don't worry, she is OK now. Can you come to pick her up?", "zh": "别担心，她现在没事了。您可以来接她吗？", "next": "n3b"}
+        ]
+      },
+      {
+        "id": "n3b",
+        "npc": {"en": "I'm at work now. Someone from my family will come.", "zh": "我在上班。我家里会有人过来。"},
+        "replies": [
+          {"en": "OK. Who is picking her up?", "zh": "好的。谁来接她？", "next": "n4"},
+          {"en": "Sorry, who is coming?", "zh": "不好意思，是谁过来？", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "I'm at work now. Her grandmother will come. Is that OK?", "zh": "我在上班。她奶奶会过来接，可以吗？" },
+        "npc": {"en": "Her grandmother will come. Is that OK?", "zh": "她奶奶会过来接，可以吗？"},
         "replies": [
-          { "en": "Yes, no problem. She is waiting at the front desk.", "zh": "可以，没问题。她在前台等着。", "next": "end" },
-          { "en": "OK. Please call us if you are late.", "zh": "好的。如果晚到请给我们打电话。", "next": "end" }
+          {"en": "Yes, no problem. She is waiting at the front desk.", "zh": "可以，没问题。她在前台等着。", "next": "end"},
+          {"en": "OK. Please call us if you are late.", "zh": "好的。如果晚到请给我们打电话。", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "Thank you, Amy. She will be there in twenty minutes.", "zh": "谢谢你，Amy。她二十分钟后到。" },
+        "npc": {"en": "Thank you, Amy. She will be there in twenty minutes.", "zh": "谢谢你，Amy。她二十分钟后到。"},
         "replies": []
       }
     ]

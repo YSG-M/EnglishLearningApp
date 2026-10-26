@@ -5,33 +5,96 @@
   "titleEn": "She did very well today",
   "goal": "下课时能用简单英语告诉家长孩子今天的表现、哪里需要多练习。",
   "chunks": [
-    { "id": "u09.c01", "en": "She did very well today.", "zh": "她今天表现很好。", "note": "did 是\"做了\"（过去的事）。男孩就说 He did very well today." },
-    { "id": "u09.c02", "en": "He is very hardworking.", "zh": "他很努力。" },
-    { "id": "u09.c03", "en": "He needs more practice.", "zh": "他需要多练习。", "note": "说别人\"需要\"，need 后面要加 s：he needs、she needs。" },
-    { "id": "u09.c04", "en": "Please check his homework.", "zh": "请检查一下他的作业。" },
-    { "id": "u09.c05", "en": "Her reading is getting better.", "zh": "她的阅读越来越好了。" },
-    { "id": "u09.c06", "en": "He talks a lot in class.", "zh": "他上课话很多。" },
-    { "id": "u09.c07", "en": "She is very smart.", "zh": "她很聪明。" },
-    { "id": "u09.c08", "en": "Don't worry.", "zh": "别担心。" },
-    { "id": "u09.c09", "en": "Let's work together.", "zh": "我们一起努力。", "note": "Let's = let us，\"我们一起……吧\"。" }
+    {"id": "u09.c01", "en": "She did very well today.", "zh": "她今天表现很好。", "note": "did 是\"做了\"（过去的事）。男孩就说 He did very well today."},
+    {"id": "u09.c02", "en": "He is very hardworking.", "zh": "他很努力。"},
+    {"id": "u09.c03", "en": "He needs more practice.", "zh": "他需要多练习。", "note": "说别人\"需要\"，need 后面要加 s：he needs、she needs。"},
+    {"id": "u09.c04", "en": "Please check his homework.", "zh": "请检查一下他的作业。"},
+    {"id": "u09.c05", "en": "Her reading is getting better.", "zh": "她的阅读越来越好了。"},
+    {"id": "u09.c06", "en": "He talks a lot in class.", "zh": "他上课话很多。"},
+    {"id": "u09.c07", "en": "She is very smart.", "zh": "她很聪明。"},
+    {"id": "u09.c08", "en": "Don't worry.", "zh": "别担心。"},
+    {"id": "u09.c09", "en": "Let's work together.", "zh": "我们一起努力。", "note": "Let's = let us，\"我们一起……吧\"。"}
   ],
   "words": ["well", "today", "hardworking", "needs", "more", "practice", "homework", "reading", "better", "smart", "worry"],
-  "drill": {
-    "pattern": "He needs more ___.",
-    "zh": "说孩子需要多练什么",
-    "fills": [
-      { "en": "practice", "zh": "他需要多练习" },
-      { "en": "reading", "zh": "他需要多阅读" },
-      { "en": "writing", "zh": "他需要多写" },
-      { "en": "speaking", "zh": "他需要多说" }
+  "patterns": {
+    "frames": [
+      {"frame": "He is ___.", "zh": "他……", "usage": "说一个男生（男孩、男同事）怎么样、在哪里、是谁。框不变，只换 ___。"},
+      {"frame": "She is ___.", "zh": "她……", "usage": "说一个女生（女孩、女同事、妈妈）。和上面一样，只是把 He 换成 She。中文\"他 / 她\"读音一样，英语一定要分开。"}
+    ],
+    "examples": [
+      {"id": "u09.e01", "scene": "家长问你，女儿上课为什么总不举手。", "en": "She is shy.", "zh": "她比较害羞。"},
+      {"id": "u09.e02", "scene": "周末和朋友喝早茶，朋友问你老公怎么没一起来。", "en": "He is sick.", "zh": "他生病了。"},
+      {"id": "u09.e03", "scene": "家长打电话到前台找儿子，他正在上课。", "en": "He is in class.", "zh": "他在上课。", "note": "in class = 在上课", "accept": ["He is in class now."]},
+      {"id": "u09.e04", "scene": "下课时，你跟家长夸她女儿会主动帮老师收本子。", "en": "She is very helpful.", "zh": "她很乐意帮忙。"},
+      {"id": "u09.e05", "scene": "在组屋楼下，邻居问你身边的小女孩是谁。", "en": "She is my daughter.", "zh": "她是我女儿。", "note": "on leave = 在休假、请假（不在上班）"},
+      {"id": "u09.e06", "scene": "在 hawker centre 吃午饭，遇到朋友，朋友问你旁边的女生是谁。", "en": "She is my colleague.", "zh": "她是我的同事。"},
+      {"id": "u09.e07", "scene": "家长问女儿哪方面比较强，她作文写得好。", "en": "She is good at writing.", "zh": "她很会写作文。", "note": "good at = 擅长、很会"},
+      {"id": "u09.e08", "scene": "周末带孩子去朋友家，孩子一直不说话，你跟朋友解释。", "en": "He is a bit tired today.", "zh": "他今天有点累。", "note": "a bit = 有一点"},
+      {"id": "u09.e09", "scene": "在诊所，你陪妈妈来看病，护士问她怎么了。", "en": "She is not feeling well.", "zh": "她身体不太舒服。", "note": "not feeling well = 身体不舒服", "accept": ["She isn't feeling well."]},
+      {"id": "u09.e10", "scene": "朋友来你家吃饭，你老公已经下楼去接她了，你在电话里告诉她。", "en": "He is waiting for you outside.", "zh": "他在外面等你。", "note": "waiting for you = 在等你"}
     ]
+  },
+  "daily": [
+    {"id": "u09.d01", "word": "boy", "scene": "在电梯里遇到邻居的儿子，他主动帮你按电梯。", "en": "He is a good boy.", "zh": "他是个好孩子。", "note": "boy = 男孩"},
+    {"id": "u09.d02", "word": "girl", "scene": "朋友的女儿主动跟你打招呼，你夸她。", "en": "She is a nice girl.", "zh": "她是个好女孩。", "note": "girl = 女孩"},
+    {"id": "u09.d03", "word": "baby", "scene": "邻居推着婴儿车出来，你想问宝宝多大了。", "en": "How old is the baby?", "zh": "宝宝多大了？", "note": "How old = 多大、几岁"},
+    {"id": "u09.d04", "word": "cute", "scene": "朋友给你看她刚出生的宝宝的照片。", "en": "Your baby is very cute.", "zh": "你的宝宝好可爱。", "note": "cute = 可爱"},
+    {"id": "u09.d05", "word": "tall", "scene": "很久没见邻居的儿子，他长高了很多。", "en": "Your son is very tall.", "zh": "你儿子好高啊。", "note": "tall = 高（说人）"},
+    {"id": "u09.d06", "word": "play", "scene": "在楼下的游乐场，一个小朋友一直看着你家孩子。", "en": "Do you want to play?", "zh": "你想一起玩吗？", "note": "play = 玩"},
+    {"id": "u09.d07", "word": "cousin", "scene": "周末和一个年轻女生逛街，遇到同事，同事问她是谁。", "en": "She is my cousin.", "zh": "她是我表妹。", "note": "cousin = 表/堂兄弟姐妹，英语不分"},
+    {"id": "u09.d08", "word": "children", "scene": "新认识的朋友说她是妈妈，你想问她有几个孩子。", "en": "How many children do you have?", "zh": "你有几个孩子？", "note": "children = 孩子们（一个孩子是 child）"},
+    {"id": "u09.d09", "word": "naughty", "scene": "朋友的儿子在餐厅里跑来跑去，朋友有点不好意思。", "en": "He is a bit naughty.", "zh": "他有点调皮。", "note": "naughty = 调皮"},
+    {"id": "u09.d10", "word": "grandma", "scene": "朋友问你家里的老人身体好不好。", "en": "My grandma is 80.", "zh": "我奶奶 80 岁了。", "note": "grandma = 奶奶、外婆；80 读作 eighty"},
+    {"id": "u09.d11", "word": "brother", "scene": "新朋友问你有没有兄弟姐妹。", "en": "I have one brother.", "zh": "我有一个哥哥。", "note": "brother = 哥哥或弟弟，英语不分"},
+    {"id": "u09.d12", "word": "kind", "scene": "邻居阿姨帮你收了快递，你跟家人说起她。", "en": "She is very kind.", "zh": "她人很好。", "note": "kind = 善良、对人好"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 在公园",
+      "lines": [
+        {"en": "It's Saturday.", "zh": "今天是星期六。"},
+        {"en": "I go to the park with my friend.", "zh": "我和朋友去公园。"},
+        {"en": "I see my neighbour and her baby.", "zh": "我看到了我的邻居和她的宝宝。"},
+        {"en": "\"Your baby is very cute! How old is the baby?\"", "zh": "\"你的宝宝好可爱！宝宝多大了？\""},
+        {"en": "Her son is here too.", "zh": "她儿子也在。"},
+        {"en": "He is very tall.", "zh": "他很高。"},
+        {"en": "He is a bit naughty.", "zh": "他有点调皮。"},
+        {"en": "My neighbour is a bit tired today.", "zh": "我的邻居今天有点累。"},
+        {"en": "\"Don't worry. Let's play together!\"", "zh": "\"别担心。我们一起玩吧！\""},
+        {"en": "She is very kind.", "zh": "她人很好。"},
+        {"en": "Have a nice weekend!", "zh": "周末愉快！"}
+      ]
+    },
+    "dialogue": {
+      "title": "下课后和爸爸聊几句",
+      "setting": "下课了，林先生带着小女儿来补习中心接儿子。",
+      "cast": [
+        {"name": "Mr Lim", "voice": "bm_george"}
+      ],
+      "lines": [
+        {"speaker": "Mr Lim", "en": "Hi teacher. How is my son today?", "zh": "老师好。我儿子今天怎么样？"},
+        {"speaker": "Amy", "en": "He did very well today.", "zh": "他今天表现很好。"},
+        {"speaker": "Mr Lim", "en": "Very good!", "zh": "那太好了！"},
+        {"speaker": "Amy", "en": "But he talks a lot in class.", "zh": "不过他上课话很多。"},
+        {"speaker": "Mr Lim", "en": "Sorry. He is a bit naughty.", "zh": "不好意思，他有点调皮。"},
+        {"speaker": "Amy", "en": "Don't worry. He is very smart.", "zh": "别担心，他很聪明。"},
+        {"speaker": "Mr Lim", "en": "What can I do at home?", "zh": "我在家里可以做什么？"},
+        {"speaker": "Amy", "en": "Please check his homework.", "zh": "请检查一下他的作业。"},
+        {"speaker": "Mr Lim", "en": "Okay, I will.", "zh": "好的，我会的。"},
+        {"speaker": "Amy", "en": "Is she your daughter?", "zh": "她是你女儿吗？"},
+        {"speaker": "Mr Lim", "en": "Yes. She is three.", "zh": "是的，她三岁了。"},
+        {"speaker": "Amy", "en": "She is very cute!", "zh": "她好可爱！"},
+        {"speaker": "Mr Lim", "en": "Thank you. See you tomorrow!", "zh": "谢谢。明天见！"},
+        {"speaker": "Amy", "en": "See you! Have a nice day!", "zh": "再见！祝你今天愉快！"}
+      ]
+    }
   },
   "grammar": {
     "title": "he / his 和 she / her",
     "body": "说孩子的时候：男孩用 he（他）和 his（他的），女孩用 she（她）和 her（她的）。中文\"他的 / 她的\"读音一样，英语一定要分开。",
     "examples": [
-      { "en": "He is hardworking. Please check his homework.", "zh": "他很努力。请检查他的作业。" },
-      { "en": "She is smart. Her reading is getting better.", "zh": "她很聪明。她的阅读越来越好了。" }
+      {"en": "He is hardworking. Please check his homework.", "zh": "他很努力。请检查他的作业。"},
+      {"en": "She is smart. Her reading is getting better.", "zh": "她很聪明。她的阅读越来越好了。"}
     ]
   },
   "phonics": "p07",
@@ -44,41 +107,47 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi teacher, how is Ryan doing?", "zh": "老师你好，Ryan 最近怎么样？" },
+        "npc": {"en": "Hi teacher, how is Ryan doing?", "zh": "老师你好，Ryan 最近怎么样？"},
         "replies": [
-          { "en": "He is very hardworking.", "zh": "他很努力。", "next": "n2" },
-          { "en": "He did very well today.", "zh": "他今天表现很好。", "next": "n2" }
+          {"en": "He is very hardworking.", "zh": "他很努力。", "next": "n2"},
+          {"en": "He did very well today.", "zh": "他今天表现很好。", "next": "n2"},
+          {"en": "He is very smart.", "zh": "他很聪明。", "next": "n2"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Oh, that's good to hear. Any problems?", "zh": "哦，听到真高兴。有什么问题吗？" },
+        "npc": {"en": "Oh, that's good to hear. Any problems?", "zh": "哦，听到真高兴。有什么问题吗？"},
         "replies": [
-          { "en": "He needs more practice.", "zh": "他需要多练习。", "next": "n3" },
-          { "en": "He talks a lot in class.", "zh": "他上课话很多。", "next": "n3" }
+          {"en": "He needs more practice.", "zh": "他需要多练习。", "next": "n3"},
+          {"en": "He talks a lot in class.", "zh": "他上课话很多。", "next": "n3"},
+          {"en": "He is a bit shy in class.", "zh": "他上课有点害羞。", "next": "n3"}
         ]
       },
       {
         "id": "n3",
-        "npc": { "en": "I see. What can I do at home?", "zh": "明白了。我在家可以做什么？" },
-        "replies": [{ "en": "Please check his homework.", "zh": "请检查一下他的作业。", "next": "n4" }]
+        "npc": {"en": "I see. What can I do at home?", "zh": "明白了。我在家可以做什么？"},
+        "replies": [
+          {"en": "Please check his homework.", "zh": "请检查一下他的作业。", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Okay, I will. I'm a bit worried about his exam.", "zh": "好的，我会的。我有点担心他的考试。" },
+        "npc": {"en": "Okay, I will. I'm a bit worried about his exam.", "zh": "好的，我会的。我有点担心他的考试。"},
         "replies": [
-          { "en": "Don't worry.", "zh": "别担心。", "next": "n5" },
-          { "en": "Don't worry. Let's work together.", "zh": "别担心，我们一起努力。", "next": "n5" }
+          {"en": "Don't worry.", "zh": "别担心。", "next": "n5"},
+          {"en": "Don't worry. Let's work together.", "zh": "别担心，我们一起努力。", "next": "n5"}
         ]
       },
       {
         "id": "n5",
-        "npc": { "en": "Thank you so much, teacher.", "zh": "非常感谢你，老师。" },
-        "replies": [{ "en": "You're welcome.", "zh": "不客气。", "next": "end" }]
+        "npc": {"en": "Thank you so much, teacher.", "zh": "非常感谢你，老师。"},
+        "replies": [
+          {"en": "You're welcome.", "zh": "不客气。", "next": "end"}
+        ]
       },
       {
         "id": "end",
-        "npc": { "en": "See you next week!", "zh": "下星期见！" },
+        "npc": {"en": "See you next week!", "zh": "下星期见！"},
         "replies": []
       }
     ]

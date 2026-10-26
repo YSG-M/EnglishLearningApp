@@ -42,7 +42,13 @@ export const CHANNEL_ARGS = {
   'parts.listCompleted': none,
   'review.getQueue': none,
   'review.submit': z.tuple([z.object({ cardId: shortId, exercise, grade, activeMs })]),
-  'review.getPracticeSet': z.tuple([shortId]),
+  'review.getPracticeSet': z.tuple([
+    z.discriminatedUnion('scope', [
+      z.object({ scope: z.literal('recent') }),
+      z.object({ scope: z.literal('unit'), unitId: shortId }),
+      z.object({ scope: z.literal('random'), count: z.number().int().min(1).max(100) }),
+    ]),
+  ]),
   'speech.getStatus': none,
   'speech.recognize': z.tuple([
     z.object({ samples: audio, sampleRate: z.literal(16000), itemId: shortId, keep: z.boolean() }),

@@ -27,11 +27,23 @@ export interface ExerciseProps {
 /** The sentence or word a card asks her to produce, in the shape the speech tools need. */
 export function answerOf(item: ReviewItem): { sentence: SpokenSentence; accept: string[] } | null {
   if (item.kind === 'chunk') return { sentence: item.chunk, accept: item.chunk.accept ?? [] };
+  if (item.kind === 'example') return { sentence: item.example, accept: item.example.accept ?? [] };
   if (item.kind === 'word') {
     const w = item.word;
     return { sentence: { en: w.text, zh: w.zh, audio: w.audio, tokens: tokenize(w.text) }, accept: [] };
   }
   return null;
+}
+
+/** 🎬 Pattern examples are asked through their scene: that is where she will need the sentence. */
+function ScenePrompt({ item }: { item: ReviewItem }) {
+  if (item.kind !== 'example') return null;
+  return (
+    <p className="scene">
+      <span className="scene-label">{zh.part.scene}</span>
+      {item.example.scene}
+    </p>
+  );
 }
 
 export function ListenChoose({ item, seed, onOutcome }: ExerciseProps) {
@@ -89,7 +101,12 @@ export function SpeakFromZh({ item, onOutcome }: ExerciseProps) {
   if (!answer) return null;
   const { sentence, accept } = answer;
   const firstWord = sentence.tokens[0]?.surface ?? '';
-  const itemId = item.kind === 'chunk' ? item.chunk.id : `word:${sentence.en.toLowerCase()}`;
+  const itemId =
+    item.kind === 'chunk'
+      ? item.chunk.id
+      : item.kind === 'example'
+        ? item.example.id
+        : `word:${sentence.en.toLowerCase()}`;
 
   const finish = (o: ExerciseOutcome, d: 'passed' | 'gaveUp') => {
     if (done) return;
@@ -100,6 +117,7 @@ export function SpeakFromZh({ item, onOutcome }: ExerciseProps) {
   return (
     <div className="exercise">
       <h2>🗣 {zh.review.speakFromZh}</h2>
+      <ScenePrompt item={item} />
       <p className="prompt-zh">{sentence.zh}</p>
       {level >= 1 && level < 3 ? (
         <p className="hint-line">
@@ -188,6 +206,7 @@ export function RecallSelfRate({ item, onOutcome }: ExerciseProps) {
   return (
     <div className="exercise">
       <h2>🤔 {zh.review.recallTitle}</h2>
+      <ScenePrompt item={item} />
       <p className="prompt-zh">{sentence.zh}</p>
       {!shown ? (
         <Button

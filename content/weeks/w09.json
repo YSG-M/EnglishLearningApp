@@ -1,0 +1,46 @@
+{
+  "week": 9,
+  "stories": {
+    "narrative": {
+      "title": "Amy 收到了礼物",
+      "lines": [
+        {"en": "On Saturday, I had lunch with my friend.", "zh": "星期六，我和朋友一起吃午饭。"},
+        {"en": "We went to the hawker centre.", "zh": "我们去了 hawker centre。"},
+        {"en": "I had noodles. The soup was delicious!", "zh": "我吃了面，汤很好喝！"},
+        {"en": "My friend had chicken rice.", "zh": "我朋友吃了鸡饭。"},
+        {"en": "\"Let's buy some fruit!\"", "zh": "\"我们买点水果吧！\""},
+        {"en": "After lunch, I went home.", "zh": "吃完午饭，我回了家。"},
+        {"en": "A parcel was at the door.", "zh": "门口有一个包裹。"},
+        {"en": "It was a gift from my sister.", "zh": "是我妹妹送的礼物。"},
+        {"en": "There was a letter for me too.", "zh": "还有一封给我的信。"},
+        {"en": "I sent my sister a message.", "zh": "我给妹妹发了消息。"},
+        {"en": "\"I received your gift. Thank you!\"", "zh": "\"我收到你的礼物了，谢谢！\""},
+        {"en": "It was a very nice day.", "zh": "今天真是美好的一天。"}
+      ]
+    },
+    "dialogue": {
+      "title": "前台来了包裹",
+      "setting": "中午，快递员 Ali 给 Amy 送包裹到补习中心前台，同事 Jason 也在。",
+      "cast": [
+        {"name": "Ali", "voice": "bm_lewis"},
+        {"name": "Jason", "voice": "bm_george"}
+      ],
+      "lines": [
+        {"speaker": "Ali", "en": "Hello, I have a parcel for Amy.", "zh": "你好，我有一个 Amy 的包裹。"},
+        {"speaker": "Amy", "en": "I'm Amy. Thank you!", "zh": "我就是 Amy。谢谢！"},
+        {"speaker": "Ali", "en": "Please sign here.", "zh": "请在这里签名。"},
+        {"speaker": "Amy", "en": "Okay. Here you are.", "zh": "好的，给你。"},
+        {"speaker": "Jason", "en": "Amy, what did you buy?", "zh": "Amy，你买了什么？"},
+        {"speaker": "Amy", "en": "I bought a new bag online.", "zh": "我在网上买了一个新包。"},
+        {"speaker": "Jason", "en": "Nice! Have you eaten?", "zh": "不错！你吃了吗？"},
+        {"speaker": "Amy", "en": "Not yet. I'm hungry.", "zh": "还没有。我饿了。"},
+        {"speaker": "Jason", "en": "Let's have lunch together.", "zh": "我们一起吃午饭吧。"},
+        {"speaker": "Amy", "en": "Sure! What do you want to eat?", "zh": "好啊！你想吃什么？"},
+        {"speaker": "Jason", "en": "Let's try the noodles downstairs.", "zh": "我们去试试楼下的面吧。"},
+        {"speaker": "Amy", "en": "Okay! Let's go.", "zh": "好！我们走吧。"},
+        {"speaker": "Jason", "en": "The box is heavy. Let me carry it for you.", "zh": "箱子很重。我帮你拿吧。"},
+        {"speaker": "Amy", "en": "Thank you, Jason!", "zh": "谢谢你，Jason！"}
+      ]
+    }
+  }
+}

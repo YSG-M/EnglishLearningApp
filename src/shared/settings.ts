@@ -3,6 +3,8 @@ import { z } from 'zod';
 export const Settings = z.object({
   /** Show 谐音 / pinyin hints under words. Per-word hints still fade after 3 correct answers. */
   showHints: z.boolean().default(true),
+  /** Show each word's Chinese meaning under it (tapping a word always shows it). */
+  showGlosses: z.boolean().default(false),
   /** 'always' shows Chinese under every sentence; 'tap' hides it until tapped. */
   chineseMode: z.enum(['always', 'tap']).default('always'),
   /** Maximum reviews per day; the rest wait for later days. */

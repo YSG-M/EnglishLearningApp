@@ -15,6 +15,19 @@ const lexicon = ['hi', 'hello', 'bye', 'good', 'morning', 'afternoon', 'evening'
   (w) => word(w),
 );
 
+function stories() {
+  const lines = ['Hi!', 'Good morning!', "I'm Amy.", 'A cup of tea.', 'See you!', 'Bye!'];
+  return {
+    narrative: { title: 'Amy 的早上', lines: lines.map((en) => ({ en, zh: '中文' })) },
+    dialogue: {
+      title: '早上',
+      setting: '在门口',
+      cast: [{ name: 'Jason', voice: 'bm_george' }],
+      lines: lines.map((en, i) => ({ speaker: i % 2 ? 'Amy' : 'Jason', en, zh: '中文' })),
+    },
+  };
+}
+
 function unit(id: string, overrides: Record<string, unknown> = {}) {
   return {
     id,
@@ -29,14 +42,11 @@ function unit(id: string, overrides: Record<string, unknown> = {}) {
       { id: `${id}.c04`, en: 'Bye!', zh: '拜拜' },
     ],
     words: ['hi', 'bye', 'see'],
-    drill: {
-      pattern: 'Good ___!',
-      zh: '问候',
-      fills: [
-        { en: 'morning', zh: '早上好' },
-        { en: 'afternoon', zh: '下午好' },
-        { en: 'evening', zh: '晚上好' },
-      ],
+    patterns: {
+      frames: [{ frame: 'Good ___!', zh: '……好', usage: '不同时间的问候' }],
+      examples: ['morning', 'afternoon', 'evening', 'night', 'morning, Amy', 'afternoon, Amy', 'evening, Amy', 'night, Amy'].map(
+        (fill, i) => ({ id: `${id}.e0${i + 1}`, scene: `场景${i + 1}`, en: `Good ${fill}!`, zh: '问候' }),
+      ),
     },
     dialogue: {
       title: '打招呼',
@@ -49,6 +59,14 @@ function unit(id: string, overrides: Record<string, unknown> = {}) {
         { id: 'end', npc: { en: 'Bye!', zh: '再见' }, replies: [] },
       ],
     },
+    daily: ['hi', 'bye', 'see', 'good', 'morning', 'night', 'tea', 'cup'].map((w, i) => ({
+      id: `${id}.d0${i + 1}`,
+      word: w,
+      scene: `生活场景${i + 1}`,
+      en: { hi: 'Hi!', bye: 'Bye!', see: 'See you!', good: 'Good morning!', morning: 'Good morning, Amy!', night: 'Good night!', tea: 'A cup of tea.', cup: 'A cup of tea, Amy.' }[w],
+      zh: '生活',
+    })),
+    stories: stories(),
     task: '说一次 Hi',
     ...overrides,
   };
@@ -70,6 +88,7 @@ function raw(overrides: Partial<RawContent> = {}): RawContent {
     lexicon: [{ file: 'lexicon.json', data: lexicon }],
     units: [{ file: 'u01.json', data: unit('u01') }],
     phonics: [],
+    weeks: [{ file: 'w01.json', data: { week: 1, stories: stories() } }],
     ...overrides,
   };
 }
@@ -97,7 +116,9 @@ describe('compileContent', () => {
     expect(r.errors).toEqual([]);
     const b = r.bundle!;
     expect(Object.keys(b.units)).toEqual(['u01']);
-    expect(b.units.u01?.drill.items.map((i) => i.en)).toEqual(['Good morning!', 'Good afternoon!', 'Good evening!']);
+    const examples = b.units.u01!.patterns.examples;
+    expect(examples.map((e) => e.en).slice(0, 3)).toEqual(['Good morning!', 'Good afternoon!', 'Good evening!']);
+    expect(examples[4]?.pattern).toEqual({ frame: 0, slot: [1, 3] });
     expect(b.parts.map((p) => p.id)).toEqual(['ch01', 'u01:learn', 'u01:practice', 'u01:apply', 'w01:review']);
     expect(b.parts[0]?.light).toBe(true);
   });
@@ -161,8 +182,58 @@ describe('compileContent', () => {
   });
 
   it('warns about unused lexicon entries without failing', () => {
-    const r = compileContent(raw(), sha1);
+    const r = compileContent(raw({ lexicon: [{ file: 'lexicon.json', data: [...lexicon, word('spare')] }] }), sha1);
     expect(r.errors).toEqual([]);
-    expect(r.warnings).toContain('lexicon: "cup" is never used');
+    expect(r.warnings).toContain('lexicon: "spare" is never used');
+  });
+});
+
+describe('compileContent: patterns', () => {
+  const withPatterns = (patch: (u: ReturnType<typeof unit>) => void) => {
+    const u = unit('u01');
+    patch(u);
+    return raw({ units: [{ file: 'u01.json', data: u }] });
+  };
+
+  it('rejects an example that does not fit any frame', () => {
+    const r = compileContent(
+      withPatterns((u) => {
+        u.patterns.examples[0]!.en = 'See you!';
+      }),
+      sha1,
+    );
+    expect(r.errors.join('\n')).toMatch(/u01\.e01: "See you!" does not fit the pattern Good ___!/);
+  });
+
+  it('marks chunks that already use the pattern', () => {
+    const r = compileContent(
+      withPatterns((u) => {
+        u.chunks[0]!.en = 'Good morning!';
+      }),
+      sha1,
+    );
+    expect(r.bundle!.units.u01!.chunks[0]!.pattern).toEqual({ frame: 0, slot: [1, 2] });
+    expect(r.bundle!.units.u01!.chunks[1]!.pattern).toBeUndefined();
+  });
+
+  it('warns when no dialogue reply uses the pattern', () => {
+    expect(compileContent(raw(), sha1).warnings.join('\n')).toMatch(/no dialogue reply uses the unit's pattern/);
+    const r = compileContent(
+      withPatterns((u) => {
+        u.dialogue.nodes[0]!.replies[0]!.en = 'Good morning!';
+      }),
+      sha1,
+    );
+    expect(r.warnings.join('\n')).not.toMatch(/no dialogue reply/);
+  });
+
+  it('rejects example ids from another unit', () => {
+    const r = compileContent(
+      withPatterns((u) => {
+        u.patterns.examples[0]!.id = 'u09.e01';
+      }),
+      sha1,
+    );
+    expect(r.errors.join('\n')).toMatch(/example u09\.e01 must start with u01\./);
   });
 });

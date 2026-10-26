@@ -95,4 +95,31 @@ export const MIGRATIONS: Migration[] = [
       );
     `,
   },
+  {
+    version: 2,
+    name: 'pattern example cards',
+    // SQLite cannot alter a CHECK constraint, so the table is rebuilt with the new kind allowed.
+    sql: `
+      CREATE TABLE cards_v2 (
+        id TEXT PRIMARY KEY,
+        kind TEXT NOT NULL CHECK (kind IN ('chunk', 'word', 'pair', 'example')),
+        due TEXT NOT NULL,
+        stability REAL NOT NULL,
+        difficulty REAL NOT NULL,
+        scheduled_days REAL NOT NULL,
+        learning_steps INTEGER NOT NULL,
+        reps INTEGER NOT NULL,
+        lapses INTEGER NOT NULL,
+        state INTEGER NOT NULL,
+        last_review TEXT,
+        introduced_at TEXT NOT NULL
+      );
+      INSERT INTO cards_v2 SELECT id, kind, due, stability, difficulty, scheduled_days, learning_steps,
+        reps, lapses, state, last_review, introduced_at FROM cards;
+      DROP TABLE cards;
+      ALTER TABLE cards_v2 RENAME TO cards;
+      CREATE INDEX cards_due ON cards (due);
+      CREATE INDEX cards_introduced ON cards (introduced_at);
+    `,
+  },
 ];

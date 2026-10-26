@@ -7,7 +7,7 @@
  *
  * Changing this file changes the contract for both sides: update docs/02-architecture.md too.
  */
-import type { ContentBundle } from './content/bundle';
+import type { CardKind, ContentBundle } from './content/bundle';
 import type { TodayPlan } from './domain/planner';
 import type { ExerciseType } from './domain/exercise';
 import type { Grade } from './domain/srs';
@@ -48,8 +48,8 @@ export interface TodayView {
 
 export interface ReviewCardView {
   cardId: string;
-  kind: 'chunk' | 'word' | 'pair';
-  /** Chunk id, lexicon key, or phonics pair id. */
+  kind: CardKind;
+  /** Chunk id, lexicon key, phonics pair id, or pattern example id. */
   itemId: string;
   reps: number;
   lapses: number;
@@ -72,6 +72,8 @@ export interface CompletePartInput {
 export interface CompletePartResult {
   /** New review cards created by this part. */
   cardsIntroduced: number;
+  /** False when she was taking the part again. */
+  firstTime: boolean;
   today: TodayView;
 }
 
@@ -128,6 +130,15 @@ export interface DiagnosticsExportResult {
   folder: string;
 }
 
+/**
+ * Extra practice outside the schedule: cards from parts completed in the last RECENT_DAYS days,
+ * one unit's cards, or a random draw from everything learned.
+ */
+export type PracticeScope =
+  { scope: 'recent' } | { scope: 'unit'; unitId: string } | { scope: 'random'; count: number };
+
+export const RECENT_DAYS = 7;
+
 export interface AppApi {
   app: {
     getInfo(): Promise<AppInfo>;
@@ -148,7 +159,7 @@ export interface AppApi {
     getQueue(): Promise<ReviewCardView[]>;
     submit(input: ReviewSubmission): Promise<TodayView>;
     /** Extra practice outside the schedule (does not change intervals). */
-    getPracticeSet(unitId: string): Promise<ReviewCardView[]>;
+    getPracticeSet(scope: PracticeScope): Promise<ReviewCardView[]>;
   };
   speech: {
     getStatus(): Promise<SpeechStatus>;

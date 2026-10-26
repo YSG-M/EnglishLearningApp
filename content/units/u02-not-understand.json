@@ -5,33 +5,96 @@
   "titleEn": "Sorry, can you say that again?",
   "goal": "听不懂的时候不慌：会请对方再说一遍、说慢一点，或者请对方稍等。",
   "chunks": [
-    { "id": "u02.c01", "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "note": "这是最有用的一句！听不懂就说，一点都不丢脸。", "accept": ["Sorry, can you say again?", "Can you say that again?"] },
-    { "id": "u02.c02", "en": "Slowly, please.", "zh": "请说慢一点。", "accept": ["Slowly please.", "Please speak slowly."] },
-    { "id": "u02.c03", "en": "One moment, please.", "zh": "请稍等。", "note": "需要时间想、查东西或者找人时说。" },
-    { "id": "u02.c04", "en": "Sorry, I don't understand.", "zh": "不好意思，我听不懂。", "accept": ["I don't understand.", "Sorry, I do not understand."] },
-    { "id": "u02.c05", "en": "What does it mean?", "zh": "这是什么意思？" },
-    { "id": "u02.c06", "en": "Can you write it down?", "zh": "你可以写下来吗？", "note": "听不懂名字、地址、电话号码时特别好用。" },
-    { "id": "u02.c07", "en": "My English is not very good.", "zh": "我的英语不太好。", "note": "先说这句，对方一般会说慢一点、说简单一点。" },
-    { "id": "u02.c08", "en": "Let me check.", "zh": "我查一下。", "note": "需要去问人、看电脑、看课表时说。" },
-    { "id": "u02.c09", "en": "Thank you for waiting.", "zh": "谢谢你的耐心等待。" }
+    {"id": "u02.c01", "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "note": "这是最有用的一句！听不懂就说，一点都不丢脸。", "accept": ["Sorry, can you say again?", "Can you say that again?"]},
+    {"id": "u02.c02", "en": "Slowly, please.", "zh": "请说慢一点。", "accept": ["Slowly please.", "Please speak slowly."]},
+    {"id": "u02.c03", "en": "One moment, please.", "zh": "请稍等。", "note": "需要时间想、查东西或者找人时说。"},
+    {"id": "u02.c04", "en": "Sorry, I don't understand.", "zh": "不好意思，我听不懂。", "accept": ["I don't understand.", "Sorry, I do not understand."]},
+    {"id": "u02.c05", "en": "What does it mean?", "zh": "这是什么意思？"},
+    {"id": "u02.c06", "en": "Can you write it down?", "zh": "你可以写下来吗？", "note": "听不懂名字、地址、电话号码时特别好用。"},
+    {"id": "u02.c07", "en": "My English is not very good.", "zh": "我的英语不太好。", "note": "先说这句，对方一般会说慢一点、说简单一点。"},
+    {"id": "u02.c08", "en": "Let me check.", "zh": "我查一下。", "note": "需要去问人、看电脑、看课表时说。"},
+    {"id": "u02.c09", "en": "Thank you for waiting.", "zh": "谢谢你的耐心等待。"}
   ],
   "words": ["sorry", "again", "slowly", "please", "moment", "understand", "mean", "write", "check", "english"],
-  "drill": {
-    "pattern": "Can you ___, please?",
-    "zh": "请对方帮忙做一件事",
-    "fills": [
-      { "en": "say that again", "zh": "可以请你再说一遍吗？" },
-      { "en": "speak slowly", "zh": "可以请你说慢一点吗？" },
-      { "en": "write it down", "zh": "可以请你写下来吗？" },
-      { "en": "spell it", "zh": "可以请你拼一下吗？" }
+  "patterns": {
+    "frames": [
+      {"frame": "Can you ___?", "zh": "你能……吗？/ 可以请你……吗？", "usage": "请别人帮你做一件事。框不变，只把想让对方做的事放进 ___。想更客气，句尾加 please。"}
+    ],
+    "examples": [
+      {"id": "u02.e01", "scene": "家长在前台说得太快，你没听清。", "en": "Can you say that again?", "zh": "可以再说一遍吗？", "note": "say that again = 再说一遍"},
+      {"id": "u02.e02", "scene": "打电话给电信公司问账单，客服说得很快。", "en": "Can you speak slowly?", "zh": "你可以说慢一点吗？", "accept": ["Can you speak slowly, please?", "Can you speak more slowly?"]},
+      {"id": "u02.e03", "scene": "家长在电话里报了一个英文名字，你写不出来。", "en": "Can you spell it?", "zh": "你可以拼一下吗？", "note": "spell = 一个字母一个字母地念出来"},
+      {"id": "u02.e04", "scene": "诊所护士说了一个药名，你记不住。", "en": "Can you write it down?", "zh": "你可以写下来吗？", "note": "write it down = 把它写下来"},
+      {"id": "u02.e05", "scene": "在 NTUC 买了一箱水，搬不上收银台，旁边有一位年轻人。", "en": "Can you help me?", "zh": "你可以帮我一下吗？", "accept": ["Can you help me, please?"]},
+      {"id": "u02.e06", "scene": "朋友告诉你她住的地方叫什么，你没听过，想跟着念。", "en": "Can you say it slowly?", "zh": "你可以慢慢地说一遍吗？"},
+      {"id": "u02.e07", "scene": "在 hawker centre 点餐，你不太能吃辣。", "en": "Can you make it less spicy?", "zh": "可以做得不那么辣吗？", "note": "less spicy = 少辣一点"},
+      {"id": "u02.e08", "scene": "家里水管漏水，师傅在电话里说今天没空。", "en": "Can you come tomorrow?", "zh": "你明天可以来吗？"},
+      {"id": "u02.e09", "scene": "家长交了学费，你想让他看一下收据上的名字对不对。", "en": "Can you check this?", "zh": "你可以看一下这个对不对吗？", "note": "check = 检查、确认一下"},
+      {"id": "u02.e10", "scene": "前台电话响了，你正在接待家长，请同事帮忙。", "en": "Can you answer the phone?", "zh": "你可以接一下电话吗？", "note": "answer the phone = 接电话（不是\"回答电话\"）", "accept": ["Can you answer the phone, please?"]}
     ]
+  },
+  "daily": [
+    {"id": "u02.d01", "word": "know", "scene": "在巴士站，一位阿姨问你这路车去不去 Bedok，你也不清楚。", "en": "Sorry, I don't know.", "zh": "不好意思，我不知道。", "accept": ["I don't know."]},
+    {"id": "u02.d02", "word": "hear", "scene": "在 MRT 上和朋友打电话，车厢里太吵了。", "en": "Sorry, I can't hear you.", "zh": "不好意思，我听不到你说话。", "note": "can't = 不能；hear = 听到", "accept": ["I can't hear you."]},
+    {"id": "u02.d03", "word": "easy", "scene": "周末和朋友喝咖啡，她问你学英语难不难。", "en": "English is not easy.", "zh": "英语不容易。", "note": "easy = 容易", "accept": ["English is not very easy."]},
+    {"id": "u02.d04", "word": "fast", "scene": "晚上和家人看新加坡电视新闻，男主播说得很快。", "en": "He speaks very fast.", "zh": "他说得好快。"},
+    {"id": "u02.d05", "word": "word", "scene": "在 NTUC，包装上有一个英文单词你不认识，问身边的朋友。", "en": "What is this word?", "zh": "这个词是什么？", "accept": ["What's this word?"]},
+    {"id": "u02.d06", "word": "little", "scene": "在诊所，护士问你会不会说英语。", "en": "I speak a little English.", "zh": "我会说一点英语。", "note": "a little = 一点点"},
+    {"id": "u02.d07", "word": "chinese", "scene": "在诊所挂号，你想问护士会不会说华语。", "en": "Can you speak Chinese?", "zh": "你会说华语吗？"},
+    {"id": "u02.d08", "word": "sure", "scene": "出门前，邻居问你今天会不会下雨。", "en": "I'm not sure.", "zh": "我不太确定。", "note": "not sure = 不确定", "accept": ["I am not sure."]},
+    {"id": "u02.d09", "word": "address", "scene": "朋友约你周末去她家玩，你要问她住哪里。", "en": "What is your address?", "zh": "你的地址是什么？", "accept": ["What's your address?"]},
+    {"id": "u02.d10", "word": "lost", "scene": "第一次去朋友住的组屋区，转了几圈都找不到路。", "en": "Sorry, I'm lost.", "zh": "不好意思，我迷路了。", "note": "lost = 迷路了", "accept": ["I'm lost.", "Sorry, I am lost."]},
+    {"id": "u02.d11", "word": "ready", "scene": "周末朋友在楼下等你，你还在换衣服。", "en": "One moment, I'm not ready.", "zh": "等一下，我还没准备好。", "note": "ready = 准备好了", "accept": ["I'm not ready.", "One moment, I am not ready."]},
+    {"id": "u02.d12", "word": "map", "scene": "出了 MRT 站找不到路，你拿着手机请路人帮你看地图。", "en": "Can you show me on the map?", "zh": "你可以在地图上指给我看吗？", "note": "show me = 指给我看", "accept": ["Can you show me on the map, please?"]}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 迷路了",
+      "lines": [
+        {"en": "It's the weekend. I'm at the MRT.", "zh": "今天是周末。我在 MRT 站。"},
+        {"en": "I need to see my friend today.", "zh": "我今天要去找朋友。"},
+        {"en": "I'm lost. I don't know the way.", "zh": "我迷路了，不知道怎么走。"},
+        {"en": "My phone! It's my friend.", "zh": "手机响了！是我的朋友。"},
+        {"en": "\"Sorry, I can't hear you. Can you say that again?\"", "zh": "\"不好意思，我听不到。可以再说一遍吗？\""},
+        {"en": "I see my neighbour near the MRT.", "zh": "我在 MRT 站附近看到了我的邻居。"},
+        {"en": "\"Can you help me? I'm lost.\"", "zh": "\"你可以帮我一下吗？我迷路了。\""},
+        {"en": "She speaks very fast.", "zh": "她说得好快。"},
+        {"en": "Slowly, please. My English is not very good.", "zh": "请说慢一点，我的英语不太好。"},
+        {"en": "She can speak Chinese. Very good!", "zh": "她会说华语，太好了！"},
+        {"en": "I walk with my neighbour. Now I'm not lost.", "zh": "我和邻居一起走过去。现在我不迷路了。"},
+        {"en": "I say thank you to my neighbour.", "zh": "我跟邻居说了谢谢。"}
+      ]
+    },
+    "dialogue": {
+      "title": "吵吵的 hawker centre",
+      "setting": "星期六中午，Amy 和朋友 Lily 约在 hawker centre 吃饭，周围很吵。",
+      "cast": [
+        {"name": "Lily", "voice": "af_sarah"},
+        {"name": "Uncle", "voice": "am_michael"}
+      ],
+      "lines": [
+        {"speaker": "Lily", "en": "Hi Amy! How are you?", "zh": "嗨，Amy！你好吗？"},
+        {"speaker": "Amy", "en": "Hi Lily! Sorry, I'm late.", "zh": "嗨，Lily！不好意思，我迟到了。"},
+        {"speaker": "Lily", "en": "It's fine. Are you hungry?", "zh": "没关系。你饿不饿？"},
+        {"speaker": "Amy", "en": "Sorry, I can't hear you. Can you say that again?", "zh": "不好意思，我听不到。可以再说一遍吗？"},
+        {"speaker": "Lily", "en": "Are you hungry?", "zh": "你饿不饿？"},
+        {"speaker": "Amy", "en": "Yes, I'm very hungry!", "zh": "饿，我好饿！"},
+        {"speaker": "Lily", "en": "Do you like spicy food?", "zh": "你喜欢吃辣的吗？"},
+        {"speaker": "Amy", "en": "Yes, but not very spicy.", "zh": "喜欢，可是不要太辣。"},
+        {"speaker": "Uncle", "en": "Yes? What do you need?", "zh": "要什么？"},
+        {"speaker": "Amy", "en": "Hi, uncle! Can you make it less spicy?", "zh": "阿叔你好！可以做得不那么辣吗？"},
+        {"speaker": "Uncle", "en": "Yes. One moment, please.", "zh": "好。请稍等。"},
+        {"speaker": "Lily", "en": "Your English is very good, Amy!", "zh": "Amy，你的英语很好啊！"},
+        {"speaker": "Amy", "en": "Thank you. I'm still learning English.", "zh": "谢谢，我还在学英语呢。"}
+      ]
+    }
   },
   "grammar": {
     "title": "don't 就是 do not",
     "body": "说\"我不……\"的时候，在动作前面加 don't：I don't understand（我不明白）。don't 就是 do not 的简写，说话时用 don't 更自然。",
     "examples": [
-      { "en": "I don't understand.", "zh": "我不明白。" },
-      { "en": "I don't know.", "zh": "我不知道。" }
+      {"en": "I don't understand.", "zh": "我不明白。"},
+      {"en": "I don't know.", "zh": "我不知道。"}
     ]
   },
   "dialogue": {
@@ -43,36 +106,38 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi, I want to ask about the Saturday class for my son, the P3 one, is there still a slot?", "zh": "你好，我想问一下我儿子小三的星期六课，还有位子吗？" },
+        "npc": {"en": "Hi, I want to ask about the Saturday class for my son, the P3 one, is there still a slot?", "zh": "你好，我想问一下我儿子小三的星期六课，还有位子吗？"},
         "replies": [
-          { "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n2" },
-          { "en": "Slowly, please.", "zh": "请说慢一点。", "next": "n2" }
+          {"en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n2"},
+          {"en": "Slowly, please.", "zh": "请说慢一点。", "next": "n2"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Sure. The Saturday Chinese class. For Primary 3. Any place left?", "zh": "好的。星期六的华文课，小三的。还有位子吗？" },
+        "npc": {"en": "Sure. The Saturday Chinese class. For Primary 3. Any place left?", "zh": "好的。星期六的华文课，小三的。还有位子吗？"},
         "replies": [
-          { "en": "One moment, please.", "zh": "请稍等。", "next": "n3" },
-          { "en": "Let me check.", "zh": "我查一下。", "next": "n3" }
+          {"en": "One moment, please.", "zh": "请稍等。", "next": "n3"},
+          {"en": "Let me check.", "zh": "我查一下。", "next": "n3"}
         ]
       },
       {
         "id": "n3",
-        "npc": { "en": "Okay, no rush.", "zh": "好的，不急。" },
-        "replies": [{ "en": "Thank you for waiting.", "zh": "谢谢你的耐心等待。", "next": "n4" }]
+        "npc": {"en": "Okay, no rush.", "zh": "好的，不急。"},
+        "replies": [
+          {"en": "Thank you for waiting.", "zh": "谢谢你的耐心等待。", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "So, is there a place for him?", "zh": "那么，还有他的位子吗？" },
+        "npc": {"en": "So, is there a place for him?", "zh": "那么，还有他的位子吗？"},
         "replies": [
-          { "en": "Yes, we have a place.", "zh": "有的，我们还有位子。", "next": "end" },
-          { "en": "Sorry, I don't understand.", "zh": "不好意思，我听不懂。", "next": "n2" }
+          {"en": "Yes, we have a place.", "zh": "有的，我们还有位子。", "next": "end"},
+          {"en": "Sorry, I don't understand.", "zh": "不好意思，我听不懂。", "next": "n2"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "Great, thank you so much!", "zh": "太好了，非常感谢！" },
+        "npc": {"en": "Great, thank you so much!", "zh": "太好了，非常感谢！"},
         "replies": []
       }
     ]

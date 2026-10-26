@@ -30,7 +30,7 @@ describe('a first day', () => {
 
   it('finishing the learn part creates sentence and word cards and counts the day', () => {
     const r = t.learning.completePart({ partId: 'u01:learn', activeMs: 60_000 });
-    expect(r.cardsIntroduced).toBe(4 + 3);
+    expect(r.cardsIntroduced).toBe(4 + 3 + 6); // sentences + words + daily words not already in words
     expect(r.today.dayCounted).toBe(true);
     expect(r.today.streak).toMatchObject({ current: 1, totalDays: 1 });
     expect(r.today.plan.nextPart?.id).toBe('u01:practice');
@@ -42,13 +42,23 @@ describe('a first day', () => {
     t.learning.completePart({ partId: 'u01:learn', activeMs: 0 });
     const again = t.learning.completePart({ partId: 'u01:learn', activeMs: 0 });
     expect(again.cardsIntroduced).toBe(0);
-    expect(t.repos.cards.count()).toBe(7);
+    expect(t.repos.cards.count()).toBe(13); // 4 sentences + 3 words + 6 more 🏠 daily words
   });
 
-  it('the practice part introduces the unit’s sound-pair cards', () => {
+  it('the practice part introduces the unit’s pattern examples and sound-pair cards', () => {
     const r = t.learning.completePart({ partId: 'u01:practice', activeMs: 0 });
-    expect(r.cardsIntroduced).toBe(2);
+    expect(r.cardsIntroduced).toBe(10);
+    expect(r.firstTime).toBe(true);
     expect(t.repos.cards.has('pair:p01.m01')).toBe(true);
+    expect(t.repos.cards.has('example:u01.e08')).toBe(true);
+  });
+
+  it('taking a part again adds only missing cards and does not count as a new part', () => {
+    t.learning.completePart({ partId: 'u01:practice', activeMs: 0 });
+    t.db.run("DELETE FROM cards WHERE id = 'example:u01.e01'");
+    const r = t.learning.completePart({ partId: 'u01:practice', activeMs: 0 });
+    expect(r).toMatchObject({ firstTime: false, cardsIntroduced: 1 });
+    expect(r.today.partsCompletedToday).toBe(1);
   });
 
   it('rejects unknown parts with NOT_FOUND', () => {
@@ -65,7 +75,7 @@ describe('reviews', () => {
 
   it('brings new cards back within two days as listening exercises', () => {
     const q = t.learning.getReviewQueue();
-    expect(q).toHaveLength(7);
+    expect(q).toHaveLength(13);
     expect(new Set(q.map((c) => c.exercise))).toEqual(new Set(['listen-choose']));
   });
 
@@ -80,7 +90,7 @@ describe('reviews', () => {
       expect(v.reviewsDoneToday).toBeGreaterThan(0);
     }
     const v = t.learning.getToday();
-    expect(v.reviewsDoneToday).toBe(7);
+    expect(v.reviewsDoneToday).toBe(13);
     expect(v.plan.reviewIds).toEqual([]);
     expect(v.dayCounted).toBe(true);
     expect(v.streak.current).toBe(2);
@@ -90,7 +100,7 @@ describe('reviews', () => {
     t.learning.updateSettings({ reviewCap: 5 });
     const v = t.learning.getToday();
     expect(v.plan.reviewIds).toHaveLength(5);
-    expect(v.plan.deferredReviews).toBe(2);
+    expect(v.plan.deferredReviews).toBe(8);
   });
 
   it('switches to speaking once a card has been seen twice', () => {
@@ -99,7 +109,7 @@ describe('reviews', () => {
       t.learning.submitReview({ cardId: id, exercise: 'listen-choose', grade: 'good', activeMs: 0 });
     }
     expect(t.repos.cards.get(id)!.reps).toBeGreaterThanOrEqual(2);
-    const views = t.learning.getPracticeSet('u01');
+    const views = t.learning.getPracticeSet({ scope: 'unit', unitId: 'u01' });
     expect(views.find((v) => v.cardId === id)?.exercise).toBe('speak-from-zh');
   });
 
@@ -115,9 +125,25 @@ describe('reviews', () => {
         activeMs: 0,
       });
     }
-    expect(t.learning.getPracticeSet('u01').find((v) => v.cardId === 'chunk:u01.c01')?.exercise).toBe(
-      'recall-self-rate',
-    );
+    expect(
+      t.learning.getPracticeSet({ scope: 'unit', unitId: 'u01' }).find((v) => v.cardId === 'chunk:u01.c01')
+        ?.exercise,
+    ).toBe('recall-self-rate');
+  });
+
+  it('practice sets: recent parts, one unit, or a random draw, without rescheduling', () => {
+    t.learning.completePart({ partId: 'u01:practice', activeMs: 0 });
+    const due = t.repos.cards.get('chunk:u01.c01')!.due;
+    const recent = t.learning.getPracticeSet({ scope: 'recent' }).map((c) => c.cardId);
+    expect(recent).toContain('chunk:u01.c01');
+    expect(recent).toContain('example:u01.e01');
+    expect(t.learning.getPracticeSet({ scope: 'unit', unitId: 'u01' })).toHaveLength(recent.length);
+    expect(t.learning.getPracticeSet({ scope: 'random', count: 3 })).toHaveLength(3);
+    expect(t.repos.cards.get('chunk:u01.c01')!.due).toBe(due);
+
+    t.clock.advanceDays(8);
+    expect(t.learning.getPracticeSet({ scope: 'recent' })).toEqual([]);
+    expect(() => t.learning.getPracticeSet({ scope: 'unit', unitId: 'u99' })).toThrow(AppError);
   });
 
   it('rejects reviews of unknown cards', () => {
@@ -177,7 +203,7 @@ describe('study days and the streak', () => {
     const v = t.learning.getToday();
     expect(v.plan.welcomeBack).toBe(true);
     expect(v.plan.reviewIds).toHaveLength(10);
-    expect(v.plan.deferredReviews).toBe(4);
+    expect(v.plan.deferredReviews).toBe(8);
   });
 });
 

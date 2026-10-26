@@ -5,34 +5,96 @@
   "titleEn": "How much is it?",
   "goal": "能问价格、说时间、报电话号码、说星期几。",
   "chunks": [
-    { "id": "u04.c01", "en": "How much is it?", "zh": "多少钱？", "accept": ["How much?", "How much is this?"] },
-    { "id": "u04.c02", "en": "It's $5.", "zh": "五块钱。", "note": "$5 读作 five dollars。It's 就是 It is。", "accept": ["It is $5.", "5 dollars."] },
-    { "id": "u04.c03", "en": "What time is it?", "zh": "现在几点？" },
-    { "id": "u04.c04", "en": "It's 3pm.", "zh": "现在下午三点。", "note": "3pm 读作 three p m；早上是 am，下午和晚上是 pm。", "accept": ["It is 3pm."] },
-    { "id": "u04.c05", "en": "My phone number is 9123 4567.", "zh": "我的电话号码是 9123 4567。", "note": "电话号码一个数字一个数字地读：nine one two three……" },
-    { "id": "u04.c06", "en": "Monday to Friday.", "zh": "星期一到星期五。" },
-    { "id": "u04.c07", "en": "See you on Saturday.", "zh": "星期六见。" },
-    { "id": "u04.c08", "en": "Is it open on Sunday?", "zh": "星期天开门吗？" },
-    { "id": "u04.c09", "en": "Can you give me a discount?", "zh": "可以便宜一点吗？", "note": "在小店、市场可以试试；大超市一般不讲价。" }
+    {"id": "u04.c01", "en": "How much is it?", "zh": "多少钱？", "accept": ["How much?", "How much is this?"]},
+    {"id": "u04.c02", "en": "It's $5.", "zh": "五块钱。", "note": "$5 读作 five dollars。It's 就是 It is。", "accept": ["It is $5.", "5 dollars."]},
+    {"id": "u04.c03", "en": "What time is it?", "zh": "现在几点？"},
+    {"id": "u04.c04", "en": "It's 3pm.", "zh": "现在下午三点。", "note": "3pm 读作 three p m；早上是 am，下午和晚上是 pm。", "accept": ["It is 3pm."]},
+    {"id": "u04.c05", "en": "My phone number is 9123 4567.", "zh": "我的电话号码是 9123 4567。", "note": "电话号码一个数字一个数字地读：nine one two three……"},
+    {"id": "u04.c06", "en": "Monday to Friday.", "zh": "星期一到星期五。"},
+    {"id": "u04.c07", "en": "See you on Saturday.", "zh": "星期六见。"},
+    {"id": "u04.c08", "en": "Is it open on Sunday?", "zh": "星期天开门吗？"},
+    {"id": "u04.c09", "en": "Can you give me a discount?", "zh": "可以便宜一点吗？", "note": "在小店、市场可以试试；大超市一般不讲价。"}
   ],
   "words": ["much", "time", "phone", "number", "monday", "friday", "saturday", "sunday", "open", "discount"],
-  "drill": {
-    "pattern": "See you on ___.",
-    "zh": "星期几见",
-    "fills": [
-      { "en": "Monday", "zh": "星期一见" },
-      { "en": "Wednesday", "zh": "星期三见" },
-      { "en": "Friday", "zh": "星期五见" },
-      { "en": "Saturday", "zh": "星期六见" },
-      { "en": "Sunday", "zh": "星期天见" }
+  "patterns": {
+    "frames": [
+      {"frame": "How much is ___?", "zh": "……多少钱？", "usage": "问价钱。把你想问的东西放进 ___：this（这个）、the chicken rice（鸡饭）。"},
+      {"frame": "What time ___?", "zh": "几点……？", "usage": "问时间：几点开门、几点开会、几点能来。What time 放在最前面，后面接你想问的事。"}
+    ],
+    "examples": [
+      {"id": "u04.e01", "scene": "在巴刹，你指着一袋苹果问摊主。", "en": "How much is this?", "zh": "这个多少钱？", "accept": ["How much is it?"]},
+      {"id": "u04.e02", "scene": "手机没电了，你问旁边的同事现在几点。", "en": "What time is it?", "zh": "现在几点？", "accept": ["Sorry, what time is it?"]},
+      {"id": "u04.e03", "scene": "路过 HDB 楼下的理发店，想问剪一次头发多少钱。", "en": "How much is a haircut?", "zh": "剪一次头发多少钱？", "note": "haircut = 剪头发、理发"},
+      {"id": "u04.e04", "scene": "老板说今天要开会，你问他几点。", "en": "What time is the meeting?", "zh": "几点开会？"},
+      {"id": "u04.e05", "scene": "在 hawker centre 的鸡饭摊前，看不到价钱牌。", "en": "How much is the chicken rice?", "zh": "鸡饭多少钱？"},
+      {"id": "u04.e06", "scene": "晚上想去诊所看病，先打电话问几点关门。", "en": "What time do you close?", "zh": "你们几点关门？", "note": "close = 关门、打烊"},
+      {"id": "u04.e07", "scene": "家长想多买一本课本，你不知道价钱，问同事。", "en": "How much is this book?", "zh": "这本书多少钱？"},
+      {"id": "u04.e08", "scene": "家里水管坏了，师傅在电话里说今天可以来。", "en": "What time can you come?", "zh": "你几点能来？"},
+      {"id": "u04.e09", "scene": "打电话给附近的餐馆叫外卖，想知道送餐费。", "en": "How much is the delivery?", "zh": "送餐费多少钱？", "note": "delivery = 送货、外卖配送", "accept": ["How much is delivery?"]},
+      {"id": "u04.e10", "scene": "今天诊所关门了，你想明天一早再来。", "en": "What time does the clinic open tomorrow?", "zh": "诊所明天几点开门？", "accept": ["What time does the clinic open?"]}
     ]
+  },
+  "daily": [
+    {"id": "u04.d01", "word": "expensive", "scene": "周末在商场看到一个很漂亮的包，朋友问你买不买。", "en": "It's very expensive.", "zh": "太贵了。", "note": "expensive = 贵", "accept": ["It is very expensive.", "It's too expensive."]},
+    {"id": "u04.d02", "word": "cash", "scene": "早上在咖啡店买早餐，摊主说只收现金，你的钱包里没有。", "en": "Sorry, I don't have cash.", "zh": "不好意思，我没有现金。", "accept": ["I don't have cash."]},
+    {"id": "u04.d03", "word": "card", "scene": "在家附近的诊所看完病，要付钱。", "en": "Can I pay by card?", "zh": "可以刷卡吗？", "note": "pay by card = 刷卡付钱"},
+    {"id": "u04.d04", "word": "change", "scene": "在巴士站，邻居问你有没有零钱可以换给她。", "en": "Sorry, I have no change.", "zh": "不好意思，我没有零钱。", "note": "change = 零钱；找的钱", "accept": ["Sorry, I don't have change."]},
+    {"id": "u04.d05", "word": "cents", "scene": "在 NTUC 结账，孩子问你一个塑料袋多少钱。", "en": "It's 5 cents.", "zh": "五分钱。", "note": "100 cents = 1 dollar", "accept": ["It is 5 cents.", "5 cents."]},
+    {"id": "u04.d06", "word": "week", "scene": "朋友约你这几天一起吃饭，可是你每天都要加班。", "en": "I'm busy this week.", "zh": "我这星期很忙。", "note": "this week = 这个星期", "accept": ["I am busy this week."]},
+    {"id": "u04.d07", "word": "o'clock", "scene": "早上家人在房间里问你现在几点。", "en": "It's 7 o'clock.", "zh": "七点了。", "note": "整点说 o'clock：7 o'clock = 七点整", "accept": ["It is 7 o'clock.", "It's 7."]},
+    {"id": "u04.d08", "word": "dollars", "scene": "朋友问你新买的 T 恤多少钱。", "en": "It's 10 dollars.", "zh": "十块钱。", "accept": ["It is 10 dollars.", "It's $10."]},
+    {"id": "u04.d09", "word": "half", "scene": "在商场看到大减价的牌子，你高兴地告诉朋友。", "en": "It's half price today!", "zh": "今天半价！", "note": "half price = 半价", "accept": ["It is half price today!"]},
+    {"id": "u04.d10", "word": "noon", "scene": "和朋友约星期六中午一起吃饭。", "en": "See you at noon.", "zh": "中午见。", "note": "noon = 中午十二点"},
+    {"id": "u04.d11", "word": "date", "scene": "在诊所填表格，你忘了今天是几号。", "en": "What is the date today?", "zh": "今天几号？", "note": "date = 日期（几月几号）", "accept": ["What's the date today?"]},
+    {"id": "u04.d12", "word": "dinner", "scene": "朋友来家里玩，问你们家几点吃晚饭。", "en": "Dinner is at 7pm.", "zh": "晚饭七点吃。", "accept": ["Dinner is at 7."]}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期六",
+      "lines": [
+        {"en": "It's Saturday. It's 9 o'clock.", "zh": "今天是星期六，九点了。"},
+        {"en": "I need a haircut today.", "zh": "我今天要去剪头发。"},
+        {"en": "\"How much is a haircut?\"", "zh": "\"剪一次头发多少钱？\""},
+        {"en": "It's 10 dollars. Not expensive!", "zh": "十块钱，不贵！"},
+        {"en": "At noon, I see my friend.", "zh": "中午，我去见朋友。"},
+        {"en": "We have chicken rice.", "zh": "我们吃鸡饭。"},
+        {"en": "The chicken rice is $5.", "zh": "鸡饭五块钱一份。"},
+        {"en": "We see a nice phone.", "zh": "我们看到一部很好看的手机。"},
+        {"en": "It's very expensive.", "zh": "很贵。"},
+        {"en": "Today it's half price!", "zh": "可是今天半价！"},
+        {"en": "\"Can I pay by card?\"", "zh": "\"可以刷卡吗？\""},
+        {"en": "I'm home at 6 o'clock. Dinner is at 7pm.", "zh": "我六点到家，七点吃晚饭。"}
+      ]
+    },
+    "dialogue": {
+      "title": "打电话问诊所",
+      "setting": "星期六晚上，Amy 有点不舒服，打电话问家附近的诊所明天开不开门。",
+      "cast": [
+        {"name": "Nurse", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Nurse", "en": "Good evening! How can I help you?", "zh": "晚上好！有什么可以帮你？"},
+        {"speaker": "Amy", "en": "Hi. What time does the clinic open tomorrow?", "zh": "你好。诊所明天几点开门？"},
+        {"speaker": "Nurse", "en": "Tomorrow is Sunday. Sorry, not on Sunday.", "zh": "明天是星期天。不好意思，星期天不开。"},
+        {"speaker": "Amy", "en": "Okay. What time do you close today?", "zh": "好的。你们今天几点关门？"},
+        {"speaker": "Nurse", "en": "At 9pm.", "zh": "晚上九点。"},
+        {"speaker": "Amy", "en": "What time is it now?", "zh": "现在几点了？"},
+        {"speaker": "Nurse", "en": "It's 8 o'clock. Do you want to come now?", "zh": "八点了。你要现在过来吗？"},
+        {"speaker": "Amy", "en": "Yes, please.", "zh": "好的，麻烦了。"},
+        {"speaker": "Nurse", "en": "Can I have your phone number?", "zh": "可以给我你的电话号码吗？"},
+        {"speaker": "Amy", "en": "My phone number is 9123 4567.", "zh": "我的电话号码是 9123 4567。"},
+        {"speaker": "Nurse", "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？"},
+        {"speaker": "Amy", "en": "9123 4567.", "zh": "9123 4567。"},
+        {"speaker": "Nurse", "en": "Thank you. See you later!", "zh": "谢谢，一会儿见！"}
+      ]
+    }
   },
   "grammar": {
     "title": "星期几用 on，几点钟用 at",
     "body": "说\"在星期几\"，前面加 on：on Monday、on Saturday。说\"在几点\"，前面加 at：at 3pm。",
     "examples": [
-      { "en": "See you on Monday.", "zh": "星期一见。" },
-      { "en": "The class starts at 4pm.", "zh": "课下午四点开始。" }
+      {"en": "See you on Monday.", "zh": "星期一见。"},
+      {"en": "The class starts at 4pm.", "zh": "课下午四点开始。"}
     ]
   },
   "phonics": "p02",
@@ -45,33 +107,46 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hello! Looking for something?", "zh": "你好！想找什么？" },
-        "replies": [{ "en": "How much is it?", "zh": "这个多少钱？", "next": "n2" }]
+        "npc": {"en": "Hello! Looking for something?", "zh": "你好！想找什么？"},
+        "replies": [
+          {"en": "How much is it?", "zh": "这个多少钱？", "next": "n2"},
+          {"en": "Hi, how much is this one?", "zh": "你好，这个多少钱？", "next": "n2"}
+        ]
       },
       {
         "id": "n2",
-        "npc": { "en": "This one? It's 25 dollars.", "zh": "这个吗？25 块。" },
+        "npc": {"en": "This one? It's 25 dollars.", "zh": "这个吗？25 块。"},
         "replies": [
-          { "en": "Can you give me a discount?", "zh": "可以便宜一点吗？", "next": "n3" },
-          { "en": "Okay.", "zh": "好的。", "next": "n4" }
+          {"en": "Can you give me a discount?", "zh": "可以便宜一点吗？", "next": "n3"},
+          {"en": "Okay.", "zh": "好的。", "next": "n4"}
         ]
       },
       {
         "id": "n3",
-        "npc": { "en": "For you, 20 dollars. Okay?", "zh": "给你 20 块，可以吗？" },
-        "replies": [{ "en": "Okay, thank you.", "zh": "好的，谢谢。", "next": "n4" }]
+        "npc": {"en": "For you, 20 dollars. Okay?", "zh": "给你 20 块，可以吗？"},
+        "replies": [
+          {"en": "Okay, thank you.", "zh": "好的，谢谢。", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Cash or card?", "zh": "付现金还是刷卡？" },
+        "npc": {"en": "Cash or card?", "zh": "付现金还是刷卡？"},
         "replies": [
-          { "en": "Card, please.", "zh": "刷卡，谢谢。", "next": "end" },
-          { "en": "Cash.", "zh": "现金。", "next": "end" }
+          {"en": "Card, please.", "zh": "刷卡，谢谢。", "next": "n5"},
+          {"en": "Cash.", "zh": "现金。", "next": "n5"}
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {"en": "Here you go. Anything else?", "zh": "给你。还要别的吗？"},
+        "replies": [
+          {"en": "What time do you close today?", "zh": "你们今天几点关门？", "next": "end"},
+          {"en": "No, thank you.", "zh": "不用了，谢谢。", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "Here you go. Thank you, have a nice day!", "zh": "给你。谢谢，祝你今天愉快！" },
+        "npc": {"en": "We close at 10pm. Thank you, have a nice day!", "zh": "我们晚上 10 点关门。谢谢，祝你今天愉快！"},
         "replies": []
       }
     ]

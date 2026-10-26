@@ -1,0 +1,43 @@
+{
+  "week": 4,
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期五",
+      "lines": [
+        {"en": "It's Friday. I'm at the front desk.", "zh": "今天是星期五，我在前台。"},
+        {"en": "\"Hello, Bright Learning Centre.\"", "zh": "\"你好，这里是 Bright 补习中心。\""},
+        {"en": "\"Sorry, she is in class now.\"", "zh": "\"不好意思，她现在在上课。\""},
+        {"en": "\"Can I take a message?\"", "zh": "\"我可以帮您留言吗？\""},
+        {"en": "At night, I take the MRT home.", "zh": "晚上，我坐 MRT 回家。"},
+        {"en": "The MRT is very crowded.", "zh": "MRT 好挤。"},
+        {"en": "Now it's raining! Where is my umbrella?", "zh": "这时候下雨了！我的雨伞呢？"},
+        {"en": "I will take a taxi.", "zh": "我打的士吧。"},
+        {"en": "\"Please turn left here. Please stop here.\"", "zh": "\"请在这里左转。请在这里停。\""},
+        {"en": "I'm at home now.", "zh": "我现在到家了。"},
+        {"en": "My phone has no battery. I need to charge my phone.", "zh": "我的手机没电了，要给手机充电。"},
+        {"en": "\"Hi, Mum! Can we have a video call?\"", "zh": "\"妈，你好！我们可以视频通话吗？\""}
+      ]
+    },
+    "dialogue": {
+      "title": "去朋友家迷路了",
+      "setting": "星期六下午，Amy 第一次去朋友 Mei 的新家，在组屋区里找不到路，给 Mei 打电话。",
+      "cast": [
+        {"name": "Mei", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Mei", "en": "Hello? Amy?", "zh": "喂？Amy？"},
+        {"speaker": "Amy", "en": "Hi Mei! Sorry, I'm late. The traffic is very bad.", "zh": "嗨 Mei！不好意思，我迟到了，路上很堵。"},
+        {"speaker": "Mei", "en": "It's okay. Where are you now?", "zh": "没关系。你现在在哪里？"},
+        {"speaker": "Amy", "en": "I'm at the bus stop. How do I get to your house?", "zh": "我在巴士站。去你家怎么走？"},
+        {"speaker": "Mei", "en": "Go straight and turn left.", "zh": "一直往前走，然后左转。"},
+        {"speaker": "Amy", "en": "Sorry, the line is not clear. Can you say that again?", "zh": "不好意思，信号不太好。可以再说一遍吗？"},
+        {"speaker": "Mei", "en": "Go straight. Turn left.", "zh": "往前走，左转。"},
+        {"speaker": "Amy", "en": "Okay. Is it far?", "zh": "好的。远吗？"},
+        {"speaker": "Mei", "en": "No. It's Block 456. I'm at the lobby.", "zh": "不远。是 456 座，我在大堂等你。"},
+        {"speaker": "Amy", "en": "Okay, I'm coming.", "zh": "好的，我马上来。"},
+        {"speaker": "Mei", "en": "It's raining. Do you have an umbrella?", "zh": "下雨了。你有雨伞吗？"},
+        {"speaker": "Amy", "en": "Yes, I do. See you!", "zh": "有的。待会儿见！"}
+      ]
+    }
+  }
+}

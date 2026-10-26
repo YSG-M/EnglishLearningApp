@@ -1,6 +1,6 @@
-/** 学新句子: intro → each chunk (listen, see hints, shadow) → grammar tip → word list. */
+/** 学新句子: intro → each chunk (listen, see hints, shadow) → grammar tip → 🏠 daily words → word list. */
 import { useState } from 'react';
-import type { UnitItem } from '@shared/content/bundle';
+import type { ChunkItem, DailyItem, UnitItem } from '@shared/content/bundle';
 import { PlayRow, WordAudio } from '../../components/AudioButtons';
 import { ChineseText } from '../../components/ChineseText';
 import { Card } from '../../components/ui';
@@ -9,13 +9,19 @@ import { useApp } from '../../state/AppContext';
 import { SentenceCard } from './SentenceCard';
 import { Stepper } from './Stepper';
 
-type Step = { type: 'intro' } | { type: 'chunk'; index: number } | { type: 'grammar' } | { type: 'words' };
+type Step =
+  | { type: 'intro' }
+  | { type: 'chunk'; index: number }
+  | { type: 'grammar' }
+  | { type: 'daily'; index: number }
+  | { type: 'words' };
 
 export function learnSteps(unit: UnitItem): Step[] {
   return [
     { type: 'intro' },
     ...unit.chunks.map((_, index) => ({ type: 'chunk' as const, index })),
     ...(unit.grammar ? [{ type: 'grammar' as const }] : []),
+    ...unit.daily.map((_, index) => ({ type: 'daily' as const, index })),
     { type: 'words' },
   ];
 }
@@ -65,13 +71,46 @@ export function WordList({ keys }: { keys: string[] }) {
               <WordAudio clip={w.audio} text={w.text} />
               <span className="word-en">{w.text}</span>
               <span className="word-zh">{w.zh}</span>
-              {settings.showHints && w.hint.hanzi ? <span className="hint-hanzi">{w.hint.hanzi}</span> : null}
+              {settings.showHints && w.hint.pinyin ? (
+                <span className="hint-pinyin">{w.hint.pinyin}</span>
+              ) : null}
               {w.hint.note ? <span className="word-note">{w.hint.note}</span> : null}
             </li>
           );
         })}
       </ul>
     </Card>
+  );
+}
+
+function ChunkStep({ unit, chunk }: { unit: UnitItem; chunk: ChunkItem }) {
+  const frame = chunk.pattern ? unit.patterns.frames[chunk.pattern.frame] : undefined;
+  return (
+    <SentenceCard
+      sentence={chunk}
+      itemId={chunk.id}
+      {...(chunk.note ? { note: chunk.note } : {})}
+      accept={chunk.accept ?? []}
+      {...(chunk.pattern && frame
+        ? { slot: chunk.pattern.slot, badge: zh.part.patternBadge(frame.frame) }
+        : {})}
+    />
+  );
+}
+
+function DailyStep({ daily }: { daily: DailyItem }) {
+  const { bundle } = useApp();
+  const word = bundle.lexicon[daily.word];
+  return (
+    <SentenceCard
+      sentence={daily}
+      itemId={daily.id}
+      scene={daily.scene}
+      slot={daily.slot}
+      {...(word ? { badge: zh.part.dailyBadge(word.text, word.zh) } : {})}
+      {...(daily.note ? { note: daily.note } : {})}
+      accept={daily.accept ?? []}
+    />
   );
 }
 
@@ -83,16 +122,13 @@ export function LearnPart({ unit, onFinish }: { unit: UnitItem; onFinish(): void
     <Stepper index={i} total={steps.length} onIndex={setI} onFinish={onFinish}>
       {step.type === 'intro' ? <UnitIntro unit={unit} /> : null}
       {step.type === 'chunk' ? (
-        <SentenceCard
-          key={unit.chunks[step.index]!.id}
-          sentence={unit.chunks[step.index]!}
-          itemId={unit.chunks[step.index]!.id}
-          {...(unit.chunks[step.index]!.note ? { note: unit.chunks[step.index]!.note } : {})}
-          accept={unit.chunks[step.index]!.accept ?? []}
-        />
+        <ChunkStep key={step.index} unit={unit} chunk={unit.chunks[step.index]!} />
       ) : null}
       {step.type === 'grammar' && unit.grammar ? <GrammarTip grammar={unit.grammar} /> : null}
-      {step.type === 'words' ? <WordList keys={unit.words} /> : null}
+      {step.type === 'daily' ? <DailyStep key={step.index} daily={unit.daily[step.index]!} /> : null}
+      {step.type === 'words' ? (
+        <WordList keys={[...new Set([...unit.words, ...unit.daily.map((d) => d.word)])]} />
+      ) : null}
     </Stepper>
   );
 }

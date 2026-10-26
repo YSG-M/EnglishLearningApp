@@ -12,13 +12,18 @@ beforeEach(() => {
 });
 afterEach(() => rmSync(dir, { recursive: true, force: true }));
 
-const v2: Migration = { version: 2, name: 'test column', sql: 'ALTER TABLE cards ADD COLUMN note TEXT;' };
+const LATEST = MIGRATIONS.at(-1)!.version;
+const next: Migration = {
+  version: LATEST + 1,
+  name: 'test column',
+  sql: 'ALTER TABLE cards ADD COLUMN note TEXT;',
+};
 
 describe('openDatabase', () => {
   it('creates the latest schema and records the migration', () => {
     const db = openDatabase(':memory:');
     expect(db.userVersion).toBe(MIGRATIONS.at(-1)!.version);
-    expect(db.all('SELECT type FROM app_events')).toEqual([{ type: 'migration' }]);
+    expect(db.all('SELECT type FROM app_events')).toEqual(MIGRATIONS.map(() => ({ type: 'migration' })));
     db.close();
   });
 
@@ -28,12 +33,12 @@ describe('openDatabase', () => {
     openDatabase(file, { backupsDir: backups }).close();
     expect(existsSync(backups)).toBe(false); // a brand new database has nothing to back up
 
-    const db = openDatabase(file, { backupsDir: backups, migrations: [...MIGRATIONS, v2] });
-    expect(db.userVersion).toBe(2);
+    const db = openDatabase(file, { backupsDir: backups, migrations: [...MIGRATIONS, next] });
+    expect(db.userVersion).toBe(LATEST + 1);
     db.close();
     const files = readdirSync(backups);
     expect(files).toHaveLength(1);
-    expect(files[0]).toMatch(/^learning-v1-.*\.sqlite$/);
+    expect(files[0]).toMatch(new RegExp(`^learning-v${LATEST}-.*\\.sqlite$`));
   });
 
   it('keeps data across reopen', () => {
@@ -48,7 +53,7 @@ describe('openDatabase', () => {
 
   it('refuses a database written by a newer app version', () => {
     const file = join(dir, 'learning.sqlite');
-    openDatabase(file, { migrations: [...MIGRATIONS, v2] }).close();
+    openDatabase(file, { migrations: [...MIGRATIONS, next] }).close();
     expect(() => openDatabase(file)).toThrow(/newer than this app supports/);
   });
 
@@ -69,14 +74,39 @@ describe('openDatabase', () => {
     const file = join(dir, 'learning.sqlite');
     openDatabase(file).close();
     const bad: Migration = {
-      version: 2,
+      version: LATEST + 1,
       name: 'bad',
       sql: 'ALTER TABLE cards ADD COLUMN x TEXT; SELECT * FROM nope;',
     };
     expect(() => openDatabase(file, { migrations: [...MIGRATIONS, bad] })).toThrow();
     const db = openDatabase(file);
-    expect(db.userVersion).toBe(1);
+    expect(db.userVersion).toBe(LATEST);
     expect(db.all("SELECT name FROM pragma_table_info('cards') WHERE name = 'x'")).toEqual([]);
+    db.close();
+  });
+});
+
+describe('migration 2: pattern example cards', () => {
+  it('keeps existing cards and accepts the new card kind', () => {
+    const file = join(dir, 'learning.sqlite');
+    const v1 = openDatabase(file, { migrations: MIGRATIONS.filter((m) => m.version === 1) });
+    v1.run(
+      `INSERT INTO cards (id, kind, due, stability, difficulty, scheduled_days, learning_steps, reps, lapses, state, last_review, introduced_at)
+       VALUES ('chunk:u01.c01', 'chunk', '2026-10-25T00:00:00.000Z', 1, 5, 1, 0, 1, 0, 2, NULL, '2026-10-24T00:00:00.000Z')`,
+    );
+    expect(() =>
+      v1.run(
+        `INSERT INTO cards (id, kind, due, stability, difficulty, scheduled_days, learning_steps, reps, lapses, state, last_review, introduced_at)
+         VALUES ('example:u01.e01', 'example', 'x', 1, 5, 1, 0, 1, 0, 2, NULL, 'x')`,
+      ),
+    ).toThrow();
+    v1.close();
+
+    const db = openDatabase(file, { backupsDir: join(dir, 'backups') });
+    const { cards } = createRepositories(db);
+    expect(cards.get('chunk:u01.c01')).toMatchObject({ kind: 'chunk', reps: 1 });
+    cards.upsert({ ...cards.get('chunk:u01.c01')!, id: 'example:u01.e01', kind: 'example' });
+    expect(cards.allIds()).toEqual(['chunk:u01.c01', 'example:u01.e01']);
     db.close();
   });
 });

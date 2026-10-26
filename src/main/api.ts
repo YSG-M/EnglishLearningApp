@@ -2,7 +2,7 @@
  * Implements the AppApi contract (src/shared/ipc.ts) by delegating to services.
  * Contains no Electron imports, so the whole API can be exercised in tests.
  */
-import type { AppApi, AppInfo, RecognizeInput } from '../shared/ipc';
+import type { AppApi, AppInfo, PracticeScope, RecognizeInput } from '../shared/ipc';
 import type { ContentService } from './services/contentService';
 import type { DiagnosticsService } from './services/diagnosticsService';
 import type { LearningService } from './services/learningService';
@@ -71,7 +71,7 @@ export function createAppApi(d: ApiDeps): AppApi {
     review: {
       getQueue: asyncify(() => d.learning.getReviewQueue()),
       submit: asyncify((input) => d.learning.submitReview(input)),
-      getPracticeSet: asyncify((unitId: string) => d.learning.getPracticeSet(unitId)),
+      getPracticeSet: asyncify((scope: PracticeScope) => d.learning.getPracticeSet(scope)),
     },
     speech: {
       getStatus: asyncify(() => d.asr.getStatus()),

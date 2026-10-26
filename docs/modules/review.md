@@ -20,10 +20,21 @@
 
 语音识别中途不可用时，`speak-from-zh` 会自动换成 `recall-self-rate`，复习不会中断。
 
-## 额外练习
+## 复习页的三个区域
 
-课程页每个学过的单元有"🔁 练一练"：`review.getPracticeSet(unitId)` 取这个单元的卡片，用同一个 `ReviewSession` 做，但 `submit={false}`，**不改变复习安排**。
+| 区域          | 数据                                                                                                                           | 是否改变复习安排 |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| 📅 今天的复习 | `review.getQueue()`（FSRS 到期卡片，按每日上限截好）                                                                           | 会（`submit`）   |
+| 🆕 最近学的   | `review.getPracticeSet({ scope: 'recent' })`：最近 `RECENT_DAYS = 7` 天**第一次完成**的课程部分产生的所有卡片                  | 不会             |
+| 📚 全部学过的 | 学过的单元列表（`parts.listCompleted`）；每个单元 `{ scope: 'unit', unitId }`；"随机抽 20 张" `{ scope: 'random', count: 20 }` | 不会             |
+
+额外练习用同一个 `ReviewSession`，但 `submit={false}`。原因：自由练习如果也改间隔，一张卡一天练几遍，算法会以为已经记牢，把下次复习推得太远。
+
+## 句型例句卡片（`example`）
+
+句型课结束时，10 个例句各建一张卡片。题型和句子卡片一样（先"听音选意思"，2 次以后"看中文说英文"），但"看中文说英文"和"自己评分"会在中文上面显示 🎬 场景。
 
 ## 测试
 
-`src/renderer/src/features/review/ReviewSession.test.tsx`：选对 / 选错（含练习轮不重复提交）、自我评分、语音不可用时降级、放弃、听辨题、额外练习不提交。
+- `src/renderer/src/features/review/ReviewSession.test.tsx`：选对 / 选错（含练习轮不重复提交）、自我评分、语音不可用时降级、放弃、听辨题、额外练习不提交。
+- `src/renderer/src/pages/ReviewPage.test.tsx`：三个区域、单元练习不提交。

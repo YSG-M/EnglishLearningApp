@@ -15,7 +15,9 @@ export type Route =
   | { name: 'phrasebook' }
   | { name: 'progress' }
   | { name: 'settings' }
-  | { name: 'part'; partId: string };
+  | { name: 'part'; partId: string; from?: 'today' | 'course' }
+  | { name: 'unitSummary'; unitId: string; from?: Route }
+  | { name: 'weekSummary'; week: number; from?: Route };
 
 export interface AppState {
   bundle: ContentBundle;

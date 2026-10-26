@@ -17,11 +17,13 @@ import { markStudyDay, MIN_ACTIVE_MS, reconcileStreak } from '../../shared/domai
 import type {
   CompletePartInput,
   CompletePartResult,
+  PracticeScope,
   ProgressStats,
   ReviewCardView,
   ReviewSubmission,
   TodayView,
 } from '../../shared/ipc';
+import { RECENT_DAYS } from '../../shared/ipc';
 import { Settings } from '../../shared/settings';
 import type { Clock } from '../clock';
 import type { Database } from '../db/database';
@@ -156,20 +158,25 @@ export class LearningService {
       this.reconcileOncePerDay();
       const now = this.d.clock.now();
       const day = toDay(now);
+      const firstTime = !this.d.repos.parts.isComplete(part.id);
+      // Also on a repeat: content added after she first took the part (e.g. pattern examples)
+      // gets its cards here instead of never.
       let introduced = 0;
-      if (!this.d.repos.parts.isComplete(part.id)) {
-        for (const id of cardsForPart(bundle, part)) {
-          if (this.d.repos.cards.has(id)) continue;
-          this.d.repos.cards.upsert(introduceCard(id, parseCardId(id).kind, now));
-          introduced++;
-        }
+      for (const id of cardsForPart(bundle, part)) {
+        if (this.d.repos.cards.has(id)) continue;
+        this.d.repos.cards.upsert(introduceCard(id, parseCardId(id).kind, now));
+        introduced++;
+      }
+      if (firstTime) {
         this.d.repos.parts.complete(part.id, now.toISOString(), day, input.activeMs);
         this.d.repos.activity.increment(day, 'parts');
         this.d.logger.info('part completed', { partId: part.id, cardsIntroduced: introduced });
+      } else {
+        this.d.logger.info('part repeated', { partId: part.id, cardsIntroduced: introduced });
       }
       this.d.repos.activity.addActiveMs(day, Math.min(input.activeMs, MAX_ACTIVE_SLICE_MS * 3));
       this.evaluateDay();
-      return { cardsIntroduced: introduced, today: this.buildTodayView() };
+      return { cardsIntroduced: introduced, firstTime, today: this.buildTodayView() };
     });
   }
 
@@ -210,16 +217,28 @@ export class LearningService {
     });
   }
 
-  /** Cards already introduced for a unit, for extra practice; nothing is rescheduled. */
-  getPracticeSet(unitId: string): ReviewCardView[] {
+  /** Cards already introduced, for extra practice; nothing is rescheduled. */
+  getPracticeSet(scope: PracticeScope): ReviewCardView[] {
     const bundle = this.d.content();
-    const unit = bundle.units[unitId];
-    if (!unit) throw new AppError('NOT_FOUND', '找不到这个单元。');
-    const ids = [
-      ...unit.chunks.map((c) => cardId('chunk', c.id)),
-      ...unit.words.map((w) => cardId('word', w)),
-    ];
-    return this.toViews(ids.filter((id) => this.d.repos.cards.has(id)));
+    const partsById = new Map(bundle.parts.map((p) => [p.id, p]));
+    const fromParts = (partIds: string[]) =>
+      partIds.flatMap((id) => {
+        const part = partsById.get(id);
+        return part ? cardsForPart(bundle, part) : [];
+      });
+    let ids: string[];
+    if (scope.scope === 'unit') {
+      if (!bundle.units[scope.unitId]) throw new AppError('NOT_FOUND', '找不到这个单元。');
+      ids = fromParts(['learn', 'practice'].map((k) => `${scope.unitId}:${k}`));
+    } else if (scope.scope === 'recent') {
+      ids = fromParts(this.d.repos.parts.listIdsSince(addDays(this.today(), -(RECENT_DAYS - 1))));
+    } else {
+      ids = shuffle(this.d.repos.cards.allIds().filter((id) => this.itemExists(bundle, id))).slice(
+        0,
+        scope.count,
+      );
+    }
+    return this.toViews([...new Set(ids)].filter((id) => this.d.repos.cards.has(id)));
   }
 
   private toViews(ids: string[]): ReviewCardView[] {
@@ -295,7 +314,7 @@ export class LearningService {
   }
 }
 
-/** Review cards a part creates: new sentences and words on "learn", sound pairs on "practice". */
+/** Review cards a part creates: sentences, words and 🏠 daily words on "learn"; pattern examples and sound pairs on "practice". */
 export function cardsForPart(bundle: ContentBundle, part: Part): string[] {
   const ids: string[] = [];
   for (const uid of part.unitIds) {
@@ -304,8 +323,12 @@ export function cardsForPart(bundle: ContentBundle, part: Part): string[] {
     if (part.kind === 'learn') {
       ids.push(...unit.chunks.map((c) => cardId('chunk', c.id)));
       ids.push(...unit.words.map((w) => cardId('word', w)));
-    } else if (part.kind === 'practice' && unit.phonics) {
-      ids.push(...(bundle.phonics[unit.phonics]?.pairs ?? []).map((p) => cardId('pair', p.id)));
+      ids.push(...unit.daily.map((d) => cardId('word', d.word)));
+    } else if (part.kind === 'practice') {
+      ids.push(...unit.patterns.examples.map((e) => cardId('example', e.id)));
+      if (unit.phonics) {
+        ids.push(...(bundle.phonics[unit.phonics]?.pairs ?? []).map((p) => cardId('pair', p.id)));
+      }
     }
   }
   return ids;
@@ -317,6 +340,19 @@ export function itemExistsInBundle(bundle: ContentBundle, kind: CardKind, itemId
     const unitId = itemId.split('.')[0] ?? '';
     return bundle.units[unitId]?.chunks.some((c) => c.id === itemId) ?? false;
   }
+  if (kind === 'example') {
+    const unitId = itemId.split('.')[0] ?? '';
+    return bundle.units[unitId]?.patterns.examples.some((e) => e.id === itemId) ?? false;
+  }
   const phonicsId = itemId.split('.')[0] ?? '';
   return bundle.phonics[phonicsId]?.pairs.some((p) => p.id === itemId) ?? false;
+}
+
+function shuffle<T>(items: T[]): T[] {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j]!, a[i]!];
+  }
+  return a;
 }

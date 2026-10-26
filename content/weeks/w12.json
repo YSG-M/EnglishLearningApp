@@ -1,0 +1,45 @@
+{
+  "week": 12,
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期五",
+      "lines": [
+        {"en": "I take leave on Friday.", "zh": "我星期五请了假。"},
+        {"en": "I'm fine. I want to relax.", "zh": "我没有生病，只是想放松一下。"},
+        {"en": "In the morning, I sleep late.", "zh": "早上我睡了个懒觉。"},
+        {"en": "I go to the shop with my friend.", "zh": "我和朋友去商店。"},
+        {"en": "I want to return a pair of shoes.", "zh": "我想退一双鞋。"},
+        {"en": "The shoes are too small for me.", "zh": "那双鞋我穿太小了。"},
+        {"en": "\"Can I get a bigger size?\"", "zh": "\"可以换大一号的吗？\""},
+        {"en": "\"Sure. Do you have the receipt?\"", "zh": "\"可以。你有收据吗？\""},
+        {"en": "I have the receipt in my bag.", "zh": "收据就在我包里。"},
+        {"en": "My friend and I see a black dress.", "zh": "我和朋友看到一条黑色的裙子。"},
+        {"en": "It's very nice, and very expensive!", "zh": "很好看，也很贵！"},
+        {"en": "We go home and have porridge.", "zh": "我们回家吃了粥。"}
+      ]
+    },
+    "dialogue": {
+      "title": "跟老板请假",
+      "setting": "星期三下午，Amy 去老板 Mr Lee 的办公室，想请星期五的假。",
+      "cast": [
+        {"name": "Mr Lee", "voice": "bm_george"}
+      ],
+      "lines": [
+        {"speaker": "Amy", "en": "Can I speak to you for a moment?", "zh": "我可以跟您谈一下吗？"},
+        {"speaker": "Mr Lee", "en": "Sure, Amy. Come in.", "zh": "当然，Amy。进来吧。"},
+        {"speaker": "Amy", "en": "Can I take leave on Friday?", "zh": "我周五可以请假吗？"},
+        {"speaker": "Mr Lee", "en": "On Friday? Are you OK?", "zh": "周五？你还好吗？"},
+        {"speaker": "Amy", "en": "No, I'm fine. My friend has a wedding.", "zh": "没有，我很好。我朋友要结婚。"},
+        {"speaker": "Mr Lee", "en": "Nice! Who can cover your class?", "zh": "哦，真好！谁可以代你的课？"},
+        {"speaker": "Amy", "en": "Jason can cover my class.", "zh": "Jason 可以代我的课。"},
+        {"speaker": "Mr Lee", "en": "Good. And the parents?", "zh": "好。那家长呢？"},
+        {"speaker": "Amy", "en": "I have called all the parents.", "zh": "我已经给所有家长打过电话了。"},
+        {"speaker": "Mr Lee", "en": "Very good. Is there anything else?", "zh": "很好。还有别的事吗？"},
+        {"speaker": "Amy", "en": "Yes. Can I leave early today, too?", "zh": "有。我今天也可以早点走吗？"},
+        {"speaker": "Mr Lee", "en": "Today, too?", "zh": "今天也要？"},
+        {"speaker": "Amy", "en": "I'm a bit dizzy. I need to see a doctor.", "zh": "我有点头晕，需要去看医生。"},
+        {"speaker": "Mr Lee", "en": "OK, go and rest. Send me your MC.", "zh": "好，去休息吧。把病假单发给我。"}
+      ]
+    }
+  }
+}

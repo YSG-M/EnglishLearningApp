@@ -23,4 +23,11 @@ describe('shipped content', () => {
       else expect(w.hint.hanzi, w.text).toBeTruthy();
     }
   });
+
+  it('gives every green / yellow word a pinyin line (the only form the UI shows)', () => {
+    const missing = Object.values(result.bundle?.lexicon ?? {})
+      .filter((w) => w.hint.grade !== 'red' && !w.hint.pinyin)
+      .map((w) => w.text);
+    expect(missing).toEqual([]);
+  });
 });

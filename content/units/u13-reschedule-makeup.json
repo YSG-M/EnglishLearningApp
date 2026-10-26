@@ -5,33 +5,95 @@
   "titleEn": "We can arrange a make-up class",
   "goal": "家长说孩子要请假或者想换上课时间时，能用英语安排补课、确认时间。",
   "chunks": [
-    { "id": "u13.c01", "en": "Can we change the class to Friday?", "zh": "可以把课改到星期五吗？" },
-    { "id": "u13.c02", "en": "He can't come today.", "zh": "他今天不能来。", "note": "can't = can not，\"不能\"。" },
-    { "id": "u13.c03", "en": "She is sick today.", "zh": "她今天生病了。" },
-    { "id": "u13.c04", "en": "We can arrange a make-up class.", "zh": "我们可以安排补课。", "note": "make-up class = 补课。" },
-    { "id": "u13.c05", "en": "Is Friday okay for you?", "zh": "星期五你方便吗？" },
-    { "id": "u13.c06", "en": "What time is good for you?", "zh": "你什么时间方便？" },
-    { "id": "u13.c07", "en": "I will check the timetable.", "zh": "我查一下课表。" },
-    { "id": "u13.c08", "en": "No problem.", "zh": "没问题。" },
-    { "id": "u13.c09", "en": "Thank you for letting me know.", "zh": "谢谢你告诉我。", "note": "家长请假、通知事情时，用这句回复很礼貌。" }
+    {"id": "u13.c01", "en": "Can we change the class to Friday?", "zh": "可以把课改到星期五吗？"},
+    {"id": "u13.c02", "en": "He can't come today.", "zh": "他今天不能来。", "note": "can't = can not，\"不能\"。"},
+    {"id": "u13.c03", "en": "She is sick today.", "zh": "她今天生病了。"},
+    {"id": "u13.c04", "en": "We can arrange a make-up class.", "zh": "我们可以安排补课。", "note": "make-up class = 补课。"},
+    {"id": "u13.c05", "en": "Is Friday okay for you?", "zh": "星期五你方便吗？"},
+    {"id": "u13.c06", "en": "What time is good for you?", "zh": "你什么时间方便？"},
+    {"id": "u13.c07", "en": "I will check the timetable.", "zh": "我查一下课表。"},
+    {"id": "u13.c08", "en": "No problem.", "zh": "没问题。"},
+    {"id": "u13.c09", "en": "Thank you for letting me know.", "zh": "谢谢你告诉我。", "note": "家长请假、通知事情时，用这句回复很礼貌。"}
   ],
   "words": ["change", "can't", "come", "sick", "arrange", "make-up", "okay", "timetable", "problem", "letting"],
-  "drill": {
-    "pattern": "Can we change the class to ___?",
-    "zh": "问能不能换到别的时间",
-    "fills": [
-      { "en": "Friday", "zh": "可以改到星期五吗？" },
-      { "en": "next week", "zh": "可以改到下星期吗？" },
-      { "en": "4pm", "zh": "可以改到下午四点吗？" },
-      { "en": "Sunday morning", "zh": "可以改到星期天早上吗？" }
+  "patterns": {
+    "frames": [
+      {"frame": "Can we ___?", "zh": "我们可以……吗？", "usage": "商量一件\"我们一起\"做的事：一起开始、换时间、坐这里。和 Can you 很像，只是把 you 换成 we。"},
+      {"frame": "Is ___ okay for you?", "zh": "……你方便吗？/ ……可以吗？", "usage": "约时间时问对方行不行。把时间放进 ___：Is Friday okay for you?"}
+    ],
+    "examples": [
+      {"id": "u13.e01", "scene": "晚饭后，你想和老公聊聊这个周末怎么安排。", "en": "Can we talk?", "zh": "我们可以聊一下吗？", "accept": ["Can we talk for a moment?"]},
+      {"id": "u13.e02", "scene": "周末和家人一起包饺子，材料都准备好了，你问大家。", "en": "Can we start now?", "zh": "我们现在可以开始了吗？"},
+      {"id": "u13.e03", "scene": "hawker centre 人很多，你和朋友看到一张桌子有空位，问旁边的阿姨。", "en": "Can we sit here?", "zh": "我们可以坐这里吗？"},
+      {"id": "u13.e04", "scene": "朋友约你今天去喝咖啡，可是你今天太累了。", "en": "Can we meet tomorrow?", "zh": "我们明天见面可以吗？"},
+      {"id": "u13.e05", "scene": "你打电话给一位家长，先问对方现在方不方便说话。", "en": "Is now okay for you?", "zh": "您现在方便吗？"},
+      {"id": "u13.e06", "scene": "和朋友在 kopitiam 吃完饭，你想各付各的。", "en": "Can we pay separately?", "zh": "我们可以分开付吗？", "note": "pay separately = 分开付、各付各的"},
+      {"id": "u13.e07", "scene": "家长想带孩子来试听，你问下午三点行不行。", "en": "Is 3pm okay for you?", "zh": "下午三点您方便吗？"},
+      {"id": "u13.e08", "scene": "家里水管坏了，师傅问哪天来修，你问他这个星期六行不行。", "en": "Is this Saturday okay for you?", "zh": "这个星期六你可以吗？"},
+      {"id": "u13.e09", "scene": "家长想给孩子补课，星期天早上还有位子。", "en": "Is Sunday morning okay for you?", "zh": "星期天早上您方便吗？"},
+      {"id": "u13.e10", "scene": "同事说星期五的会她来不了，你提议改到星期一。", "en": "Can we move the meeting to Monday?", "zh": "我们可以把会改到星期一吗？", "note": "move ... to Monday = 把……改到星期一"}
     ]
+  },
+  "daily": [
+    {"id": "u13.d01", "word": "birthday", "scene": "朋友约你星期天出去玩，可是那天你要过生日。", "en": "Sunday is my birthday.", "zh": "星期天是我生日。"},
+    {"id": "u13.d02", "word": "visit", "scene": "朋友约你星期天去逛街，可是你父母那天要来你家。", "en": "My parents will visit on Sunday.", "zh": "我父母星期天要来看我。", "note": "visit = 去看望、拜访"},
+    {"id": "u13.d03", "word": "dentist", "scene": "牙疼了好几天，晚上你跟老公说。", "en": "I need to see the dentist.", "zh": "我要去看牙医。", "note": "see the dentist = 看牙医"},
+    {"id": "u13.d04", "word": "evening", "scene": "朋友约你星期六中午吃饭，可是你中午要陪孩子上课。", "en": "Can we meet in the evening?", "zh": "我们晚上见可以吗？", "note": "in the evening = 傍晚、晚上"},
+    {"id": "u13.d05", "word": "calendar", "scene": "朋友问你下星期六有没有空，你拿出手机。", "en": "Let me check my calendar.", "zh": "我看一下我的日历。"},
+    {"id": "u13.d06", "word": "cancel", "scene": "约了朋友周末吃饭，可是孩子突然发烧了。", "en": "Sorry, I need to cancel.", "zh": "不好意思，我得取消了。"},
+    {"id": "u13.d07", "word": "movie", "scene": "晚饭后，你问老公今晚要不要一起去看电影。", "en": "Can we see a movie tonight?", "zh": "我们今晚去看电影好吗？", "note": "see a movie = 看电影"},
+    {"id": "u13.d08", "word": "remember", "scene": "在楼下遇到一位只见过一次的邻居，你笑着问她。", "en": "Do you remember my name?", "zh": "你还记得我的名字吗？"},
+    {"id": "u13.d09", "word": "tuesday", "scene": "朋友约你星期一晚上吃饭，可是你那天要加班。", "en": "Can we change it to Tuesday?", "zh": "可以改到星期二吗？"},
+    {"id": "u13.d10", "word": "wedding", "scene": "朋友约你星期六去逛街，可是那天你要去喝喜酒。", "en": "I have a wedding on Saturday.", "zh": "我星期六要去参加婚礼。"},
+    {"id": "u13.d11", "word": "wednesday", "scene": "邻居约你一起去巴刹买菜，你问她星期三行不行。", "en": "Is Wednesday okay for you?", "zh": "星期三你方便吗？"},
+    {"id": "u13.d12", "word": "holiday", "scene": "朋友问你星期一要不要上班，那天是公共假期。", "en": "Monday is a holiday.", "zh": "星期一是公共假期。", "note": "holiday = 假期、放假的日子"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的生日周末",
+      "lines": [
+        {"en": "Sunday is my birthday.", "zh": "星期天是我生日。"},
+        {"en": "My parents will visit on Sunday.", "zh": "我父母星期天要来看我。"},
+        {"en": "My friend is free on Saturday.", "zh": "我朋友星期六有空。"},
+        {"en": "\"Can we see a movie on Saturday?\"", "zh": "\"我们星期六去看电影好吗？\""},
+        {"en": "Let me check my calendar.", "zh": "我看一下我的日历。"},
+        {"en": "Sorry, I have a wedding on Saturday.", "zh": "不好意思，我星期六要去参加婚礼。"},
+        {"en": "Monday is a holiday.", "zh": "星期一是公共假期。"},
+        {"en": "I'm free on Monday.", "zh": "我星期一有空。"},
+        {"en": "\"Is Monday okay for you?\"", "zh": "\"星期一你方便吗？\""},
+        {"en": "Monday is okay for my friend.", "zh": "我朋友星期一可以。"},
+        {"en": "We will see a movie on Monday.", "zh": "我们星期一去看电影。"},
+        {"en": "It will be a busy weekend!", "zh": "这个周末会很忙！"}
+      ]
+    },
+    "dialogue": {
+      "title": "孩子发烧了",
+      "setting": "早上，Mrs Lim 打电话到补习中心，说孩子今天不能来上课。",
+      "cast": [
+        {"name": "Mrs Lim", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Lim", "en": "Hi Amy. My child is sick today.", "zh": "Amy 你好。我孩子今天生病了。"},
+        {"speaker": "Amy", "en": "I'm sorry. Is it a fever?", "zh": "真抱歉。是发烧吗？"},
+        {"speaker": "Mrs Lim", "en": "Yes. He can't come today.", "zh": "是的。他今天不能来。"},
+        {"speaker": "Amy", "en": "Thank you for letting me know.", "zh": "谢谢你告诉我。"},
+        {"speaker": "Amy", "en": "We can arrange a make-up class.", "zh": "我们可以安排补课。"},
+        {"speaker": "Mrs Lim", "en": "Can we change it to Tuesday?", "zh": "可以改到星期二吗？"},
+        {"speaker": "Amy", "en": "I will check the timetable.", "zh": "我查一下课表。"},
+        {"speaker": "Amy", "en": "Sorry, Tuesday is full. Is Wednesday okay for you?", "zh": "不好意思，星期二满了。星期三你方便吗？"},
+        {"speaker": "Mrs Lim", "en": "Wednesday is fine. What time?", "zh": "星期三可以。几点？"},
+        {"speaker": "Amy", "en": "Is 5pm okay for you?", "zh": "下午五点你方便吗？"},
+        {"speaker": "Mrs Lim", "en": "Yes, no problem. Thank you, Amy.", "zh": "可以，没问题。谢谢你，Amy。"},
+        {"speaker": "Amy", "en": "See you on Wednesday. Bye!", "zh": "星期三见。拜拜！"}
+      ]
+    }
   },
   "grammar": {
     "title": "can 和 can't",
     "body": "can 是\"能、可以\"，can't 是\"不能\"。两个词很像：can't 的 a 读得更开、更长，结尾还有一个轻轻的 t。听不清时，可以问 Can or cannot?",
     "examples": [
-      { "en": "He can come on Friday.", "zh": "他星期五能来。" },
-      { "en": "He can't come today.", "zh": "他今天不能来。" }
+      {"en": "He can come on Friday.", "zh": "他星期五能来。"},
+      {"en": "He can't come today.", "zh": "他今天不能来。"}
     ]
   },
   "phonics": "p11",
@@ -44,36 +106,40 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi, this is Jayden's father. Jayden can't come for class today.", "zh": "你好，我是 Jayden 的爸爸。Jayden 今天不能来上课。" },
+        "npc": {"en": "Hi, this is Jayden's father. Jayden can't come for class today.", "zh": "你好，我是 Jayden 的爸爸。Jayden 今天不能来上课。"},
         "replies": [
-          { "en": "Okay. Thank you for letting me know.", "zh": "好的，谢谢你告诉我。", "next": "n2" },
-          { "en": "Is he sick today?", "zh": "他今天生病了吗？", "next": "n2" }
+          {"en": "Okay. Thank you for letting me know.", "zh": "好的，谢谢你告诉我。", "next": "n2"},
+          {"en": "Is he sick today?", "zh": "他今天生病了吗？", "next": "n2"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Yes, he has a fever. Can he do a make-up class?", "zh": "是的，他发烧了。他可以补课吗？" },
+        "npc": {"en": "Yes, he has a fever. Can he do a make-up class?", "zh": "是的，他发烧了。他可以补课吗？"},
         "replies": [
-          { "en": "We can arrange a make-up class.", "zh": "我们可以安排补课。", "next": "n3" },
-          { "en": "No problem.", "zh": "没问题。", "next": "n3" }
+          {"en": "We can arrange a make-up class.", "zh": "我们可以安排补课。", "next": "n3"},
+          {"en": "No problem.", "zh": "没问题。", "next": "n3"},
+          {"en": "Sure. Can we arrange it next week?", "zh": "可以。我们安排在下星期可以吗？", "next": "n3"}
         ]
       },
       {
         "id": "n3",
-        "npc": { "en": "That's great. When can he come?", "zh": "太好了。他什么时候可以来？" },
+        "npc": {"en": "That's great. When can he come?", "zh": "太好了。他什么时候可以来？"},
         "replies": [
-          { "en": "Is Friday okay for you?", "zh": "星期五你方便吗？", "next": "n4" },
-          { "en": "What time is good for you?", "zh": "你什么时间方便？", "next": "n4" }
+          {"en": "Is Friday okay for you?", "zh": "星期五你方便吗？", "next": "n4"},
+          {"en": "What time is good for you?", "zh": "你什么时间方便？", "next": "n4"},
+          {"en": "Is 5pm okay for you?", "zh": "下午五点你方便吗？", "next": "n4"}
         ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Friday at 5pm is good for us.", "zh": "星期五下午五点我们可以。" },
-        "replies": [{ "en": "No problem. I will check the timetable.", "zh": "没问题，我查一下课表。", "next": "end" }]
+        "npc": {"en": "Friday at 5pm is good for us.", "zh": "星期五下午五点我们可以。"},
+        "replies": [
+          {"en": "No problem. I will check the timetable.", "zh": "没问题，我查一下课表。", "next": "end"}
+        ]
       },
       {
         "id": "end",
-        "npc": { "en": "Thank you so much. Bye!", "zh": "非常感谢，再见！" },
+        "npc": {"en": "Thank you so much. Bye!", "zh": "非常感谢，再见！"},
         "replies": []
       }
     ]

@@ -2,9 +2,10 @@
  * A sentence shown word by word, each word with its pronunciation aid underneath.
  *
  * Hint rules (CLAUDE.md · 课程内容规则):
- *  - green / yellow: 谐音 + pinyin shown, until she has said the word correctly HINT_FADE_AFTER times
+ *  - green / yellow: the pinyin-style 谐音 shown (the 汉字 form is not displayed), until she has said the word correctly HINT_FADE_AFTER times
  *  - red: never a 谐音; a red marker that opens the mouth-position note when tapped
  *  - the global "show hints" setting turns all 谐音 off (red notes remain available on tap)
+ * Tapping a word always plays it and shows its Chinese meaning; `showGlosses` shows every meaning.
  */
 import { useState } from 'react';
 import type { WordEntry } from '@shared/content/bundle';
@@ -33,6 +34,10 @@ export interface TokenLineProps {
   showHints: boolean;
   /** Words to highlight (from feedback). */
   focusKeys?: string[];
+  /** Show each word's Chinese meaning under it. */
+  showGlosses?: boolean;
+  /** Token range [start, end) that fills a pattern's ___, highlighted so the fixed frame stands out. */
+  slot?: [number, number];
   size?: 'md' | 'lg';
 }
 
@@ -42,6 +47,8 @@ export function TokenLine({
   hintProgress,
   showHints,
   focusKeys = [],
+  showGlosses = false,
+  slot,
   size = 'lg',
 }: TokenLineProps) {
   const [open, setOpen] = useState<number | null>(null);
@@ -53,8 +60,13 @@ export function TokenLine({
         const revealed = open === i;
         const focus = !!t.key && focusKeys.includes(t.key);
         const grade = entry?.hint.grade;
+        const inSlot = slot ? i >= slot[0] && i < slot[1] : false;
+        const frameClass = slot ? (inSlot ? 'slot' : 'frame') : '';
         return (
-          <span key={i} className={`token ${grade ? `grade-${grade}` : ''} ${focus ? 'focus' : ''}`}>
+          <span
+            key={i}
+            className={`token ${grade ? `grade-${grade}` : ''} ${focus ? 'focus' : ''} ${frameClass}`}
+          >
             <button
               type="button"
               className="token-word"
@@ -70,10 +82,10 @@ export function TokenLine({
             </button>
             <span className="token-hint" data-testid={`hint-${i}`} data-visibility={vis}>
               {vis === 'shown' || ((vis === 'faded' || vis === 'off') && revealed) ? (
-                <>
-                  <span className="hint-hanzi">{entry?.hint.hanzi}</span>
-                  {entry?.hint.pinyin ? <span className="hint-pinyin">{entry.hint.pinyin}</span> : null}
-                </>
+                // Learner preference: show the pinyin line only. The 汉字 stays in the content as the authoring reference.
+                entry?.hint.pinyin ? (
+                  <span className="hint-pinyin">{entry.hint.pinyin}</span>
+                ) : null
               ) : vis === 'red' ? (
                 <span className="hint-red" aria-label={zh.hints.noHanzi}>
                   ●
@@ -84,7 +96,8 @@ export function TokenLine({
                 </span>
               ) : null}
             </span>
-            {revealed && entry && (entry.hint.note || vis === 'red') ? (
+            {showGlosses && entry ? <span className="token-gloss">{entry.zh}</span> : null}
+            {revealed && entry ? (
               <span className="token-note" role="note">
                 <strong>{entry.text}</strong> {entry.zh}
                 {entry.hint.note ? <span className="token-note-body">{entry.hint.note}</span> : null}

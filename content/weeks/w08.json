@@ -1,0 +1,43 @@
+{
+  "week": 8,
+  "stories": {
+    "narrative": {
+      "title": "Amy 热热的星期六",
+      "lines": [
+        {"en": "Last Saturday was a very hot day.", "zh": "上个星期六天气特别热。"},
+        {"en": "My aircon was not working.", "zh": "我的空调坏了。"},
+        {"en": "I called the aircon uncle.", "zh": "我给空调师傅打了电话。"},
+        {"en": "He can come on Monday.", "zh": "他星期一才能来。"},
+        {"en": "I went to the hawker centre with my husband.", "zh": "我和老公去了 hawker centre。"},
+        {"en": "My coffee was cold, and the spoon was dirty.", "zh": "我的咖啡是凉的，勺子也是脏的。"},
+        {"en": "\"Excuse me, my coffee is cold.\"", "zh": "\"不好意思，我的咖啡是凉的。\""},
+        {"en": "The uncle was very nice.", "zh": "卖咖啡的 uncle 人很好。"},
+        {"en": "\"Sorry about that! Let me make a new one.\"", "zh": "\"真不好意思！我给你重新做一杯。\""},
+        {"en": "After that, we went home.", "zh": "然后我们回家了。"},
+        {"en": "The lift was broken. We took the stairs.", "zh": "电梯坏了，我们走了楼梯。"},
+        {"en": "It was a long day!", "zh": "真是漫长的一天！"}
+      ]
+    },
+    "dialogue": {
+      "title": "教室太热了",
+      "setting": "下午，家长 Mrs Wong 来接孩子，在前台说教室里太热。",
+      "cast": [
+        {"name": "Mrs Wong", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Wong", "en": "Hi, the classroom is very hot today.", "zh": "你好，今天教室里好热。"},
+        {"speaker": "Amy", "en": "I'm sorry about that.", "zh": "这件事真抱歉。"},
+        {"speaker": "Amy", "en": "The aircon is not working.", "zh": "空调坏了。"},
+        {"speaker": "Mrs Wong", "en": "My child is tired and hot.", "zh": "我孩子又累又热。"},
+        {"speaker": "Amy", "en": "I understand. Let me check for you.", "zh": "我明白。我帮您查一下。"},
+        {"speaker": "Amy", "en": "The aircon uncle will come tomorrow morning.", "zh": "空调师傅明天早上会来。"},
+        {"speaker": "Mrs Wong", "en": "Can you open the window?", "zh": "可以开一下窗吗？"},
+        {"speaker": "Amy", "en": "Yes, and let me turn on the fan.", "zh": "可以，我再把风扇打开。"},
+        {"speaker": "Amy", "en": "Let me get you some water.", "zh": "我给您倒杯水。"},
+        {"speaker": "Mrs Wong", "en": "Thank you. Please call me after class.", "zh": "谢谢。下课后请给我打个电话。"},
+        {"speaker": "Amy", "en": "No problem. I'll tell the teacher.", "zh": "没问题。我会告诉老师。"},
+        {"speaker": "Amy", "en": "Thank you for telling us. It won't happen again.", "zh": "谢谢您告诉我们。不会再这样了。"}
+      ]
+    }
+  }
+}

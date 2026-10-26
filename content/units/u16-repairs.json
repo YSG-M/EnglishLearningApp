@@ -5,26 +5,86 @@
   "titleEn": "My aircon is not working",
   "goal": "家里东西坏了，能打电话说清楚问题，约好修理时间、问价钱。",
   "chunks": [
-    { "id": "u16.c01", "en": "My aircon is not working.", "zh": "我的空调坏了。", "note": "新加坡说 aircon（空调）。not working = 坏了、不工作。", "accept": ["My aircon isn't working."] },
-    { "id": "u16.c02", "en": "The water is leaking.", "zh": "漏水了。" },
-    { "id": "u16.c03", "en": "The light is broken.", "zh": "灯坏了。" },
-    { "id": "u16.c04", "en": "When can you come?", "zh": "你什么时候能来？" },
-    { "id": "u16.c05", "en": "Can you come tomorrow morning?", "zh": "你明天早上能来吗？" },
-    { "id": "u16.c06", "en": "How much will it cost?", "zh": "要多少钱？" },
-    { "id": "u16.c07", "en": "I live in Block 123.", "zh": "我住在 123 座。", "note": "HDB 组屋用 Block（座）。数字可以一个一个读：one two three。" },
-    { "id": "u16.c08", "en": "Please call me before you come.", "zh": "来之前请给我打电话。" },
-    { "id": "u16.c09", "en": "Thank you for fixing it.", "zh": "谢谢你帮我修好。" }
+    {"id": "u16.c01", "en": "My aircon is not working.", "zh": "我的空调坏了。", "note": "新加坡说 aircon（空调）。not working = 坏了、不工作。", "accept": ["My aircon isn't working."]},
+    {"id": "u16.c02", "en": "The water is leaking.", "zh": "漏水了。"},
+    {"id": "u16.c03", "en": "The light is broken.", "zh": "灯坏了。"},
+    {"id": "u16.c04", "en": "When can you come?", "zh": "你什么时候能来？"},
+    {"id": "u16.c05", "en": "Can you come tomorrow morning?", "zh": "你明天早上能来吗？"},
+    {"id": "u16.c06", "en": "How much will it cost?", "zh": "要多少钱？"},
+    {"id": "u16.c07", "en": "I live in Block 123.", "zh": "我住在 123 座。", "note": "HDB 组屋用 Block（座）。数字可以一个一个读：one two three。"},
+    {"id": "u16.c08", "en": "Please call me before you come.", "zh": "来之前请给我打电话。"},
+    {"id": "u16.c09", "en": "Thank you for fixing it.", "zh": "谢谢你帮我修好。"}
   ],
   "words": ["aircon", "working", "water", "leaking", "broken", "light", "come", "cost", "live", "block", "before", "fixing"],
-  "drill": {
-    "pattern": "My ___ is not working.",
-    "zh": "我的……坏了",
-    "fills": [
-      { "en": "aircon", "zh": "空调" },
-      { "en": "fridge", "zh": "冰箱" },
-      { "en": "washing machine", "zh": "洗衣机" },
-      { "en": "fan", "zh": "风扇" }
+  "patterns": {
+    "frames": [
+      {"frame": "My ___ is not working.", "zh": "我的……坏了／……不能用了", "usage": "东西坏了、开不了、用不了的时候，先说这一句，对方马上知道是什么问题。框不变，只把坏掉的东西放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u16.e01", "scene": "家里的风扇不转了，你打电话给邻居借一台。", "en": "My fan is not working.", "zh": "我的风扇坏了。", "accept": ["My fan isn't working."]},
+      {"id": "u16.e02", "scene": "同事问你为什么没回 WhatsApp。", "en": "My phone is not working.", "zh": "我的手机坏了。", "accept": ["My phone isn't working."]},
+      {"id": "u16.e03", "scene": "在 MRT 站，闸门刷不过去，你去问站务员。", "en": "My card is not working.", "zh": "我的卡刷不了。", "note": "not working = 用不了（不一定是坏了）", "accept": ["My card isn't working."]},
+      {"id": "u16.e04", "scene": "冰箱不冷了，你打电话叫维修师傅。", "en": "My fridge is not working.", "zh": "我的冰箱坏了。", "accept": ["My fridge isn't working."]},
+      {"id": "u16.e05", "scene": "在诊所填表，你的笔写不出字，想跟护士借一支。", "en": "Sorry, my pen is not working.", "zh": "不好意思，我的笔写不出来了。", "accept": ["Sorry, my pen isn't working."]},
+      {"id": "u16.e06", "scene": "早上到前台，电脑开不了机，你告诉经理。", "en": "My computer is not working.", "zh": "我的电脑开不了。", "accept": ["My computer isn't working."]},
+      {"id": "u16.e07", "scene": "在网上给学生上华文课，学生说听不到你的声音。", "en": "Sorry, my mic is not working.", "zh": "不好意思，我的麦克风坏了。", "note": "mic = 麦克风（microphone 的简称）", "accept": ["Sorry, my mic isn't working."]},
+      {"id": "u16.e08", "scene": "洗衣机不转了，你打电话给电器店。", "en": "My washing machine is not working.", "zh": "我的洗衣机坏了。", "note": "washing machine = 洗衣机", "accept": ["My washing machine isn't working."]},
+      {"id": "u16.e09", "scene": "家里上不了网，你打电话给网络公司。", "en": "Hello, my Wi-Fi is not working.", "zh": "你好，我家的网络用不了。", "note": "Wi-Fi = 无线网络", "accept": ["Hello, my Wi-Fi isn't working.", "My Wi-Fi is not working."]},
+      {"id": "u16.e10", "scene": "洗澡没有热水，你跟 HDB 维修师傅说。", "en": "Uncle, my water heater is not working.", "zh": "师傅，我的热水器坏了。", "note": "water heater = 热水器；新加坡常叫年长的师傅 Uncle", "accept": ["Uncle, my water heater isn't working.", "My water heater is not working."]}
     ]
+  },
+  "daily": [
+    {"id": "u16.d01", "word": "sink", "scene": "晚上洗碗时，厨房的水槽下面一直滴水。", "en": "The kitchen sink is leaking.", "zh": "厨房的水槽漏水了。", "note": "sink = 洗碗的水槽"},
+    {"id": "u16.d02", "word": "bathroom", "scene": "第一次去朋友家做客，你想上洗手间。", "en": "Where is the bathroom?", "zh": "洗手间在哪里？", "note": "在别人家里，问 bathroom 比 toilet 更客气"},
+    {"id": "u16.d03", "word": "window", "scene": "外面下雨了，你请家人关窗。", "en": "Can you close the window?", "zh": "你可以关一下窗吗？"},
+    {"id": "u16.d04", "word": "plumber", "scene": "邻居问你家漏水修好了没有。", "en": "The plumber is coming tomorrow.", "zh": "水管师傅明天来。", "note": "plumber = 修水管的师傅"},
+    {"id": "u16.d05", "word": "bed", "scene": "晚上十一点，你跟家人说晚安。", "en": "I want to go to bed.", "zh": "我想去睡觉了。", "note": "go to bed = 上床睡觉"},
+    {"id": "u16.d06", "word": "shower", "scene": "早上洗澡，水一直是冷的，你跟老公说。", "en": "The shower has no hot water.", "zh": "花洒没有热水。", "note": "shower = 淋浴、花洒"},
+    {"id": "u16.d07", "word": "ceiling", "scene": "下大雨后，你发现房间的天花板在滴水，打电话给 town council。", "en": "The ceiling is leaking.", "zh": "天花板漏水了。"},
+    {"id": "u16.d08", "word": "lock", "scene": "已经走到楼下了，你突然不确定有没有锁门，问老公。", "en": "Did you lock the door?", "zh": "你锁门了吗？"},
+    {"id": "u16.d09", "word": "turn", "scene": "回到家很热，你请孩子开空调。", "en": "Please turn on the aircon.", "zh": "请把空调打开。", "note": "turn on = 打开（电器）；turn off = 关掉"},
+    {"id": "u16.d10", "word": "remote", "scene": "想看电视，可是找不到遥控器。", "en": "Where is the remote?", "zh": "遥控器在哪里？", "note": "remote = 遥控器"},
+    {"id": "u16.d11", "word": "room", "scene": "空调坏了，晚上你跟老公抱怨。", "en": "My room is very hot.", "zh": "我的房间好热。"},
+    {"id": "u16.d12", "word": "bulb", "scene": "房间的灯不亮了，你跟老公说要去买灯泡。", "en": "I need a new light bulb.", "zh": "我要买一个新灯泡。", "note": "light bulb = 灯泡"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 家的东西都坏了",
+      "lines": [
+        {"en": "Today was a bad day at home.", "zh": "今天家里真倒霉。"},
+        {"en": "My aircon is not working.", "zh": "我的空调坏了。"},
+        {"en": "My room is very hot.", "zh": "我的房间好热。"},
+        {"en": "The kitchen sink is leaking.", "zh": "厨房的水槽漏水了。"},
+        {"en": "The shower has no hot water.", "zh": "花洒没有热水。"},
+        {"en": "The kitchen light is broken too.", "zh": "厨房的灯也坏了。"},
+        {"en": "I called the plumber.", "zh": "我给水管师傅打了电话。"},
+        {"en": "\"When can you come?\"", "zh": "\"你什么时候能来？\""},
+        {"en": "\"I can come tomorrow morning.\"", "zh": "\"我明天早上可以来。\""},
+        {"en": "Tonight, I will sleep with the fan.", "zh": "今晚我就开着风扇睡吧。"},
+        {"en": "I want to go to bed now.", "zh": "我现在想去睡觉了。"}
+      ]
+    },
+    "dialogue": {
+      "title": "水管师傅来了",
+      "setting": "第二天早上，水管师傅 Uncle Tan 来到 Amy 家。",
+      "cast": [
+        {"name": "Uncle Tan", "voice": "am_michael"}
+      ],
+      "lines": [
+        {"speaker": "Uncle Tan", "en": "Hello! I'm the plumber.", "zh": "你好！我是水管师傅。"},
+        {"speaker": "Amy", "en": "Hi, thank you for coming.", "zh": "你好，谢谢你过来。"},
+        {"speaker": "Amy", "en": "The kitchen sink is leaking.", "zh": "厨房的水槽漏水了。"},
+        {"speaker": "Uncle Tan", "en": "Let me see. Okay, no problem.", "zh": "我看看。好的，没问题。"},
+        {"speaker": "Amy", "en": "And the shower has no hot water.", "zh": "还有，花洒没有热水。"},
+        {"speaker": "Uncle Tan", "en": "Your water heater is broken.", "zh": "你的热水器坏了。"},
+        {"speaker": "Amy", "en": "How much will it cost?", "zh": "要多少钱？"},
+        {"speaker": "Uncle Tan", "en": "$80 for the sink and the heater.", "zh": "水槽和热水器一共八十块。"},
+        {"speaker": "Amy", "en": "Okay, no problem.", "zh": "好的，没问题。"},
+        {"speaker": "Uncle Tan", "en": "All okay now. Please turn on the water heater.", "zh": "都好了。请把热水器打开。"},
+        {"speaker": "Amy", "en": "Thank you for fixing it.", "zh": "谢谢你帮我修好。"},
+        {"speaker": "Uncle Tan", "en": "You're welcome. Bye!", "zh": "不客气。拜拜！"}
+      ]
+    }
   },
   "phonics": "p14",
   "dialogue": {
@@ -36,38 +96,45 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hello, aircon service. How can I help?", "zh": "你好，空调维修。有什么可以帮你？" },
-        "replies": [{ "en": "Hi, my aircon is not working.", "zh": "你好，我的空调坏了。", "next": "n2" }]
+        "npc": {"en": "Hello, aircon service. How can I help?", "zh": "你好，空调维修。有什么可以帮你？"},
+        "replies": [
+          {"en": "Hi, my aircon is not working.", "zh": "你好，我的空调坏了。", "next": "n2"},
+          {"en": "Hi, the water is leaking. My aircon is not working.", "zh": "你好，漏水了。我的空调坏了。", "next": "n2"}
+        ]
       },
       {
         "id": "n2",
-        "npc": { "en": "OK. What's your address?", "zh": "好的。你的地址是？" },
-        "replies": [{ "en": "I live in Block 123.", "zh": "我住在 123 座。", "next": "n3" }]
+        "npc": {"en": "OK. What's your address?", "zh": "好的。你的地址是？"},
+        "replies": [
+          {"en": "I live in Block 123.", "zh": "我住在 123 座。", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "I can come on Friday afternoon.", "zh": "我星期五下午可以来。" },
+        "npc": {"en": "I can come on Friday afternoon.", "zh": "我星期五下午可以来。"},
         "replies": [
-          { "en": "Can you come tomorrow morning?", "zh": "你明天早上能来吗？", "next": "n4" },
-          { "en": "OK, Friday afternoon is fine.", "zh": "好的，星期五下午可以。", "next": "n5" }
+          {"en": "Can you come tomorrow morning?", "zh": "你明天早上能来吗？", "next": "n4"},
+          {"en": "OK, Friday afternoon is fine.", "zh": "好的，星期五下午可以。", "next": "n5"}
         ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Tomorrow morning, ten o'clock. Can?", "zh": "明天早上十点，可以吗？" },
-        "replies": [{ "en": "Yes, thank you.", "zh": "可以，谢谢。", "next": "n5" }]
+        "npc": {"en": "Tomorrow morning, ten o'clock. Can?", "zh": "明天早上十点，可以吗？"},
+        "replies": [
+          {"en": "Yes, thank you.", "zh": "可以，谢谢。", "next": "n5"}
+        ]
       },
       {
         "id": "n5",
-        "npc": { "en": "Checking is fifty dollars first.", "zh": "先检查要五十块。" },
+        "npc": {"en": "Checking is fifty dollars first.", "zh": "先检查要五十块。"},
         "replies": [
-          { "en": "OK. Please call me before you come.", "zh": "好的。来之前请给我打电话。", "next": "end" },
-          { "en": "How much will it cost?", "zh": "（修好）一共要多少钱？", "next": "end" }
+          {"en": "OK. Please call me before you come.", "zh": "好的。来之前请给我打电话。", "next": "end"},
+          {"en": "How much will it cost?", "zh": "（修好）一共要多少钱？", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "I check first, then I tell you. No problem. Bye!", "zh": "我先检查，再告诉你。没问题。拜拜！" },
+        "npc": {"en": "I check first, then I tell you. No problem. Bye!", "zh": "我先检查，再告诉你。没问题。拜拜！"},
         "replies": []
       }
     ]

@@ -68,13 +68,37 @@ export const Chunk = Sentence.extend({
 });
 export type Chunk = z.infer<typeof Chunk>;
 
-export const Drill = z.object({
-  /** Sentence frame with exactly one "___", e.g. "Can I have ___, please?" */
-  pattern: z.string().regex(/^[^_]*___[^_]*$/, 'a drill pattern needs exactly one ___'),
+export const EXAMPLE_ID = /^u\d{2}\.e\d{2}$/;
+
+/** A sentence frame with exactly one "___", e.g. "Can you ___?". */
+export const PatternFrame = z.object({
+  frame: z.string().regex(/^[^_]*___[^_]*$/, 'a pattern frame needs exactly one ___'),
+  /** Chinese meaning of the frame, e.g. "你能……吗？" */
   zh: z.string().min(1),
-  fills: z.array(Sentence).min(3).max(6),
+  /** When to use it, in plain Chinese. */
+  usage: z.string().min(1),
 });
-export type Drill = z.infer<typeof Drill>;
+export type PatternFrame = z.infer<typeof PatternFrame>;
+
+export const PatternExample = Sentence.extend({
+  id: id(EXAMPLE_ID, 'pattern example ids look like u02.e01'),
+  /** 🎬 One line of Chinese: where she is, who she is talking to, what she wants. */
+  scene: z.string().min(1),
+  /** Phrase meaning that single-word glosses get wrong, e.g. "take a seat = 坐下". */
+  note: z.string().min(1).optional(),
+  accept: z.array(z.string().min(1)).optional(),
+});
+export type PatternExample = z.infer<typeof PatternExample>;
+
+/**
+ * The unit's 万用句型: 1–3 frames (paired frames such as question + answer) and ten examples,
+ * each in its own scene. Every example must fit one of the frames.
+ */
+export const Patterns = z.object({
+  frames: z.array(PatternFrame).min(1).max(3),
+  examples: z.array(PatternExample).min(8).max(12),
+});
+export type Patterns = z.infer<typeof Patterns>;
 
 export const Grammar = z.object({
   title: z.string().min(1),
@@ -84,6 +108,51 @@ export const Grammar = z.object({
 
 export const Voice = z.enum(['bf_emma', 'bf_isabella', 'bm_george', 'bm_lewis', 'af_sarah', 'am_michael']);
 export type Voice = z.infer<typeof Voice>;
+
+export const DAILY_ID = /^u\d{2}\.d\d{2}$/;
+
+/** 🏠 An everyday word, taught through one short sentence from daily life (not work). */
+export const DailyWord = Sentence.extend({
+  id: id(DAILY_ID, 'daily word ids look like u01.d01'),
+  /** Lexicon key of the word being taught; it must appear in `en`. */
+  word: z.string().min(1),
+  scene: z.string().min(1),
+  note: z.string().min(1).optional(),
+  accept: z.array(z.string().min(1)).optional(),
+});
+export type DailyWord = z.infer<typeof DailyWord>;
+
+export const StoryLine = Sentence.extend({
+  /** Who says it (a cast name, or "Amy"). Narrative lines leave it out. */
+  speaker: z.string().min(1).optional(),
+});
+
+export const CastMember = z.object({ name: z.string().min(1), voice: Voice });
+
+/** 📚 "Amy 的一天": narration with at most a few quoted lines, read in the default voice. */
+export const NarrativeStory = z.object({
+  title: z.string().min(1),
+  lines: z.array(StoryLine).min(6).max(16),
+});
+
+/** 🎭 A short play: every line is spoken by someone; Amy uses the default voice. */
+export const DialogueStory = z.object({
+  title: z.string().min(1),
+  /** Where it happens and who is there, in Chinese. */
+  setting: z.string().min(1),
+  cast: z.array(CastMember).min(1).max(4),
+  lines: z.array(StoryLine.extend({ speaker: z.string().min(1) })).min(6).max(16),
+});
+
+/** Two stories that reuse what was just learned: one narrative, one play. */
+export const Stories = z.object({ narrative: NarrativeStory, dialogue: DialogueStory });
+export type Stories = z.infer<typeof Stories>;
+
+/** content/weeks/wNN.json: the week's stories (the week summary itself is generated). */
+export const WeekContent = z.object({
+  week: z.number().int().min(1),
+  stories: Stories,
+});
 
 export const DialogueReply = Sentence.extend({ next: z.string().min(1) });
 
@@ -117,7 +186,10 @@ export const Unit = z.object({
   chunks: z.array(Chunk).min(4).max(12),
   /** Lexicon keys (lower-case) that become vocabulary review cards. */
   words: z.array(z.string().min(1)).min(3).max(14),
-  drill: Drill,
+  patterns: Patterns,
+  /** 🏠 12 everyday words with a daily-life sentence each (decision 0007). */
+  daily: z.array(DailyWord).min(8).max(14),
+  stories: Stories,
   grammar: Grammar.optional(),
   phonics: id(PHONICS_ID, 'phonics ids look like p01').optional(),
   dialogue: Dialogue,

@@ -28,6 +28,16 @@ export function buildMeaningOptions(bundle: ContentBundle, item: ReviewItem, see
       Object.values(bundle.units).flatMap((u) => u.chunks.map((c) => c.zh)),
       answer,
     );
+  } else if (item.kind === 'example') {
+    answer = item.example.zh;
+    pool = uniqueByText(
+      item.unit.patterns.examples.map((e) => e.zh),
+      answer,
+    );
+    wider = uniqueByText(
+      Object.values(bundle.units).flatMap((u) => u.patterns.examples.map((e) => e.zh)),
+      answer,
+    );
   } else if (item.kind === 'word') {
     answer = item.word.zh;
     pool = uniqueByText(

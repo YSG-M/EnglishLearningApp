@@ -5,26 +5,90 @@
   "titleEn": "How do I get to the MRT station?",
   "goal": "能问路、问坐哪路巴士，打 Grab 时能告诉司机你在哪里。",
   "chunks": [
-    { "id": "u08.c01", "en": "Excuse me, where is the MRT station?", "zh": "请问，地铁站在哪里？", "note": "Excuse me 是向陌生人开口时的礼貌开头。MRT 就是新加坡的地铁。" },
-    { "id": "u08.c02", "en": "How do I get to Orchard?", "zh": "去乌节路怎么走？", "note": "把 Orchard 换成你要去的地方。" },
-    { "id": "u08.c03", "en": "Which bus should I take?", "zh": "我应该坐哪路巴士？" },
-    { "id": "u08.c04", "en": "Is this the right way?", "zh": "这个方向对吗？" },
-    { "id": "u08.c05", "en": "Is it far?", "zh": "远吗？" },
-    { "id": "u08.c06", "en": "How long does it take?", "zh": "要多久？" },
-    { "id": "u08.c07", "en": "I'm at the lobby.", "zh": "我在大堂。", "note": "打 Grab 时告诉司机你在哪里。组屋楼下也可以说 void deck。" },
-    { "id": "u08.c08", "en": "Please stop here.", "zh": "请在这里停。" },
-    { "id": "u08.c09", "en": "Okay, I'm coming.", "zh": "好的，我马上来。" }
+    {"id": "u08.c01", "en": "Excuse me, where is the MRT station?", "zh": "请问，地铁站在哪里？", "note": "Excuse me 是向陌生人开口时的礼貌开头。MRT 就是新加坡的地铁。"},
+    {"id": "u08.c02", "en": "How do I get to Orchard?", "zh": "去乌节路怎么走？", "note": "把 Orchard 换成你要去的地方。"},
+    {"id": "u08.c03", "en": "Which bus should I take?", "zh": "我应该坐哪路巴士？"},
+    {"id": "u08.c04", "en": "Is this the right way?", "zh": "这个方向对吗？"},
+    {"id": "u08.c05", "en": "Is it far?", "zh": "远吗？"},
+    {"id": "u08.c06", "en": "How long does it take?", "zh": "要多久？"},
+    {"id": "u08.c07", "en": "I'm at the lobby.", "zh": "我在大堂。", "note": "打 Grab 时告诉司机你在哪里。组屋楼下也可以说 void deck。"},
+    {"id": "u08.c08", "en": "Please stop here.", "zh": "请在这里停。"},
+    {"id": "u08.c09", "en": "Okay, I'm coming.", "zh": "好的，我马上来。"}
   ],
   "words": ["excuse", "mrt", "station", "bus", "right", "way", "far", "long", "lobby", "stop"],
-  "drill": {
-    "pattern": "How do I get to ___?",
-    "zh": "问去某个地方怎么走",
-    "fills": [
-      { "en": "the MRT station", "zh": "去地铁站怎么走？" },
-      { "en": "Orchard", "zh": "去乌节路怎么走？" },
-      { "en": "the bus stop", "zh": "去巴士站怎么走？" },
-      { "en": "the clinic", "zh": "去诊所怎么走？" }
+  "patterns": {
+    "frames": [
+      {"frame": "Where is ___?", "zh": "……在哪里？", "usage": "找东西、找地方。把要找的东西放进 ___。对陌生人先说 Excuse me。"},
+      {"frame": "How do I get to ___?", "zh": "去……怎么走？", "usage": "问去一个地方的路怎么走、坐什么车。把要去的地方放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u08.e01", "scene": "在 hawker centre 吃完饭，想去洗手间。", "en": "Where is the toilet?", "zh": "洗手间在哪里？", "note": "新加坡一般说 toilet", "accept": ["Excuse me, where is the toilet?"]},
+      {"id": "u08.e02", "scene": "早上要出门，找不到手机，问家里人。", "en": "Where is my phone?", "zh": "我的手机在哪里？"},
+      {"id": "u08.e03", "scene": "在 MRT 站拿着很多东西，不想走楼梯。", "en": "Where is the lift?", "zh": "电梯在哪里？", "note": "lift = 电梯（新加坡、英国说 lift）", "accept": ["Excuse me, where is the lift?"]},
+      {"id": "u08.e04", "scene": "下了 MRT 还要转巴士，问站里的工作人员。", "en": "Excuse me, where is the bus stop?", "zh": "请问，巴士站在哪里？", "accept": ["Where is the bus stop?"]},
+      {"id": "u08.e05", "scene": "去朋友家，在组屋区里绕了一圈也没找到。", "en": "Excuse me, where is Block 456?", "zh": "请问，456 座在哪里？", "note": "Block 456 读作 block four five six", "accept": ["Where is Block 456?"]},
+      {"id": "u08.e06", "scene": "刚搬到新的组屋，想知道附近诊所怎么走，问邻居。", "en": "How do I get to the clinic?", "zh": "去诊所怎么走？"},
+      {"id": "u08.e07", "scene": "第一次来这个区，想去 hawker centre 吃午饭，问路人。", "en": "How do I get to the hawker centre?", "zh": "去小贩中心怎么走？"},
+      {"id": "u08.e08", "scene": "同事请你周末去她家吃饭，你问她怎么去。", "en": "How do I get to your house?", "zh": "去你家怎么走？", "note": "get to = 到达、去到", "accept": ["How do I get to your place?"]},
+      {"id": "u08.e09", "scene": "家里人住院了，你在巴士站问别人怎么去医院。", "en": "How do I get to the hospital from here?", "zh": "从这里去医院怎么走？", "note": "from here = 从这里", "accept": ["How do I get to the hospital?"]},
+      {"id": "u08.e10", "scene": "下班后去了一个不熟的地方，想坐 MRT 回家。", "en": "Excuse me, where is the nearest MRT station?", "zh": "请问，最近的地铁站在哪里？", "note": "the nearest = 最近的", "accept": ["Where is the nearest MRT station?"]}
     ]
+  },
+  "daily": [
+    {"id": "u08.d01", "word": "tap", "scene": "带妈妈第一次坐巴士，上车时你教她拍卡。", "en": "Tap your card here.", "zh": "在这里拍卡。", "note": "tap = 轻轻拍一下（拍卡）"},
+    {"id": "u08.d02", "word": "crowded", "scene": "早上八点，朋友问你为什么不坐 MRT。", "en": "The MRT is very crowded.", "zh": "MRT 好挤。", "note": "crowded = 人很多、很挤"},
+    {"id": "u08.d03", "word": "taxi", "scene": "晚上和家人吃完饭，巴士一直不来。", "en": "I will take a taxi.", "zh": "我打的士吧。", "note": "take a taxi = 坐出租车", "accept": ["I'll take a taxi."]},
+    {"id": "u08.d04", "word": "left", "scene": "坐 Grab 回家，快到你住的那栋楼了。", "en": "Please turn left here.", "zh": "请在这里左转。", "note": "turn left = 左转（turn right = 右转）"},
+    {"id": "u08.d05", "word": "straight", "scene": "在组屋楼下，一位阿姨问你巴士站怎么走。", "en": "Go straight.", "zh": "一直往前走。", "note": "go straight = 直走"},
+    {"id": "u08.d06", "word": "traffic", "scene": "周末去朋友家吃饭，路上塞车，你发信息给她。", "en": "Sorry, the traffic is very bad.", "zh": "不好意思，路上很堵。", "note": "the traffic is bad = 塞车、很堵"},
+    {"id": "u08.d07", "word": "stairs", "scene": "组屋的电梯在维修，你只能走楼梯。", "en": "I will take the stairs.", "zh": "我走楼梯吧。", "note": "take the stairs = 走楼梯", "accept": ["I'll take the stairs."]},
+    {"id": "u08.d08", "word": "train", "scene": "在 MRT 站台上，你叫正在看手机的朋友。", "en": "The train is coming.", "zh": "车来了。", "note": "train = 火车，这里指 MRT 列车"},
+    {"id": "u08.d09", "word": "driver", "scene": "和家人在商场门口等车，你看到车来了。", "en": "My Grab driver is here.", "zh": "我叫的 Grab 到了。", "note": "driver = 司机"},
+    {"id": "u08.d10", "word": "umbrella", "scene": "要出门了，外面下大雨，你问家人。", "en": "Do you have an umbrella?", "zh": "你有雨伞吗？"},
+    {"id": "u08.d11", "word": "cross", "scene": "带朋友的孩子去买东西，走到红绿灯路口。", "en": "Let's cross here.", "zh": "我们从这里过马路。", "note": "cross = 过（马路）"},
+    {"id": "u08.d12", "word": "drive", "scene": "邻居问你家里谁会开车。", "en": "My husband can drive.", "zh": "我老公会开车。", "note": "drive = 开车"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的雨天星期天",
+      "lines": [
+        {"en": "Today is Sunday.", "zh": "今天是星期天。"},
+        {"en": "I take the MRT to see my friend.", "zh": "我坐 MRT 去看朋友。"},
+        {"en": "The MRT is very crowded.", "zh": "MRT 好挤。"},
+        {"en": "I get off at the next stop.", "zh": "我在下一站下车。"},
+        {"en": "\"Excuse me, which bus should I take?\"", "zh": "\"请问，我应该坐哪路巴士？\""},
+        {"en": "The bus is slow. The traffic is very bad.", "zh": "巴士好慢，路上很堵。"},
+        {"en": "Now it's raining!", "zh": "这时候下雨了！"},
+        {"en": "Where is my umbrella?", "zh": "我的雨伞呢？"},
+        {"en": "I will take a taxi.", "zh": "我打的士吧。"},
+        {"en": "\"Please stop here.\"", "zh": "\"请在这里停。\""},
+        {"en": "My friend is at the lobby.", "zh": "我的朋友在大堂等我。"},
+        {"en": "\"Hi! Sorry, I'm late.\"", "zh": "\"嗨！不好意思，我迟到了。\""}
+      ]
+    },
+    "dialogue": {
+      "title": "下雨天坐 Grab 回家",
+      "setting": "星期天晚上，Amy 从朋友家坐 Grab 回家，外面在下雨。",
+      "cast": [
+        {"name": "Driver", "voice": "bm_lewis"}
+      ],
+      "lines": [
+        {"speaker": "Driver", "en": "Hello! Are you Amy?", "zh": "你好！你是 Amy 吗？"},
+        {"speaker": "Amy", "en": "Yes. Hi! How long does it take?", "zh": "是的。你好！要多久？"},
+        {"speaker": "Driver", "en": "10 minutes. The traffic is bad today.", "zh": "十分钟。今天路上很堵。"},
+        {"speaker": "Amy", "en": "It's okay.", "zh": "没关系。"},
+        {"speaker": "Driver", "en": "Is this the right way?", "zh": "是走这条路吗？"},
+        {"speaker": "Amy", "en": "Yes. Go straight, please.", "zh": "对。请一直往前开。"},
+        {"speaker": "Driver", "en": "Okay.", "zh": "好的。"},
+        {"speaker": "Amy", "en": "Please turn left here.", "zh": "请在这里左转。"},
+        {"speaker": "Driver", "en": "Here?", "zh": "这里吗？"},
+        {"speaker": "Amy", "en": "Yes. Please stop here.", "zh": "对。请在这里停。"},
+        {"speaker": "Driver", "en": "Do you have an umbrella?", "zh": "你有雨伞吗？"},
+        {"speaker": "Amy", "en": "No, but it's okay. My home is near.", "zh": "没有，不过没关系，我家很近。"},
+        {"speaker": "Driver", "en": "Okay. Have a nice day!", "zh": "好的。祝你愉快！"},
+        {"speaker": "Amy", "en": "Thank you. You too!", "zh": "谢谢，你也是！"}
+      ]
+    }
   },
   "phonics": "p06",
   "dialogue": {
@@ -36,30 +100,45 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hello, I'm your Grab driver. Where are you now?", "zh": "你好，我是你的 Grab 司机。你现在在哪里？" },
+        "npc": {"en": "Hello, I'm your Grab driver. Where are you now?", "zh": "你好，我是你的 Grab 司机。你现在在哪里？"},
         "replies": [
-          { "en": "I'm at the lobby.", "zh": "我在大堂。", "next": "n2" },
-          { "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n1b" }
+          {"en": "I'm at the lobby.", "zh": "我在大堂。", "next": "n2"},
+          {"en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n1b"}
         ]
       },
       {
         "id": "n1b",
-        "npc": { "en": "Sure. Where. Are. You?", "zh": "好的。你——在——哪里？" },
-        "replies": [{ "en": "I'm at the lobby.", "zh": "我在大堂。", "next": "n2" }]
+        "npc": {"en": "Sure. Where. Are. You?", "zh": "好的。你——在——哪里？"},
+        "replies": [
+          {"en": "I'm at the lobby.", "zh": "我在大堂。", "next": "n2"}
+        ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Block 123, right?", "zh": "123 座，对吗？" },
-        "replies": [{ "en": "Yes, block 123.", "zh": "对，123 座。", "next": "n3" }]
+        "npc": {"en": "Block 123, right?", "zh": "123 座，对吗？"},
+        "replies": [
+          {"en": "Yes, block 123.", "zh": "对，123 座。", "next": "n3"},
+          {"en": "Yes. Where is your car?", "zh": "对。你的车在哪里？", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "Okay, I'm here already. Silver car.", "zh": "好的，我已经到了。银色的车。" },
-        "replies": [{ "en": "Okay, I'm coming.", "zh": "好的，我马上来。", "next": "end" }]
+        "npc": {"en": "Okay, I'm here already. Silver car.", "zh": "好的，我已经到了。银色的车。"},
+        "replies": [
+          {"en": "Okay, I'm coming.", "zh": "好的，我马上来。", "next": "end"},
+          {"en": "Sorry, where is it?", "zh": "不好意思，车在哪里？", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "Near the bus stop. I'm waving at you now.", "zh": "在巴士站旁边。我现在在向你挥手。"},
+        "replies": [
+          {"en": "Okay, I see you. I'm coming.", "zh": "好的，看到你了，我马上来。", "next": "end"}
+        ]
       },
       {
         "id": "end",
-        "npc": { "en": "No problem. See you.", "zh": "没问题，待会见。" },
+        "npc": {"en": "No problem. See you.", "zh": "没问题，待会见。"},
         "replies": []
       }
     ]

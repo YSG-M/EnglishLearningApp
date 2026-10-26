@@ -5,6 +5,7 @@ import { AppProvider, useApp, useInitialLoad, type Route } from './state/AppCont
 import { CoursePage } from './pages/CoursePage';
 import { PartPage } from './pages/PartPage';
 import { PhrasebookPage } from './pages/PhrasebookPage';
+import { UnitSummaryPage, WeekSummaryPage } from './pages/SummaryPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { ReviewPage } from './pages/ReviewPage';
 import { SettingsPage } from './pages/SettingsPage';
@@ -21,7 +22,12 @@ const NAV: { route: Route['name']; label: string; icon: string }[] = [
 
 function Sidebar() {
   const { route, navigate } = useApp();
-  const active = route.name === 'part' ? 'today' : route.name;
+  const active =
+    route.name === 'part'
+      ? (route.from ?? 'today')
+      : route.name === 'unitSummary' || route.name === 'weekSummary'
+        ? 'course'
+        : route.name;
   return (
     <nav className="sidebar" aria-label="主菜单">
       <div className="brand">
@@ -68,8 +74,16 @@ function Screen() {
     case 'settings':
       page = <SettingsPage />;
       break;
+    case 'unitSummary':
+      page = <UnitSummaryPage unitId={route.unitId} {...(route.from ? { from: route.from } : {})} />;
+      break;
+    case 'weekSummary':
+      page = <WeekSummaryPage week={route.week} {...(route.from ? { from: route.from } : {})} />;
+      break;
     case 'part':
-      page = <PartPage key={route.partId} partId={route.partId} />;
+      page = (
+        <PartPage key={route.partId} partId={route.partId} {...(route.from ? { from: route.from } : {})} />
+      );
       break;
   }
   return (
@@ -78,7 +92,15 @@ function Screen() {
       <main className="content">
         {/* Keyed by route so an error on one screen is cleared by navigating away. */}
         <ErrorBoundary
-          key={route.name === 'part' ? route.partId : route.name}
+          key={
+            route.name === 'part'
+              ? route.partId
+              : route.name === 'unitSummary'
+                ? route.unitId
+                : route.name === 'weekSummary'
+                  ? `w${route.week}`
+                  : route.name
+          }
           onReset={() => navigate({ name: 'today' })}
         >
           {page}

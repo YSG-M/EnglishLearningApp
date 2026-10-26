@@ -42,9 +42,29 @@ export function fixtureBundle(): ContentBundle {
   const c1 = { ...spoken("Hi, I'm Amy.", '你好，我是 Amy。'), id: 'u01.c01', accept: ['Hi, I am Amy.'] };
   const c2 = { ...spoken('Nice to meet you.', '很高兴认识你。'), id: 'u01.c02' };
   const c3 = { ...spoken('Thank you.', '谢谢你。'), id: 'u01.c03' };
-  const c4 = { ...spoken('Good morning.', '早上好。'), id: 'u01.c04' };
+  const c4 = {
+    ...spoken('Good morning.', '早上好。'),
+    id: 'u01.c04',
+    pattern: { frame: 0, slot: [1, 2] as [number, number] },
+  };
   const r1 = { ...spoken('Nice to meet you.', '很高兴认识你。'), next: 'end' };
   const r2 = { ...spoken('Thank you.', '谢谢你。'), next: 'end' };
+  const stories = {
+    narrative: {
+      kind: 'narrative' as const,
+      title: 'Amy 的早上',
+      lines: [spoken('Good morning.', '早上好。'), spoken("Hi, I'm Amy.", '你好，我是 Amy。')],
+    },
+    dialogue: {
+      kind: 'dialogue' as const,
+      title: '新邻居',
+      setting: '在电梯里',
+      lines: [
+        { ...spoken('Nice to meet you.', '很高兴认识你。'), speaker: 'Mrs Tan' },
+        { ...spoken('Thank you.', '谢谢你。'), speaker: 'Amy' },
+      ],
+    },
+  };
   return {
     contentVersion: '0.0.0-test',
     contentHash: 'test',
@@ -59,11 +79,34 @@ export function fixtureBundle(): ContentBundle {
         goal: '能打招呼',
         chunks: [c1, c2, c3, c4],
         words: ['hi', 'nice', 'meet', 'thank'],
-        drill: {
-          pattern: 'Good ___.',
-          zh: '问候',
-          items: [{ ...spoken('Good morning.', '早上好。'), fillZh: '早上好' }],
+        patterns: {
+          frames: [{ frame: 'Good ___.', zh: '……好', usage: '不同时间的问候' }],
+          examples: [
+            {
+              ...spoken('Good morning.', '早上好。'),
+              id: 'u01.e01',
+              scene: '早上到补习中心，看到同事。',
+              pattern: { frame: 0, slot: [1, 2] },
+            },
+            {
+              ...spoken('Good morning, Amy.', '早上好，Amy。'),
+              id: 'u01.e02',
+              scene: '早上同事先跟你打招呼。',
+              note: 'Amy 换成对方的名字',
+              pattern: { frame: 0, slot: [1, 3] },
+            },
+          ],
         },
+        daily: [
+          {
+            ...spoken('Nice to meet you.', '很高兴认识你。'),
+            id: 'u01.d01',
+            word: 'nice',
+            scene: '周末在楼下认识了新邻居。',
+            slot: [0, 1],
+          },
+        ],
+        stories,
         phonics: 'p01',
         dialogue: {
           title: '认识新同事',
@@ -98,6 +141,7 @@ export function fixtureBundle(): ContentBundle {
       },
     },
     challenges: {},
+    weeks: { '1': { week: 1, unitIds: ['u01'], stories } },
     parts: [
       {
         id: 'u01:learn',
@@ -113,7 +157,7 @@ export function fixtureBundle(): ContentBundle {
         kind: 'practice',
         week: 1,
         day: 2,
-        title: '打招呼 · 句型和发音',
+        title: '打招呼 · 句型课',
         unitIds: ['u01'],
         light: false,
       },
@@ -130,6 +174,9 @@ export function createMockApi(
   opts: {
     bundle?: ContentBundle;
     queue?: ReviewCardView[];
+    /** Returned by review.getPracticeSet (defaults to `queue`). */
+    practice?: ReviewCardView[];
+    completed?: string[];
     recognizeText?: string;
     settings?: Partial<Settings>;
   } = {},
@@ -137,6 +184,7 @@ export function createMockApi(
   const bundle = opts.bundle ?? fixtureBundle();
   let settings: Settings = { ...defaultSettings, ...opts.settings };
   const hints: Record<string, number> = {};
+  const completed = new Set(opts.completed ?? []);
   const calls: MockApi['calls'] = [];
   const log = <T>(channel: string, args: unknown[], value: T): Promise<T> => {
     calls.push({ channel, args });
@@ -180,13 +228,21 @@ export function createMockApi(
       addActiveTime: (ms) => log('today.addActiveTime', [ms], today()),
     },
     parts: {
-      complete: (input) => log('parts.complete', [input], { cardsIntroduced: 2, today: today() }),
-      listCompleted: () => log('parts.listCompleted', [], []),
+      complete: (input) => {
+        const firstTime = !completed.has(input.partId);
+        completed.add(input.partId);
+        return log('parts.complete', [input], {
+          cardsIntroduced: firstTime ? 2 : 0,
+          firstTime,
+          today: today(),
+        });
+      },
+      listCompleted: () => log('parts.listCompleted', [], [...completed]),
     },
     review: {
       getQueue: () => log('review.getQueue', [], opts.queue ?? []),
       submit: (input) => log('review.submit', [input], today()),
-      getPracticeSet: (unitId) => log('review.getPracticeSet', [unitId], opts.queue ?? []),
+      getPracticeSet: (scope) => log('review.getPracticeSet', [scope], opts.practice ?? opts.queue ?? []),
     },
     speech: {
       getStatus: () => log('speech.getStatus', [], { state: 'ready' as const }),

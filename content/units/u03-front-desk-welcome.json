@@ -5,33 +5,96 @@
   "titleEn": "How can I help you?",
   "goal": "能在前台用英语接待来接送孩子的家长：问好、请坐、请稍等、问孩子名字。",
   "chunks": [
-    { "id": "u03.c01", "en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？", "note": "前台最常用的第一句话。", "accept": ["Hello, how can I help you?", "How can I help you?"] },
-    { "id": "u03.c02", "en": "Please take a seat.", "zh": "请坐。", "note": "take a seat 是\"坐下\"的礼貌说法。" },
-    { "id": "u03.c03", "en": "Please wait a moment.", "zh": "请稍等一下。", "accept": ["Please wait a moment, please."] },
-    { "id": "u03.c04", "en": "What is your child's name?", "zh": "你孩子叫什么名字？", "note": "child's 就是\"孩子的\"。", "accept": ["What's your child's name?"] },
-    { "id": "u03.c05", "en": "Which class is he in?", "zh": "他在哪个班？", "note": "男孩用 he，女孩用 she：Which class is she in?" },
-    { "id": "u03.c06", "en": "The class is upstairs.", "zh": "教室在楼上。" },
-    { "id": "u03.c07", "en": "The class ends at 5pm.", "zh": "课下午 5 点结束。", "note": "5pm 读作 five p m。" },
-    { "id": "u03.c08", "en": "Please sign here.", "zh": "请在这里签名。" },
-    { "id": "u03.c09", "en": "She is coming now.", "zh": "她马上就来。", "note": "孩子是男孩就说 He is coming now." }
+    {"id": "u03.c01", "en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？", "note": "前台最常用的第一句话。", "accept": ["Hello, how can I help you?", "How can I help you?"]},
+    {"id": "u03.c02", "en": "Please take a seat.", "zh": "请坐。", "note": "take a seat 是\"坐下\"的礼貌说法。"},
+    {"id": "u03.c03", "en": "Please wait a moment.", "zh": "请稍等一下。", "accept": ["Please wait a moment, please."]},
+    {"id": "u03.c04", "en": "What is your child's name?", "zh": "你孩子叫什么名字？", "note": "child's 就是\"孩子的\"。", "accept": ["What's your child's name?"]},
+    {"id": "u03.c05", "en": "Which class is he in?", "zh": "他在哪个班？", "note": "男孩用 he，女孩用 she：Which class is she in?"},
+    {"id": "u03.c06", "en": "The class is upstairs.", "zh": "教室在楼上。"},
+    {"id": "u03.c07", "en": "The class ends at 5pm.", "zh": "课下午 5 点结束。", "note": "5pm 读作 five p m。"},
+    {"id": "u03.c08", "en": "Please sign here.", "zh": "请在这里签名。"},
+    {"id": "u03.c09", "en": "She is coming now.", "zh": "她马上就来。", "note": "孩子是男孩就说 He is coming now."}
   ],
   "words": ["help", "seat", "wait", "child's", "name", "class", "upstairs", "sign", "here", "now"],
-  "drill": {
-    "pattern": "Please ___.",
-    "zh": "礼貌地请家长做一件事",
-    "fills": [
-      { "en": "take a seat", "zh": "请坐" },
-      { "en": "wait a moment", "zh": "请稍等" },
-      { "en": "sign here", "zh": "请在这里签名" },
-      { "en": "come in", "zh": "请进" }
+  "patterns": {
+    "frames": [
+      {"frame": "Please ___.", "zh": "请……", "usage": "客气地请别人做一件事。Please 放在最前面，后面直接说要对方做的动作。"}
+    ],
+    "examples": [
+      {"id": "u03.e01", "scene": "一位家长站在中心门口，不好意思进来。", "en": "Please come in.", "zh": "请进。", "note": "come in = 进来"},
+      {"id": "u03.e02", "scene": "家长来早了，孩子还没下课，你请他在前台旁边等。", "en": "Please wait here.", "zh": "请在这里等。"},
+      {"id": "u03.e03", "scene": "在 HDB 楼下，电梯门快关了，你还在跑过去。", "en": "Please hold the lift!", "zh": "请等一下电梯！", "note": "hold the lift = 按住电梯（别让门关上）"},
+      {"id": "u03.e04", "scene": "亲戚的孩子来家里玩，你在打电话，他们太吵了。", "en": "Please be quiet.", "zh": "请安静。", "note": "be quiet = 安静"},
+      {"id": "u03.e05", "scene": "家里开着空调，家人进房间没关门。", "en": "Please close the door.", "zh": "请关门。", "accept": ["Please close the door, thank you."]},
+      {"id": "u03.e06", "scene": "你在很挤的 MRT 上，朋友打电话来，你小声说。", "en": "Sorry, please call me later.", "zh": "不好意思，请晚点打给我。", "note": "call me later = 晚点打给我", "accept": ["Please call me later."]},
+      {"id": "u03.e07", "scene": "修空调的师傅来你家，进门前你请他脱鞋。", "en": "Please take off your shoes.", "zh": "请把鞋脱了。", "note": "take off = 脱下（不是\"拿走\"）"},
+      {"id": "u03.e08", "scene": "家长 4 点就到了，可是孩子 5 点才下课。", "en": "Please come back at 5pm.", "zh": "请 5 点再来。", "note": "come back = 回来、再来"},
+      {"id": "u03.e09", "scene": "周末和朋友在公园拍了合照，照片在她的手机上。", "en": "Please send me the photo on WhatsApp.", "zh": "请在 WhatsApp 上把照片发给我。", "accept": ["Please send me the photo."]},
+      {"id": "u03.e10", "scene": "新家长来报名，你把表格递给他。", "en": "Please write your phone number here.", "zh": "请在这里写你的电话号码。", "accept": ["Please write your number here."]}
     ]
+  },
+  "daily": [
+    {"id": "u03.d01", "word": "home", "scene": "周末请朋友来家里玩，你打开门。", "en": "Welcome to my home!", "zh": "欢迎来我家！", "note": "welcome to = 欢迎来到"},
+    {"id": "u03.d02", "word": "toilet", "scene": "在朋友家吃饭，你想上洗手间。", "en": "Where is the toilet?", "zh": "洗手间在哪里？", "note": "新加坡一般说 toilet", "accept": ["Where's the toilet?"]},
+    {"id": "u03.d03", "word": "downstairs", "scene": "朋友开车来接你，你已经在组屋楼下等了，给她发语音。", "en": "I'm downstairs now.", "zh": "我现在在楼下。", "accept": ["I am downstairs now.", "I'm downstairs."]},
+    {"id": "u03.d04", "word": "floor", "scene": "在 HDB 电梯里，你站在按钮旁边，一位阿姨走进来。", "en": "Which floor, please?", "zh": "请问去几楼？", "note": "floor = 楼层"},
+    {"id": "u03.d05", "word": "key", "scene": "早上要出门，找不到家门钥匙。", "en": "Where is my key?", "zh": "我的钥匙在哪里？", "accept": ["Where's my key?"]},
+    {"id": "u03.d06", "word": "chair", "scene": "在 hawker centre，人很多，旁边桌有一把空椅子。", "en": "Can I use this chair?", "zh": "我可以用这把椅子吗？", "note": "use = 用"},
+    {"id": "u03.d07", "word": "sit", "scene": "亲戚来家里，你请她坐下。", "en": "Please sit down.", "zh": "请坐。", "note": "sit down = 坐下"},
+    {"id": "u03.d08", "word": "early", "scene": "周末约朋友在 MRT 站见面，你早到了十分钟，给她发消息。", "en": "I'm early today.", "zh": "我今天早到了。", "accept": ["I am early today."]},
+    {"id": "u03.d09", "word": "queue", "scene": "在 hawker centre 的鸡饭摊前，人很多，你不确定这是不是排队的队伍。", "en": "Is this the queue?", "zh": "这里是排队的地方吗？", "note": "queue = 排队的队伍（读音像字母 Q）"},
+    {"id": "u03.d10", "word": "wet", "scene": "下大雨，你走路回家，鞋子全湿了。", "en": "My shoes are wet.", "zh": "我的鞋子湿了。", "note": "wet = 湿的"},
+    {"id": "u03.d11", "word": "kitchen", "scene": "朋友来家里，问你老公在哪里。", "en": "My husband is in the kitchen.", "zh": "我老公在厨房。"},
+    {"id": "u03.d12", "word": "tissue", "scene": "在 hawker centre 吃完饭，手很油，问身边的朋友。", "en": "Do you have a tissue?", "zh": "你有纸巾吗？", "note": "tissue = 纸巾"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 家来了客人",
+      "lines": [
+        {"en": "It's the weekend. My friend is coming today.", "zh": "今天是周末，朋友要来我家。"},
+        {"en": "I wait downstairs.", "zh": "我在楼下等她。"},
+        {"en": "She is early!", "zh": "她早到了！"},
+        {"en": "We take the lift to my floor.", "zh": "我们坐电梯上楼。"},
+        {"en": "\"Welcome to my home! Please come in.\"", "zh": "\"欢迎来我家！请进。\""},
+        {"en": "My husband is in the kitchen.", "zh": "我老公在厨房。"},
+        {"en": "He is busy.", "zh": "他在忙。"},
+        {"en": "The weather is very hot today.", "zh": "今天天气很热。"},
+        {"en": "We are very hungry.", "zh": "我们都很饿。"},
+        {"en": "Now it's ready. Very nice!", "zh": "饭做好了，很好吃！"},
+        {"en": "At 5pm, I walk my friend to the lift.", "zh": "下午五点，我送朋友到电梯口。"},
+        {"en": "\"See you! Have a nice weekend!\"", "zh": "\"再见！周末愉快！\""}
+      ]
+    },
+    "dialogue": {
+      "title": "下雨天来接孩子",
+      "setting": "下午突然下起大雨，林太太提早来补习中心接儿子。",
+      "cast": [
+        {"name": "Mrs Lim", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Amy", "en": "Good afternoon! How can I help you?", "zh": "下午好！有什么可以帮你？"},
+        {"speaker": "Mrs Lim", "en": "Hi! I'm early today.", "zh": "你好！我今天来早了。"},
+        {"speaker": "Amy", "en": "What is your child's name?", "zh": "你孩子叫什么名字？"},
+        {"speaker": "Mrs Lim", "en": "Jason. Jason Lim.", "zh": "Jason，Jason Lim。"},
+        {"speaker": "Amy", "en": "Which class is he in?", "zh": "他在哪个班？"},
+        {"speaker": "Mrs Lim", "en": "Sorry, I don't know.", "zh": "不好意思，我不知道。"},
+        {"speaker": "Amy", "en": "One moment, please. Let me check.", "zh": "请稍等，我查一下。"},
+        {"speaker": "Mrs Lim", "en": "Thank you.", "zh": "谢谢。"},
+        {"speaker": "Amy", "en": "The class ends at 5pm. Please take a seat.", "zh": "课下午五点结束。请坐。"},
+        {"speaker": "Mrs Lim", "en": "Thank you. Where is the toilet?", "zh": "谢谢。洗手间在哪里？"},
+        {"speaker": "Amy", "en": "The toilet is upstairs.", "zh": "洗手间在楼上。"},
+        {"speaker": "Mrs Lim", "en": "Sorry, my shoes are wet.", "zh": "不好意思，我的鞋子湿了。"},
+        {"speaker": "Amy", "en": "It's okay. Here is a tissue.", "zh": "没关系。给你纸巾。"},
+        {"speaker": "Mrs Lim", "en": "Thank you! See you tomorrow!", "zh": "谢谢！明天见！"}
+      ]
+    }
   },
   "grammar": {
     "title": "he 和 she 一定要分清",
     "body": "中文\"他\"和\"她\"读音一样，英语却完全不同：男孩用 he，女孩用 she。前台说到孩子时最容易说错，开口前先想一下：是男孩还是女孩？",
     "examples": [
-      { "en": "He is in Class A.", "zh": "他（男孩）在 A 班。" },
-      { "en": "She is in Class B.", "zh": "她（女孩）在 B 班。" }
+      {"en": "He is in Class A.", "zh": "他（男孩）在 A 班。"},
+      {"en": "She is in Class B.", "zh": "她（女孩）在 B 班。"}
     ]
   },
   "phonics": "p01",
@@ -44,38 +107,45 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi, good afternoon.", "zh": "你好，下午好。" },
+        "npc": {"en": "Hi, good afternoon.", "zh": "你好，下午好。"},
         "replies": [
-          { "en": "Good afternoon! How can I help you?", "zh": "下午好！有什么可以帮你？", "next": "n2" },
-          { "en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？", "next": "n2" }
+          {"en": "Good afternoon! How can I help you?", "zh": "下午好！有什么可以帮你？", "next": "n2"},
+          {"en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？", "next": "n2"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "I'm here to pick up my daughter.", "zh": "我来接我女儿。" },
-        "replies": [{ "en": "What is your child's name?", "zh": "你孩子叫什么名字？", "next": "n3" }]
+        "npc": {"en": "I'm here to pick up my daughter.", "zh": "我来接我女儿。"},
+        "replies": [
+          {"en": "What is your child's name?", "zh": "你孩子叫什么名字？", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "Her name is Chloe. Chloe Tan.", "zh": "她叫 Chloe，Chloe Tan。" },
-        "replies": [{ "en": "Which class is she in?", "zh": "她在哪个班？", "next": "n4" }]
+        "npc": {"en": "Her name is Chloe. Chloe Tan.", "zh": "她叫 Chloe，Chloe Tan。"},
+        "replies": [
+          {"en": "Which class is she in?", "zh": "她在哪个班？", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "The P2 class, I think.", "zh": "我想是小二的班。" },
+        "npc": {"en": "The P2 class, I think.", "zh": "我想是小二的班。"},
         "replies": [
-          { "en": "Okay. Please take a seat.", "zh": "好的，请坐。", "next": "n5" },
-          { "en": "Please wait a moment.", "zh": "请稍等一下。", "next": "n5" }
+          {"en": "Okay. Please take a seat.", "zh": "好的，请坐。", "next": "n5"},
+          {"en": "Please wait a moment.", "zh": "请稍等一下。", "next": "n5"}
         ]
       },
       {
         "id": "n5",
-        "npc": { "en": "Sure, thanks.", "zh": "好的，谢谢。" },
-        "replies": [{ "en": "She is coming now.", "zh": "她马上就来。", "next": "end" }]
+        "npc": {"en": "Sure, thanks.", "zh": "好的，谢谢。"},
+        "replies": [
+          {"en": "She is coming now.", "zh": "她马上就来。", "next": "end"},
+          {"en": "She is coming now. Please wait here.", "zh": "她马上就来，请在这里等。", "next": "end"}
+        ]
       },
       {
         "id": "end",
-        "npc": { "en": "Oh, there she is. Thank you!", "zh": "哦，她来了。谢谢！" },
+        "npc": {"en": "Oh, there she is. Thank you!", "zh": "哦，她来了。谢谢！"},
         "replies": []
       }
     ]

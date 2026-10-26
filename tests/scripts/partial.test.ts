@@ -25,6 +25,7 @@ function raw(
       data: { id, ...(unitPhonics[id] ? { phonics: unitPhonics[id] } : {}) },
     })),
     phonics: phonics.map((id) => ({ file: `${id}.json`, data: { id } })),
+    weeks: [],
   };
 }
 

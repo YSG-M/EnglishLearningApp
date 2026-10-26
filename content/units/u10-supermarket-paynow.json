@@ -5,34 +5,95 @@
   "titleEn": "Can I pay by PayNow?",
   "goal": "在超市能问东西在哪里、有没有，结账时能说用什么方式付款、要不要袋子。",
   "chunks": [
-    { "id": "u10.c01", "en": "Excuse me, where is the milk?", "zh": "请问，牛奶在哪里？" },
-    { "id": "u10.c02", "en": "Do you have eggs?", "zh": "你们有鸡蛋吗？", "note": "问\"有没有\"时，东西一般用复数：eggs。" },
-    { "id": "u10.c03", "en": "I'm looking for bread.", "zh": "我在找面包。" },
-    { "id": "u10.c04", "en": "Is this on sale?", "zh": "这个在打折吗？" },
-    { "id": "u10.c05", "en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付款吗？", "note": "PayNow 是新加坡的手机转账。" },
-    { "id": "u10.c06", "en": "Can I pay by card?", "zh": "可以刷卡吗？" },
-    { "id": "u10.c07", "en": "I don't need a bag.", "zh": "我不要袋子。", "note": "新加坡超市的塑料袋要收费，自己带袋子就说这句。" },
-    { "id": "u10.c08", "en": "Can I have a receipt?", "zh": "可以给我收据吗？" },
-    { "id": "u10.c09", "en": "That's all, thank you.", "zh": "就这些，谢谢。", "accept": ["That is all, thank you."] }
+    {"id": "u10.c01", "en": "Excuse me, where is the milk?", "zh": "请问，牛奶在哪里？"},
+    {"id": "u10.c02", "en": "Do you have eggs?", "zh": "你们有鸡蛋吗？", "note": "问\"有没有\"时，东西一般用复数：eggs。"},
+    {"id": "u10.c03", "en": "I'm looking for bread.", "zh": "我在找面包。"},
+    {"id": "u10.c04", "en": "Is this on sale?", "zh": "这个在打折吗？"},
+    {"id": "u10.c05", "en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付款吗？", "note": "PayNow 是新加坡的手机转账。"},
+    {"id": "u10.c06", "en": "Can I pay by card?", "zh": "可以刷卡吗？"},
+    {"id": "u10.c07", "en": "I don't need a bag.", "zh": "我不要袋子。", "note": "新加坡超市的塑料袋要收费，自己带袋子就说这句。"},
+    {"id": "u10.c08", "en": "Can I have a receipt?", "zh": "可以给我收据吗？"},
+    {"id": "u10.c09", "en": "That's all, thank you.", "zh": "就这些，谢谢。", "accept": ["That is all, thank you."]}
   ],
   "words": ["milk", "eggs", "looking", "bread", "sale", "pay", "paynow", "card", "need", "bag", "receipt"],
-  "drill": {
-    "pattern": "Where is the ___?",
-    "zh": "问东西在哪里",
-    "fills": [
-      { "en": "milk", "zh": "牛奶在哪里？" },
-      { "en": "bread", "zh": "面包在哪里？" },
-      { "en": "rice", "zh": "米在哪里？" },
-      { "en": "toilet", "zh": "洗手间在哪里？" },
-      { "en": "cashier", "zh": "收银台在哪里？" }
+  "patterns": {
+    "frames": [
+      {"frame": "Do you have ___?", "zh": "你（们）有……吗？", "usage": "问对方有没有某样东西，买东西、借东西、问人有没有空都能用。框不变，只把想要的东西放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u10.e01", "scene": "在 hawker centre 吃完饭，你问摊主有没有纸巾。", "en": "Do you have tissue?", "zh": "有纸巾吗？"},
+      {"id": "u10.e02", "scene": "在 kopitiam 买咖啡，你只有一张大钞，问摊主找得开吗。", "en": "Do you have change?", "zh": "有零钱找吗？", "note": "change = 零钱、找的钱（不是\"改变\"）"},
+      {"id": "u10.e03", "scene": "家长要填报名表，你找不到笔，问旁边的同事。", "en": "Do you have a pen?", "zh": "你有笔吗？"},
+      {"id": "u10.e04", "scene": "电脑出了问题，你想请同事过来帮你看看。", "en": "Do you have time now?", "zh": "你现在有空吗？", "note": "have time = 有空"},
+      {"id": "u10.e05", "scene": "你跟家长讲完上课时间和学费，问他还有没有问题。", "en": "Do you have any questions?", "zh": "您还有什么问题吗？"},
+      {"id": "u10.e06", "scene": "一位家长突然来前台说要见校长，你问他有没有预约。", "en": "Do you have an appointment?", "zh": "您有预约吗？", "note": "appointment = 预约（约好的时间）"},
+      {"id": "u10.e07", "scene": "在 NTUC 结账，东西太多，一个小袋子装不下。", "en": "Do you have a bigger bag?", "zh": "有大一点的袋子吗？"},
+      {"id": "u10.e08", "scene": "在超市买洗洁精，这瓶太大了，你想要小瓶的。", "en": "Do you have a smaller one?", "zh": "有小一点的吗？", "note": "a smaller one = 小一点的那个（one 指刚才说的东西）"},
+      {"id": "u10.e09", "scene": "早上去巴刹（wet market）买菜，问鱼摊今天有没有新鲜的鱼。", "en": "Do you have fresh fish today?", "zh": "今天有新鲜的鱼吗？"},
+      {"id": "u10.e10", "scene": "在 Guardian 药房，你咳嗽好几天了，问店员。", "en": "Do you have medicine for a cough?", "zh": "有治咳嗽的药吗？", "note": "medicine for a cough = 治咳嗽的药", "accept": ["Do you have cough medicine?"]}
     ]
+  },
+  "daily": [
+    {"id": "u10.d01", "word": "apples", "scene": "邻居在 NTUC 遇到你，问你常买什么水果。", "en": "I buy apples every week.", "zh": "我每个星期都买苹果。", "note": "apples = 苹果（一个是 apple）"},
+    {"id": "u10.d02", "word": "bananas", "scene": "在超市看到香蕉打折，你告诉身边的家人。", "en": "The bananas are on sale.", "zh": "香蕉在打折。", "note": "on sale = 打折"},
+    {"id": "u10.d03", "word": "basket", "scene": "进了超市，要买的东西不多，用不着推车。", "en": "I need a basket.", "zh": "我要一个篮子。", "note": "basket = 篮子"},
+    {"id": "u10.d04", "word": "trolley", "scene": "周末去大超市买一星期的东西，家人问你要不要推车。", "en": "I will take a trolley.", "zh": "我推一辆推车吧。", "note": "trolley = 超市推车", "accept": ["I'll take a trolley."]},
+    {"id": "u10.d05", "word": "fridge", "scene": "星期天早上打开冰箱，什么都没有了。", "en": "The fridge is empty.", "zh": "冰箱空了。", "note": "empty = 空的"},
+    {"id": "u10.d06", "word": "oil", "scene": "在超市找了半天食用油，你问店员。", "en": "Where is the oil?", "zh": "油在哪里？", "note": "oil = 油（做饭用的油叫 cooking oil）"},
+    {"id": "u10.d07", "word": "salt", "scene": "在 hawker centre 点汤，你想吃得清淡一点。", "en": "No salt, please.", "zh": "请不要放盐。", "note": "No ___, please. = 请不要放……"},
+    {"id": "u10.d08", "word": "juice", "scene": "在饮料摊，你不想喝咖啡，想喝果汁。", "en": "Do you have juice?", "zh": "你们有果汁吗？", "note": "juice = 果汁"},
+    {"id": "u10.d09", "word": "bottle", "scene": "在 MRT 站旁边的小店，你很渴。", "en": "Can I have a bottle of water?", "zh": "可以给我一瓶水吗？", "note": "a bottle of = 一瓶"},
+    {"id": "u10.d10", "word": "meat", "scene": "朋友请你吃饭，问你有没有什么不吃的。", "en": "I don't eat meat.", "zh": "我不吃肉。", "note": "meat = 肉；和 meet（见面）读音一样"},
+    {"id": "u10.d11", "word": "tofu", "scene": "在经济饭摊，摊主问你要什么菜。", "en": "I like tofu.", "zh": "我喜欢豆腐。"},
+    {"id": "u10.d12", "word": "sell", "scene": "在组屋楼下的小超市，你想买米。", "en": "Do you sell rice here?", "zh": "你们这里卖米吗？", "note": "sell = 卖（buy = 买）"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 去超市",
+      "lines": [
+        {"en": "It's Sunday. The fridge is empty.", "zh": "今天是星期天，冰箱空了。"},
+        {"en": "I take a basket.", "zh": "我拿了一个篮子。"},
+        {"en": "I need milk, eggs and bread.", "zh": "我要买牛奶、鸡蛋和面包。"},
+        {"en": "\"Excuse me, where is the milk?\"", "zh": "\"请问，牛奶在哪里？\""},
+        {"en": "The bananas are on sale.", "zh": "香蕉在打折。"},
+        {"en": "I buy apples and bananas.", "zh": "我买了苹果和香蕉。"},
+        {"en": "\"Do you have tofu?\"", "zh": "\"你们有豆腐吗？\""},
+        {"en": "I don't need a bag.", "zh": "我不要袋子。"},
+        {"en": "\"Can I pay by PayNow?\"", "zh": "\"可以用 PayNow 付款吗？\""},
+        {"en": "\"That's all, thank you.\"", "zh": "\"就这些，谢谢。\""},
+        {"en": "I will cook tonight.", "zh": "今晚我来做饭。"}
+      ]
+    },
+    "dialogue": {
+      "title": "和朋友逛超市",
+      "setting": "星期六上午，Amy 和朋友 Mei 一起去 NTUC 买东西。",
+      "cast": [
+        {"name": "Mei", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Mei", "en": "Amy, do you need a basket?", "zh": "Amy，你要篮子吗？"},
+        {"speaker": "Amy", "en": "Yes, thank you.", "zh": "要，谢谢。"},
+        {"speaker": "Mei", "en": "What do you need today?", "zh": "你今天要买什么？"},
+        {"speaker": "Amy", "en": "I'm looking for bread.", "zh": "我在找面包。"},
+        {"speaker": "Mei", "en": "The bread is here. It's on sale!", "zh": "面包在这里，正在打折！"},
+        {"speaker": "Amy", "en": "Good! I need eggs too.", "zh": "太好了！我还要鸡蛋。"},
+        {"speaker": "Mei", "en": "Do you need milk?", "zh": "你要牛奶吗？"},
+        {"speaker": "Amy", "en": "No. Where is the oil?", "zh": "不用。油在哪里？"},
+        {"speaker": "Mei", "en": "It's near the rice.", "zh": "在米的旁边。"},
+        {"speaker": "Amy", "en": "Thank you. Do you want juice?", "zh": "谢谢。你要果汁吗？"},
+        {"speaker": "Mei", "en": "No, thank you. I have water.", "zh": "不用了，谢谢。我有水。"},
+        {"speaker": "Amy", "en": "Okay. That's all.", "zh": "好的，就这些。"},
+        {"speaker": "Mei", "en": "Do you need a bag?", "zh": "你要袋子吗？"},
+        {"speaker": "Amy", "en": "No, I don't need a bag.", "zh": "不用，我不要袋子。"}
+      ]
+    }
   },
   "grammar": {
     "title": "两个以上要加 s",
     "body": "中文说\"两个鸡蛋\"，\"鸡蛋\"不变；英语超过一个，后面要加 s：one egg，two eggs。",
     "examples": [
-      { "en": "one egg, two eggs", "zh": "一个鸡蛋，两个鸡蛋" },
-      { "en": "one bag, three bags", "zh": "一个袋子，三个袋子" }
+      {"en": "one egg, two eggs", "zh": "一个鸡蛋，两个鸡蛋"},
+      {"en": "one bag, three bags", "zh": "一个袋子，三个袋子"}
     ]
   },
   "phonics": "p08",
@@ -45,39 +106,55 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi, do you have a membership card?", "zh": "你好，有会员卡吗？" },
+        "npc": {"en": "Hi, do you have a membership card?", "zh": "你好，有会员卡吗？"},
         "replies": [
-          { "en": "No, sorry.", "zh": "没有，不好意思。", "next": "n2" },
-          { "en": "Yes.", "zh": "有。", "next": "n2" }
+          {"en": "No, sorry.", "zh": "没有，不好意思。", "next": "n2"},
+          {"en": "Yes.", "zh": "有。", "next": "n2"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Okay. Do you need a bag?", "zh": "好的。需要袋子吗？" },
+        "npc": {"en": "Okay. Do you need a bag?", "zh": "好的。需要袋子吗？"},
         "replies": [
-          { "en": "I don't need a bag.", "zh": "我不要袋子。", "next": "n3" },
-          { "en": "Yes, one bag, please.", "zh": "要，一个袋子，谢谢。", "next": "n3" }
+          {"en": "I don't need a bag.", "zh": "我不要袋子。", "next": "n3"},
+          {"en": "Yes, one bag, please.", "zh": "要，一个袋子，谢谢。", "next": "n3"},
+          {"en": "Do you have a bigger bag?", "zh": "有大一点的袋子吗？", "next": "n2b"}
+        ]
+      },
+      {
+        "id": "n2b",
+        "npc": {"en": "Yes, here you go. That one is 10 cents.", "zh": "有，给你。那个袋子一毛钱。"},
+        "replies": [
+          {"en": "Okay, thank you.", "zh": "好的，谢谢。", "next": "n3"}
         ]
       },
       {
         "id": "n3",
-        "npc": { "en": "Your total is 23 dollars 50.", "zh": "一共 23 块 5。" },
+        "npc": {"en": "Your total is 23 dollars 50.", "zh": "一共 23 块 5。"},
         "replies": [
-          { "en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付款吗？", "next": "n4" },
-          { "en": "Can I pay by card?", "zh": "可以刷卡吗？", "next": "n4" }
+          {"en": "Can I pay by PayNow?", "zh": "可以用 PayNow 付款吗？", "next": "n4"},
+          {"en": "Can I pay by card?", "zh": "可以刷卡吗？", "next": "n4"},
+          {"en": "Here is $50. Do you have change?", "zh": "这是 50 块，有零钱找吗？", "next": "n3b"}
+        ]
+      },
+      {
+        "id": "n3b",
+        "npc": {"en": "Yes, no problem. Here is your change, 26 dollars 50.", "zh": "有，没问题。找你 26 块 5。"},
+        "replies": [
+          {"en": "Can I have a receipt?", "zh": "可以给我收据吗？", "next": "end"}
         ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Sure, go ahead.", "zh": "可以，请。" },
+        "npc": {"en": "Sure, go ahead.", "zh": "可以，请。"},
         "replies": [
-          { "en": "Can I have a receipt?", "zh": "可以给我收据吗？", "next": "end" },
-          { "en": "That's all, thank you.", "zh": "就这些，谢谢。", "next": "end" }
+          {"en": "Can I have a receipt?", "zh": "可以给我收据吗？", "next": "end"},
+          {"en": "That's all, thank you.", "zh": "就这些，谢谢。", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "Here's your receipt. Thank you!", "zh": "这是你的收据。谢谢！" },
+        "npc": {"en": "Here's your receipt. Thank you!", "zh": "这是你的收据。谢谢！"},
         "replies": []
       }
     ]

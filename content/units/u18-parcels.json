@@ -5,25 +5,86 @@
   "titleEn": "Is there a parcel for me?",
   "goal": "能和快递员沟通：不在家时怎么放、改时间送、去取包裹。",
   "chunks": [
-    { "id": "u18.c01", "en": "Is there a parcel for me?", "zh": "有我的包裹吗？" },
-    { "id": "u18.c02", "en": "I'm here to collect a parcel.", "zh": "我来取包裹。" },
-    { "id": "u18.c03", "en": "My parcel has not arrived.", "zh": "我的包裹还没到。", "accept": ["My parcel hasn't arrived."] },
-    { "id": "u18.c04", "en": "Here is my tracking number.", "zh": "这是我的快递单号。" },
-    { "id": "u18.c05", "en": "Sorry, I'm not at home now.", "zh": "不好意思，我现在不在家。" },
-    { "id": "u18.c06", "en": "Can you leave it at the door?", "zh": "可以放在门口吗？" },
-    { "id": "u18.c07", "en": "Can you deliver it tomorrow?", "zh": "可以明天送吗？" },
-    { "id": "u18.c08", "en": "I'll come down now.", "zh": "我现在下来。", "note": "住组屋或公寓时，快递员在楼下等你，就这样说。" }
+    {"id": "u18.c01", "en": "Is there a parcel for me?", "zh": "有我的包裹吗？"},
+    {"id": "u18.c02", "en": "I'm here to collect a parcel.", "zh": "我来取包裹。"},
+    {"id": "u18.c03", "en": "My parcel has not arrived.", "zh": "我的包裹还没到。", "accept": ["My parcel hasn't arrived."]},
+    {"id": "u18.c04", "en": "Here is my tracking number.", "zh": "这是我的快递单号。"},
+    {"id": "u18.c05", "en": "Sorry, I'm not at home now.", "zh": "不好意思，我现在不在家。"},
+    {"id": "u18.c06", "en": "Can you leave it at the door?", "zh": "可以放在门口吗？"},
+    {"id": "u18.c07", "en": "Can you deliver it tomorrow?", "zh": "可以明天送吗？"},
+    {"id": "u18.c08", "en": "I'll come down now.", "zh": "我现在下来。", "note": "住组屋或公寓时，快递员在楼下等你，就这样说。"}
   ],
   "words": ["parcel", "collect", "arrived", "tracking", "number", "home", "now", "leave", "door", "deliver"],
-  "drill": {
-    "pattern": "Can you leave it ___?",
-    "zh": "可以把它放在……吗？",
-    "fills": [
-      { "en": "at the door", "zh": "门口" },
-      { "en": "at the lobby", "zh": "大堂" },
-      { "en": "with my neighbour", "zh": "交给我的邻居" },
-      { "en": "in the locker", "zh": "快递柜里" }
+  "patterns": {
+    "frames": [
+      {"frame": "I'm here to ___.", "zh": "我是来……的", "usage": "走到柜台、前台或者见到工作人员时，第一句就说明你来干什么，对方马上知道怎么帮你。框不变，只把你要办的事放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u18.e01", "scene": "中心开放日，你一早到场帮忙，跟负责的老师打招呼。", "en": "I'm here to help.", "zh": "我是来帮忙的。", "accept": ["I am here to help."]},
+      {"id": "u18.e02", "scene": "去管理处交杂费，走到柜台前。", "en": "I'm here to pay.", "zh": "我是来交钱的。", "accept": ["I am here to pay."]},
+      {"id": "u18.e03", "scene": "走进诊所，跟前台的护士说明来意。", "en": "I'm here to see the doctor.", "zh": "我是来看医生的。", "note": "see the doctor = 看医生", "accept": ["I am here to see the doctor."]},
+      {"id": "u18.e04", "scene": "在邮局排到你了，你要寄一个包裹。", "en": "I'm here to send a parcel.", "zh": "我是来寄包裹的。", "accept": ["I am here to send a parcel."]},
+      {"id": "u18.e05", "scene": "网上买了东西，选了到店自取，你走到店里的柜台。", "en": "I'm here to collect my order.", "zh": "我是来取我订的东西的。", "note": "order = 订的东西、订单", "accept": ["I am here to collect my order."]},
+      {"id": "u18.e06", "scene": "买错了东西，你把包裹拿到邮局寄回去。", "en": "I'm here to return this parcel.", "zh": "我是来退这个包裹的。", "note": "return = 退回", "accept": ["I am here to return this parcel."]},
+      {"id": "u18.e07", "scene": "在银行，职员问你今天要办什么。", "en": "I'm here to open an account.", "zh": "我是来开户的。", "note": "open an account = 开户", "accept": ["I am here to open an account."]},
+      {"id": "u18.e08", "scene": "快递显示已经送到，可是你没收到，你去物业办公室问。", "en": "I'm here to ask about my parcel.", "zh": "我是来问我的包裹的。", "note": "ask about = 问一下……的事", "accept": ["I am here to ask about my parcel."]},
+      {"id": "u18.e09", "scene": "你去另一间分校送一份文件给那里的老师。", "en": "I'm here to give this to Mrs Lim.", "zh": "我是来把这个交给 Lim 老师的。", "accept": ["I am here to give this to Mrs Lim."]},
+      {"id": "u18.e10", "scene": "邻居不在家，托你去快递点帮她取包裹。", "en": "Hi, I'm here to pick up a parcel for my neighbour.", "zh": "你好，我来帮我邻居取包裹。", "note": "pick up = 取（东西）、接（人）", "accept": ["I'm here to pick up a parcel for my neighbour.", "Hi, I'm here to collect a parcel for my neighbour."]}
     ]
+  },
+  "daily": [
+    {"id": "u18.d01", "word": "online", "scene": "朋友夸你的包很好看，问你在哪里买的。", "en": "I bought it online.", "zh": "我在网上买的。"},
+    {"id": "u18.d02", "word": "gift", "scene": "朋友过生日，你把礼物交给她。", "en": "This is a gift for you.", "zh": "这是送给你的礼物。"},
+    {"id": "u18.d03", "word": "box", "scene": "家里收到一个快递，你手上拿着东西，叫孩子帮忙打开。", "en": "Can you open the box?", "zh": "你可以把箱子打开吗？"},
+    {"id": "u18.d04", "word": "heavy", "scene": "从 NTUC 买菜回来，老公过来帮你。", "en": "This bag is very heavy.", "zh": "这个袋子好重。"},
+    {"id": "u18.d05", "word": "letter", "scene": "从楼下信箱拿信回来，你交给老公。", "en": "There is a letter for you.", "zh": "有你的一封信。"},
+    {"id": "u18.d06", "word": "letterbox", "scene": "老公要下楼买早餐，你请他顺便看一下信箱。", "en": "Please check the letterbox.", "zh": "请看一下信箱。", "note": "letterbox = 信箱（HDB 楼下一排一排的那种）"},
+    {"id": "u18.d07", "word": "stamp", "scene": "在邮局寄信，你问柜台要邮票。", "en": "I need a stamp, please.", "zh": "我要一张邮票，谢谢。"},
+    {"id": "u18.d08", "word": "slow", "scene": "网上买的东西两个星期还没到，你跟朋友抱怨。", "en": "The delivery is very slow.", "zh": "送得好慢。"},
+    {"id": "u18.d09", "word": "doorbell", "scene": "在厨房做饭，突然听到\"叮咚\"一声，你问家人。", "en": "Is that the doorbell?", "zh": "是门铃响了吗？"},
+    {"id": "u18.d10", "word": "post", "scene": "写好了给妈妈的信，你跟老公说明天要去邮局。", "en": "I need to post this letter.", "zh": "我要去寄这封信。", "note": "post = 寄（信、包裹）"},
+    {"id": "u18.d11", "word": "sent", "scene": "朋友说没收到你的消息。", "en": "I sent you a message.", "zh": "我给你发了消息。", "note": "sent = send（发、寄）的过去"},
+    {"id": "u18.d12", "word": "received", "scene": "妹妹寄了礼物给你，你打电话谢谢她。", "en": "I received your gift. Thank you!", "zh": "我收到你的礼物了，谢谢！", "note": "received = 收到了"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 给妈妈买的礼物",
+      "lines": [
+        {"en": "Last week, I bought a gift online.", "zh": "上个星期，我在网上买了一份礼物。"},
+        {"en": "It was a birthday gift for my mum.", "zh": "是给妈妈的生日礼物。"},
+        {"en": "The delivery was very slow.", "zh": "送得很慢。"},
+        {"en": "I sent the shop a message.", "zh": "我给店家发了消息。"},
+        {"en": "Today, the parcel arrived.", "zh": "今天，包裹到了。"},
+        {"en": "The box was at the door.", "zh": "箱子放在门口。"},
+        {"en": "It was very heavy.", "zh": "很重。"},
+        {"en": "\"Can you open the box?\"", "zh": "\"你可以把箱子打开吗？\""},
+        {"en": "It was the gift for my mum!", "zh": "就是给妈妈的礼物！"},
+        {"en": "I will give it to my mum on Sunday.", "zh": "我星期天把它送给妈妈。"},
+        {"en": "It's a very nice gift!", "zh": "这份礼物真不错！"}
+      ]
+    },
+    "dialogue": {
+      "title": "在邮局寄包裹",
+      "setting": "星期六上午，Amy 去邮局给朋友寄一个包裹。",
+      "cast": [
+        {"name": "Mr Lee", "voice": "am_michael"}
+      ],
+      "lines": [
+        {"speaker": "Amy", "en": "Hi, I'm here to send a parcel.", "zh": "你好，我是来寄包裹的。"},
+        {"speaker": "Mr Lee", "en": "Sure. What is the address?", "zh": "好的。地址是什么？"},
+        {"speaker": "Amy", "en": "Here is the address.", "zh": "这是地址。"},
+        {"speaker": "Mr Lee", "en": "The box is very heavy. It's $12.", "zh": "箱子很重。要十二块。"},
+        {"speaker": "Amy", "en": "Okay. Can I pay with PayNow?", "zh": "好的。可以用 PayNow 付吗？"},
+        {"speaker": "Mr Lee", "en": "Yes, you can.", "zh": "可以。"},
+        {"speaker": "Amy", "en": "And I need a stamp, please.", "zh": "我还要一张邮票，谢谢。"},
+        {"speaker": "Mr Lee", "en": "Here you are. Is that all?", "zh": "给你。就这些吗？"},
+        {"speaker": "Amy", "en": "Yes. When can you deliver it?", "zh": "是的。什么时候能送到？"},
+        {"speaker": "Mr Lee", "en": "Tomorrow or Monday.", "zh": "明天或者星期一。"},
+        {"speaker": "Amy", "en": "Can I have the tracking number?", "zh": "可以给我快递单号吗？"},
+        {"speaker": "Mr Lee", "en": "Here is your tracking number.", "zh": "这是你的快递单号。"},
+        {"speaker": "Amy", "en": "Thank you very much!", "zh": "非常感谢！"}
+      ]
+    }
   },
   "phonics": "p16",
   "dialogue": {
@@ -35,39 +96,46 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hello, I'm delivering your parcel. Are you at home?", "zh": "你好，我在给你送包裹。你在家吗？" },
+        "npc": {"en": "Hello, I'm delivering your parcel. Are you at home?", "zh": "你好，我在给你送包裹。你在家吗？"},
         "replies": [
-          { "en": "Sorry, I'm not at home now.", "zh": "不好意思，我现在不在家。", "next": "n2" },
-          { "en": "Yes, I'll come down now.", "zh": "在，我现在下来。", "next": "down" }
+          {"en": "Sorry, I'm not at home now.", "zh": "不好意思，我现在不在家。", "next": "n2"},
+          {"en": "Yes, I'll come down now.", "zh": "在，我现在下来。", "next": "down"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Can I leave it at the door?", "zh": "我可以放在门口吗？" },
+        "npc": {"en": "Can I leave it at the door?", "zh": "我可以放在门口吗？"},
         "replies": [
-          { "en": "Yes, you can leave it at the door.", "zh": "可以，你放在门口吧。", "next": "n3" },
-          { "en": "Can you deliver it tomorrow?", "zh": "可以明天送吗？", "next": "n4" }
+          {"en": "Yes, you can leave it at the door.", "zh": "可以，你放在门口吧。", "next": "n3"},
+          {"en": "Can you deliver it tomorrow?", "zh": "可以明天送吗？", "next": "n4"}
         ]
       },
       {
         "id": "n3",
-        "npc": { "en": "OK, I'll take a photo for you.", "zh": "好的，我会拍张照片给你。" },
-        "replies": [{ "en": "Thank you very much!", "zh": "非常感谢！", "next": "end" }]
+        "npc": {"en": "OK, I'll take a photo for you.", "zh": "好的，我会拍张照片给你。"},
+        "replies": [
+          {"en": "Thank you very much!", "zh": "非常感谢！", "next": "end"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Tomorrow I'm not in this area. Can I leave it at the lobby?", "zh": "我明天不在这一区。可以放在大堂吗？" },
-        "replies": [{ "en": "OK, please leave it at the lobby.", "zh": "好的，请放在大堂。", "next": "end" }]
+        "npc": {"en": "Tomorrow I'm not in this area. Can I leave it at the lobby?", "zh": "我明天不在这一区。可以放在大堂吗？"},
+        "replies": [
+          {"en": "OK, please leave it at the lobby.", "zh": "好的，请放在大堂。", "next": "end"}
+        ]
       },
       {
         "id": "end",
-        "npc": { "en": "Done. Have a nice day!", "zh": "好了。祝你今天愉快！" },
+        "npc": {"en": "Done. Have a nice day!", "zh": "好了。祝你今天愉快！"},
         "replies": []
       },
       {
         "id": "down",
-        "npc": { "en": "OK, I'm waiting at the lobby. See you!", "zh": "好的，我在大堂等你。待会见！" },
-        "replies": []
+        "npc": {"en": "OK, I'm waiting at the lobby. See you!", "zh": "好的，我在大堂等你。待会见！"},
+        "replies": [
+          {"en": "Hi, I'm here to collect my parcel.", "zh": "你好，我来取我的包裹。", "next": "end"},
+          {"en": "Hi, I'm Amy. I'm here to collect a parcel.", "zh": "你好，我是 Amy。我来取包裹。", "next": "end"}
+        ]
       }
     ]
   },

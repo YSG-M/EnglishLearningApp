@@ -46,6 +46,19 @@ export function SettingsPage() {
           />
         </label>
 
+        <label className="setting-row">
+          <span>
+            {zh.settings.showGlosses}
+            <span className="muted small block">{zh.settings.showGlossesHelp}</span>
+          </span>
+          <input
+            type="checkbox"
+            className="toggle"
+            checked={settings.showGlosses}
+            onChange={(e) => void updateSettings({ showGlosses: e.target.checked })}
+          />
+        </label>
+
         <div className="setting-row">
           <span>{zh.settings.chineseMode}</span>
           <div className="segmented" role="radiogroup">

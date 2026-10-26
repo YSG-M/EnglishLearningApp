@@ -1,22 +1,17 @@
 import { useEffect, useState } from 'react';
 import type { Part } from '@shared/content/bundle';
+import { partById } from '../state/content';
 import type { TodayView } from '@shared/ipc';
 import { api, logError } from '../api/client';
+import { KIND_ICON, PartTile } from '../components/PartTile';
 import { Button, Card, Loading, Notice } from '../components/ui';
 import { zh } from '../i18n/zh';
 import { useApp } from '../state/AppContext';
 
-const KIND_ICON: Record<Part['kind'], string> = {
-  learn: '📖',
-  practice: '🧩',
-  apply: '💬',
-  review: '🔁',
-  challenge: '🎙️',
-};
-
 export function TodayPage() {
-  const { settings, navigate } = useApp();
+  const { bundle, settings, navigate } = useApp();
   const [view, setView] = useState<TodayView | null>(null);
+  const [lastDone, setLastDone] = useState<Part | null>(null);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -28,10 +23,21 @@ export function TodayPage() {
         logError('today.get', err);
         if (alive) setFailed(true);
       });
+    api.parts
+      .listCompleted()
+      .then((ids) => {
+        // Latest regular part she finished: the one she is most likely to want to take again.
+        const last = [...ids]
+          .reverse()
+          .map((id) => partById(bundle, id))
+          .find((p) => p && !p.light);
+        if (alive) setLastDone(last ?? null);
+      })
+      .catch((err: unknown) => logError('parts.listCompleted', err));
     return () => {
       alive = false;
     };
-  }, []);
+  }, [bundle]);
 
   if (failed) return <Notice tone="warn">{zh.errors.generic}</Notice>;
   if (!view) return <Loading label={zh.common.loading} />;
@@ -127,6 +133,11 @@ export function TodayPage() {
             </>
           )}
         </Card>
+        {lastDone ? (
+          <Card title={`🔁 ${zh.today.againTitle}`}>
+            <PartTile part={lastDone} status="done" />
+          </Card>
+        ) : null}
       </div>
 
       <p className="muted small center">{zh.today.minimum}</p>

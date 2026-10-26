@@ -81,6 +81,10 @@ export class CardRepository {
       .map((r) => r.id);
   }
 
+  allIds(): string[] {
+    return this.db.all<{ id: string }>('SELECT id FROM cards ORDER BY id').map((r) => r.id);
+  }
+
   count(): number {
     return Number(this.db.get<{ n: number }>('SELECT COUNT(*) AS n FROM cards')?.n ?? 0);
   }

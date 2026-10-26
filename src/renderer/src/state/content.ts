@@ -1,8 +1,10 @@
 /** Lookups over the content bundle used by several screens. */
 import type {
+  CardKind,
   ChunkItem,
   ContentBundle,
   Part,
+  PatternExampleItem,
   PhonicsItem,
   PhonicsPairItem,
   SpokenSentence,
@@ -27,6 +29,15 @@ export function findChunk(
   return unit && chunk ? { unit, chunk } : undefined;
 }
 
+export function findExample(
+  bundle: ContentBundle,
+  exampleId: string,
+): { unit: UnitItem; example: PatternExampleItem } | undefined {
+  const unit = bundle.units[exampleId.split('.')[0] ?? ''];
+  const example = unit?.patterns.examples.find((e) => e.id === exampleId);
+  return unit && example ? { unit, example } : undefined;
+}
+
 export function unitsOfWord(bundle: ContentBundle, key: string): UnitItem[] {
   return Object.values(bundle.units).filter((u) => u.words.includes(key));
 }
@@ -42,14 +53,15 @@ export function findPair(
 
 export type ReviewItem =
   | { kind: 'chunk'; unit: UnitItem; chunk: ChunkItem }
+  | { kind: 'example'; unit: UnitItem; example: PatternExampleItem }
   | { kind: 'word'; word: WordEntry; units: UnitItem[] }
   | { kind: 'pair'; phonics: PhonicsItem; pair: PhonicsPairItem };
 
-export function resolveItem(
-  bundle: ContentBundle,
-  kind: 'chunk' | 'word' | 'pair',
-  itemId: string,
-): ReviewItem | undefined {
+export function resolveItem(bundle: ContentBundle, kind: CardKind, itemId: string): ReviewItem | undefined {
+  if (kind === 'example') {
+    const f = findExample(bundle, itemId);
+    return f ? { kind, ...f } : undefined;
+  }
   if (kind === 'chunk') {
     const f = findChunk(bundle, itemId);
     return f ? { kind, ...f } : undefined;
@@ -65,10 +77,11 @@ export function resolveItem(
 /** Short display text for a card, e.g. in the trouble list. */
 export function cardLabel(bundle: ContentBundle, cardId: string): { en: string; zh: string } | undefined {
   const i = cardId.indexOf(':');
-  const kind = cardId.slice(0, i) as 'chunk' | 'word' | 'pair';
+  const kind = cardId.slice(0, i) as CardKind;
   const item = resolveItem(bundle, kind, cardId.slice(i + 1));
   if (!item) return undefined;
   if (item.kind === 'chunk') return { en: item.chunk.en, zh: item.chunk.zh };
+  if (item.kind === 'example') return { en: item.example.en, zh: item.example.zh };
   if (item.kind === 'word') return { en: item.word.text, zh: item.word.zh };
   return { en: `${item.pair.a.en} / ${item.pair.b.en}`, zh: item.phonics.title };
 }
@@ -76,7 +89,7 @@ export function cardLabel(bundle: ContentBundle, cardId: string): { en: string; 
 export interface PhraseHit {
   sentence: SpokenSentence;
   unit: UnitItem;
-  source: 'chunk' | 'drill' | 'reply';
+  source: 'chunk' | 'example' | 'daily' | 'reply';
 }
 
 /** Every sentence she might want to look up at work, de-duplicated by English text. */
@@ -92,7 +105,8 @@ export function allPhrases(bundle: ContentBundle): PhraseHit[] {
   const units = Object.values(bundle.units).sort((a, b) => a.id.localeCompare(b.id));
   for (const u of units) {
     for (const c of u.chunks) add(c, u, 'chunk');
-    for (const d of u.drill.items) add(d, u, 'drill');
+    for (const e of u.patterns.examples) add(e, u, 'example');
+    for (const d of u.daily) add(d, u, 'daily');
     for (const n of Object.values(u.dialogue.nodes)) for (const r of n.replies) add(r, u, 'reply');
   }
   return out;

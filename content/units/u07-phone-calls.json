@@ -5,33 +5,96 @@
   "titleEn": "Hello, Bright Learning Centre",
   "goal": "能用英语接补习中心的电话：报中心名字、问对方是谁、帮忙留言。",
   "chunks": [
-    { "id": "u07.c01", "en": "Hello, Bright Learning Centre.", "zh": "你好，这里是 Bright 补习中心。", "note": "把 Bright 换成你们中心的名字。接电话第一句就报名字，很专业。" },
-    { "id": "u07.c02", "en": "May I know who is calling?", "zh": "请问您是哪位？", "note": "非常礼貌的问法，新加坡办公室里很常用。" },
-    { "id": "u07.c03", "en": "Sorry, she is in class now.", "zh": "不好意思，她现在在上课。", "note": "男老师就说 he is in class now。" },
-    { "id": "u07.c04", "en": "Can I take a message?", "zh": "我可以帮您留言吗？" },
-    { "id": "u07.c05", "en": "Can you spell your name?", "zh": "可以拼一下您的名字吗？" },
-    { "id": "u07.c06", "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。", "note": "call you back = 回电话给你。" },
-    { "id": "u07.c07", "en": "Sorry, the line is not clear.", "zh": "不好意思，信号不太好。" },
-    { "id": "u07.c08", "en": "Please hold on.", "zh": "请别挂断，稍等。" },
-    { "id": "u07.c09", "en": "Thank you for calling.", "zh": "谢谢您的来电。" }
+    {"id": "u07.c01", "en": "Hello, Bright Learning Centre.", "zh": "你好，这里是 Bright 补习中心。", "note": "把 Bright 换成你们中心的名字。接电话第一句就报名字，很专业。"},
+    {"id": "u07.c02", "en": "May I know who is calling?", "zh": "请问您是哪位？", "note": "非常礼貌的问法，新加坡办公室里很常用。"},
+    {"id": "u07.c03", "en": "Sorry, she is in class now.", "zh": "不好意思，她现在在上课。", "note": "男老师就说 he is in class now。"},
+    {"id": "u07.c04", "en": "Can I take a message?", "zh": "我可以帮您留言吗？"},
+    {"id": "u07.c05", "en": "Can you spell your name?", "zh": "可以拼一下您的名字吗？"},
+    {"id": "u07.c06", "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。", "note": "call you back = 回电话给你。"},
+    {"id": "u07.c07", "en": "Sorry, the line is not clear.", "zh": "不好意思，信号不太好。"},
+    {"id": "u07.c08", "en": "Please hold on.", "zh": "请别挂断，稍等。"},
+    {"id": "u07.c09", "en": "Thank you for calling.", "zh": "谢谢您的来电。"}
   ],
   "words": ["may", "know", "calling", "message", "spell", "call", "back", "line", "clear", "hold"],
-  "drill": {
-    "pattern": "I will ask her to ___.",
-    "zh": "答应家长会让老师做什么",
-    "fills": [
-      { "en": "call you back", "zh": "我会让她回电话给您" },
-      { "en": "WhatsApp you", "zh": "我会让她发 WhatsApp 给您" },
-      { "en": "send you the timetable", "zh": "我会让她把课表发给您" },
-      { "en": "check the time", "zh": "我会让她确认一下时间" }
+  "patterns": {
+    "frames": [
+      {"frame": "I will ___.", "zh": "我会……/ 我等一下……", "usage": "答应别人你会做一件事，或者说你等一下要做什么。框不变，把要做的事放进 ___。口语里 I will 常常连读成 I'll。"}
+    ],
+    "examples": [
+      {"id": "u07.e01", "scene": "家长问星期六的课还有没有位子，你要看一下电脑。", "en": "I will check.", "zh": "我查一下。", "accept": ["I'll check."]},
+      {"id": "u07.e02", "scene": "家长说孩子今天生病不来了，请你转告老师。", "en": "Okay, I will tell her.", "zh": "好的，我会告诉她。", "accept": ["I will tell her.", "Okay, I'll tell her."]},
+      {"id": "u07.e03", "scene": "你在挤巴士，朋友打电话来，你听不清楚。", "en": "I will call you later.", "zh": "我晚点打给你。", "note": "call you later = 晚点打给你", "accept": ["I'll call you later."]},
+      {"id": "u07.e04", "scene": "周末和朋友吃完饭，朋友说可以开车送你回家，你说不用了。", "en": "It's okay, I will take the MRT.", "zh": "没关系，我坐地铁。", "note": "take the MRT = 坐地铁（不是\"拿\"）", "accept": ["I will take the MRT.", "It's okay, I'll take the MRT."]},
+      {"id": "u07.e05", "scene": "在小店买东西，老板问你付现金还是刷卡。", "en": "I will pay by PayNow.", "zh": "我用 PayNow 付。", "note": "pay by = 用……付钱", "accept": ["I'll pay by PayNow."]},
+      {"id": "u07.e06", "scene": "诊所里人太多了，你跟护士说明天再来。", "en": "I will come back tomorrow.", "zh": "我明天再来。", "accept": ["I'll come back tomorrow."]},
+      {"id": "u07.e07", "scene": "家长在电话里问上课时间，你说发 WhatsApp 给他。", "en": "I will send you the timetable.", "zh": "我把课表发给你。", "note": "timetable = 课表、时间表", "accept": ["I'll send you the timetable."]},
+      {"id": "u07.e08", "scene": "周末约了朋友吃饭，MRT 出了故障，你发 WhatsApp 告诉她。", "en": "Sorry, I will be 5 minutes late.", "zh": "不好意思，我会晚到 5 分钟。", "note": "5 minutes 读作 five minutes", "accept": ["I will be 5 minutes late.", "Sorry, I'll be 5 minutes late."]},
+      {"id": "u07.e09", "scene": "家长打电话找李老师（男老师），他正在上课。", "en": "I will ask him to call you back.", "zh": "我会让他回电话给您。", "note": "男的用 him，女的用 her", "accept": ["I'll ask him to call you back."]},
+      {"id": "u07.e10", "scene": "下班前家里人发 WhatsApp 问晚饭怎么办，你说你来做。", "en": "Don't buy food, I will cook tonight.", "zh": "别买吃的了，我今晚做饭。", "accept": ["I will cook tonight.", "I'll cook tonight."]}
     ]
+  },
+  "daily": [
+    {"id": "u07.d01", "word": "battery", "scene": "晚上和朋友在外面，手机突然黑屏了。", "en": "My phone has no battery.", "zh": "我的手机没电了。", "note": "has no battery = 没电了"},
+    {"id": "u07.d02", "word": "charge", "scene": "回到家，你一进门就找插座。", "en": "I need to charge my phone.", "zh": "我要给手机充电。", "note": "charge = 充电"},
+    {"id": "u07.d03", "word": "charger", "scene": "在朋友家，手机快没电了，你没带充电器。", "en": "Can I borrow your charger?", "zh": "可以借一下你的充电器吗？", "note": "borrow = 借（借来用）"},
+    {"id": "u07.d04", "word": "missed", "scene": "洗完澡出来，看到朋友打来过电话，你回拨过去。", "en": "Sorry, I missed your call.", "zh": "不好意思，刚才没接到你的电话。", "note": "missed your call = 没接到你的电话"},
+    {"id": "u07.d05", "word": "text", "scene": "朋友打电话来，你正在 MRT 上不方便说话。", "en": "I will text you later.", "zh": "我晚点发信息给你。", "note": "text = 发短信 / 发信息", "accept": ["I'll text you later."]},
+    {"id": "u07.d06", "word": "mum", "scene": "新朋友问你晚上一般做什么。", "en": "I call my mum every night.", "zh": "我每天晚上都给妈妈打电话。", "note": "mum = 妈妈（新加坡和英国的说法）"},
+    {"id": "u07.d07", "word": "video", "scene": "周末想家了，你发信息给妈妈。", "en": "Can we have a video call?", "zh": "我们可以视频通话吗？", "note": "video call = 视频通话"},
+    {"id": "u07.d08", "word": "sister", "scene": "邻居问你家里人是不是也在新加坡。", "en": "My sister is in China.", "zh": "我妹妹在中国。", "note": "sister = 姐姐或妹妹，英语不分"},
+    {"id": "u07.d09", "word": "wrong", "scene": "一个陌生人打电话找 David，你不认识他。", "en": "Sorry, wrong number.", "zh": "不好意思，你打错了。", "note": "wrong number = 打错电话了"},
+    {"id": "u07.d10", "word": "loud", "scene": "在 hawker centre 接到朋友电话，周围很吵。", "en": "It's too loud here.", "zh": "这里太吵了。", "note": "loud = 声音大、吵"},
+    {"id": "u07.d11", "word": "internet", "scene": "在家看视频，一直卡住，你跟家人抱怨。", "en": "The internet is very slow.", "zh": "网好慢啊。", "note": "slow = 慢"},
+    {"id": "u07.d12", "word": "tonight", "scene": "朋友打电话来，想约你晚上一起吃饭。", "en": "Are you free tonight?", "zh": "你今晚有空吗？", "note": "free = 有空（也有\"免费\"的意思）"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的手机没电了",
+      "lines": [
+        {"en": "I take the MRT at night.", "zh": "晚上，我坐 MRT。"},
+        {"en": "My phone has no battery.", "zh": "我的手机没电了。"},
+        {"en": "I'm at home now.", "zh": "我现在到家了。"},
+        {"en": "I need to charge my phone.", "zh": "我要给手机充电。"},
+        {"en": "I missed a call from my mum.", "zh": "我没接到妈妈的电话。"},
+        {"en": "I will call her back.", "zh": "我要给她回电话。"},
+        {"en": "\"Hi, Mum! Sorry, I missed your call.\"", "zh": "\"妈，你好！不好意思，刚才没接到你的电话。\""},
+        {"en": "\"Can we have a video call?\"", "zh": "\"我们可以视频通话吗？\""},
+        {"en": "The internet is very slow.", "zh": "网好慢啊。"},
+        {"en": "The line is not clear.", "zh": "信号不太好。"},
+        {"en": "I will call my mum tomorrow.", "zh": "我明天再给妈妈打电话。"},
+        {"en": "I'm tired. I need to sleep.", "zh": "我好累，要睡觉了。"}
+      ]
+    },
+    "dialogue": {
+      "title": "朋友约晚饭",
+      "setting": "星期六下午，Amy 在很挤的 MRT 上，朋友 Mei 打电话来。",
+      "cast": [
+        {"name": "Mei", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Mei", "en": "Hi Amy! It's Mei.", "zh": "嗨 Amy！我是 Mei。"},
+        {"speaker": "Amy", "en": "Hi Mei! Sorry, it's too loud here.", "zh": "嗨 Mei！不好意思，这里太吵了。"},
+        {"speaker": "Mei", "en": "Where are you?", "zh": "你在哪里？"},
+        {"speaker": "Amy", "en": "I'm on the MRT.", "zh": "我在 MRT 上。"},
+        {"speaker": "Mei", "en": "Are you free tonight?", "zh": "你今晚有空吗？"},
+        {"speaker": "Amy", "en": "Yes, I'm free.", "zh": "有，我有空。"},
+        {"speaker": "Mei", "en": "Good! Dinner near the MRT?", "zh": "太好了！在 MRT 站附近吃晚饭？"},
+        {"speaker": "Amy", "en": "Okay. What time?", "zh": "好的。几点？"},
+        {"speaker": "Mei", "en": "At 7. Is that okay?", "zh": "七点。可以吗？"},
+        {"speaker": "Amy", "en": "Sorry, the line is not clear.", "zh": "不好意思，信号不太好。"},
+        {"speaker": "Mei", "en": "At 7!", "zh": "七点！"},
+        {"speaker": "Amy", "en": "Okay! I will take the MRT.", "zh": "好的！我坐 MRT 过去。"},
+        {"speaker": "Mei", "en": "Good. See you tonight!", "zh": "好。今晚见！"},
+        {"speaker": "Amy", "en": "See you! I will text you later.", "zh": "晚上见！我晚点发信息给你。"}
+      ]
+    }
   },
   "grammar": {
     "title": "him 和 her",
     "body": "说\"让他 / 让她……\"的时候：男的用 him，女的用 her。和 he / she 一样，开口前先想一想是男是女。",
     "examples": [
-      { "en": "I will ask him to call you back.", "zh": "我会让他回电话给您。" },
-      { "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。" }
+      {"en": "I will ask him to call you back.", "zh": "我会让他回电话给您。"},
+      {"en": "I will ask her to call you back.", "zh": "我会让她回电话给您。"}
     ]
   },
   "phonics": "p05",
@@ -44,35 +107,44 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hello? Is this Bright Learning Centre?", "zh": "喂？是 Bright 补习中心吗？" },
-        "replies": [{ "en": "Hello, Bright Learning Centre.", "zh": "你好，这里是 Bright 补习中心。", "next": "n2" }]
+        "npc": {"en": "Hello? Is this Bright Learning Centre?", "zh": "喂？是 Bright 补习中心吗？"},
+        "replies": [
+          {"en": "Hello, Bright Learning Centre.", "zh": "你好，这里是 Bright 补习中心。", "next": "n2"}
+        ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Hi, can I speak to Teacher Wang?", "zh": "你好，我可以找王老师吗？" },
-        "replies": [{ "en": "May I know who is calling?", "zh": "请问您是哪位？", "next": "n3" }]
+        "npc": {"en": "Hi, can I speak to Teacher Wang?", "zh": "你好，我可以找王老师吗？"},
+        "replies": [
+          {"en": "May I know who is calling?", "zh": "请问您是哪位？", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "I'm Ethan's mother.", "zh": "我是 Ethan 的妈妈。" },
-        "replies": [{ "en": "Sorry, she is in class now.", "zh": "不好意思，她现在在上课。", "next": "n4" }]
+        "npc": {"en": "I'm Ethan's mother.", "zh": "我是 Ethan 的妈妈。"},
+        "replies": [
+          {"en": "Sorry, she is in class now.", "zh": "不好意思，她现在在上课。", "next": "n4"}
+        ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Oh, I see.", "zh": "哦，这样啊。" },
+        "npc": {"en": "Oh, I see.", "zh": "哦，这样啊。"},
         "replies": [
-          { "en": "Can I take a message?", "zh": "我可以帮您留言吗？", "next": "n5" },
-          { "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。", "next": "n5" }
+          {"en": "Can I take a message?", "zh": "我可以帮您留言吗？", "next": "n5"},
+          {"en": "I will ask her to call you back.", "zh": "我会让她回电话给您。", "next": "n5"}
         ]
       },
       {
         "id": "n5",
-        "npc": { "en": "Yes, please ask her to call me back after class.", "zh": "好的，请她下课后回电话给我。" },
-        "replies": [{ "en": "Okay. Thank you for calling.", "zh": "好的，谢谢您的来电。", "next": "end" }]
+        "npc": {"en": "Yes, please ask her to call me back after class.", "zh": "好的，请她下课后回电话给我。"},
+        "replies": [
+          {"en": "Okay. Thank you for calling.", "zh": "好的，谢谢您的来电。", "next": "end"},
+          {"en": "Okay, I will tell her.", "zh": "好的，我会告诉她。", "next": "end"}
+        ]
       },
       {
         "id": "end",
-        "npc": { "en": "Thank you. Bye.", "zh": "谢谢，再见。" },
+        "npc": {"en": "Thank you. Bye.", "zh": "谢谢，再见。"},
         "replies": []
       }
     ]

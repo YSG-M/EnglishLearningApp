@@ -1,0 +1,44 @@
+{
+  "week": 3,
+  "stories": {
+    "narrative": {
+      "title": "Amy 和邻居吃午饭",
+      "lines": [
+        {"en": "It's Sunday morning. I'm not busy.", "zh": "星期天早上，我不忙。"},
+        {"en": "I see my neighbour downstairs.", "zh": "我在楼下遇到了邻居。"},
+        {"en": "\"Do you want to have lunch together?\"", "zh": "\"要不要一起吃午饭？\""},
+        {"en": "We walk to the market.", "zh": "我们走路去巴刹。"},
+        {"en": "It's very hot today.", "zh": "今天很热。"},
+        {"en": "I have a kopi, less sugar.", "zh": "我喝一杯咖啡，少糖。"},
+        {"en": "My neighbour has a teh, no sugar.", "zh": "邻居喝一杯奶茶，不要糖。"},
+        {"en": "We have chicken rice. Not spicy!", "zh": "我们吃鸡饭，不要辣！"},
+        {"en": "My neighbour is a good cook.", "zh": "我的邻居很会做饭。"},
+        {"en": "I can't cook. \"Can you teach me?\"", "zh": "我不会做饭。\"你可以教我吗？\""},
+        {"en": "We return the tray together.", "zh": "我们一起把托盘还回去。"},
+        {"en": "It's a nice Sunday.", "zh": "这是一个愉快的星期天。"}
+      ]
+    },
+    "dialogue": {
+      "title": "试听课的爸爸",
+      "setting": "星期六上午，林先生带儿子来上试听课，他在前台等。",
+      "cast": [
+        {"name": "Mr Lim", "voice": "bm_lewis"}
+      ],
+      "lines": [
+        {"speaker": "Mr Lim", "en": "Hi! My son is in the trial class.", "zh": "你好！我儿子在上试听课。"},
+        {"speaker": "Amy", "en": "Welcome! Each class is 90 minutes.", "zh": "欢迎！每节课 90 分钟。"},
+        {"speaker": "Mr Lim", "en": "90 minutes? I'm very hungry.", "zh": "90 分钟？我好饿啊。"},
+        {"speaker": "Amy", "en": "Do you want to have lunch? The market is near here.", "zh": "你要不要去吃午饭？巴刹就在附近。"},
+        {"speaker": "Mr Lim", "en": "Is the chicken rice good?", "zh": "那里的鸡饭好吃吗？"},
+        {"speaker": "Amy", "en": "Yes! It's very nice. Not expensive.", "zh": "好吃！而且不贵。"},
+        {"speaker": "Mr Lim", "en": "How much is it?", "zh": "多少钱？"},
+        {"speaker": "Amy", "en": "It's 5 dollars.", "zh": "五块钱。"},
+        {"speaker": "Mr Lim", "en": "Thank you. Can I have your phone number?", "zh": "谢谢。可以给我你的电话号码吗？"},
+        {"speaker": "Amy", "en": "Yes. I will WhatsApp you at noon.", "zh": "可以。中午我会发 WhatsApp 给你。"},
+        {"speaker": "Mr Lim", "en": "Thank you! Do you want a kopi?", "zh": "谢谢！你要不要一杯咖啡？"},
+        {"speaker": "Amy", "en": "Yes, please! Kopi O, less sugar.", "zh": "好啊，谢谢！黑咖啡，少糖。"},
+        {"speaker": "Mr Lim", "en": "See you at noon!", "zh": "中午见！"}
+      ]
+    }
+  }
+}

@@ -30,5 +30,6 @@ export function loadRawContent(contentDir = CONTENT_DIR): RawContent {
     lexicon: readDir(join(contentDir, 'lexicon')),
     units: readDir(join(contentDir, 'units')),
     phonics: readDir(join(contentDir, 'phonics')),
+    weeks: readDir(join(contentDir, 'weeks')),
   };
 }

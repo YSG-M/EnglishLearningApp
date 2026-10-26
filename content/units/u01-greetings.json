@@ -5,33 +5,94 @@
   "titleEn": "Hello, I'm Amy",
   "goal": "能和新同事、邻居、家长打招呼，简单介绍自己。",
   "chunks": [
-    { "id": "u01.c01", "en": "Hi, I'm Amy.", "zh": "你好，我是 Amy。", "note": "把 Amy 换成你自己的英文名。I'm 就是 I am 的简写。", "accept": ["Hi, I am Amy.", "Hello, I'm Amy."] },
-    { "id": "u01.c02", "en": "Nice to meet you.", "zh": "很高兴认识你。", "note": "第一次见面时说。对方说完，你可以回 Nice to meet you too." },
-    { "id": "u01.c03", "en": "Good morning!", "zh": "早上好！", "note": "中午 12 点以前用。下午说 Good afternoon，晚上说 Good evening。" },
-    { "id": "u01.c04", "en": "How are you?", "zh": "你好吗？", "note": "熟人见面最常用的问候，不是真的在问你的身体。" },
-    { "id": "u01.c05", "en": "I'm fine, thank you.", "zh": "我很好，谢谢。", "accept": ["I am fine, thank you.", "Fine, thank you.", "I'm good, thank you."] },
-    { "id": "u01.c06", "en": "I'm from China.", "zh": "我来自中国。", "accept": ["I am from China."] },
-    { "id": "u01.c07", "en": "I work at a learning centre.", "zh": "我在一家补习中心工作。", "note": "新加坡用英式拼写 centre（美式是 center），读音一样。" },
-    { "id": "u01.c08", "en": "See you tomorrow!", "zh": "明天见！" },
-    { "id": "u01.c09", "en": "Have a nice day!", "zh": "祝你今天愉快！", "note": "分开时说，很礼貌。对方说了，你可以回 You too!" }
+    {"id": "u01.c01", "en": "Hi, I'm Amy.", "zh": "你好，我是 Amy。", "note": "把 Amy 换成你自己的英文名。I'm 就是 I am 的简写。", "accept": ["Hi, I am Amy.", "Hello, I'm Amy."]},
+    {"id": "u01.c02", "en": "Nice to meet you.", "zh": "很高兴认识你。", "note": "第一次见面时说。对方说完，你可以回 Nice to meet you too."},
+    {"id": "u01.c03", "en": "Good morning!", "zh": "早上好！", "note": "中午 12 点以前用。下午说 Good afternoon，晚上说 Good evening。"},
+    {"id": "u01.c04", "en": "How are you?", "zh": "你好吗？", "note": "熟人见面最常用的问候，不是真的在问你的身体。"},
+    {"id": "u01.c05", "en": "I'm fine, thank you.", "zh": "我很好，谢谢。", "accept": ["I am fine, thank you.", "Fine, thank you.", "I'm good, thank you."]},
+    {"id": "u01.c06", "en": "I'm from China.", "zh": "我来自中国。", "accept": ["I am from China."]},
+    {"id": "u01.c07", "en": "I work at a learning centre.", "zh": "我在一家补习中心工作。", "note": "新加坡用英式拼写 centre（美式是 center），读音一样。"},
+    {"id": "u01.c08", "en": "See you tomorrow!", "zh": "明天见！"},
+    {"id": "u01.c09", "en": "Have a nice day!", "zh": "祝你今天愉快！", "note": "分开时说，很礼貌。对方说了，你可以回 You too!"}
   ],
   "words": ["hi", "hello", "nice", "meet", "good", "morning", "fine", "thank", "from", "work", "tomorrow", "day"],
-  "drill": {
-    "pattern": "Good ___!",
-    "zh": "不同时间的问候",
-    "fills": [
-      { "en": "morning", "zh": "早上好" },
-      { "en": "afternoon", "zh": "下午好" },
-      { "en": "evening", "zh": "晚上好" },
-      { "en": "night", "zh": "晚安（睡前或者晚上分开时）" }
+  "patterns": {
+    "frames": [
+      {"frame": "I'm ___.", "zh": "我是……/ 我（现在）……", "usage": "说自己是谁、是做什么的，或者现在怎么样（累、饿、忙、饱了）。框不变，只把想说的放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u01.e01", "scene": "一位新家长来到前台，问你叫什么名字。", "en": "I'm Amy.", "zh": "我是 Amy。", "note": "把 Amy 换成你自己的英文名", "accept": ["I am Amy."]},
+      {"id": "u01.e02", "scene": "昨晚没睡好，早上在楼下遇到邻居，她问你 How are you?", "en": "I'm tired.", "zh": "我好累。", "accept": ["I am tired."]},
+      {"id": "u01.e03", "scene": "在 hawker centre，朋友还想再给你点一碗。", "en": "I'm full.", "zh": "我吃饱了。", "note": "full = 吃饱了", "accept": ["I am full."]},
+      {"id": "u01.e04", "scene": "周末和朋友约在 MRT 站见面，你晚到了几分钟。", "en": "Sorry, I'm late.", "zh": "不好意思，我迟到了。", "note": "late = 迟到", "accept": ["Sorry, I am late.", "I'm late, sorry."]},
+      {"id": "u01.e05", "scene": "在 HDB 电梯里，邻居问你是做什么工作的。", "en": "I'm a teacher.", "zh": "我是老师。", "accept": ["I am a teacher."]},
+      {"id": "u01.e06", "scene": "刚搬进新的 HDB，去敲隔壁的门打招呼。", "en": "Hi, I'm your new neighbour.", "zh": "你好，我是你的新邻居。", "accept": ["Hello, I'm your new neighbour.", "I'm your new neighbour."]},
+      {"id": "u01.e07", "scene": "周末在家，家人问你饿不饿、要不要先吃饭。", "en": "Yes, I'm very hungry.", "zh": "要，我好饿。", "accept": ["I'm very hungry.", "Yes, I am very hungry."]},
+      {"id": "u01.e08", "scene": "你正在接待家长，同事过来叫你帮忙。", "en": "Sorry, I'm busy now.", "zh": "不好意思，我现在在忙。", "accept": ["Sorry, I am busy now.", "Sorry, I'm busy."]},
+      {"id": "u01.e09", "scene": "家长打电话说到中心楼下了，问你在哪里。", "en": "I'm at the front desk.", "zh": "我在前台。", "note": "front desk = 前台", "accept": ["I am at the front desk."]},
+      {"id": "u01.e10", "scene": "新来的外教同事夸你英语好，你想谦虚一下。", "en": "Thank you. I'm still learning English.", "zh": "谢谢，我还在学英语呢。", "note": "still learning = 还在学", "accept": ["I'm still learning English.", "Thank you, I am still learning English."]}
     ]
+  },
+  "daily": [
+    {"id": "u01.d01", "word": "friend", "scene": "周末在商场遇到老同学，你向身边的家人介绍她。", "en": "This is my friend.", "zh": "这是我的朋友。"},
+    {"id": "u01.d02", "word": "neighbour", "scene": "在楼下和朋友聊天，住隔壁的阿姨走过来打招呼。", "en": "She is my neighbour.", "zh": "她是我的邻居。", "note": "neighbour = 邻居（英式拼写）"},
+    {"id": "u01.d03", "word": "family", "scene": "新认识的朋友问你和谁一起住。", "en": "I live with my family.", "zh": "我和家人一起住。"},
+    {"id": "u01.d04", "word": "live", "scene": "在 hawker centre 和新朋友聊天，你想问她住在哪里。", "en": "Where do you live?", "zh": "你住在哪里？"},
+    {"id": "u01.d05", "word": "near", "scene": "朋友问你家离 MRT 站远不远。", "en": "I live near the MRT.", "zh": "我住在 MRT 站附近。", "note": "near = 在……附近"},
+    {"id": "u01.d06", "word": "weekend", "scene": "星期五下班，和邻居在电梯里分开时。", "en": "Have a nice weekend!", "zh": "周末愉快！"},
+    {"id": "u01.d07", "word": "walk", "scene": "朋友问你每天怎么去 MRT 站。", "en": "I walk to the MRT.", "zh": "我走路去 MRT 站。"},
+    {"id": "u01.d08", "word": "sleep", "scene": "晚上十一点，家人还在看电视，你困了。", "en": "I need to sleep.", "zh": "我要睡觉了。"},
+    {"id": "u01.d09", "word": "weather", "scene": "早上出门，邻居说今天很热。", "en": "The weather is very hot today.", "zh": "今天天气很热。"},
+    {"id": "u01.d10", "word": "hot", "scene": "在巴士站等车，旁边的阿姨跟你聊天。", "en": "It's very hot today.", "zh": "今天很热。"},
+    {"id": "u01.d11", "word": "rain", "scene": "朋友约你周末去公园，你看了天气预报。", "en": "I don't like the rain.", "zh": "我不喜欢下雨。"},
+    {"id": "u01.d12", "word": "husband", "scene": "带老公参加朋友的聚会，你向朋友介绍他。", "en": "This is my husband.", "zh": "这是我老公。", "note": "husband = 丈夫、老公"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期六早上",
+      "lines": [
+        {"en": "Good morning! I'm Amy.", "zh": "早上好！我是 Amy。"},
+        {"en": "I'm from China.", "zh": "我来自中国。"},
+        {"en": "I live near the MRT with my family.", "zh": "我和家人住在 MRT 站附近。"},
+        {"en": "I work at a learning centre.", "zh": "我在一家补习中心工作。"},
+        {"en": "It's a nice day.", "zh": "今天天气不错。"},
+        {"en": "I see my neighbour.", "zh": "我看到了我的邻居。"},
+        {"en": "\"Good morning! How are you?\"", "zh": "\"早上好！你好吗？\""},
+        {"en": "\"I'm fine, thank you.\"", "zh": "\"我很好，谢谢。\""},
+        {"en": "The weather is very hot today.", "zh": "今天天气很热。"},
+        {"en": "I walk to the MRT with my friend.", "zh": "我和朋友走路去 MRT 站。"},
+        {"en": "I'm very hungry!", "zh": "我好饿！"},
+        {"en": "Have a nice day!", "zh": "祝你今天愉快！"}
+      ]
+    },
+    "dialogue": {
+      "title": "电梯里的新邻居",
+      "setting": "星期六早上，Amy 在 HDB 电梯里遇到住同一层的陈太太。",
+      "cast": [
+        {"name": "Mrs Tan", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Tan", "en": "Good morning! Are you my new neighbour?", "zh": "早上好！你是我的新邻居吗？"},
+        {"speaker": "Amy", "en": "Yes. Hi, I'm Amy.", "zh": "是的。你好，我叫 Amy。"},
+        {"speaker": "Mrs Tan", "en": "Nice to meet you, Amy. I'm Mrs Tan.", "zh": "很高兴认识你，Amy。我是陈太太。"},
+        {"speaker": "Amy", "en": "Nice to meet you too.", "zh": "我也很高兴认识你。"},
+        {"speaker": "Mrs Tan", "en": "Where are you from?", "zh": "你是哪里人？"},
+        {"speaker": "Amy", "en": "I'm from China.", "zh": "我来自中国。"},
+        {"speaker": "Mrs Tan", "en": "Do you work near the MRT?", "zh": "你在 MRT 站附近工作吗？"},
+        {"speaker": "Amy", "en": "Yes, I work at a learning centre. I'm a teacher.", "zh": "是的，我在一家补习中心工作，我是老师。"},
+        {"speaker": "Mrs Tan", "en": "Very good! It's very hot today.", "zh": "真好！今天好热啊。"},
+        {"speaker": "Amy", "en": "Yes, I'm very hungry!", "zh": "是啊，我好饿！"},
+        {"speaker": "Mrs Tan", "en": "See you, Amy!", "zh": "再见，Amy！"},
+        {"speaker": "Amy", "en": "See you! Have a nice weekend!", "zh": "再见！周末愉快！"}
+      ]
+    }
   },
   "grammar": {
     "title": "I'm 就是 I am",
     "body": "英语里经常把两个词缩成一个：I am → I'm。说话时用 I'm 更自然，两个都对。",
     "examples": [
-      { "en": "I am Amy. = I'm Amy.", "zh": "我是 Amy。" },
-      { "en": "I am fine. = I'm fine.", "zh": "我很好。" }
+      {"en": "I am Amy. = I'm Amy.", "zh": "我是 Amy。"},
+      {"en": "I am fine. = I'm fine.", "zh": "我很好。"}
     ]
   },
   "dialogue": {
@@ -43,36 +104,39 @@
     "nodes": [
       {
         "id": "n1",
-        "npc": { "en": "Hi! I'm Jason. I'm the new teacher.", "zh": "嗨！我是 Jason，我是新来的老师。" },
+        "npc": {"en": "Hi! I'm Jason. I'm the new teacher.", "zh": "嗨！我是 Jason，我是新来的老师。"},
         "replies": [
-          { "en": "Hi, I'm Amy. Nice to meet you.", "zh": "你好，我是 Amy，很高兴认识你。", "next": "n2" },
-          { "en": "Hello! Nice to meet you.", "zh": "你好！很高兴认识你。", "next": "n2" }
+          {"en": "Hi, I'm Amy. Nice to meet you.", "zh": "你好，我是 Amy，很高兴认识你。", "next": "n2"},
+          {"en": "Hello! Nice to meet you.", "zh": "你好！很高兴认识你。", "next": "n2"},
+          {"en": "Hi, I'm Amy. I'm at the front desk.", "zh": "你好，我是 Amy，我在前台工作。", "next": "n2"}
         ]
       },
       {
         "id": "n2",
-        "npc": { "en": "Nice to meet you too. Where are you from?", "zh": "我也很高兴认识你。你是哪里人？" },
-        "replies": [{ "en": "I'm from China.", "zh": "我来自中国。", "next": "n3" }]
+        "npc": {"en": "Nice to meet you too. Where are you from?", "zh": "我也很高兴认识你。你是哪里人？"},
+        "replies": [
+          {"en": "I'm from China.", "zh": "我来自中国。", "next": "n3"}
+        ]
       },
       {
         "id": "n3",
-        "npc": { "en": "Oh, nice! How long have you been in Singapore?", "zh": "哦，不错！你来新加坡多久了？" },
+        "npc": {"en": "Oh, nice! How long have you been in Singapore?", "zh": "哦，不错！你来新加坡多久了？"},
         "replies": [
-          { "en": "Two years.", "zh": "两年。", "next": "n4" },
-          { "en": "Three years.", "zh": "三年。", "next": "n4" }
+          {"en": "Two years.", "zh": "两年。", "next": "n4"},
+          {"en": "Three years.", "zh": "三年。", "next": "n4"}
         ]
       },
       {
         "id": "n4",
-        "npc": { "en": "Great. Welcome to the team! See you around.", "zh": "太好了。欢迎加入！回头见。" },
+        "npc": {"en": "Great. Welcome to the team! See you around.", "zh": "太好了。欢迎加入！回头见。"},
         "replies": [
-          { "en": "See you tomorrow!", "zh": "明天见！", "next": "end" },
-          { "en": "Bye! Have a nice day!", "zh": "拜拜！祝你今天愉快！", "next": "end" }
+          {"en": "See you tomorrow!", "zh": "明天见！", "next": "end"},
+          {"en": "Bye! Have a nice day!", "zh": "拜拜！祝你今天愉快！", "next": "end"}
         ]
       },
       {
         "id": "end",
-        "npc": { "en": "You too. Bye!", "zh": "你也是。拜拜！" },
+        "npc": {"en": "You too. Bye!", "zh": "你也是。拜拜！"},
         "replies": []
       }
     ]

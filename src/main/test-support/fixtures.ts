@@ -58,15 +58,49 @@ const dialogue = (reply: string) => ({
   ],
 });
 
-const drill = {
-  pattern: 'Can I have ___, please?',
-  zh: '点东西',
-  fills: [
-    { en: 'a coffee', zh: '一杯咖啡' },
-    { en: 'a tea', zh: '一杯茶' },
-    { en: 'water', zh: '水' },
-  ],
-};
+const FILLS = ['a coffee', 'a tea', 'water', 'coffee', 'tea', 'a water', 'a coffee, a tea', 'tea, water'];
+
+const patterns = (unitId: string) => ({
+  frames: [{ frame: 'Can I have ___, please?', zh: '我可以要……吗？', usage: '点东西' }],
+  examples: FILLS.map((fill, i) => ({
+    id: `${unitId}.e${String(i + 1).padStart(2, '0')}`,
+    scene: `场景 ${i + 1}`,
+    en: `Can I have ${fill}, please?`,
+    zh: '点东西',
+  })),
+});
+
+const DAILY: [string, string][] = [
+  ['hi', 'Hi!'],
+  ['nice', 'Nice to meet you.'],
+  ['coffee', 'A coffee, please.'],
+  ['tea', 'Tea, please.'],
+  ['water', 'Water, please.'],
+  ['morning', 'Good morning!'],
+  ['bye', 'Bye!'],
+  ['see', 'See you!'],
+];
+
+const daily = (unitId: string) =>
+  DAILY.map(([word, en], i) => ({
+    id: `${unitId}.d0${i + 1}`,
+    word,
+    scene: `生活 ${i + 1}`,
+    en,
+    zh: '中文',
+  }));
+
+const STORY_LINES = ['Hi!', 'Good morning!', "I'm Amy.", 'A coffee, please.', 'Thank you.', 'Bye!'];
+
+const stories = () => ({
+  narrative: { title: '早上', lines: STORY_LINES.map((en) => ({ en, zh: '中文' })) },
+  dialogue: {
+    title: '早上',
+    setting: '咖啡店',
+    cast: [{ name: 'Jason', voice: 'bm_george' }],
+    lines: STORY_LINES.map((en, i) => ({ speaker: i % 2 ? 'Amy' : 'Jason', en, zh: '中文' })),
+  },
+});
 
 export const MINI_CONTENT: RawContent = {
   curriculum: {
@@ -106,7 +140,9 @@ export const MINI_CONTENT: RawContent = {
           { id: 'u01.c04', en: 'Bye!', zh: '再见！' },
         ],
         words: ['hi', 'nice', 'meet'],
-        drill,
+        patterns: patterns('u01'),
+        daily: daily('u01'),
+        stories: stories(),
         phonics: 'p01',
         dialogue: dialogue("Hi, I'm Amy."),
         task: '说 Good morning',
@@ -127,7 +163,9 @@ export const MINI_CONTENT: RawContent = {
           { id: 'u02.c04', en: 'Can I have a tea, please?', zh: '我可以要一杯茶吗？' },
         ],
         words: ['coffee', 'tea', 'please'],
-        drill,
+        patterns: patterns('u02'),
+        daily: daily('u02'),
+        stories: stories(),
         dialogue: dialogue('Thank you.'),
         task: '点一杯咖啡',
       },
@@ -152,6 +190,7 @@ export const MINI_CONTENT: RawContent = {
       },
     },
   ],
+  weeks: [{ file: 'w01.json', data: { week: 1, stories: stories() } }],
 };
 
 export function miniBundle(): ContentBundle {
