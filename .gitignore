@@ -34,3 +34,6 @@ dist-web/
 *.key
 *.pfx
 *.pem
+
+# Personal publish checklist for the user, not shared
+.agent-wiki/tasks/user-steps.md
