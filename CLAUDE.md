@@ -6,6 +6,7 @@
 **新会话开始时**：先读本文件，再读 `.agent-wiki/INDEX.md`（代理共享 wiki，含 `summaries/` 交接总结）和
 `docs/progress.md`（已完成 / 未完成 / 已知问题 / 下一步），然后按任务需要阅读 `docs/README.md` 索引里的文档。
 本项目遵守 `D:\Tools\Claude Work Rule\Project Wiki and Sub-agent rule.md`（用户已于 2026-10-24 确认）。
+**例外（用户 2026-10-29 决定）**：本项目的 `.agent-wiki/` 进 git（规则第 7 条在本项目不适用），所以 wiki 里不放密钥、证书私钥或任何个人数据。
 `docs/decisions/` 里已经定下的决定，**没有新证据就不重新讨论**。
 
 ## 核心原则（任何设计冲突时以此为准）

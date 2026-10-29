@@ -1,6 +1,6 @@
 # 文档索引
 
-开口说 · 新加坡生活英语（KaikouEnglish）—— 离线、免费的 Windows 英语口语学习软件。
+开口说 · 新加坡生活英语（KaikouEnglish）—— 离线、免费的英语口语学习软件；iPhone Web/PWA 正在真机验收前准备，仓库暂保留 Windows 桌面版。
 
 ## 先读这几篇
 
@@ -9,6 +9,19 @@
 | [`progress.md`](progress.md)                     | 当前进度：已完成 / 未完成 / 已知问题 / 下一步          |
 | [`01-learning-method.md`](01-learning-method.md) | 学习方法、目标、研究依据、防放弃设计、自动调速规则     |
 | [`02-architecture.md`](02-architecture.md)       | 技术架构、模块边界、文件归属、路径、IPC 接口、数据库表 |
+
+## iPhone Web / PWA
+
+| 文档                                          | 内容                                       |
+| --------------------------------------------- | ------------------------------------------ |
+| [iPhone 试用步骤](web/iphone-test.md)         | 电脑启动、证书安装、主屏幕安装及真机结果表 |
+| [Web 架构](web/architecture.md)               | 模块装配、存储、资源与备份契约             |
+| [移动界面规范](web/mobile-ui.md)              | 四标签、学习步骤与安全区                   |
+| [界面验证](web/mobile-validation.md)          | Chrome 截图与真机待测边界                  |
+| [资源与 HTTPS](web/assets.md)                 | 资源构建、离线缓存、更新及本地服务         |
+| [语音](web/speech.md)                         | 录音、播放、本地识别与限制                 |
+| [存储](web/storage.md)                        | SQLite、录音、完整备份与恢复               |
+| [决定 0008](decisions/0008-web-pwa-iphone.md) | Web 替代桌面与真机放行条件                 |
 
 ## 课程内容
 

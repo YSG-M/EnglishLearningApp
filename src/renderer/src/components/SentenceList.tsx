@@ -80,27 +80,30 @@ export function SentenceList({
   };
   if (!items.length) return null;
   return (
-    <Card title={title}>
-      {intro ? <p className="muted">{intro}</p> : null}
-      {running ? (
-        <Button
-          onClick={() => {
-            player.stop();
-            setRunning(false);
-          }}
-        >
-          ⏹ {zh.part.stopAll}
-        </Button>
-      ) : (
-        <Button variant="primary" onClick={() => void playAll()}>
-          ▶ {zh.part.playAll}
-        </Button>
-      )}
-      <ul className="sentence-list">
-        {items.map((i) => (
-          <Line key={i.key} item={i} />
-        ))}
-      </ul>
+    <Card>
+      <details open>
+        <summary className="card-title">{title}</summary>
+        {intro ? <p className="muted">{intro}</p> : null}
+        {running ? (
+          <Button
+            onClick={() => {
+              player.stop();
+              setRunning(false);
+            }}
+          >
+            ⏹ {zh.part.stopAll}
+          </Button>
+        ) : (
+          <Button variant="primary" onClick={() => void playAll()}>
+            ▶ {zh.part.playAll}
+          </Button>
+        )}
+        <ul className="sentence-list">
+          {items.map((i) => (
+            <Line key={i.key} item={i} />
+          ))}
+        </ul>
+      </details>
     </Card>
   );
 }

@@ -2,6 +2,7 @@
 import { render } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import type { SpeechStatus } from '@shared/ipc';
+import type { ContentBundle } from '@shared/content/bundle';
 import { defaultSettings, type Settings } from '@shared/settings';
 import { setApi } from './api/client';
 import { createMockApi, fixtureBundle, type MockApi } from './api/mockApi';
@@ -25,6 +26,7 @@ export function renderWithApp(
     settings?: Partial<Settings>;
     speech?: SpeechStatus;
     hints?: Record<string, number>;
+    bundle?: ContentBundle;
   } = {},
 ): { api: MockApi } & ReturnType<typeof render> {
   stubMedia();
@@ -32,7 +34,7 @@ export function renderWithApp(
   setApi(api);
   const result = render(
     <AppProvider
-      bundle={fixtureBundle()}
+      bundle={opts.bundle ?? fixtureBundle()}
       settings={{ ...defaultSettings, ...opts.settings }}
       speech={opts.speech ?? { state: 'ready' }}
       hints={opts.hints ?? {}}

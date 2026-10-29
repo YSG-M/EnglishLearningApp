@@ -7,6 +7,7 @@ import { KIND_ICON, PartTile } from '../components/PartTile';
 import { Button, Card, Loading, Notice } from '../components/ui';
 import { zh } from '../i18n/zh';
 import { useApp } from '../state/AppContext';
+import { DownloadNotice } from '../../../web/ui/DownloadNotice';
 
 export function TodayPage() {
   const { bundle, settings, navigate } = useApp();
@@ -48,6 +49,7 @@ export function TodayPage() {
 
   return (
     <div className="page today">
+      <DownloadNotice />
       <header className="today-hero">
         <h1>{zh.today.greeting(settings.learnerName, new Date().getHours())}</h1>
         <p className="hero-days">
@@ -141,6 +143,7 @@ export function TodayPage() {
       </div>
 
       <p className="muted small center">{zh.today.minimum}</p>
+      <Button onClick={() => navigate({ name: 'phrasebook' })}>🔍 速查常用句</Button>
     </div>
   );
 }

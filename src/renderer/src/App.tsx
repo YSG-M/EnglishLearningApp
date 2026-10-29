@@ -10,14 +10,15 @@ import { ProgressPage } from './pages/ProgressPage';
 import { ReviewPage } from './pages/ReviewPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { TodayPage } from './pages/TodayPage';
+import { Button, Card, PageHeader } from './components/ui';
+import { useEffect } from 'react';
+import { PlaybackNotice } from '../../web/ui/WebServices';
 
 const NAV: { route: Route['name']; label: string; icon: string }[] = [
   { route: 'today', label: zh.nav.today, icon: '🏠' },
   { route: 'course', label: zh.nav.course, icon: '📚' },
   { route: 'review', label: zh.nav.review, icon: '🔁' },
-  { route: 'phrasebook', label: zh.nav.phrasebook, icon: '🔍' },
-  { route: 'progress', label: zh.nav.progress, icon: '📈' },
-  { route: 'settings', label: zh.nav.settings, icon: '⚙️' },
+  { route: 'mine', label: '我的', icon: '👤' },
 ];
 
 function Sidebar() {
@@ -27,7 +28,9 @@ function Sidebar() {
       ? (route.from ?? 'today')
       : route.name === 'unitSummary' || route.name === 'weekSummary'
         ? 'course'
-        : route.name;
+        : ['phrasebook', 'progress', 'settings'].includes(route.name)
+          ? 'mine'
+          : route.name;
   return (
     <nav className="sidebar" aria-label="主菜单">
       <div className="brand">
@@ -52,10 +55,47 @@ function Sidebar() {
   );
 }
 
-function Screen() {
-  const { route, navigate } = useApp();
+export function Screen() {
+  const { route, navigate, goBack } = useApp();
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    const resize = () => {
+      document.documentElement.style.setProperty(
+        '--app-height',
+        `${viewport?.height ?? window.innerHeight}px`,
+      );
+      document.documentElement.style.setProperty(
+        '--keyboard-inset',
+        `${Math.max(0, window.innerHeight - (viewport?.height ?? window.innerHeight) - (viewport?.offsetTop ?? 0))}px`,
+      );
+    };
+    resize();
+    viewport?.addEventListener('resize', resize);
+    return () => {
+      viewport?.removeEventListener('resize', resize);
+      document.documentElement.style.removeProperty('--app-height');
+      document.documentElement.style.removeProperty('--keyboard-inset');
+    };
+  }, []);
   let page;
   switch (route.name) {
+    case 'mine':
+      page = (
+        <div className="page">
+          <PageHeader title="我的" />
+          <Card>
+            <p>每天开口一点点，慢慢看见自己的进步。</p>
+            <div className="mine-links">
+              {(['phrasebook', 'progress', 'settings'] as const).map((name) => (
+                <Button key={name} onClick={() => navigate({ name })}>
+                  {zh.nav[name]} →
+                </Button>
+              ))}
+            </div>
+          </Card>
+        </div>
+      );
+      break;
     case 'today':
       page = <TodayPage />;
       break;
@@ -87,9 +127,18 @@ function Screen() {
       break;
   }
   return (
-    <div className="shell">
-      <Sidebar />
+    <div className={`shell ${route.name === 'part' ? 'learning-shell' : ''}`}>
+      <header className="mobile-topbar">
+        {!NAV.some((tab) => tab.route === route.name) ? (
+          <Button variant="ghost" onClick={goBack}>
+            ← 返回
+          </Button>
+        ) : null}
+        <span>{zh.appName}</span>
+      </header>
+      {route.name !== 'part' ? <Sidebar /> : null}
       <main className="content">
+        <PlaybackNotice />
         {/* Keyed by route so an error on one screen is cleared by navigating away. */}
         <ErrorBoundary
           key={

@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { Token } from '@shared/content/tokenize';
 import { buildFeedback, type Feedback } from '@shared/domain/feedback';
 import { bestMatch } from '@shared/domain/speechMatch';
-import { api, errorCode, logError } from '../api/client';
+import { api, logError } from '../api/client';
 import type { Recording } from '../audio/recorder';
 import { player } from '../audio/player';
 import { wavBlobUrl } from '../audio/wav';
@@ -64,10 +64,18 @@ export function SpeakPanel({
   const [failed, setFailed] = useState(false);
   const [awaitingSelf, setAwaitingSelf] = useState(false);
   const attempts = useRef(0);
+  const active = useRef(true);
   const [tried, setTried] = useState(false);
   const selfMode = speech.state !== 'ready';
 
   useEffect(() => () => void (ownUrl && URL.revokeObjectURL(ownUrl)), [ownUrl]);
+  useEffect(() => {
+    active.current = true;
+    return () => {
+      active.current = false;
+      player.stop();
+    };
+  }, []);
 
   const keepLocal = (r: Recording) => {
     setOwnUrl((old) => {
@@ -104,7 +112,7 @@ export function SpeakPanel({
     setFailed(false);
     setAwaitingSelf(false);
     const r = await rec.record({ silenceMs: settings.silenceMs });
-    if (!r) return;
+    if (!r || !active.current) return;
     keepLocal(r);
     attempts.current += 1;
     setTried(true);
@@ -119,16 +127,16 @@ export function SpeakPanel({
     setProcessing(true);
     try {
       const res = await api.speech.recognize({ samples: r.samples, sampleRate: 16000, itemId, keep });
+      if (!active.current) return;
       await handleRecognized(res.text, res.recordingId);
     } catch (err) {
-      const code = errorCode(err);
+      if (!active.current) return;
       logError('recognize', err);
-      if (code === 'SPEECH_UNAVAILABLE') {
-        await refreshSpeech();
-        setAwaitingSelf(true);
-      } else setFailed(true);
+      setFailed(true);
+      setAwaitingSelf(true);
+      void refreshSpeech().catch((e: unknown) => logError('refreshSpeech', e));
     } finally {
-      setProcessing(false);
+      if (active.current) setProcessing(false);
     }
   };
 

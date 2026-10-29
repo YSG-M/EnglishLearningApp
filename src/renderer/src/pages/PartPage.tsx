@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useWebServices } from '../../../web/ui/WebServices';
 import { api, logError } from '../api/client';
 import { Button, Card, Notice } from '../components/ui';
 import { ApplyPart } from '../features/lesson/ApplyPart';
@@ -14,18 +15,61 @@ import { partById } from '../state/content';
 
 export function PartPage({ partId, from = 'today' }: { partId: string; from?: 'today' | 'course' }) {
   const { bundle, navigate } = useApp();
+  const services = useWebServices();
   const part = partById(bundle, partId);
   const time = useActiveTime(true);
   const [finished, setFinished] = useState<{ cards: number; firstTime: boolean } | null>(null);
   const [saving, setSaving] = useState(false);
   const [saveFailed, setSaveFailed] = useState(false);
+  const [resources, setResources] = useState<'loading' | 'ready' | 'error'>(services ? 'loading' : 'ready');
+  const [attempt, setAttempt] = useState(0);
+  const assets = services?.assets;
+  useEffect(() => {
+    if (!assets || !part) return;
+    let alive = true;
+    const prepare = async () => {
+      const available = await assets.getAvailableWeeks?.();
+      if (!available?.includes(part.week)) await assets.ensureWeeks([part.week]);
+      if (alive) setResources('ready');
+    };
+    void prepare().catch(() => {
+      if (alive) setResources('error');
+    });
+    return () => {
+      alive = false;
+    };
+  }, [assets, part, attempt]);
   useStopAudioOnUnmount();
 
   const back = () => navigate({ name: from });
   if (!part) return <Notice tone="warn">{zh.errors.generic}</Notice>;
+  if (resources !== 'ready')
+    return (
+      <div className="page">
+        <Notice tone={resources === 'error' ? 'warn' : 'info'}>
+          {resources === 'error'
+            ? '这周音频尚未准备好，请检查网络和本机空间。你可以返回可用课程。'
+            : '正在核对这周离线音频，请保持应用打开…'}
+        </Notice>
+        <Button onClick={back}>返回可用课程</Button>
+        {resources === 'error' ? (
+          <Button
+            onClick={() => {
+              setResources('loading');
+              setAttempt((n) => n + 1);
+            }}
+          >
+            重试下载
+          </Button>
+        ) : (
+          <Button onClick={() => assets?.pause()}>暂停下载</Button>
+        )}
+      </div>
+    );
   const units = part.unitIds.map((id) => bundle.units[id]).filter((u) => u !== undefined);
 
   const finish = async () => {
+    if (saving) return;
     setSaving(true);
     setSaveFailed(false);
     try {
@@ -112,7 +156,7 @@ export function PartPage({ partId, from = 'today' }: { partId: string; from?: 't
       {saving ? <Notice>{zh.common.loading}</Notice> : null}
       {saveFailed ? (
         <Notice tone="warn">
-          {zh.errors.generic} <Button onClick={onFinish}>{zh.common.retry}</Button>
+          学习记录未保存，请检查本机可用空间后重试。 <Button onClick={onFinish}>{zh.common.retry}</Button>
         </Notice>
       ) : null}
       {body ?? <Notice tone="warn">{zh.errors.generic}</Notice>}

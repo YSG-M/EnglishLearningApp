@@ -2,6 +2,14 @@
 
 > 这份文档是各模块之间的**约定**。改动接口（`src/shared/ipc.ts`、`src/shared/content/*`）前，先改这里。
 
+## Web/PWA 迁移（2026-10-29）
+
+用户已决定由 iPhone 主屏幕 Web 应用替代桌面版，见 [决定 0008](decisions/0008-web-pwa-iphone.md)。
+本轮保留下述 Electron 实现；Web 的模块边界、构建者文件归属、浏览器 `AppApi`、数据库/语音 Worker 协议、
+资源清单、缓存更新、备份格式与本地 HTTPS 验收以 [Web 架构](web/architecture.md) 为准，
+界面以 [移动界面规范](web/mobile-ui.md) 为准。以下章节描述已有桌面版；其中 Node SQLite、`media://`、
+桌面语音兜底与磁盘目录不适用于浏览器。Web 允许下载静态内容与模型，个人数据不上传。
+
 ## 1. 总览
 
 ```

@@ -38,12 +38,12 @@ describe('<PracticePart> (句型课)', () => {
     expect(screen.getByText('第 2 / 2 个场景')).toBeInTheDocument();
   });
 
-  it('toggles word meanings and remembers it in settings', () => {
+  it('toggles word meanings and remembers it in settings', async () => {
     const { api } = renderWithApp(<PracticePart unit={unit} onFinish={vi.fn()} />);
     next();
     expect(screen.queryByText('早上')).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /逐词意思/ }));
-    expect(screen.getByText('早上')).toHaveClass('token-gloss');
+    expect(await screen.findByText('早上')).toHaveClass('token-gloss');
     expect(api.calls.some((c) => c.channel === 'settings.update')).toBe(true);
   });
 });

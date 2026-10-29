@@ -1,6 +1,24 @@
 # 当前进度
 
-> 新会话开始时先读这里。最后更新：2026-10-25（汇总页、小故事、日常用词）
+> 新会话开始时先读这里。最后更新：2026-10-29（Pages 发布准备；线上与 iPhone 待验收）
+
+## 2026-10-29：GitHub Pages 发布准备
+
+新增 Pages 工作流与 `web:build:ci`，提交手机生成资产供 CI 使用；本地完整生成命令保留。手机指南改为 Pages，LAN/证书移到开发文档。未提交、推送或操作仓库设置；GitHub 与 iPhone 尚待用户验收。实测检查结果统一见 wiki Now。
+
+## 2026-10-29：iPhone Web / PWA 集成
+
+Web 版已接入真实 `createWebApi`（SQLite WASM / OPFS / IndexedDB）、资源客户端和单线程语音 Worker；生产入口不使用 Fake。保留 Electron 代码，按决定 0008 等 iPhone 测试通过后再处理移除。手机操作与结果表见 [iPhone 试用步骤](web/iphone-test.md)，模块细节见 [Web 文档索引](README.md#iphone-web--pwa)。
+
+- 修复四个根标签误显示返回按钮；清单未就绪时显示“正在读取资源清单”，不显示零字节总量，进度条保持等待状态。
+- 集成者实际执行 `npm run check`、`npm run web:check`、`npm run web:build`。测试计数、最终 release 和测量记录统一见 `.agent-wiki/INDEX.md` 的 Now；不把跳过当作通过。构建中 zod PURE 注释警告不影响成功；内容校验仍有已知的词汇警告。
+- `node scripts/web/browser-smoke.mjs` 使用新 Chrome profile，对最终构建真实执行首周下载校验、首次 SW 接管、打开第一课、播放 M4A 至结束、断网 Range 206 与离线重载。首轮程序点击缺少用户手势而未完成播放；补上 CDP 用户手势后通过。此证据验证浏览器解码与播放结束，不证明手机扬声器实际出声。
+- `node src/web/ui/validation/capture.mjs` 在两种宽度下检查横向溢出、根标签与固定学习栏；人工逐页查看目标尺寸的今天、课程、汇总、复习、我的、设置和句子步骤。[截图说明](web/mobile-validation.md) 区分 Mock 布局与真实站点验证。
+- 既有 builders 的真实 Chrome 存储冷重开、备份恢复及 WASM 课程音频识别记录保留在各模块文档；本轮没有用它们代替 iPhone 测试。生产站点 harness 没有课程 WAV 作为假麦克风的能力，所以生产录音到识别的整条链路本轮未测。
+
+**尚未验证**：iPhone Safari/主屏幕的飞行模式进程冷启动、真人麦克风、重开权限、静音开关、录音后音量/路由、每句识别速度与峰值内存、备份真机往返、横屏/软键盘/安全区、真实配额及系统回收。下一步由持有人按试用表填写结果；目前不宣称 iPhone 已放行。
+
+**已知 Web 限制**：旧激活 release 缓存保守保留，没有自动回收；完整 JSON 备份有内存开销，手机大备份尚未压测；运行时上游未附完整第三方构建依赖声明，公开分发前仍需核对。模型失败保留回听/自评；不使用云识别或浏览器 TTS。用户已决定公开仓库并使用 GitHub Pages，跳过 LAN 测试；发布步骤见 [开发说明](dev-setup.md#发布到-github-pages)。
 
 ## 已完成（v1）
 

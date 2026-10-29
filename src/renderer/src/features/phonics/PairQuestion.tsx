@@ -2,7 +2,7 @@
  * Minimal-pair listening question: one of two similar words is played, she picks which.
  * Shared by the practice part's phonics quiz and the review screen.
  */
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { PhonicsPairItem, Sentence } from '@shared/content/bundle';
 import { stableShuffle } from '@shared/domain/exercise';
 import { player } from '../../audio/player';
@@ -28,11 +28,6 @@ export function PairQuestion({
 }) {
   const { target, options } = useMemo(() => pickPairTarget(pair, seed), [pair, seed]);
   const [chosen, setChosen] = useState<Sentence | null>(null);
-
-  useEffect(() => {
-    const t = setTimeout(() => void player.play({ clip: target.audio, text: target.en }), 250);
-    return () => clearTimeout(t);
-  }, [target]);
 
   const choose = (o: Sentence) => {
     if (chosen) return;

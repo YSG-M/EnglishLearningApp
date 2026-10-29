@@ -111,7 +111,10 @@ export function UnitSummaryPage({ unitId, from = { name: 'course' } }: { unitId:
         <p className="muted">{zh.summary.help}</p>
       </Card>
       <UnitSentences unit={unit} />
-      <WordList keys={[...new Set([...unit.words, ...unit.daily.map((d) => d.word)])]} />
+      <details open>
+        <summary>🔤 单词表</summary>
+        <WordList keys={[...new Set([...unit.words, ...unit.daily.map((d) => d.word)])]} />
+      </details>
       <Stories stories={unit.stories} prefix={unit.id} />
     </div>
   );

@@ -2,7 +2,7 @@
 import { cleanup, fireEvent, screen, waitFor } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ReviewCardView } from '@shared/ipc';
-import type { MockApi } from '../../api/mockApi';
+import { createMockApi, type MockApi } from '../../api/mockApi';
 import { renderWithApp } from '../../test-utils';
 import { ReviewSession } from './ReviewSession';
 
@@ -24,6 +24,21 @@ const submits = (api: MockApi) =>
     .map((c) => c.args[0] as { cardId: string; grade: string });
 
 describe('<ReviewSession>', () => {
+  it('keeps the current card on save failure and retries before advancing', async () => {
+    const api = createMockApi();
+    const submit = api.review.submit;
+    api.review.submit = vi.fn().mockRejectedValueOnce(new Error('Storage full')).mockImplementation(submit);
+    const onDone = vi.fn();
+    renderWithApp(<ReviewSession cards={[card({})]} onDone={onDone} />, { api });
+    fireEvent.click(screen.getByRole('button', { name: '很高兴认识你。' }));
+    expect(await screen.findByText(/学习记录未保存/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /下一张/ })).toBeDisabled();
+    expect(onDone).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: '重试保存' }));
+    await waitFor(() => expect(screen.getByRole('button', { name: /下一张/ })).toBeEnabled());
+    fireEvent.click(screen.getByRole('button', { name: /下一张/ }));
+    expect(onDone).toHaveBeenCalledWith({ reviewed: 1, correct: 1 });
+  });
   it('listen-choose: picking the right meaning submits "good"', async () => {
     const onDone = vi.fn();
     const { api } = renderWithApp(<ReviewSession cards={[card({})]} onDone={onDone} />);

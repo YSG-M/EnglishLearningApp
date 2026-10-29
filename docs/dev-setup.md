@@ -1,5 +1,23 @@
 # 开发环境与打包
 
+## Web / iPhone PWA
+
+Web 入口与桌面命令并存。先准备既有课程 WAV，再运行：
+
+```powershell
+npm run web:assets
+npm run web:dev
+npm run web:build
+npm run web:typecheck
+npm run web:check
+```
+
+可选离线识别资产由 `npm run web:models` 准备；模型缺失不阻止基本课程。静态产物在 `dist-web/`，课程压缩与测量在 `resources/web/`、`resources/web-reports/`，其中 resources/web/ 必须提交，报告和构建产物不提交。npm 安装 ffmpeg-static 后需批准其安装脚本，`package.json` 已记录批准版本。
+
+手机直接使用 Pages HTTPS 地址，按 [iPhone 指南](web/iphone-test.md) 操作。LAN/证书仅供开发排查，见 [资源说明](web/assets.md)。
+
+Windows Codex 沙箱可能使 tsx 的系统用户信息读取报 `uv_os_get_passwd ENOMEM`；这是本机检查环境限制，需授权同一检查在沙箱外运行，不能将跳过的检查算作通过。原桌面搭建和验证命令继续保留如下。
+
 ## 1. 环境要求
 
 | 项目    | 版本 / 说明                                                                       |
@@ -81,3 +99,19 @@ npm run dist                 # 输出 release/<版本>/KaikouEnglish-Setup-<版�
 - **没有自动更新**：升级时直接运行新版本的安装程序覆盖安装。学习记录、录音、设置保存在
   `%APPDATA%\KaikouEnglish`（`app.getPath('userData')`），覆盖安装和卸载都不会删除。
 - 还没有自定义图标：放一个 256×256 的 `build/icon.ico` 即可替换 Electron 默认图标。
+
+## 发布到 GitHub Pages
+
+用户已于 2026-10-29 决定使用公开仓库 `YSG-M/EnglishLearningApp`，跳过本地 LAN 测试，直接在 https://ysg-m.github.io/EnglishLearningApp/ 验收。
+
+1. 课程、音频或模型改变时，在有原 WAV 的开发机先运行 `npm run web:build`；将更新的 `resources/web/` 与源码、工作流一起提交。目录只能包含公开课程、音频、模型、许可证和清单，不能放个人录音、学习库或密钥。
+2. 由用户检查工作区后执行 `git add .`、`git commit -m "Prepare GitHub Pages deployment"`，再执行 `git switch main`、`git merge feat/v1`、`git push origin main`。若尚无本地 main，先检出远程 main 或创建 main。代理不执行提交或推送。
+3. 仓库 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**。若仍私有，先在 Settings → General → Danger Zone 将仓库设为 Public。
+4. 在 Actions 查看 **Deploy GitHub Pages** 的 build/deploy。初次启用后可点 Run workflow 并选择 main。成功后访问目标地址，按 [iPhone 试用步骤](web/iphone-test.md) 安装并填写结果。当前 GitHub 尚未运行，不能宣称线上通过。
+5. 后续合并并推送 main 自动发布。手机联网打开应用，在离线设置检查更新；候选资源完整校验后按提示确认激活并重新打开。离线时继续旧版，个人数据仍在手机；更新前建议导出备份。
+
+CI 使用 Node 24、`npm ci --ignore-scripts`，设置 `WEB_BASE=/EnglishLearningApp/` 后运行 `npm run web:build:ci`。先核验已提交资源全部字节与 SHA-256，再构建 shell/Service Worker 并核验完整产物。跳过安装脚本避免 ffmpeg/Electron 下载，esbuild 使用 npm 平台可选包内二进制；CI 构建不导入转码模块，不读取原 WAV/Kokoro/本机模型缓存。原 Windows `ci.yml` 保持不变。
+
+`resources/web/` 必须提交；`resources/web-reports/`、`dist-web/`、原 WAV、开发模型缓存及 `.certs/` 仍忽略。本地 `web:build` 继续重新生成资源；只改应用代码可直接用 CI 命令。
+
+依据 [GitHub Pages 自定义工作流文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)，工作流使用已发布超过两周的 checkout/setup-node v4、configure-pages v5、upload-pages-artifact v3、deploy-pages v4。

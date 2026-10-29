@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { PlayRow } from '../components/AudioButtons';
 import { TokenLine } from '../components/TokenLine';
-import { Card, PageHeader } from '../components/ui';
+import { Button, Card, PageHeader } from '../components/ui';
 import { zh } from '../i18n/zh';
 import { useApp } from '../state/AppContext';
 import { allPhrases, searchPhrases } from '../state/content';
@@ -18,7 +18,6 @@ export function PhrasebookPage() {
       <input
         className="search-input"
         type="search"
-        autoFocus
         value={query}
         placeholder={zh.phrasebook.placeholder}
         onChange={(e) => setQuery(e.target.value)}
@@ -29,6 +28,7 @@ export function PhrasebookPage() {
           {results.length ? zh.phrasebook.results(results.length) : zh.phrasebook.noResults}
         </p>
       ) : null}
+      {query && !results.length ? <Button onClick={() => setQuery('')}>清除搜索</Button> : null}
       <ul className="phrase-results">
         {results.map((r) => (
           <li key={r.sentence.audio}>

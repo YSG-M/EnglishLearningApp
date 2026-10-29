@@ -1007,3 +1007,192 @@ p {
 .info-list dd {
   margin: 0;
 }
+
+/* The scroll container and action bars follow the visible viewport on mobile keyboards. */
+body {
+  overflow: hidden;
+}
+.shell {
+  height: 100vh;
+  height: var(--app-height, 100dvh);
+  flex-direction: column;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+.mobile-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: env(safe-area-inset-top) max(16px, env(safe-area-inset-right)) 4px
+    max(16px, env(safe-area-inset-left));
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.mobile-topbar span {
+  font-weight: 600;
+}
+.sidebar {
+  order: 3;
+  width: 100%;
+  flex-direction: row;
+  gap: 4px;
+  border-right: 0;
+  border-top: 1px solid var(--line);
+  padding: 6px max(8px, env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom))
+    max(8px, env(safe-area-inset-left));
+}
+.brand {
+  display: none;
+}
+.nav-item {
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0;
+  padding: 4px;
+  font-size: 16px;
+  text-align: center;
+}
+.nav-item.active {
+  box-shadow: inset 0 -3px var(--accent);
+}
+.content {
+  order: 2;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px max(16px, env(safe-area-inset-right)) 24px max(16px, env(safe-area-inset-left));
+  scroll-padding-bottom: 120px;
+}
+.page {
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+h1 {
+  font-size: 24px;
+}
+.small,
+.word-note,
+.stat-label,
+.token-gloss,
+.kind-pill {
+  font-size: 16px;
+}
+button,
+input,
+select {
+  touch-action: manipulation;
+}
+button,
+.btn,
+.icon-btn,
+summary,
+.token-word {
+  min-height: 44px;
+  min-width: 44px;
+}
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+input,
+select {
+  font-size: max(16px, 1rem);
+  max-width: 100%;
+}
+.toggle {
+  min-width: 28px;
+  min-height: 28px;
+  margin: 8px;
+}
+.token-line-lg .token-word {
+  font-size: 28px;
+}
+.today-grid,
+.stat-grid,
+.word-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.card,
+.sentence-card {
+  padding: 16px;
+}
+.page-header {
+  flex-wrap: wrap;
+}
+.part-tile,
+.unit-tag,
+.setting-row,
+.recording-list li,
+.compare-row {
+  flex-wrap: wrap;
+}
+.part-tile-body {
+  min-width: 150px;
+}
+.setting-row > span {
+  flex: 1 1 180px;
+}
+.info-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+.mine-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+.step-nav {
+  position: fixed;
+  bottom: calc(var(--keyboard-inset, 0px) + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+  gap: 4px;
+}
+.shell:has(.review-session) .sidebar {
+  display: none;
+}
+.stepper,
+.challenge,
+.review-session {
+  padding-bottom: calc(112px + env(safe-area-inset-bottom));
+}
+.step-nav .btn {
+  padding: 10px;
+}
+.course-week > summary,
+.summary-unit > summary {
+  padding: 12px 0;
+  font-weight: 600;
+}
+.week-download {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 0;
+}
+progress {
+  width: 100%;
+}
+.speak-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.speak-controls .btn {
+  min-height: 52px;
+}
+.chat .bubble {
+  max-width: 100%;
+}
+.step-dots {
+  max-height: 50px;
+  overflow: auto;
+}

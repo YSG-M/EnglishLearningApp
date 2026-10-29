@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { ReviewCardView } from '@shared/ipc';
 import { gradeOutcome, isCorrect, type ExerciseOutcome } from '@shared/domain/exercise';
 import { api, logError } from '../../api/client';
-import { Button, Card } from '../../components/ui';
+import { Button, Card, Notice } from '../../components/ui';
 import { zh } from '../../i18n/zh';
 import { useApp } from '../../state/AppContext';
 import { resolveItem } from '../../state/content';
@@ -42,6 +42,9 @@ export function ReviewSession({
   const [queue, setQueue] = useState<QueueEntry[]>(() => cards.map((card) => ({ card, practice: !submit })));
   const [index, setIndex] = useState(0);
   const [answered, setAnswered] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [pending, setPending] = useState<ExerciseOutcome | null>(null);
+  const submitting = useRef(false);
   const stats = useRef<ReviewSummary>({ reviewed: 0, correct: 0 });
   const started = useRef(0);
   useEffect(() => {
@@ -59,19 +62,37 @@ export function ReviewSession({
     else setIndex(index + 1);
   };
 
-  const onOutcome = (o: ExerciseOutcome) => {
-    setAnswered(true);
+  const saveOutcome = async (o: ExerciseOutcome) => {
+    if (submitting.current || answered) return;
     const grade = gradeOutcome(o);
+    if (!entry.practice && submit) {
+      submitting.current = true;
+      setSaving(true);
+      setPending(null);
+      try {
+        await api.review.submit({
+          cardId: card.cardId,
+          exercise: card.exercise,
+          grade,
+          activeMs: Math.min(MAX_CARD_MS, Date.now() - started.current),
+        });
+      } catch (err) {
+        logError('review.submit', err);
+        setPending(o);
+        return;
+      } finally {
+        submitting.current = false;
+        setSaving(false);
+      }
+    }
+    setAnswered(true);
     if (entry.practice) return;
     stats.current.reviewed++;
     if (isCorrect(grade)) stats.current.correct++;
     else setQueue((q) => [...q, { card, practice: true }]);
-    const activeMs = Math.min(MAX_CARD_MS, Date.now() - started.current);
-    if (submit) {
-      api.review
-        .submit({ cardId: card.cardId, exercise: card.exercise, grade, activeMs })
-        .catch((err: unknown) => logError('review.submit', err));
-    }
+  };
+  const onOutcome = (o: ExerciseOutcome) => {
+    void saveOutcome(o);
   };
 
   // Speech can drop out mid-session (model crashed): fall back to self-rating for speaking cards.
@@ -101,9 +122,20 @@ export function ReviewSession({
           <RecallSelfRate key={key} item={item} seed={seed} onOutcome={onOutcome} />
         )}
       </Card>
+      {pending ? (
+        <Notice tone="warn">
+          学习记录未保存，请检查本机空间后重试。
+          <Button onClick={() => void saveOutcome(pending)}>重试保存</Button>
+        </Notice>
+      ) : null}
       <div className="step-nav">
         <span />
-        <Button variant="primary" size="lg" disabled={!answered && !!item} onClick={next}>
+        <Button
+          variant="primary"
+          size="lg"
+          disabled={saving || !!pending || (!answered && !!item)}
+          onClick={next}
+        >
           {zh.review.next} →
         </Button>
       </div>

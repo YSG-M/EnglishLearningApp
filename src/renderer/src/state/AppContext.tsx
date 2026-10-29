@@ -15,6 +15,7 @@ export type Route =
   | { name: 'phrasebook' }
   | { name: 'progress' }
   | { name: 'settings' }
+  | { name: 'mine' }
   | { name: 'part'; partId: string; from?: 'today' | 'course' }
   | { name: 'unitSummary'; unitId: string; from?: Route }
   | { name: 'weekSummary'; week: number; from?: Route };
@@ -23,9 +24,11 @@ export interface AppState {
   bundle: ContentBundle;
   settings: Settings;
   speech: SpeechStatus;
+  saveError: string | null;
   hintProgress: Record<string, number>;
   route: Route;
   navigate(route: Route): void;
+  goBack(): void;
   updateSettings(patch: Partial<Settings>): Promise<void>;
   recordCorrectWords(keys: string[]): Promise<void>;
   refreshSpeech(): Promise<void>;
@@ -84,8 +87,10 @@ export function AppProvider(props: {
 }) {
   const [settings, setSettings] = useState(props.settings);
   const [speech, setSpeech] = useState(props.speech);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const [hintProgress, setHintProgress] = useState(props.hints);
   const [route, setRoute] = useState<Route>(props.initialRoute ?? { name: 'today' });
+  const [history, setHistory] = useState<Route[]>([]);
 
   const refreshSpeech = useCallback(async () => {
     try {
@@ -103,11 +108,12 @@ export function AppProvider(props: {
   }, [speech.state, refreshSpeech]);
 
   const updateSettings = useCallback(async (patch: Partial<Settings>) => {
-    setSettings((s) => ({ ...s, ...patch }));
+    setSaveError(null);
     try {
       setSettings(await api.settings.update(patch));
     } catch (err) {
       logError('settings update', err);
+      setSaveError('设置未保存，请检查本机可用空间后重试。');
     }
   }, []);
 
@@ -120,19 +126,40 @@ export function AppProvider(props: {
     }
   }, []);
 
-  const navigate = useCallback((r: Route) => {
-    setRoute(r);
-    window.scrollTo?.(0, 0);
-  }, []);
+  const navigate = useCallback(
+    (r: Route) => {
+      setHistory((h) => [...h, route]);
+      setRoute(r);
+      document.querySelector('main')?.scrollTo?.(0, 0);
+    },
+    [route],
+  );
+
+  const goBack = useCallback(() => {
+    if (route.name === 'today') {
+      document.querySelector('main')?.scrollTo?.(0, 0);
+      return;
+    }
+    if (route.name === 'course' || route.name === 'review' || route.name === 'mine') {
+      setRoute({ name: 'today' });
+      setHistory([]);
+      return;
+    }
+    const previous = history.at(-1);
+    setHistory((h) => h.slice(0, -1));
+    setRoute(previous ?? { name: 'today' });
+  }, [history, route.name]);
 
   const value = useMemo<AppState>(
     () => ({
       bundle: props.bundle,
       settings,
       speech,
+      saveError,
       hintProgress,
       route,
       navigate,
+      goBack,
       updateSettings,
       recordCorrectWords,
       refreshSpeech,
@@ -141,9 +168,11 @@ export function AppProvider(props: {
       props.bundle,
       settings,
       speech,
+      saveError,
       hintProgress,
       route,
       navigate,
+      goBack,
       updateSettings,
       recordCorrectWords,
       refreshSpeech,

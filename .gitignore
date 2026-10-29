@@ -23,5 +23,14 @@ userdata/
 .DS_Store
 Thumbs.db
 
-# Agent wiki and agent summaries (local only, see global rules)
-.agent-wiki/
+# Agent wiki is tracked by the user's project decision.
+
+# Generated PWA assets and local HTTPS secrets
+resources/web-reports/
+resources/web-models/
+dist-web/
+.certs/
+**/.validation/
+*.key
+*.pfx
+*.pem

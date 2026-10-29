@@ -8,6 +8,9 @@ export default tseslint.config(
     ignores: [
       'out/**',
       'dist/**',
+      'dist-web/**',
+      '.certs/**',
+      '**/.validation/**',
       'release/**',
       'resources/**',
       '.models/**',
@@ -27,7 +30,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['src/renderer/**/*.{ts,tsx}'],
+    files: ['src/renderer/**/*.{ts,tsx}', 'src/web/**/*.{ts,tsx}'],
     languageOptions: { globals: { ...globals.browser } },
     plugins: { 'react-hooks': reactHooks },
     rules: reactHooks.configs.recommended.rules,

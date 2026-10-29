@@ -2,7 +2,7 @@
  * The four review exercise types. Each reports an ExerciseOutcome exactly once via `onOutcome`;
  * the session maps it to a scheduling grade with `gradeOutcome`.
  */
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { SpokenSentence } from '@shared/content/bundle';
 import type { ExerciseOutcome } from '@shared/domain/exercise';
 import type { Grade } from '@shared/domain/srs';
@@ -51,14 +51,6 @@ export function ListenChoose({ item, seed, onOutcome }: ExerciseProps) {
   const options = useMemo(() => buildMeaningOptions(bundle, item, seed), [bundle, item, seed]);
   const answer = answerOf(item);
   const [chosen, setChosen] = useState<number | null>(null);
-
-  const clip = answer?.sentence.audio;
-  const text = answer?.sentence.en;
-  useEffect(() => {
-    if (!clip) return;
-    const t = setTimeout(() => void player.play({ clip, ...(text ? { text } : {}) }), 250);
-    return () => clearTimeout(t);
-  }, [clip, text]);
 
   if (!answer) return null;
   return (

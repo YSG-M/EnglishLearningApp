@@ -6,6 +6,22 @@
  * than failing silently or blocking the lesson.
  */
 import { contentAudioUrl } from '@shared/ipc';
+import { setAudioSession, stopRecordingForPlayback } from './session';
+
+export interface PlaybackError {
+  kind: 'gesture' | 'missing';
+  request: PlayRequest;
+}
+export interface PlayerOptions {
+  resolveClip: (key: string) => string;
+  allowSpeechSynthesis: boolean;
+  onError?: (error: PlaybackError) => void;
+}
+let options: PlayerOptions = { resolveClip: contentAudioUrl, allowSpeechSynthesis: true };
+export function configurePlayer(next: PlayerOptions): void {
+  player.stop();
+  options = next;
+}
 
 export interface PlayRequest {
   /** Course clip key, or a full URL (media://rec/..., blob:...). */
@@ -50,6 +66,7 @@ class AudioPlayer {
   }
 
   private halt(): void {
+    this.gen++;
     this.cancelCurrent?.();
     this.cancelCurrent = null;
     this.setPlaying(null);
@@ -63,9 +80,18 @@ class AudioPlayer {
 
   private start(req: PlayRequest): Promise<void> {
     this.halt();
+    stopRecordingForPlayback();
+    setAudioSession('playback');
     const my = ++this.gen;
     const id = req.id ?? req.clip ?? req.url ?? req.text ?? 'audio';
-    const src = req.url ?? (req.clip ? contentAudioUrl(req.clip) : undefined);
+    let src: string | undefined;
+    try {
+      src = req.url ?? (req.clip ? options.resolveClip(req.clip) : undefined);
+    } catch {
+      options.onError?.({ kind: 'missing', request: req });
+      this.seq++;
+      return Promise.resolve();
+    }
     this.setPlaying(id);
 
     return new Promise<void>((resolve) => {
@@ -76,17 +102,23 @@ class AudioPlayer {
         }
         resolve();
       };
-      const fallback = () => {
+      const fallback = (error?: unknown) => {
         if (my !== this.gen) return resolve();
-        if (req.text && typeof speechSynthesis !== 'undefined') this.speak(req.text, req.rate ?? 1, end);
-        else end();
+        const gesture = error instanceof DOMException && error.name === 'NotAllowedError';
+        if (!gesture && options.allowSpeechSynthesis && req.text && typeof speechSynthesis !== 'undefined')
+          this.speak(req.text, req.rate ?? 1, end);
+        else {
+          this.seq++;
+          options.onError?.({ kind: gesture ? 'gesture' : 'missing', request: req });
+          end();
+        }
       };
       if (!src) return fallback();
 
       this.audio ??= new Audio();
       const a = this.audio;
       a.onended = end;
-      a.onerror = fallback;
+      a.onerror = () => fallback();
       a.preservesPitch = true;
       a.src = src;
       a.playbackRate = req.rate ?? 1;
@@ -123,6 +155,7 @@ class AudioPlayer {
     this.cancelCurrent = () => {
       u.onend = null;
       speechSynthesis.cancel();
+      onEnd();
     };
     speechSynthesis.speak(u);
   }

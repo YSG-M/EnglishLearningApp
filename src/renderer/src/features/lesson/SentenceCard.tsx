@@ -21,7 +21,7 @@ export function SentenceCard({
   scene,
   slot,
   badge,
-  autoPlay = true,
+  autoPlay = false,
   onResult,
 }: {
   sentence: SpokenSentence;
@@ -80,6 +80,7 @@ export function SentenceCard({
         </p>
       ) : null}
       <PlayRow sentence={sentence} size="lg" />
+      <p className="muted small">点一下听原音，再跟着说。</p>
       <h3 className="shadow-title">🎤 {zh.part.shadowTitle}</h3>
       <SpeakPanel
         key={itemId}

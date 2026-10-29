@@ -116,6 +116,16 @@ export function ProgressPage() {
 
       <Card title={zh.progress.activity}>
         <ActivityBars activity={stats.activity} />
+        <details>
+          <summary>查看每日学习时长</summary>
+          <ul>
+            {stats.activity.map((a) => (
+              <li key={a.day}>
+                {a.day} · {Math.round(a.activeMs / 60000)} 分钟{a.counted ? ' · 已完成今天学习' : ''}
+              </li>
+            ))}
+          </ul>
+        </details>
       </Card>
 
       <Card title={`🎙️ ${zh.progress.challenges}`}>

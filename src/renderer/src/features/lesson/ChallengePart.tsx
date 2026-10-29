@@ -2,7 +2,8 @@
  * 录音挑战: a longer free recording, saved so she can hear her progress against earlier ones.
  * No scoring: the point is to talk, and to notice later how much more she can say.
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { Recording } from '../../audio/recorder';
 import type { ChallengeItem } from '@shared/content/bundle';
 import type { RecordingView } from '@shared/ipc';
 import { api, logError } from '../../api/client';
@@ -53,6 +54,10 @@ export function ChallengePart({
   const [saved, setSaved] = useState<RecordingView | null>(null);
   const [localUrl, setLocalUrl] = useState<string | null>(null);
   const [saveFailed, setSaveFailed] = useState(false);
+  const [pending, setPending] = useState<Recording | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [listened, setListened] = useState(false);
+  const mounted = useRef(true);
   const [elapsed, setElapsed] = useState(0);
   const recording = rec.state === 'recording';
 
@@ -74,28 +79,46 @@ export function ChallengePart({
   }, [recording, onActivity]);
 
   useEffect(() => () => void (localUrl && URL.revokeObjectURL(localUrl)), [localUrl]);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
 
   const start = async () => {
     setSaveFailed(false);
     setElapsed(0);
+    setSaved(null);
+    setPending(null);
+    setListened(false);
     const r = await rec.record({
       silenceMs: settings.silenceMs,
       autoStop: false,
       maxMs: challenge.maxSeconds * 1000,
     });
-    if (!r) return;
+    if (!r || !mounted.current) return;
     setLocalUrl(wavBlobUrl(r.samples, r.sampleRate));
+    setPending(r);
+  };
+
+  const save = async () => {
+    if (!pending || saving) return;
+    setSaving(true);
+    setSaveFailed(false);
     try {
       setSaved(
         await api.recordings.saveChallenge({
           challengeId: challenge.id,
-          samples: r.samples,
+          samples: pending.samples,
           sampleRate: 16000,
         }),
       );
     } catch (err) {
       logError('saveChallenge', err);
       setSaveFailed(true);
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -129,7 +152,7 @@ export function ChallengePart({
             </Button>
           </>
         ) : (
-          <Button variant="primary" size="lg" onClick={() => void start()}>
+          <Button variant="primary" size="lg" disabled={saving} onClick={() => void start()}>
             🎤 {localUrl ? zh.common.retry : zh.part.challengeRecord}
           </Button>
         )}
@@ -138,9 +161,19 @@ export function ChallengePart({
         {localUrl && !recording ? (
           <div className="row">
             {saved ? <p className="success-text">✅ {zh.part.challengeSaved}</p> : null}
-            <Button onClick={() => void player.play({ url: localUrl, id: 'challenge-own' })}>
+            <Button
+              onClick={() => {
+                void player.play({ url: localUrl, id: 'challenge-own' });
+                setListened(true);
+              }}
+            >
               👂 {zh.part.challengeThisTime}
             </Button>
+            {pending && !saved ? (
+              <Button disabled={saving || !listened} onClick={() => void save()}>
+                {saving ? '正在保存…' : '保存这次录音'}
+              </Button>
+            ) : null}
           </div>
         ) : null}
         {earlier.length ? (
@@ -152,7 +185,7 @@ export function ChallengePart({
 
       <div className="step-nav">
         <span />
-        <Button variant="primary" size="lg" onClick={onFinish} disabled={recording}>
+        <Button variant="primary" size="lg" onClick={onFinish} disabled={recording || !saved || saveFailed}>
           ✓ {zh.common.done}
         </Button>
       </div>

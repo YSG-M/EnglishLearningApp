@@ -5,7 +5,6 @@
  */
 import { useEffect, useRef, useState } from 'react';
 import type { DialogueItem, DialogueNodeItem, DialogueReplyItem } from '@shared/content/bundle';
-import { player } from '../../audio/player';
 import { PlayButton } from '../../components/AudioButtons';
 import { ChineseText } from '../../components/ChineseText';
 import { SpeakPanel, type SpeakResult } from '../../components/SpeakPanel';
@@ -33,12 +32,6 @@ export function DialoguePlayer({ dialogue, onComplete }: { dialogue: DialogueIte
   const current = turns[turns.length - 1];
   const node = current?.node;
   const ended = !!node && node.replies.length === 0;
-
-  useEffect(() => {
-    if (!node) return;
-    const t = setTimeout(() => void player.play({ clip: node.npc.audio, text: node.npc.en }), 400);
-    return () => clearTimeout(t);
-  }, [node]);
 
   useEffect(() => {
     if (ended && !completed.current) {
@@ -85,22 +78,32 @@ export function DialoguePlayer({ dialogue, onComplete }: { dialogue: DialogueIte
         {dialogue.setting}
       </p>
       <div className="chat">
-        {turns.map((t, i) => (
-          <div key={`${t.node.id}-${i}`}>
-            <div className="bubble npc">
-              <span className="bubble-name">{dialogue.npcName}</span>
-              <p className="en">{t.node.npc.en}</p>
-              <ChineseText text={t.node.npc.zh} className="small" />
-              <PlayButton clip={t.node.npc.audio} text={t.node.npc.en} size="sm" />
-            </div>
-            {t.reply ? (
-              <div className="bubble me">
-                <p className="en">{t.reply.en}</p>
-                <p className="zh small">{t.reply.zh}</p>
+        {turns.map((t, i) => {
+          const content = (
+            <>
+              <div className="bubble npc">
+                <span className="bubble-name">{dialogue.npcName}</span>
+                <p className="en">{t.node.npc.en}</p>
+                <ChineseText text={t.node.npc.zh} className="small" />
+                <PlayButton clip={t.node.npc.audio} text={t.node.npc.en} size="sm" />
               </div>
-            ) : null}
-          </div>
-        ))}
+              {t.reply ? (
+                <div className="bubble me">
+                  <p className="en">{t.reply.en}</p>
+                  <p className="zh small">{t.reply.zh}</p>
+                </div>
+              ) : null}
+            </>
+          );
+          return i === turns.length - 1 ? (
+            <div key={`${t.node.id}-${i}`}>{content}</div>
+          ) : (
+            <details key={`${t.node.id}-${i}`}>
+              <summary>之前的对话 · 第 {i + 1} 轮</summary>
+              {content}
+            </details>
+          );
+        })}
       </div>
 
       {node && !ended ? (

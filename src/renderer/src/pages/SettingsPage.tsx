@@ -4,9 +4,12 @@ import { api, logError } from '../api/client';
 import { Button, Card, Notice, PageHeader } from '../components/ui';
 import { zh } from '../i18n/zh';
 import { useApp } from '../state/AppContext';
+import { WebSettings } from '../../../web/ui/WebSettings';
+import { useWebServices } from '../../../web/ui/WebServices';
 
 export function SettingsPage() {
-  const { settings, updateSettings, speech, refreshSpeech } = useApp();
+  const web = useWebServices();
+  const { settings, updateSettings, speech, refreshSpeech, saveError } = useApp();
   const [info, setInfo] = useState<AppInfo | null>(null);
   const [exported, setExported] = useState<string | null>(null);
   const [name, setName] = useState(settings.learnerName);
@@ -31,6 +34,8 @@ export function SettingsPage() {
   return (
     <div className="page settings">
       <PageHeader title={`⚙️ ${zh.settings.title}`} />
+      <WebSettings />
+      {saveError ? <Notice tone="warn">{saveError}</Notice> : null}
 
       <Card title={zh.settings.learning}>
         <label className="setting-row">
@@ -161,11 +166,15 @@ export function SettingsPage() {
               void api.diagnostics.openLogsFolder().catch((e: unknown) => logError('openLogs', e))
             }
           >
-            📂 {zh.settings.openLogs}
+            📂 {web ? '导出日志' : zh.settings.openLogs}
           </Button>
           <Button onClick={() => void exportDiag()}>📦 {zh.settings.exportDiag}</Button>
         </div>
-        {exported ? <Notice tone="success">{zh.settings.exported(exported)}</Notice> : null}
+        {exported ? (
+          <Notice tone="success">
+            {web ? `诊断文件已准备：${exported}，请保存到“文件”。` : zh.settings.exported(exported)}
+          </Notice>
+        ) : null}
       </Card>
     </div>
   );
