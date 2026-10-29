@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": { "lib": ["ES2023", "WebWorker"], "types": ["vite/client"] },
+  "include": [
+    "src/web/pwa/service-worker.ts",
+    "src/web/storage/**/*worker*.ts",
+    "src/web/speech/**/*worker*.ts"
+  ],
+  "exclude": ["**/*.test.ts"]
+}

@@ -1,0 +1,57 @@
+{
+  "contentVersion": "0.1.0",
+  "defaultVoice": "bf_emma",
+  "weeks": [
+    { "week": 1, "units": ["u01", "u02"], "challengeBefore": "ch01" },
+    { "week": 2, "units": ["u03", "u04"] },
+    { "week": 3, "units": ["u05", "u06"] },
+    { "week": 4, "units": ["u07", "u08"] },
+    { "week": 5, "units": ["u09", "u10"] },
+    { "week": 6, "units": ["u11", "u12"], "challengeAfter": "ch02" },
+    { "week": 7, "units": ["u13", "u14"] },
+    { "week": 8, "units": ["u15", "u16"] },
+    { "week": 9, "units": ["u17", "u18"] },
+    { "week": 10, "units": ["u19", "u20"] },
+    { "week": 11, "units": ["u21", "u22"] },
+    { "week": 12, "units": ["u23", "u24"] },
+    { "week": 13, "units": ["u25", "u26"], "challengeAfter": "ch03" }
+  ],
+  "challenges": [
+    {
+      "id": "ch01",
+      "title": "第一次录音：介绍你自己",
+      "intro": "这是你的第一段英语录音。说得少、说错都没关系，哪怕只说几个单词也可以！六周后你会再录一次，到时候对比一下，就能听到自己的进步。",
+      "prompts": [
+        { "en": "Hi, my name is ...", "zh": "你好，我的名字是……" },
+        { "en": "I'm from ...", "zh": "我来自……" },
+        { "en": "I work at ...", "zh": "我在……工作" }
+      ],
+      "maxSeconds": 45
+    },
+    {
+      "id": "ch02",
+      "title": "六周挑战：1 分钟介绍你们补习中心",
+      "intro": "六周到了！试着用 1 分钟介绍你自己和你们的补习中心。录完以后，可以和第一次的录音对比一下。",
+      "prompts": [
+        { "en": "Hi, I'm ... I'm from ...", "zh": "介绍你自己" },
+        { "en": "I work at ... learning centre.", "zh": "你在哪里工作" },
+        { "en": "We have Chinese classes for children.", "zh": "你们有什么课" },
+        { "en": "Classes are on ... at ...", "zh": "什么时候上课" },
+        { "en": "The fee is ... a month.", "zh": "学费多少" }
+      ],
+      "maxSeconds": 60
+    },
+    {
+      "id": "ch03",
+      "title": "三个月挑战：说说你的一天",
+      "intro": "三个月了，你已经学了很多！用 1 分钟说说你昨天或者今天做了什么。说完以后，和前两次的录音对比一下。",
+      "prompts": [
+        { "en": "Yesterday I ...", "zh": "昨天你做了什么" },
+        { "en": "In the morning, I ...", "zh": "早上做了什么" },
+        { "en": "At work, I ...", "zh": "上班时做了什么" },
+        { "en": "After work, I ...", "zh": "下班后做了什么" }
+      ],
+      "maxSeconds": 60
+    }
+  ]
+}

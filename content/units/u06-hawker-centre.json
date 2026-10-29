@@ -1,0 +1,141 @@
+{
+  "id": "u06",
+  "kind": "life",
+  "title": "小贩中心、咖啡店点餐",
+  "titleEn": "Kopi O, less sugar",
+  "goal": "能在小贩中心和咖啡店点饮料、点餐，说清楚少糖、不辣、在这里吃还是打包。",
+  "chunks": [
+    {"id": "u06.c01", "en": "Can I have a kopi, please?", "zh": "我要一杯咖啡（加炼奶），谢谢。", "note": "kopi = 咖啡加炼奶；kopi O = 黑咖啡加糖；kopi C = 加淡奶和糖；teh = 奶茶。"},
+    {"id": "u06.c02", "en": "Kopi O, less sugar.", "zh": "黑咖啡，少糖。", "note": "O 读作\"欧\"。少糖说 less sugar，在咖啡店也常听到 siu dai（少甜）。"},
+    {"id": "u06.c03", "en": "No sugar, please.", "zh": "不要糖。", "note": "咖啡店里也说 kosong（不加糖）。"},
+    {"id": "u06.c04", "en": "Dine in.", "zh": "在这里吃。", "accept": ["Eat here."]},
+    {"id": "u06.c05", "en": "Take away, please.", "zh": "打包，谢谢。", "note": "新加坡也常说 tapao（打包），摊主都听得懂。"},
+    {"id": "u06.c06", "en": "One chicken rice, please.", "zh": "一份鸡饭，谢谢。"},
+    {"id": "u06.c07", "en": "Not spicy, please.", "zh": "不要辣，谢谢。", "accept": ["No chilli, please."]},
+    {"id": "u06.c08", "en": "How much altogether?", "zh": "一共多少钱？"},
+    {"id": "u06.c09", "en": "Thank you, uncle!", "zh": "谢谢阿叔！", "note": "新加坡对摊主常叫 uncle（阿叔）、auntie（阿姨），很亲切。"}
+  ],
+  "words": ["kopi", "teh", "sugar", "less", "take", "away", "chicken", "rice", "spicy", "altogether"],
+  "patterns": {
+    "frames": [
+      {"frame": "Can I have ___, please?", "zh": "可以给我……吗？/ 我要……", "usage": "跟别人要东西：点餐、要收据、要袋子都可以用，很礼貌。框不变，把你要的东西放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u06.e01", "scene": "在咖啡店，想喝一杯奶茶。", "en": "Can I have a teh, please?", "zh": "我要一杯奶茶，谢谢。", "note": "teh = 奶茶（加炼奶）"},
+      {"id": "u06.e02", "scene": "和同事在餐厅吃完饭，想结账。", "en": "Can I have the bill, please?", "zh": "麻烦买单。", "note": "the bill = 账单；这句就是\"买单\""},
+      {"id": "u06.e03", "scene": "在咖啡店点冰饮料，你不想要太多冰。", "en": "Can I have less ice, please?", "zh": "可以少冰吗？", "note": "less ice = 少冰"},
+      {"id": "u06.e04", "scene": "在诊所看完病付了钱，公司要收据才能报销。", "en": "Can I have a receipt, please?", "zh": "可以给我一张收据吗？"},
+      {"id": "u06.e05", "scene": "在 hawker centre 吃 laksa，辣得受不了。", "en": "Can I have some water, please?", "zh": "可以给我一点水吗？"},
+      {"id": "u06.e06", "scene": "在 NTUC 结账，东西太多拿不了。", "en": "Can I have a bag, please?", "zh": "可以给我一个袋子吗？", "note": "NTUC 的塑料袋要另外付钱，一般几分钱"},
+      {"id": "u06.e07", "scene": "在 hawker centre，朋友来了要和你分一碗，你再要一个勺子。", "en": "Can I have one more spoon, please?", "zh": "可以再给我一个勺子吗？", "note": "one more = 再一个"},
+      {"id": "u06.e08", "scene": "下班太晚，想买一份鸡饭带回家吃。", "en": "Can I have one chicken rice, take away, please?", "zh": "一份鸡饭，打包，谢谢。", "accept": ["One chicken rice, take away, please."]},
+      {"id": "u06.e09", "scene": "打电话给诊所，想约星期一看医生。", "en": "Can I have an appointment on Monday, please?", "zh": "可以约星期一吗？", "note": "appointment = 预约（看医生的时间）"},
+      {"id": "u06.e10", "scene": "新家长来报名，你要先登记孩子的资料。", "en": "Can I have your child's name and level, please?", "zh": "可以告诉我孩子的名字和年级吗？", "accept": ["Can I have your child's name, please?"]}
+    ]
+  },
+  "daily": [
+    {"id": "u06.d01", "word": "egg", "scene": "在咖啡店吃 kaya 吐司，你想再加一个蛋。", "en": "One more egg, please.", "zh": "再加一个蛋，谢谢。", "note": "one more = 再一个"},
+    {"id": "u06.d02", "word": "fish", "scene": "朋友想请你吃鱼头米粉，可是你不吃鱼。", "en": "Sorry, I don't eat fish.", "zh": "不好意思，我不吃鱼。", "accept": ["I don't eat fish."]},
+    {"id": "u06.d03", "word": "chopsticks", "scene": "在 hawker centre 买了面，摊主只给了你一个勺子。", "en": "Can I have chopsticks, please?", "zh": "可以给我一双筷子吗？", "note": "chopsticks = 筷子（总是用复数）"},
+    {"id": "u06.d04", "word": "table", "scene": "午饭时间 hawker centre 人很多，你看到一张桌子好像没人。", "en": "Is this table free?", "zh": "这张桌子有人坐吗？", "note": "free 在这里是\"空着的\"，不是\"免费\""},
+    {"id": "u06.d05", "word": "lunch", "scene": "周末在楼下遇到老朋友，快十二点了。", "en": "Let's have lunch together.", "zh": "我们一起吃午饭吧。", "note": "have lunch = 吃午饭；let's = 我们……吧"},
+    {"id": "u06.d06", "word": "fork", "scene": "在 hawker centre 的西餐摊买了鸡扒，桌上没有叉子。", "en": "I need a fork.", "zh": "我需要一把叉子。"},
+    {"id": "u06.d07", "word": "orange", "scene": "在饮料摊，天气很热，你想喝一杯橙汁。", "en": "One orange juice, please.", "zh": "一杯橙汁，谢谢。", "note": "orange juice = 橙汁"},
+    {"id": "u06.d08", "word": "milk", "scene": "在快餐店买咖啡，店员问你要不要加牛奶。", "en": "No milk, please.", "zh": "不要加牛奶，谢谢。"},
+    {"id": "u06.d09", "word": "bread", "scene": "周末早上家里没早餐了，你跟老公说要去 NTUC 买什么。", "en": "We need bread and milk.", "zh": "我们要买面包和牛奶。"},
+    {"id": "u06.d10", "word": "tray", "scene": "在 hawker centre 吃完饭，你端着托盘，找不到放托盘的地方。", "en": "Where do I return the tray?", "zh": "托盘放回哪里？", "note": "return = 还回去；新加坡 hawker centre 吃完要自己还托盘"},
+    {"id": "u06.d11", "word": "chilli", "scene": "吃鸡饭，你觉得辣椒不够。", "en": "More chilli, please.", "zh": "再给我一点辣椒，谢谢。", "note": "chilli = 辣椒（英式拼写）", "accept": ["Can I have more chilli, please?"]},
+    {"id": "u06.d12", "word": "eat", "scene": "周末晚上饭菜上桌了，你叫家人快来吃。", "en": "Come, let's eat!", "zh": "来，吃饭啦！", "accept": ["Let's eat!"]}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期天早餐",
+      "lines": [
+        {"en": "It's Sunday morning.", "zh": "星期天早上。"},
+        {"en": "I'm at the hawker centre with my husband.", "zh": "我和老公在 hawker centre。"},
+        {"en": "\"Can I have a kopi, please? Less sugar.\"", "zh": "\"我要一杯咖啡，少糖，谢谢。\""},
+        {"en": "My husband has a teh.", "zh": "我老公喝奶茶。"},
+        {"en": "I have bread and an egg.", "zh": "我吃面包和一个蛋。"},
+        {"en": "It's very nice. Now I'm full.", "zh": "很好吃。现在我吃饱了。"},
+        {"en": "I return the tray.", "zh": "我把托盘还回去。"},
+        {"en": "We walk to the market.", "zh": "我们走路去巴刹。"},
+        {"en": "We need fish and bread.", "zh": "我们要买鱼和面包。"},
+        {"en": "\"How much altogether?\"", "zh": "\"一共多少钱？\""},
+        {"en": "It's not expensive.", "zh": "不贵。"},
+        {"en": "We walk home together.", "zh": "我们一起走路回家。"}
+      ]
+    },
+    "dialogue": {
+      "title": "和同事吃午饭",
+      "setting": "中午休息，Amy 和同事 Jason 去补习中心楼下的咖啡店吃午饭。",
+      "cast": [
+        {"name": "Jason", "voice": "bm_george"},
+        {"name": "Uncle", "voice": "am_michael"}
+      ],
+      "lines": [
+        {"speaker": "Jason", "en": "Amy, do you want to have lunch?", "zh": "Amy，要不要去吃午饭？"},
+        {"speaker": "Amy", "en": "Yes! I'm very hungry.", "zh": "要！我好饿。"},
+        {"speaker": "Jason", "en": "Is this table free?", "zh": "这张桌子有人坐吗？"},
+        {"speaker": "Amy", "en": "Yes. Let's sit here.", "zh": "没人。我们坐这里吧。"},
+        {"speaker": "Uncle", "en": "Yes, what do you want?", "zh": "要吃什么？"},
+        {"speaker": "Amy", "en": "One chicken rice, please. Not spicy.", "zh": "一份鸡饭，谢谢。不要辣。"},
+        {"speaker": "Jason", "en": "One chicken rice. More chilli, please!", "zh": "一份鸡饭。多给点辣椒！"},
+        {"speaker": "Uncle", "en": "Do you want a drink?", "zh": "要喝什么吗？"},
+        {"speaker": "Amy", "en": "Can I have a teh, please? Less sugar.", "zh": "我要一杯奶茶，少糖，谢谢。"},
+        {"speaker": "Jason", "en": "One orange juice, please.", "zh": "一杯橙汁，谢谢。"},
+        {"speaker": "Uncle", "en": "Dine in or take away?", "zh": "在这里吃还是打包？"},
+        {"speaker": "Amy", "en": "Dine in. How much altogether?", "zh": "在这里吃。一共多少钱？"},
+        {"speaker": "Uncle", "en": "It's 12 dollars.", "zh": "12 块。"},
+        {"speaker": "Amy", "en": "Thank you, uncle!", "zh": "谢谢阿叔！"}
+      ]
+    }
+  },
+  "phonics": "p04",
+  "dialogue": {
+    "title": "在咖啡店点饮料",
+    "setting": "早上，你在组屋楼下的咖啡店买咖啡，摊主阿叔问你要什么。",
+    "npcName": "Uncle",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Yes, what you want?", "zh": "要什么？"},
+        "replies": [
+          {"en": "Can I have a kopi, please?", "zh": "我要一杯咖啡，谢谢。", "next": "n2"},
+          {"en": "Kopi O, less sugar.", "zh": "黑咖啡，少糖。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "Kopi. Sugar normal?", "zh": "咖啡。糖正常吗？"},
+        "replies": [
+          {"en": "Less sugar, please.", "zh": "少糖，谢谢。", "next": "n3"},
+          {"en": "No sugar, please.", "zh": "不要糖，谢谢。", "next": "n3"},
+          {"en": "Can I have less sugar, please?", "zh": "可以少糖吗？", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Dine in or take away?", "zh": "在这里喝还是打包？"},
+        "replies": [
+          {"en": "Dine in.", "zh": "在这里喝。", "next": "n4"},
+          {"en": "Take away, please.", "zh": "打包，谢谢。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "Okay, one eighty.", "zh": "好，一块八。"},
+        "replies": [
+          {"en": "Thank you, uncle!", "zh": "谢谢阿叔！", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Okay, wait ah.", "zh": "好，等一下哦。"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天去咖啡店或小贩中心，用英语点一次饮料，比如：Kopi O, less sugar."
+}

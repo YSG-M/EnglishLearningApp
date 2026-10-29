@@ -1,0 +1,160 @@
+{
+  "id": "u21",
+  "kind": "work",
+  "title": "新学期报名、活动通知",
+  "titleEn": "Registration is open now",
+  "goal": "能告诉家长新学期什么时候开始、怎么报名、有什么优惠和活动。",
+  "chunks": [
+    {"id": "u21.c01", "en": "The new term starts in January.", "zh": "新学期一月开始。"},
+    {"id": "u21.c02", "en": "Registration is open now.", "zh": "现在开始报名了。"},
+    {"id": "u21.c03", "en": "Would you like to sign up?", "zh": "您想报名吗？", "note": "Would you like……? 比 Do you want……? 更礼貌，对家长用这个。"},
+    {"id": "u21.c04", "en": "Please fill in this form.", "zh": "请填写这张表格。"},
+    {"id": "u21.c05", "en": "There is a 10% discount for early sign-up.", "zh": "提早报名有九折优惠。", "note": "10% discount 是便宜 10%，也就是中文说的\"九折\"。别搞反了！"},
+    {"id": "u21.c06", "en": "The last day to register is 15 December.", "zh": "报名截止日期是 12 月 15 日。"},
+    {"id": "u21.c07", "en": "We have a Chinese New Year event on 25 January.", "zh": "我们 1 月 25 日有新年活动。"},
+    {"id": "u21.c08", "en": "Parents are welcome to join.", "zh": "欢迎家长一起参加。"},
+    {"id": "u21.c09", "en": "I'll send you the details on WhatsApp.", "zh": "我会在 WhatsApp 上把详情发给您。"}
+  ],
+  "words": ["new", "starts", "registration", "sign", "fill", "form", "discount", "early", "register", "event", "welcome", "details"],
+  "patterns": {
+    "frames": [
+      {"frame": "Would you like to ___?", "zh": "您想……吗？/ 要不要……？", "usage": "客客气气地问对方要不要做一件事，比 Do you want to……? 更有礼貌，对家长、客人、长辈都用这个。框不变，只把那件事放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u21.e01", "scene": "邻居 auntie 来你家门口送东西，你请她进来坐。", "en": "Would you like to come in?", "zh": "要不要进来坐坐？", "note": "come in = 进来"},
+      {"id": "u21.e02", "scene": "周末和朋友在 hawker centre 吃饭，看到邻居 auntie 一个人坐着。", "en": "Would you like to join us?", "zh": "要不要和我们一起？", "note": "join us = 和我们一起"},
+      {"id": "u21.e03", "scene": "在 MRT 上，一位老人家上了车，你站起来给他让座。", "en": "Would you like to take a seat?", "zh": "您要不要坐一下？", "note": "take a seat = 坐下（不是\"拿座位\"）"},
+      {"id": "u21.e04", "scene": "家里的电话响了，是找你老公的，可是他出去了。", "en": "Would you like to leave a message?", "zh": "您要留个言吗？", "note": "leave a message = 留言"},
+      {"id": "u21.e05", "scene": "家长想知道新学期每个星期几上课。", "en": "Would you like to see the timetable?", "zh": "您要看一下课程表吗？"},
+      {"id": "u21.e06", "scene": "家长来交新学期的学费，你问他要不要用 PayNow 付。", "en": "Would you like to pay by PayNow?", "zh": "您要用 PayNow 付款吗？", "note": "pay by PayNow = 用 PayNow 付钱"},
+      {"id": "u21.e07", "scene": "新搬来的邻居还没吃过鸡饭，你带她去 hawker centre。", "en": "Would you like to try chicken rice?", "zh": "你要不要试试鸡饭？", "accept": ["Would you like to try the chicken rice?"]},
+      {"id": "u21.e08", "scene": "家长还在犹豫要不要给孩子报名。", "en": "Would you like to book a trial class?", "zh": "您要不要先预约一节试听课？", "note": "book = 预约；trial class = 试听课"},
+      {"id": "u21.e09", "scene": "朋友来你家吃晚饭，她碗里的饭快吃完了。", "en": "Would you like to have some more rice?", "zh": "要不要再来点饭？", "note": "have some more = 再吃一点（这里 have 是\"吃\"）"},
+      {"id": "u21.e10", "scene": "新年活动快到了，你邀请来接孩子的妈妈也一起来。", "en": "Would you like to join our New Year event?", "zh": "您想参加我们的新年活动吗？", "accept": ["Would you like to join our Chinese New Year event?"]}
+    ]
+  },
+  "daily": [
+    {"id": "u21.d01", "word": "party", "scene": "朋友问你星期六晚上有没有空。", "en": "I have a party on Saturday.", "zh": "我星期六有个聚会。", "note": "party = 聚会、派对"},
+    {"id": "u21.d02", "word": "invite", "scene": "打电话给好朋友，请她来你家玩。", "en": "I want to invite you to my party.", "zh": "我想请你来我的聚会。", "note": "invite = 邀请"},
+    {"id": "u21.d03", "word": "cake", "scene": "家里来了客人，你切好了蛋糕。", "en": "Would you like some cake?", "zh": "要不要吃点蛋糕？"},
+    {"id": "u21.d04", "word": "ticket", "scene": "周末带家人去动物园，在售票处问价钱。", "en": "How much is one ticket?", "zh": "一张票多少钱？", "note": "ticket = 票"},
+    {"id": "u21.d05", "word": "festival", "scene": "邻居问你喜不喜欢中秋节。", "en": "It's a fun festival.", "zh": "这是个好玩的节日。", "note": "festival = 节日", "accept": ["It is a fun festival."]},
+    {"id": "u21.d06", "word": "relatives", "scene": "过年前，邻居问你家里忙不忙。", "en": "My relatives are coming tomorrow.", "zh": "我的亲戚明天要来。", "note": "relatives = 亲戚"},
+    {"id": "u21.d07", "word": "celebrate", "scene": "朋友问你过年怎么过。", "en": "We celebrate Chinese New Year at home.", "zh": "我们在家过春节。", "note": "celebrate = 庆祝、过（节）"},
+    {"id": "u21.d08", "word": "guests", "scene": "老公问你为什么买了这么多菜。", "en": "We have guests tonight.", "zh": "今晚家里有客人。", "note": "guests = 客人"},
+    {"id": "u21.d09", "word": "happy", "scene": "一月一号早上，在电梯里遇到邻居。", "en": "Happy New Year!", "zh": "新年快乐！"},
+    {"id": "u21.d10", "word": "group", "scene": "邻居问你有没有收到楼里活动的通知。", "en": "I'm in the WhatsApp group.", "zh": "我在那个 WhatsApp 群里。", "note": "group = 群、小组", "accept": ["I am in the WhatsApp group."]},
+    {"id": "u21.d11", "word": "flowers", "scene": "去看望刚出院的朋友，你带了一束花。", "en": "The flowers are for you.", "zh": "这些花是送给你的。", "note": "flowers = 花（复数）"},
+    {"id": "u21.d12", "word": "lantern", "scene": "中秋节晚上，和家人在公园里看灯笼。", "en": "This lantern is very nice.", "zh": "这个灯笼好漂亮。", "note": "lantern = 灯笼"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 家的新年聚会",
+      "lines": [
+        {"en": "We have a party at home tonight.", "zh": "今晚我们在家开聚会。"},
+        {"en": "I invite my neighbour and her family.", "zh": "我请了邻居一家人。"},
+        {"en": "I send the details on WhatsApp.", "zh": "我在 WhatsApp 上发了详细信息。"},
+        {"en": "In the morning, I buy a cake.", "zh": "早上我去买了一个蛋糕。"},
+        {"en": "My husband and I cook dinner.", "zh": "我和老公一起做晚饭。"},
+        {"en": "At 7pm, our guests come.", "zh": "晚上 7 点，客人们来了。"},
+        {"en": "\"Hi! Would you like to come in?\"", "zh": "\"嗨！快进来坐吧！\""},
+        {"en": "My neighbour has flowers for me.", "zh": "邻居给我带了花。"},
+        {"en": "\"Happy New Year, Amy!\"", "zh": "\"Amy，新年快乐！\""},
+        {"en": "We eat cake and talk.", "zh": "我们一边吃蛋糕一边聊天。"},
+        {"en": "We celebrate together.", "zh": "我们一起庆祝。"},
+        {"en": "It's a very happy day.", "zh": "这是很开心的一天。"}
+      ]
+    },
+    "dialogue": {
+      "title": "新学期报名",
+      "setting": "十二月的一个下午，一位妈妈 Mrs Lee 来前台问新学期报名的事。",
+      "cast": [
+        {"name": "Mrs Lee", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Lee", "en": "Hi, is registration open now?", "zh": "你好，现在可以报名了吗？"},
+        {"speaker": "Amy", "en": "Yes, registration is open now.", "zh": "可以，现在开始报名了。"},
+        {"speaker": "Mrs Lee", "en": "When does the new term start?", "zh": "新学期什么时候开始？"},
+        {"speaker": "Amy", "en": "The new term starts in January.", "zh": "新学期一月开始。"},
+        {"speaker": "Mrs Lee", "en": "Is there a discount?", "zh": "有优惠吗？"},
+        {"speaker": "Amy", "en": "Yes. There is a 10% discount for early sign-up.", "zh": "有。早报名打九折。"},
+        {"speaker": "Mrs Lee", "en": "Great! Can my child sign up?", "zh": "太好了！我孩子可以报名吗？"},
+        {"speaker": "Amy", "en": "Sure. Please fill in this form.", "zh": "当然。请填一下这张表。"},
+        {"speaker": "Mrs Lee", "en": "OK. Here you go.", "zh": "好的，给你。"},
+        {"speaker": "Amy", "en": "Thank you. We have a Chinese New Year event on 25 January.", "zh": "谢谢。我们 1 月 25 日有一个新年活动。"},
+        {"speaker": "Mrs Lee", "en": "Oh, nice! Can I come too?", "zh": "哦，真好！我也可以来吗？"},
+        {"speaker": "Amy", "en": "Yes! Parents are welcome to join.", "zh": "可以！欢迎家长一起来。"},
+        {"speaker": "Amy", "en": "I'll send you the details on WhatsApp.", "zh": "我会在 WhatsApp 上把详细信息发给您。"},
+        {"speaker": "Mrs Lee", "en": "Thank you very much!", "zh": "非常感谢！"}
+      ]
+    }
+  },
+  "phonics": "p19",
+  "dialogue": {
+    "title": "家长来问下学期报名",
+    "setting": "一位爸爸来前台问下个学期的报名情况。",
+    "npcName": "Mr Tan",
+    "npcVoice": "bm_lewis",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Hi, is registration open for next term?", "zh": "你好，下学期开始报名了吗？"},
+        "replies": [
+          {"en": "Yes, registration is open now.", "zh": "是的，现在开始报名了。", "next": "n2"},
+          {"en": "Yes! Would you like to sign up?", "zh": "是的！您想报名吗？", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "Maybe. When does the new term start?", "zh": "也许吧。新学期什么时候开始？"},
+        "replies": [
+          {"en": "The new term starts in January.", "zh": "新学期一月开始。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Any discount?", "zh": "有优惠吗？"},
+        "replies": [
+          {"en": "There is a 10% discount for early sign-up.", "zh": "提早报名有九折优惠。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "OK, I want to sign up my son.", "zh": "好，我想给我儿子报名。"},
+        "replies": [
+          {"en": "Great! Please fill in this form.", "zh": "太好了！请填写这张表格。", "next": "n5"},
+          {"en": "Would you like to book a trial class?", "zh": "您要不要先预约一节试听课？", "next": "n4b"}
+        ]
+      },
+      {
+        "id": "n4b",
+        "npc": {"en": "No, it's OK. He really wants to join now.", "zh": "不用了。他很想现在就报名。"},
+        "replies": [
+          {"en": "Great! Please fill in this form.", "zh": "太好了！请填写这张表格。", "next": "n5"}
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {"en": "Done. Anything else I should know?", "zh": "填好了。还有什么我需要知道的吗？"},
+        "replies": [
+          {"en": "We have a Chinese New Year event on 25 January. Would you like to join?", "zh": "我们 1 月 25 日有新年活动。您想参加吗？", "next": "n6"},
+          {"en": "I'll send you the details on WhatsApp.", "zh": "我会在 WhatsApp 上把详情发给您。", "next": "end"}
+        ]
+      },
+      {
+        "id": "n6",
+        "npc": {"en": "Sounds fun. Can parents come too?", "zh": "听起来很好玩。家长也可以来吗？"},
+        "replies": [
+          {"en": "Yes! Parents are welcome to join.", "zh": "可以！欢迎家长一起参加。", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Wonderful, thank you!", "zh": "太好了，谢谢！"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "把你们中心下学期的开学时间用英语说一遍：The new term starts in ___. 然后试着告诉一位家长。"
+}

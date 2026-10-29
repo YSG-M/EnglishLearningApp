@@ -1,0 +1,62 @@
+{
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.49",
+    "revision": "@29eb03535d5f2f4f899b95f22a92413ffde5284e",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.19"
+  },
+  "expected": [
+    "Hi, I'm Amy.",
+    "Nice to meet you.",
+    "Good morning!"
+  ],
+  "init": {
+    "durationMs": 689.4000000953674,
+    "wasmMemoryBytes": 536870912
+  },
+  "results": [
+    {
+      "clip": "bf_emma_6b9e42cb0bb0f044.wav",
+      "audioSeconds": 1.4101875,
+      "text": "Hi, I'm Amy.",
+      "durationMs": 1060.4000000953674,
+      "wasmMemoryBytes": 536870912
+    },
+    {
+      "clip": "bf_emma_f894a017e7a5fc59.wav",
+      "audioSeconds": 1.4210625,
+      "text": "Nice to meet you.",
+      "durationMs": 1175,
+      "wasmMemoryBytes": 536870912
+    },
+    {
+      "clip": "bf_emma_d4f3573e3ced9864.wav",
+      "audioSeconds": 1.1478125,
+      "text": "Good morning.",
+      "durationMs": 932.3000001907349,
+      "wasmMemoryBytes": 536870912
+    }
+  ],
+  "requested": [
+    "/src/web/speech/validation/preview.html",
+    "/assets/preview-BO8RkR21.js",
+    "/favicon.ico",
+    "/models-manifest.json",
+    "/models/whisper-tiny-en-int8/0ce578b827c94a961aacb8fa14b02f096504b337e5c94be37c36238cbe3e8bc6/tiny.en-encoder.int8.onnx",
+    "/models/whisper-tiny-en-int8/06c0e6ff6348d427e51839219d1c886c18cfdf411e629e33f5e1679bff9c1527/tiny.en-decoder.int8.onnx",
+    "/models/whisper-tiny-en-int8/306cd27f03c1a714eca7108e03d66b7dc042abe8c258b44c199a7ed9838dd930/tiny.en-tokens.txt",
+    "/models/whisper-tiny-en-int8/6297ed7520e0b4569486cd89be89045146728605418254fec4172194abc36c8d/sherpa-onnx-asr.js",
+    "/models/whisper-tiny-en-int8/e4dead1d159c531282e635069fa9e028175dee71f3f90908186994655425b3ce/sherpa-onnx-wasm-main-vad-asr.wasm",
+    "/models/whisper-tiny-en-int8/8a7f50a3e4e5930749e8aff9ad98f03753b87490e7796c576947611439dae9d0/sherpa-onnx-wasm-main-vad-asr.js",
+    "/models/whisper-tiny-en-int8/2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c/onnxruntime-MIT.txt",
+    "/models/whisper-tiny-en-int8/4f9e2bb7b4b407d710a68168615bbc6f70e3d7cc8ba9410fb6c65d92fa71accf/onnxruntime-ThirdPartyNotices.txt",
+    "/models/whisper-tiny-en-int8/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30/sherpa-Apache-2.0.txt",
+    "/models/whisper-tiny-en-int8/b5d65a59060e68c4ff940e1eddfa6f94b2d68fdf58ed7f4dd57721c997e35e9d/whisper-MIT.txt",
+    "/assets/smoke.worker-j2SNbeVi.js",
+    "/clips.json",
+    "/audio/bf_emma_6b9e42cb0bb0f044.wav",
+    "/audio/bf_emma_f894a017e7a5fc59.wav",
+    "/audio/bf_emma_d4f3573e3ced9864.wav"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./resources/web-reports/desktop-web.tsbuildinfo",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"]
+  },
+  "include": [
+    "src/renderer/src/**/*",
+    "src/shared/**/*",
+    "src/preload/*.d.ts",
+    "src/web/**/*",
+    "src/main/db/migrations.ts",
+    "src/main/ipc/schemas.ts"
+  ],
+  "exclude": [
+    "src/shared/**/*.test.ts",
+    "src/web/**/*.test.ts",
+    "src/web/**/*.test.tsx",
+    "src/web/pwa/service-worker.ts",
+    "src/web/**/*.worker.ts"
+  ]
+}

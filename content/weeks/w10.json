@@ -1,0 +1,45 @@
+{
+  "week": 10,
+  "stories": {
+    "narrative": {
+      "title": "Amy 忙碌的一周",
+      "lines": [
+        {"en": "I usually wake up early.", "zh": "我一般起得很早。"},
+        {"en": "On Monday, I go to the bank.", "zh": "星期一，我去银行。"},
+        {"en": "\"I want to open a bank account.\"", "zh": "\"我想开一个银行账户。\""},
+        {"en": "I show my work pass.", "zh": "我出示了我的工作准证。"},
+        {"en": "On Wednesday, my phone has no data.", "zh": "星期三，我的手机没流量了。"},
+        {"en": "I top up my phone with the app.", "zh": "我用 app 给手机充值。"},
+        {"en": "On Saturday, I'm at the front desk at 10am.", "zh": "星期六上午 10 点，我在前台上班。"},
+        {"en": "Each class is one and a half hours.", "zh": "每节课一个半小时。"},
+        {"en": "After work, I swim for one hour.", "zh": "下班后，我游泳游了一个小时。"},
+        {"en": "Oh no! Where is my wallet?", "zh": "糟了！我的钱包在哪里？"},
+        {"en": "It's at the front desk. Good!", "zh": "在前台。还好！"},
+        {"en": "Sometimes I forget my wallet.", "zh": "我有时候会忘了拿钱包。"}
+      ]
+    },
+    "dialogue": {
+      "title": "老公的手机坏了",
+      "setting": "星期天晚上，Amy 和老公 Ben 在家里商量这个星期要办的事。",
+      "cast": [
+        {"name": "Ben", "voice": "am_michael"}
+      ],
+      "lines": [
+        {"speaker": "Ben", "en": "Amy, my phone screen is broken.", "zh": "Amy，我的手机屏幕摔坏了。"},
+        {"speaker": "Amy", "en": "Oh no! You need to change the screen.", "zh": "哎呀！你要换个屏幕了。"},
+        {"speaker": "Ben", "en": "How much is it?", "zh": "要多少钱？"},
+        {"speaker": "Amy", "en": "Maybe 80 dollars.", "zh": "大概 80 块吧。"},
+        {"speaker": "Ben", "en": "That's a lot. I want to save money.", "zh": "好贵啊。我想省点钱。"},
+        {"speaker": "Amy", "en": "The shop near the MRT is cheap.", "zh": "MRT 站附近那家店便宜。"},
+        {"speaker": "Ben", "en": "OK. Can you come with me?", "zh": "好。你可以陪我去吗？"},
+        {"speaker": "Amy", "en": "Sorry, I work on Saturday.", "zh": "不好意思，我星期六要上班。"},
+        {"speaker": "Ben", "en": "What about Sunday?", "zh": "那星期天呢？"},
+        {"speaker": "Amy", "en": "Sure. We can go after lunch.", "zh": "好啊。我们吃完午饭去。"},
+        {"speaker": "Ben", "en": "Don't forget, we need to pay the bill too.", "zh": "别忘了，我们还要交账单。"},
+        {"speaker": "Amy", "en": "I can pay it on the app.", "zh": "我可以在 app 上交。"},
+        {"speaker": "Ben", "en": "Good. You're very smart!", "zh": "好。你真聪明！"},
+        {"speaker": "Amy", "en": "I know!", "zh": "我知道！"}
+      ]
+    }
+  }
+}

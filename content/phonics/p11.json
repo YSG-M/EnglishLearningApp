@@ -1,0 +1,20 @@
+{
+  "id": "p11",
+  "title": "ai 和 ay：字母 A 的音",
+  "rule": "ai（在词中间）和 ay（在词末尾）都读 /eɪ/，和 a_e 一样，像拼音\"诶伊\"(ei)。rain、wait、day、pay 都是这个音。记法：ay 常在结尾，ai 常在中间。",
+  "examples": [
+    { "en": "wait", "zh": "等" },
+    { "en": "rain", "zh": "下雨" },
+    { "en": "train", "zh": "火车" },
+    { "en": "day", "zh": "天" },
+    { "en": "pay", "zh": "付钱" },
+    { "en": "today", "zh": "今天" },
+    { "en": "Monday", "zh": "星期一" }
+  ],
+  "pairs": [
+    { "id": "p11.m01", "a": { "en": "wait", "zh": "等" }, "b": { "en": "wet", "zh": "湿的" } },
+    { "id": "p11.m02", "a": { "en": "pain", "zh": "疼痛" }, "b": { "en": "pen", "zh": "笔" } },
+    { "id": "p11.m03", "a": { "en": "late", "zh": "迟到的" }, "b": { "en": "let", "zh": "让" } },
+    { "id": "p11.m04", "a": { "en": "main", "zh": "主要的" }, "b": { "en": "men", "zh": "男人们" } }
+  ]
+}

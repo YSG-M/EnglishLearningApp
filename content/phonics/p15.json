@@ -1,0 +1,21 @@
+{
+  "id": "p15",
+  "title": "er、ir、ur：都读长长的\"呃～\"",
+  "rule": "er、ir、ur 在重读位置时读同一个音 /ɜː/，像拼音\"呃\"拉长：her、first、nurse。在词尾不重读时（teacher、number），只读一个轻轻的\"呃\"。英式发音里 r 基本不卷舌。",
+  "mouth": "嘴巴半张，嘴唇放松不圆，舌头放在中间，拉长\"呃\"。",
+  "examples": [
+    { "en": "her", "zh": "她（的）" },
+    { "en": "first", "zh": "第一" },
+    { "en": "bird", "zh": "鸟" },
+    { "en": "nurse", "zh": "护士" },
+    { "en": "Thursday", "zh": "星期四" },
+    { "en": "work", "zh": "工作" },
+    { "en": "teacher", "zh": "老师" }
+  ],
+  "pairs": [
+    { "id": "p15.m01", "a": { "en": "bird", "zh": "鸟" }, "b": { "en": "bed", "zh": "床" } },
+    { "id": "p15.m02", "a": { "en": "hurt", "zh": "受伤" }, "b": { "en": "hot", "zh": "热的" } },
+    { "id": "p15.m03", "a": { "en": "first", "zh": "第一" }, "b": { "en": "fast", "zh": "快的" } },
+    { "id": "p15.m04", "a": { "en": "work", "zh": "工作" }, "b": { "en": "walk", "zh": "走路" } }
+  ]
+}

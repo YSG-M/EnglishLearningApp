@@ -1,0 +1,157 @@
+{
+  "id": "u11",
+  "kind": "life",
+  "title": "诊所看病",
+  "titleEn": "I have a fever",
+  "goal": "在诊所能说出哪里不舒服、从什么时候开始，会问吃药的方法，会要病假单（MC）。",
+  "chunks": [
+    {"id": "u11.c01", "en": "I have a fever.", "zh": "我发烧了。"},
+    {"id": "u11.c02", "en": "I have a cough.", "zh": "我咳嗽。"},
+    {"id": "u11.c03", "en": "I have a sore throat.", "zh": "我喉咙痛。"},
+    {"id": "u11.c04", "en": "My head hurts.", "zh": "我头痛。", "accept": ["I have a headache."]},
+    {"id": "u11.c05", "en": "Since yesterday.", "zh": "从昨天开始。", "accept": ["From yesterday."]},
+    {"id": "u11.c06", "en": "I need an MC, please.", "zh": "我需要病假单。", "note": "MC = medical certificate，病假单。新加坡请病假要交给公司。"},
+    {"id": "u11.c07", "en": "How many times a day?", "zh": "一天吃几次？"},
+    {"id": "u11.c08", "en": "Before or after food?", "zh": "饭前还是饭后吃？"},
+    {"id": "u11.c09", "en": "Is it serious?", "zh": "严重吗？"}
+  ],
+  "words": ["fever", "cough", "sore", "throat", "head", "hurts", "since", "yesterday", "mc", "times", "food", "serious"],
+  "patterns": {
+    "frames": [
+      {"frame": "I have ___.", "zh": "我有……", "usage": "说自己有什么：生病（I have a fever），也能说有课、有会、有问题、有预约。框不变，只换 ___。"},
+      {"frame": "My ___ hurts.", "zh": "我的……痛。", "usage": "哪里痛，就把那个部位放进 ___：My head hurts（我头痛）。"}
+    ],
+    "examples": [
+      {"id": "u11.e01", "scene": "开会时老板讲完了，你想问一个问题。", "en": "I have a question.", "zh": "我有一个问题。"},
+      {"id": "u11.e02", "scene": "在诊所，你搬完一箱书以后腰很痛，跟医生说。", "en": "My back hurts.", "zh": "我腰痛 / 背痛。", "note": "back = 背、腰（这里不是\"回来\"）"},
+      {"id": "u11.e03", "scene": "去牙科诊所，前台问你哪里不舒服。", "en": "I have a toothache.", "zh": "我牙痛。"},
+      {"id": "u11.e04", "scene": "在诊所，你的眼睛又红又痛。", "en": "My eye hurts.", "zh": "我眼睛痛。"},
+      {"id": "u11.e05", "scene": "同事叫你一起去吃午饭，可是你马上要上课。", "en": "I have a class now.", "zh": "我现在要上课。", "accept": ["Sorry, I have a class now."]},
+      {"id": "u11.e06", "scene": "周末在 hawker centre 吃完午饭，你跟朋友说肚子不舒服。", "en": "My stomach hurts.", "zh": "我肚子痛。", "accept": ["I have a stomachache."]},
+      {"id": "u11.e07", "scene": "在诊所，医生问你还有什么症状，你一直流鼻涕。", "en": "I have a runny nose.", "zh": "我流鼻涕。", "note": "runny nose = 流鼻涕"},
+      {"id": "u11.e08", "scene": "老板叫你下午去送文件，可是你四点要和家长见面。", "en": "I have a meeting at 4pm.", "zh": "我下午四点有个会。"},
+      {"id": "u11.e09", "scene": "你到诊所前台，跟护士说你约了下午三点。", "en": "I have an appointment at 3pm.", "zh": "我约了下午三点。"},
+      {"id": "u11.e10", "scene": "在 polyclinic，医生问你的腿怎么了，你一走路就痛。", "en": "When I walk, my leg hurts.", "zh": "我一走路腿就痛。", "note": "when I walk = 我走路的时候", "accept": ["My leg hurts when I walk."]}
+    ]
+  },
+  "daily": [
+    {"id": "u11.d01", "word": "rest", "scene": "老公感冒了还要出门，你劝他在家休息。", "en": "You need to rest.", "zh": "你要休息一下。", "note": "rest = 休息"},
+    {"id": "u11.d02", "word": "doctor", "scene": "发烧两天了，你跟家人说要去诊所。", "en": "I want to see a doctor.", "zh": "我想去看医生。", "note": "see a doctor = 看医生"},
+    {"id": "u11.d03", "word": "nurse", "scene": "从诊所回来，家人问你那里的人怎么样。", "en": "The nurse is very kind.", "zh": "护士人很好。", "note": "nurse = 护士"},
+    {"id": "u11.d04", "word": "teeth", "scene": "去看牙医，医生问你多久刷一次牙。", "en": "I brush my teeth every morning.", "zh": "我每天早上刷牙。", "note": "brush my teeth = 刷牙；teeth 是牙齿（一颗是 tooth）"},
+    {"id": "u11.d05", "word": "arm", "scene": "周末搬家以后，在诊所跟医生说。", "en": "My arm hurts.", "zh": "我的手臂痛。", "note": "arm = 手臂"},
+    {"id": "u11.d06", "word": "foot", "scene": "和朋友在公园走了一下午，你想坐下休息。", "en": "My foot hurts.", "zh": "我的脚好痛。", "note": "foot = 脚（两只脚是 feet）"},
+    {"id": "u11.d07", "word": "temperature", "scene": "家里的孩子脸很红，你拿出体温计。", "en": "Let me check your temperature.", "zh": "我给你量一下体温。", "note": "Let me = 让我来；temperature = 体温、温度"},
+    {"id": "u11.d08", "word": "pharmacy", "scene": "在商场里头痛，想买止痛药，你问路人。", "en": "Is there a pharmacy near here?", "zh": "这附近有药房吗？", "note": "pharmacy = 药房（Guardian、Watsons 这类）"},
+    {"id": "u11.d09", "word": "mask", "scene": "咳嗽了，坐 MRT 前你在便利店问店员。", "en": "I need a mask.", "zh": "我要一个口罩。", "note": "mask = 口罩"},
+    {"id": "u11.d10", "word": "allergic", "scene": "医生开药前，问你有没有什么过敏。", "en": "I'm allergic to eggs.", "zh": "我对鸡蛋过敏。", "note": "allergic to = 对……过敏", "accept": ["I am allergic to eggs."]},
+    {"id": "u11.d11", "word": "soon", "scene": "朋友发信息说她生病了，你回复她。", "en": "Get well soon!", "zh": "早日康复！", "note": "Get well soon = 早日康复（祝福生病的人）"},
+    {"id": "u11.d12", "word": "headache", "scene": "朋友约你晚上出去，可是你不舒服。", "en": "I have a headache.", "zh": "我头痛。", "note": "headache = 头痛（= My head hurts.）"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 生病了",
+      "lines": [
+        {"en": "I'm not feeling well today.", "zh": "我今天不太舒服。"},
+        {"en": "I have a fever and a sore throat.", "zh": "我发烧了，喉咙也痛。"},
+        {"en": "My head hurts.", "zh": "我头痛。"},
+        {"en": "I want to see a doctor.", "zh": "我想去看医生。"},
+        {"en": "I take a taxi to the clinic.", "zh": "我坐的士去诊所。"},
+        {"en": "\"Excuse me, I need a mask.\"", "zh": "\"不好意思，我要一个口罩。\""},
+        {"en": "The nurse is very kind.", "zh": "护士人很好。"},
+        {"en": "\"Since yesterday. Is it serious?\"", "zh": "\"从昨天开始。严重吗？\""},
+        {"en": "\"Before or after food?\"", "zh": "\"饭前还是饭后吃？\""},
+        {"en": "\"I need an MC, please.\"", "zh": "\"我需要病假单。\""},
+        {"en": "At home, I need to rest.", "zh": "回到家，我要好好休息。"},
+        {"en": "\"Get well soon!\" My friend is very kind.", "zh": "朋友发来信息：\"早日康复！\"她人真好。"}
+      ]
+    },
+    "dialogue": {
+      "title": "在药房买药",
+      "setting": "星期天晚上，诊所都关门了，Amy 去组屋楼下的药房买咳嗽药。",
+      "cast": [
+        {"name": "Pharmacist", "voice": "am_michael"}
+      ],
+      "lines": [
+        {"speaker": "Pharmacist", "en": "Hi, can I help you?", "zh": "你好，需要帮忙吗？"},
+        {"speaker": "Amy", "en": "Hi. I have a cough.", "zh": "你好，我咳嗽。"},
+        {"speaker": "Pharmacist", "en": "Since when?", "zh": "从什么时候开始的？"},
+        {"speaker": "Amy", "en": "Since yesterday.", "zh": "从昨天开始。"},
+        {"speaker": "Pharmacist", "en": "Do you have a fever?", "zh": "有发烧吗？"},
+        {"speaker": "Amy", "en": "No. But I have a sore throat.", "zh": "没有。不过我喉咙痛。"},
+        {"speaker": "Pharmacist", "en": "Are you allergic to medicine?", "zh": "你对药物过敏吗？"},
+        {"speaker": "Amy", "en": "No, I'm not.", "zh": "不过敏。"},
+        {"speaker": "Pharmacist", "en": "Okay. Take this medicine.", "zh": "好的，吃这个药。"},
+        {"speaker": "Amy", "en": "How many times a day?", "zh": "一天吃几次？"},
+        {"speaker": "Pharmacist", "en": "Three times a day, after food.", "zh": "一天三次，饭后吃。"},
+        {"speaker": "Amy", "en": "Okay. Can I pay by card?", "zh": "好的。可以刷卡吗？"},
+        {"speaker": "Pharmacist", "en": "Sure. Drink more water and rest.", "zh": "可以。多喝水，好好休息。"},
+        {"speaker": "Amy", "en": "Thank you very much!", "zh": "非常感谢！"}
+      ]
+    }
+  },
+  "grammar": {
+    "title": "不舒服用 I have a ...",
+    "body": "中文说\"我发烧\"\"我咳嗽\"，英语要说\"我有一个……\"：I have a fever，I have a cough。大部分小病都可以用 I have a ... 来说。",
+    "examples": [
+      {"en": "I have a fever.", "zh": "我发烧了。"},
+      {"en": "I have a headache.", "zh": "我头痛。"}
+    ]
+  },
+  "phonics": "p09",
+  "dialogue": {
+    "title": "在诊所看医生",
+    "setting": "你感冒了，去家附近的诊所看医生。",
+    "npcName": "Doctor",
+    "npcVoice": "bm_george",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Hello, what's the problem today?", "zh": "你好，今天哪里不舒服？"},
+        "replies": [
+          {"en": "I have a fever.", "zh": "我发烧了。", "next": "n2"},
+          {"en": "I have a sore throat.", "zh": "我喉咙痛。", "next": "n2"},
+          {"en": "My head hurts.", "zh": "我头痛。", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "I see. Since when?", "zh": "明白了。从什么时候开始的？"},
+        "replies": [
+          {"en": "Since yesterday.", "zh": "从昨天开始。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Any cough?", "zh": "有咳嗽吗？"},
+        "replies": [
+          {"en": "Yes, I have a cough.", "zh": "有，我咳嗽。", "next": "n4"},
+          {"en": "No.", "zh": "没有。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "Okay, I'll give you some medicine. Take it three times a day.", "zh": "好，我给你开一些药，一天吃三次。"},
+        "replies": [
+          {"en": "Before or after food?", "zh": "饭前还是饭后吃？", "next": "n5"},
+          {"en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {"en": "After food. Do you need an MC?", "zh": "饭后吃。你需要病假单吗？"},
+        "replies": [
+          {"en": "Yes, I need an MC, please.", "zh": "需要，请给我病假单。", "next": "end"},
+          {"en": "No, thank you.", "zh": "不用，谢谢。", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Okay. Rest well and drink more water.", "zh": "好的。好好休息，多喝水。"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "把 I have a fever. 和 I have a cough. 各读三遍，再把它们记在手机备忘录里，下次去诊所就用得上。"
+}

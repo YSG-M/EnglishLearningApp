@@ -1,0 +1,138 @@
+{
+  "id": "u23",
+  "kind": "work",
+  "title": "请假、和老板沟通",
+  "titleEn": "Can I take leave on Friday?",
+  "goal": "能礼貌地向老板请假、说明身体不舒服、安排人代课。",
+  "chunks": [
+    {"id": "u23.c01", "en": "Can I take leave on Friday?", "zh": "我周五可以请假吗？", "note": "take leave = 请假。"},
+    {"id": "u23.c02", "en": "I'm not feeling well today.", "zh": "我今天不太舒服。"},
+    {"id": "u23.c03", "en": "I need to see a doctor.", "zh": "我需要去看医生。"},
+    {"id": "u23.c04", "en": "Can I leave early today?", "zh": "我今天可以早点走吗？"},
+    {"id": "u23.c05", "en": "I will send you my MC.", "zh": "我会把病假单发给你。", "note": "MC = medical certificate，新加坡的病假单。看医生后记得要一张。"},
+    {"id": "u23.c06", "en": "Jason can cover my class.", "zh": "Jason 可以代我的课。", "note": "cover my class = 代我上课。"},
+    {"id": "u23.c07", "en": "I have called all the parents.", "zh": "我已经给所有家长打过电话了。", "note": "have + 做完的动作 = \"已经……了\"。"},
+    {"id": "u23.c08", "en": "Sorry, I will be late today.", "zh": "抱歉，我今天会迟到。"},
+    {"id": "u23.c09", "en": "Is there anything else?", "zh": "还有别的事吗？"}
+  ],
+  "words": ["take", "leave", "feeling", "well", "need", "doctor", "early", "cover", "called", "parents", "late", "anything"],
+  "patterns": {
+    "frames": [
+      {"frame": "Can I ___?", "zh": "我可以……吗？", "usage": "自己想做一件事，先问对方行不行。和 Can you ___? 对比：Can you 是请别人去做，Can I 是自己要做、问别人同不同意。框不变，只把你想做的事放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u23.e01", "scene": "老板办公室的门开着，你有事要找他。", "en": "Can I come in?", "zh": "我可以进来吗？", "note": "come in = 进来"},
+      {"id": "u23.e02", "scene": "中午 hawker centre 人很多，有张桌子只坐了一个人。", "en": "Can I sit here?", "zh": "我可以坐这里吗？"},
+      {"id": "u23.e03", "scene": "在商场看到一条裙子，想穿上试试。", "en": "Can I try it on?", "zh": "我可以试穿一下吗？", "note": "try it on = 试穿（衣服、鞋子）"},
+      {"id": "u23.e04", "scene": "在 NTUC 收银台，你身上没带现金。", "en": "Can I pay by card?", "zh": "可以刷卡吗？", "note": "pay by card = 用卡付钱"},
+      {"id": "u23.e05", "scene": "在诊所填表格，你没带笔，想借护士的。", "en": "Can I use your pen?", "zh": "我可以用一下你的笔吗？"},
+      {"id": "u23.e06", "scene": "去诊所检查身体，包太大，想先放在柜台。", "en": "Can I leave my bag here?", "zh": "我的包可以放在这里吗？", "note": "leave = 放下、留下（这里不是\"离开\"）"},
+      {"id": "u23.e07", "scene": "打电话到诊所，想今天就去看医生。", "en": "Can I see the doctor today?", "zh": "我今天可以看医生吗？", "note": "see the doctor = 看医生"},
+      {"id": "u23.e08", "scene": "下星期一你要去办事，跟老板 Mr Lee 请一天假。", "en": "Can I take leave next Monday?", "zh": "我下星期一可以请假吗？", "note": "take leave = 请假", "accept": ["Can I take leave on next Monday?"]},
+      {"id": "u23.e09", "scene": "老板要你星期五前做好新学期名单，你需要多一天。", "en": "Can I have one more day?", "zh": "可以多给我一天吗？", "note": "one more day = 多一天"},
+      {"id": "u23.e10", "scene": "你想跟老板谈一下下学期的排课，可是他正在忙。", "en": "Can I speak to you for a moment?", "zh": "我可以跟您谈一下吗？", "note": "for a moment = 一会儿", "accept": ["Can I talk to you for a moment?"]}
+    ]
+  },
+  "daily": [
+    {"id": "u23.d01", "word": "feel", "scene": "病了两天，在楼下遇到邻居，她问你好点了没有。", "en": "I feel better today.", "zh": "我今天感觉好多了。"},
+    {"id": "u23.d02", "word": "dizzy", "scene": "周末在 MRT 上站了很久，朋友看你脸色不好。", "en": "I'm a bit dizzy.", "zh": "我有点头晕。", "note": "a bit = 有点", "accept": ["I am a bit dizzy."]},
+    {"id": "u23.d03", "word": "lie", "scene": "在家里头晕，你跟老公说想去躺一下。", "en": "I need to lie down.", "zh": "我需要躺一下。", "note": "lie down = 躺下"},
+    {"id": "u23.d04", "word": "stay", "scene": "星期六下大雨，朋友约你出去逛街。", "en": "I will stay at home today.", "zh": "我今天就待在家里。", "accept": ["I'll stay at home today."]},
+    {"id": "u23.d05", "word": "porridge", "scene": "生病在家，妈妈问你想吃什么。", "en": "Can I have some porridge?", "zh": "我可以吃点粥吗？", "note": "porridge = 粥，很多 hawker 摊都卖"},
+    {"id": "u23.d06", "word": "nap", "scene": "星期天吃完午饭，家人叫你一起去 mall，可是你很困。", "en": "I want to take a nap.", "zh": "我想睡个午觉。", "note": "take a nap = 小睡一会儿"},
+    {"id": "u23.d07", "word": "relax", "scene": "忙了一个星期，周末朋友问你有什么安排。", "en": "I want to relax at home.", "zh": "我想在家放松一下。"},
+    {"id": "u23.d08", "word": "lazy", "scene": "星期天早上，老公叫你起床一起去跑步。", "en": "I feel lazy today.", "zh": "我今天好懒，不想动。", "note": "lazy = 懒"},
+    {"id": "u23.d09", "word": "flu", "scene": "朋友约你明天去 hawker centre 吃饭，可是你病了。", "en": "Sorry, I have the flu.", "zh": "不好意思，我得了流感。", "note": "the flu = 流感，比普通感冒严重"},
+    {"id": "u23.d10", "word": "bored", "scene": "下雨天在家待了一整天，你给朋友发语音。", "en": "I'm bored at home.", "zh": "我在家好无聊。", "accept": ["I am bored at home."]},
+    {"id": "u23.d11", "word": "public", "scene": "邻居问你下星期一要不要上班。", "en": "Monday is a public holiday.", "zh": "星期一是公共假期。", "note": "public holiday = 公共假期，比如国庆日、开斋节"},
+    {"id": "u23.d12", "word": "boss", "scene": "晚上吃饭，老公问你新工作怎么样。", "en": "My boss is very nice.", "zh": "我的老板人很好。"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的病假",
+      "lines": [
+        {"en": "This morning, I'm not feeling well.", "zh": "今天早上，我不太舒服。"},
+        {"en": "I'm a bit dizzy.", "zh": "我有点头晕。"},
+        {"en": "I call my boss.", "zh": "我给老板打电话。"},
+        {"en": "\"Can I take leave today? I need to see a doctor.\"", "zh": "\"我今天可以请假吗？我需要去看医生。\""},
+        {"en": "\"Sure. Go and rest.\"", "zh": "\"当然可以。去休息吧。\""},
+        {"en": "Jason can cover my class.", "zh": "Jason 可以代我的课。"},
+        {"en": "I see the doctor at the clinic near my home.", "zh": "我去家附近的诊所看医生。"},
+        {"en": "I send my MC to my boss.", "zh": "我把病假单发给老板。"},
+        {"en": "I go home and lie down.", "zh": "我回家躺下。"},
+        {"en": "I have some porridge and take a nap.", "zh": "我吃了点粥，睡了个午觉。"},
+        {"en": "In the evening, I feel better.", "zh": "到了晚上，我感觉好多了。"},
+        {"en": "Tomorrow, I can go to work again.", "zh": "明天我又可以去上班了。"}
+      ]
+    },
+    "dialogue": {
+      "title": "诊所柜台",
+      "setting": "下午 Amy 头晕，去家附近的诊所看医生。柜台的护士接待她。",
+      "cast": [
+        {"name": "Nurse", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Nurse", "en": "Good afternoon. Can I help you?", "zh": "下午好。有什么可以帮您？"},
+        {"speaker": "Amy", "en": "Hi. Can I see the doctor today?", "zh": "你好。我今天可以看医生吗？"},
+        {"speaker": "Nurse", "en": "Yes. What is the problem?", "zh": "可以。哪里不舒服？"},
+        {"speaker": "Amy", "en": "I'm not feeling well. I'm a bit dizzy.", "zh": "我不太舒服，有点头晕。"},
+        {"speaker": "Nurse", "en": "OK. Please fill in this form.", "zh": "好的。请填一下这张表。"},
+        {"speaker": "Amy", "en": "Sorry, can I use your pen?", "zh": "不好意思，我可以用一下你的笔吗？"},
+        {"speaker": "Nurse", "en": "Sure. Here you are.", "zh": "当然。给你。"},
+        {"speaker": "Amy", "en": "Thank you. Can I leave my bag here?", "zh": "谢谢。我的包可以放在这里吗？"},
+        {"speaker": "Nurse", "en": "Yes, no problem. Please wait a moment.", "zh": "可以，没问题。请稍等一下。"},
+        {"speaker": "Nurse", "en": "Amy, the doctor can see you now.", "zh": "Amy，医生现在可以看你了。"},
+        {"speaker": "Amy", "en": "Thank you.", "zh": "谢谢。"},
+        {"speaker": "Nurse", "en": "Here is your medicine and your MC.", "zh": "这是你的药和病假单。"},
+        {"speaker": "Amy", "en": "Thank you. Can I pay by card?", "zh": "谢谢。可以刷卡吗？"},
+        {"speaker": "Nurse", "en": "Yes, you can. Go home and rest.", "zh": "可以。回家好好休息吧。"}
+      ]
+    }
+  },
+  "phonics": "p21",
+  "dialogue": {
+    "title": "身体不舒服，跟老板请假",
+    "setting": "早上你觉得不舒服，中心负责人 Mr Lee 看到你。",
+    "npcName": "Mr Lee",
+    "npcVoice": "bm_george",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Morning, Amy. You look tired.", "zh": "早上好，Amy。你看起来很累。"},
+        "replies": [
+          {"en": "I'm not feeling well today.", "zh": "我今天不太舒服。", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "Oh no. Do you want to go home?", "zh": "哎呀。你要回家吗？"},
+        "replies": [
+          {"en": "Can I leave early today?", "zh": "我今天可以早点走吗？", "next": "n3"},
+          {"en": "I need to see a doctor.", "zh": "我需要去看医生。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Sure. But who can take your four o'clock class?", "zh": "当然可以。不过四点那节课谁来上？"},
+        "replies": [
+          {"en": "Jason can cover my class.", "zh": "Jason 可以代我的课。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "OK, I'll ask him. Go and rest.", "zh": "好，我去问他。你去休息吧。"},
+        "replies": [
+          {"en": "Thank you. I will send you my MC.", "zh": "谢谢。我会把病假单发给你。", "next": "end"},
+          {"en": "Thank you. Can I go home now?", "zh": "谢谢。我现在可以回家了吗？", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "No problem. Take care!", "zh": "没问题。保重！"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "想一想：如果明天要请假，你会怎么用英语跟老板说？用手机录下来听一遍。"
+}

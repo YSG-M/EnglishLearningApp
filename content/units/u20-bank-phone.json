@@ -1,0 +1,145 @@
+{
+  "id": "u20",
+  "kind": "life",
+  "title": "银行、手机卡",
+  "titleEn": "I want to top up my phone",
+  "goal": "能在银行或手机店说出要办什么，听不懂时请对方写下来。",
+  "chunks": [
+    {"id": "u20.c01", "en": "I want to open a bank account.", "zh": "我想开一个银行账户。"},
+    {"id": "u20.c02", "en": "I want to top up my phone.", "zh": "我想给手机充值。", "note": "新加坡说 top up（充值），交通卡充值也这样说。"},
+    {"id": "u20.c03", "en": "Can I change my phone plan?", "zh": "我可以换手机套餐吗？"},
+    {"id": "u20.c04", "en": "How much is this plan?", "zh": "这个套餐多少钱？"},
+    {"id": "u20.c05", "en": "Here is my work pass.", "zh": "这是我的工作准证。", "note": "在新加坡办事常要出示 work pass（工作准证）或 passport（护照）。"},
+    {"id": "u20.c06", "en": "I lost my card.", "zh": "我的卡丢了。", "note": "lose（丢）的过去是 lost。"},
+    {"id": "u20.c07", "en": "Where do I sign?", "zh": "我在哪里签名？"},
+    {"id": "u20.c08", "en": "Can you write it down for me?", "zh": "能帮我写下来吗？", "note": "听不清数字或者长单词时特别有用，不用不好意思。"}
+  ],
+  "words": ["open", "bank", "account", "top", "phone", "change", "plan", "pass", "lost", "card", "sign", "write"],
+  "patterns": {
+    "frames": [
+      {"frame": "I want to ___.", "zh": "我想……／我要……", "usage": "去银行、手机店、诊所、柜台办事时，第一句就说你要办什么。框不变，只把要办的事放进 ___。想更客气，可以在句尾加 please。"}
+    ],
+    "examples": [
+      {"id": "u20.e01", "scene": "在 coffee shop 吃完饭，你走到摊位前要付钱。", "en": "I want to pay.", "zh": "我要付钱。", "accept": ["I want to pay, please."]},
+      {"id": "u20.e02", "scene": "在社区中心看到一个游泳班的海报，你走到柜台。", "en": "I want to sign up.", "zh": "我想报名。", "note": "sign up = 报名", "accept": ["I want to sign up, please."]},
+      {"id": "u20.e03", "scene": "在诊所，打电话预约看医生。", "en": "I want to see a doctor.", "zh": "我想看医生。", "note": "see a doctor = 看医生"},
+      {"id": "u20.e04", "scene": "在手机店，你觉得现在的套餐太贵了。", "en": "I want to change my plan.", "zh": "我想换套餐。", "note": "plan = （手机）套餐"},
+      {"id": "u20.e05", "scene": "在 MRT 站的服务柜台，你的交通卡没钱了。", "en": "I want to top up my card.", "zh": "我想给卡充值。", "note": "top up = 充值"},
+      {"id": "u20.e06", "scene": "银行卡不见了，你赶快去银行。", "en": "I want to cancel my card.", "zh": "我想把卡停掉。", "note": "cancel = 取消；cancel my card = 把卡停掉"},
+      {"id": "u20.e07", "scene": "在社区中心，你问有没有给大人上的英语课。", "en": "I want to learn English.", "zh": "我想学英语。"},
+      {"id": "u20.e08", "scene": "在银行柜台，你想给国内的家人汇钱。", "en": "I want to send money home.", "zh": "我想汇钱回家。", "note": "send money home = 汇钱回家（给家人）"},
+      {"id": "u20.e09", "scene": "手机卡坏了，你去手机店换一张。", "en": "I want to get a new SIM card.", "zh": "我想办一张新的手机卡。", "note": "SIM card = 手机卡"},
+      {"id": "u20.e10", "scene": "在手机店交这个月的话费，你想刷卡。", "en": "I want to pay my phone bill by card.", "zh": "我想刷卡交手机费。", "note": "phone bill = 话费账单；by card = 用卡付"}
+    ]
+  },
+  "daily": [
+    {"id": "u20.d01", "word": "wallet", "scene": "在 MRT 站准备买东西，你翻了翻包，发现钱包不见了。", "en": "Where is my wallet?", "zh": "我的钱包在哪里？", "note": "wallet = 钱包"},
+    {"id": "u20.d02", "word": "coins", "scene": "在 hawker centre 买饮料，摊主说找不开零钱，你翻了翻钱包。", "en": "I have some coins.", "zh": "我有一些硬币。", "note": "coins = 硬币、零钱"},
+    {"id": "u20.d03", "word": "ATM", "scene": "和朋友去吃饭，那家店只收现金，你问附近有没有提款机。", "en": "Is there an ATM near here?", "zh": "这附近有提款机吗？", "note": "ATM = 自动提款机"},
+    {"id": "u20.d04", "word": "password", "scene": "周末去朋友家玩，你想连她家的 Wi-Fi。", "en": "What is the Wi-Fi password?", "zh": "Wi-Fi 密码是多少？", "accept": ["What's the Wi-Fi password?"]},
+    {"id": "u20.d05", "word": "app", "scene": "在 hawker centre，朋友问你怎么付钱，你给她看手机。", "en": "I pay with this app.", "zh": "我用这个 app 付钱。", "note": "app = 手机应用、软件"},
+    {"id": "u20.d06", "word": "screen", "scene": "手机掉在地上，你拿起来给老公看。", "en": "My phone screen is broken.", "zh": "我的手机屏幕摔坏了。", "note": "screen = 屏幕"},
+    {"id": "u20.d07", "word": "save", "scene": "朋友问你为什么每天自己带饭。", "en": "I want to save money.", "zh": "我想省钱。", "note": "save money = 省钱、存钱"},
+    {"id": "u20.d08", "word": "spend", "scene": "朋友问你每个月吃饭花不花很多钱。", "en": "I don't spend a lot.", "zh": "我花得不多。", "note": "spend = 花（钱）", "accept": ["I do not spend a lot."]},
+    {"id": "u20.d09", "word": "cheap", "scene": "在 NTUC 看到鸡蛋特价，你告诉一起买菜的邻居。", "en": "The eggs are very cheap today.", "zh": "今天鸡蛋很便宜。", "note": "cheap = 便宜"},
+    {"id": "u20.d10", "word": "data", "scene": "在巴士上，你的手机突然上不了网。", "en": "My phone has no data.", "zh": "我的手机没有流量了。", "note": "data = 手机流量"},
+    {"id": "u20.d11", "word": "signal", "scene": "在 HDB 电梯里，朋友打电话来，你的声音断断续续。", "en": "There is no signal in the lift.", "zh": "电梯里没有信号。", "note": "signal = （手机）信号"},
+    {"id": "u20.d12", "word": "transfer", "scene": "和朋友吃完饭，朋友先付了钱，你说你还给她。", "en": "I can transfer the money to you.", "zh": "我可以把钱转给你。", "note": "transfer = 转账（比如用 PayNow 转钱）"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 去银行和手机店",
+      "lines": [
+        {"en": "Today I have a lot to do.", "zh": "今天我有很多事要做。"},
+        {"en": "I go to the ATM near my house.", "zh": "我去家附近的提款机。"},
+        {"en": "Oh no! Where is my wallet?", "zh": "糟了！我的钱包在哪里？"},
+        {"en": "It's in my bag. Good!", "zh": "在我的包里。还好！"},
+        {"en": "After that, I go to the bank.", "zh": "然后我去银行。"},
+        {"en": "\"I want to send money home.\"", "zh": "\"我想汇钱回家。\""},
+        {"en": "I transfer the money to my family.", "zh": "我把钱转给家人。"},
+        {"en": "Next, I go to the phone shop.", "zh": "接着我去手机店。"},
+        {"en": "My phone has no data again.", "zh": "我的手机又没有流量了。"},
+        {"en": "\"I want to change my plan, please.\"", "zh": "\"我想换个套餐。\""},
+        {"en": "The new plan is very cheap.", "zh": "新的套餐很便宜。"},
+        {"en": "I want to save money!", "zh": "我想省钱！"}
+      ]
+    },
+    "dialogue": {
+      "title": "手机屏幕摔坏了",
+      "setting": "星期六下午，Amy 拿着摔坏的手机来到商场里的手机店，店员 Ken 来帮她。",
+      "cast": [
+        {"name": "Ken", "voice": "bm_george"}
+      ],
+      "lines": [
+        {"speaker": "Ken", "en": "Hi, can I help you?", "zh": "你好，有什么可以帮你？"},
+        {"speaker": "Amy", "en": "Hi. My phone screen is broken.", "zh": "你好。我的手机屏幕摔坏了。"},
+        {"speaker": "Ken", "en": "Oh no. Can I see your phone?", "zh": "哎呀。我可以看看你的手机吗？"},
+        {"speaker": "Amy", "en": "Sure. Here you go.", "zh": "好的，给你。"},
+        {"speaker": "Ken", "en": "We need to change the screen.", "zh": "我们要换一个屏幕。"},
+        {"speaker": "Amy", "en": "How much is it?", "zh": "多少钱？"},
+        {"speaker": "Ken", "en": "It's 80 dollars.", "zh": "80 块。"},
+        {"speaker": "Amy", "en": "Oh, that's a lot.", "zh": "哦，好贵啊。"},
+        {"speaker": "Ken", "en": "This one is cheap. It's 40 dollars.", "zh": "这个便宜，40 块。"},
+        {"speaker": "Amy", "en": "OK, I want this one. Can I pay by card?", "zh": "好，我要这个。可以刷卡吗？"},
+        {"speaker": "Ken", "en": "Sure. Please wait one hour.", "zh": "可以。请等一个小时。"},
+        {"speaker": "Amy", "en": "No problem. Can I top up my phone too?", "zh": "没问题。我还可以给手机充值吗？"},
+        {"speaker": "Ken", "en": "Sure. How much?", "zh": "可以。充多少？"},
+        {"speaker": "Amy", "en": "Twenty dollars, please.", "zh": "20 块，谢谢。"}
+      ]
+    }
+  },
+  "phonics": "p18",
+  "dialogue": {
+    "title": "在手机店",
+    "setting": "你走进一家手机店，店员 Ryan 过来招呼你。",
+    "npcName": "Ryan",
+    "npcVoice": "am_michael",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Hi, how can I help you?", "zh": "你好，有什么可以帮你？"},
+        "replies": [
+          {"en": "I want to top up my phone.", "zh": "我想给手机充值。", "next": "n2"},
+          {"en": "Can I change my phone plan?", "zh": "我可以换手机套餐吗？", "next": "n3"},
+          {"en": "I want to change my phone plan.", "zh": "我想换手机套餐。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "Sure. How much do you want to top up?", "zh": "好的。你想充多少？"},
+        "replies": [
+          {"en": "Twenty dollars, please.", "zh": "二十块，谢谢。", "next": "end"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "OK. This plan is thirty dollars a month, with 100 gigabytes of data.", "zh": "好的。这个套餐每月三十块，有 100G 流量。"},
+        "replies": [
+          {"en": "Can you write it down for me?", "zh": "能帮我写下来吗？", "next": "n4"},
+          {"en": "OK, I want this plan.", "zh": "好，我要这个套餐。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "Sure. Can I see your work pass?", "zh": "好的。可以看一下你的工作准证吗？"},
+        "replies": [
+          {"en": "Here is my work pass.", "zh": "这是我的工作准证。", "next": "n5"}
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {"en": "Thank you. Please sign here.", "zh": "谢谢。请在这里签名。"},
+        "replies": [
+          {"en": "Where do I sign?", "zh": "我在哪里签？", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Right here. All done, thank you!", "zh": "就在这里。都办好了，谢谢！"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "下次去银行或者手机店，试着先说一句 I want to ___. 听不懂时就说 Can you write it down for me?"
+}

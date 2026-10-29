@@ -1,0 +1,150 @@
+{
+  "id": "u22",
+  "kind": "life",
+  "title": "说说喜欢什么、简单意见",
+  "titleEn": "I like spicy food",
+  "goal": "能说出自己喜欢和不喜欢什么，简单表达\"我觉得……\"。",
+  "chunks": [
+    {"id": "u22.c01", "en": "I like spicy food.", "zh": "我喜欢辣的食物。"},
+    {"id": "u22.c02", "en": "I don't like durian.", "zh": "我不喜欢榴莲。", "accept": ["I do not like durian."]},
+    {"id": "u22.c03", "en": "What do you like to do?", "zh": "你喜欢做什么？"},
+    {"id": "u22.c04", "en": "I like watching dramas.", "zh": "我喜欢看电视剧。", "note": "喜欢做某事：like 后面的动词加 ing。"},
+    {"id": "u22.c05", "en": "I prefer tea.", "zh": "我更喜欢茶。", "note": "prefer = 比起别的更喜欢。"},
+    {"id": "u22.c06", "en": "I think it's very good.", "zh": "我觉得很好。", "note": "I think…… = 我觉得……，后面直接说你的看法。"},
+    {"id": "u22.c07", "en": "I think it's too expensive.", "zh": "我觉得太贵了。"},
+    {"id": "u22.c08", "en": "Me too!", "zh": "我也是！"},
+    {"id": "u22.c09", "en": "It's OK, but not my favourite.", "zh": "还行，但不是我最喜欢的。", "note": "favourite 是英式拼写（美式 favorite），意思是\"最喜欢的\"。"}
+  ],
+  "words": ["like", "spicy", "food", "durian", "watching", "dramas", "prefer", "think", "too", "expensive", "favourite"],
+  "patterns": {
+    "frames": [
+      {"frame": "I like ___.", "zh": "我喜欢……", "usage": "说你喜欢的东西或喜欢做的事。喜欢\"做\"某事时，动作后面加 ing（I like walking）。"},
+      {"frame": "I don't like ___.", "zh": "我不喜欢……", "usage": "说你不喜欢的东西。只在 like 前面加 don't，后面放法和 I like 一样。"},
+      {"frame": "I think ___.", "zh": "我觉得……", "usage": "说你的看法。I think 后面直接接一句完整的话，不用加\"的是\"之类的词。"}
+    ],
+    "examples": [
+      {"id": "u22.e01", "scene": "周末和朋友在楼下的咖啡店，朋友问你平时喝什么。", "en": "I like kopi.", "zh": "我喜欢喝 kopi。", "note": "kopi = 新加坡本地咖啡"},
+      {"id": "u22.e02", "scene": "邻居 auntie 要请你喝 teh，可是你不喜欢加奶的。", "en": "I don't like milk.", "zh": "我不喜欢喝奶。", "note": "teh = 本地加奶的茶", "accept": ["I do not like milk."]},
+      {"id": "u22.e03", "scene": "同事问你新学期的课程表排得怎么样。", "en": "I think it's fine.", "zh": "我觉得还可以。", "accept": ["I think it is fine."]},
+      {"id": "u22.e04", "scene": "在商场买衣服，店员拿了两种颜色给你挑。", "en": "I like this colour.", "zh": "我喜欢这个颜色。"},
+      {"id": "u22.e05", "scene": "一位家长问你喜不喜欢当老师。", "en": "I like teaching children.", "zh": "我喜欢教小孩子。"},
+      {"id": "u22.e06", "scene": "诊所排了很久的队，朋友打电话问你还好吗。", "en": "I don't like waiting.", "zh": "我不喜欢等。", "accept": ["I do not like waiting."]},
+      {"id": "u22.e07", "scene": "在巴士站等了二十分钟，车还没来。", "en": "I think the bus is late.", "zh": "我觉得巴士迟到了。"},
+      {"id": "u22.e08", "scene": "家长问她儿子的华文怎么样，你觉得他要多练。", "en": "I think he needs more practice.", "zh": "我觉得他需要多练习。"},
+      {"id": "u22.e09", "scene": "楼下的邻居问你晚上一般做什么。", "en": "I like walking in the park after dinner.", "zh": "我喜欢晚饭后在公园散步。"},
+      {"id": "u22.e10", "scene": "家长问哪个班适合她女儿，你推荐星期六的班。", "en": "I think this class is good for her.", "zh": "我觉得这个班适合她。", "note": "good for her = 适合她、对她好"}
+    ]
+  },
+  "daily": [
+    {"id": "u22.d01", "word": "music", "scene": "坐 MRT 的时候，朋友问你耳机里在听什么。", "en": "I like Chinese music.", "zh": "我喜欢中文音乐。", "note": "music = 音乐"},
+    {"id": "u22.d02", "word": "song", "scene": "在咖啡店听到一首好听的歌，你跟朋友说。", "en": "This song is very nice.", "zh": "这首歌很好听。"},
+    {"id": "u22.d03", "word": "sing", "scene": "朋友叫你一起去唱 K，你有点不好意思。", "en": "I can't sing well.", "zh": "我唱得不好。", "accept": ["I cannot sing well."]},
+    {"id": "u22.d04", "word": "dance", "scene": "晚上楼下的 aunties 在跳舞，你拉着朋友一起去。", "en": "Let's dance together!", "zh": "我们一起跳舞吧！", "accept": ["Let's dance together."]},
+    {"id": "u22.d05", "word": "hobby", "scene": "和新认识的邻居聊天，你想多了解她。", "en": "What is your hobby?", "zh": "你的爱好是什么？", "note": "hobby = 爱好", "accept": ["What's your hobby?"]},
+    {"id": "u22.d06", "word": "interesting", "scene": "在图书馆，朋友问你借的那本书好不好看。", "en": "This story is very interesting.", "zh": "这个故事很有意思。", "note": "interesting = 有意思的"},
+    {"id": "u22.d07", "word": "boring", "scene": "老公问你那本新书看完没有，你只看了几页。", "en": "This book is boring.", "zh": "这本书很无聊。", "note": "boring = 无聊的、没意思的"},
+    {"id": "u22.d08", "word": "love", "scene": "邻居送你一盒榴莲，问你喜不喜欢。", "en": "I love durian!", "zh": "我超爱榴莲！", "note": "love 比 like 更喜欢"},
+    {"id": "u22.d09", "word": "enjoy", "scene": "星期五晚上，在电梯里和邻居分开时。", "en": "Enjoy your weekend!", "zh": "周末玩得开心！", "note": "enjoy = 好好享受"},
+    {"id": "u22.d10", "word": "badminton", "scene": "朋友问你平时做什么运动。", "en": "I like badminton.", "zh": "我喜欢打羽毛球。", "note": "badminton = 羽毛球"},
+    {"id": "u22.d11", "word": "karaoke", "scene": "星期六下午，你在 WhatsApp 上约朋友晚上出去玩。", "en": "Let's go to karaoke tonight!", "zh": "今晚我们去唱 K 吧！", "note": "karaoke = 卡拉 OK、唱 K", "accept": ["Let's go to karaoke tonight."]},
+    {"id": "u22.d12", "word": "sour", "scene": "朋友让你尝一口她买的酸梅汁。", "en": "It's too sour for me.", "zh": "对我来说太酸了。", "accept": ["It is too sour for me."]}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期六晚上",
+      "lines": [
+        {"en": "On Saturday night, I meet my friend.", "zh": "星期六晚上，我和朋友见面。"},
+        {"en": "We eat at the hawker centre.", "zh": "我们在 hawker centre 吃饭。"},
+        {"en": "I like spicy food.", "zh": "我喜欢吃辣。"},
+        {"en": "\"I don't like spicy food!\"", "zh": "朋友说：\"我不喜欢吃辣！\""},
+        {"en": "After dinner, we go to karaoke.", "zh": "吃完晚饭，我们去唱 K。"},
+        {"en": "I love music, but I can't sing well.", "zh": "我很喜欢音乐，可是我唱得不好。"},
+        {"en": "Her favourite song is very old.", "zh": "她最喜欢的歌很老。"},
+        {"en": "We sing it together.", "zh": "我们一起唱这首歌。"},
+        {"en": "We dance too. It's very fun!", "zh": "我们还跳舞。真好玩！"},
+        {"en": "I think karaoke is my new hobby.", "zh": "我觉得唱 K 是我的新爱好。"},
+        {"en": "It's not too expensive.", "zh": "也不算太贵。"},
+        {"en": "It's a happy night.", "zh": "这是一个开心的晚上。"}
+      ]
+    },
+    "dialogue": {
+      "title": "咖啡店里的邻居",
+      "setting": "星期天早上，Amy 在楼下的咖啡店遇到住同一层的邻居 Auntie Lim。",
+      "cast": [
+        {"name": "Auntie Lim", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Auntie Lim", "en": "Morning, Amy! Come, sit with me.", "zh": "早啊，Amy！来，跟我一起坐。"},
+        {"speaker": "Amy", "en": "Good morning! Thank you.", "zh": "早上好！谢谢。"},
+        {"speaker": "Auntie Lim", "en": "What would you like to drink?", "zh": "你想喝什么？"},
+        {"speaker": "Amy", "en": "I prefer tea. No milk, please.", "zh": "我比较喜欢喝茶。不要加奶，谢谢。"},
+        {"speaker": "Auntie Lim", "en": "I like kopi. Do you like durian?", "zh": "我喜欢喝 kopi。你喜欢榴莲吗？"},
+        {"speaker": "Amy", "en": "No, I don't like durian.", "zh": "不，我不喜欢榴莲。"},
+        {"speaker": "Auntie Lim", "en": "Really? I love durian!", "zh": "真的吗？我超爱榴莲！"},
+        {"speaker": "Auntie Lim", "en": "What do you like to do on Sunday?", "zh": "你星期天喜欢做什么？"},
+        {"speaker": "Amy", "en": "I like walking in the park after dinner.", "zh": "我喜欢晚饭后在公园散步。"},
+        {"speaker": "Auntie Lim", "en": "Me too! Let's walk together tonight.", "zh": "我也是！今晚一起去散步吧。"},
+        {"speaker": "Amy", "en": "Sure! What is your hobby?", "zh": "好啊！您的爱好是什么？"},
+        {"speaker": "Auntie Lim", "en": "I love karaoke! I sing every Sunday.", "zh": "我超爱唱 K！我每个星期天都唱。"},
+        {"speaker": "Amy", "en": "Really? I think it's very interesting.", "zh": "真的吗？我觉得很有意思。"},
+        {"speaker": "Auntie Lim", "en": "Come with me next time!", "zh": "下次跟我一起去！"}
+      ]
+    }
+  },
+  "grammar": {
+    "title": "喜欢做某事：like + 动词ing",
+    "body": "说\"喜欢做某事\"时，动词后面加 ing。中文说\"我喜欢看电视\"，英语不能说 I like watch TV，要说 I like watching TV。",
+    "examples": [
+      {"en": "I like watching TV.", "zh": "我喜欢看电视。"},
+      {"en": "I like cooking.", "zh": "我喜欢做饭。"},
+      {"en": "She likes walking in the park.", "zh": "她喜欢在公园散步。"}
+    ]
+  },
+  "phonics": "p20",
+  "dialogue": {
+    "title": "和同事聊爱好",
+    "setting": "休息时间，同事 Mei Ling 和你聊天。",
+    "npcName": "Mei Ling",
+    "npcVoice": "bf_isabella",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Amy, do you like durian?", "zh": "Amy，你喜欢榴莲吗？"},
+        "replies": [
+          {"en": "No, I don't like durian.", "zh": "不，我不喜欢榴莲。", "next": "n2"},
+          {"en": "Yes! I like durian.", "zh": "喜欢！我喜欢榴莲。", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "Haha. What food do you like?", "zh": "哈哈。那你喜欢吃什么？"},
+        "replies": [
+          {"en": "I like spicy food.", "zh": "我喜欢辣的食物。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Me too! What do you like to do after work?", "zh": "我也是！下班后你喜欢做什么？"},
+        "replies": [
+          {"en": "I like watching dramas.", "zh": "我喜欢看电视剧。", "next": "n4"},
+          {"en": "I like walking in the park.", "zh": "我喜欢在公园散步。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "Nice. Have you tried the new bubble tea shop? It's eight dollars a cup!", "zh": "不错。你去过新开的那家珍珠奶茶店吗？一杯八块！"},
+        "replies": [
+          {"en": "I think it's too expensive.", "zh": "我觉得太贵了。", "next": "end"},
+          {"en": "I prefer tea.", "zh": "我更喜欢喝茶。", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Haha, you're right!", "zh": "哈哈，你说得对！"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天用英语说出三样你喜欢的东西：I like ___. 再说一样不喜欢的：I don't like ___."
+}

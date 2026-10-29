@@ -1,0 +1,147 @@
+{
+  "id": "u26",
+  "kind": "life",
+  "title": "听懂新加坡式英语 Singlish",
+  "titleEn": "Can or not?",
+  "goal": "能听懂新加坡人常说的 Singlish，用标准、礼貌的英语回答。",
+  "chunks": [
+    {"id": "u26.c01", "en": "Yes, I can.", "zh": "可以。", "note": "你会常听到 \"Can or not?\"，意思是\"可以吗？\"。回答 Yes, I can. 就行，本地人也常直接说 \"Can!\"。"},
+    {"id": "u26.c02", "en": "I have finished already.", "zh": "我已经做完了。", "note": "你会听到 \"Finish already?\"（做完了吗？）。already 在 Singlish 里就像中文的\"了\"。"},
+    {"id": "u26.c03", "en": "Do you have a pen?", "zh": "你有笔吗？", "note": "你会听到 \"Got pen or not?\"。Singlish 的 got 就是 have（有）。"},
+    {"id": "u26.c04", "en": "Let's go and eat.", "zh": "我们去吃饭吧。", "note": "你会听到 \"Let's go makan!\"。makan 是马来语的\"吃饭\"，新加坡人都这样说。"},
+    {"id": "u26.c05", "en": "Is this seat taken?", "zh": "这个位子有人吗？", "note": "小贩中心桌上放了纸巾包，表示已经 \"chope\"（占座）了，就不要坐了。"},
+    {"id": "u26.c06", "en": "No problem.", "zh": "没问题。", "note": "句尾的 lah、leh、lor，就像中文的\"啦、咧、咯\"，只是语气，听到不用管它。比如 \"Can lah!\" 就是\"可以啦！\"。"},
+    {"id": "u26.c07", "en": "It's very crowded.", "zh": "人好多。", "note": "你会听到 \"Wah, so packed!\"。wah 表示惊讶，packed 就是很挤、人很多。"},
+    {"id": "u26.c08", "en": "See you later.", "zh": "待会见。"}
+  ],
+  "words": ["can", "already", "finished", "pen", "eat", "seat", "taken", "problem", "crowded", "later"],
+  "patterns": {
+    "frames": [
+      {"frame": "Is this ___?", "zh": "这个是……吗？", "usage": "指着眼前的东西问\"这个是不是……\"。this = 这个，就在你手边、眼前。"},
+      {"frame": "Is it ___?", "zh": "它……吗？/ ……吗？", "usage": "问刚才说到的那件事、那个地方\"是不是……\"。本地人常说成 \"…… or not?\"（Spicy or not?），意思一样，你用 Is it ___? 回问就很标准。"}
+    ],
+    "examples": [
+      {"id": "u26.e01", "scene": "在 hawker centre 想点一碗 mee siam，先问一下摊主。", "en": "Is it spicy?", "zh": "辣不辣？", "note": "你会听到 \"Spicy or not?\"，就是 Is it spicy?"},
+      {"id": "u26.e02", "scene": "在 NTUC 看到有人请大家试吃新饼干。", "en": "Is it free?", "zh": "是免费的吗？", "note": "free = 免费的（也有\"有空\"的意思）"},
+      {"id": "u26.e03", "scene": "同事放了一杯 kopi 在你桌上。", "en": "Is this for me?", "zh": "这是给我的吗？"},
+      {"id": "u26.e04", "scene": "中午 hawker centre 人很多，一张桌子上没放纸巾包。", "en": "Is this seat taken?", "zh": "这个位子有人吗？", "note": "seat taken = 位子被人占了"},
+      {"id": "u26.e05", "scene": "在 NTUC 看到一盒鸡蛋贴着黄色的价钱标签。", "en": "Is this on sale?", "zh": "这个在打折吗？", "note": "on sale = 在打折"},
+      {"id": "u26.e06", "scene": "前台沙发上有个书包，你问旁边的家长。", "en": "Is this your bag?", "zh": "这是您的包吗？"},
+      {"id": "u26.e07", "scene": "同事说下班一起去一家新的餐厅吃饭。", "en": "Is it far from here?", "zh": "离这里远吗？", "note": "你会听到 \"Far or not?\"，就是 Is it far?"},
+      {"id": "u26.e08", "scene": "星期天不舒服，打电话问诊所开不开门。", "en": "Is it open on Sunday?", "zh": "星期天开门吗？"},
+      {"id": "u26.e09", "scene": "在巴士站，一辆车来了，你不确定是不是去 Orchard 的。", "en": "Is this the bus to Orchard?", "zh": "这辆车去 Orchard 吗？", "note": "the bus to Orchard = 去 Orchard 的巴士"},
+      {"id": "u26.e10", "scene": "在小贩摊位点完餐，你身上没带现金。", "en": "Is it OK to pay by PayNow?", "zh": "可以用 PayNow 付吗？", "note": "Is it OK to……? = 可以……吗？", "accept": ["Is it okay to pay by PayNow?"]}
+    ]
+  },
+  "daily": [
+    {"id": "u26.d01", "word": "accent", "scene": "在巴士上，司机说话很快、口音很重，朋友问你听懂了没有。", "en": "I don't understand his accent.", "zh": "我听不懂他的口音。", "note": "accent = 口音"},
+    {"id": "u26.d02", "word": "local", "scene": "在 hawker centre，新朋友问你喜欢吃什么。", "en": "I like local food.", "zh": "我喜欢本地菜。", "note": "local = 本地的"},
+    {"id": "u26.d03", "word": "laugh", "scene": "你说错了一个英语词，朋友在旁边笑。", "en": "Please don't laugh at me!", "zh": "别笑我啦！", "note": "laugh at = 笑（某人）"},
+    {"id": "u26.d04", "word": "Malay", "scene": "朋友说 makan，你想知道这是哪种话。", "en": "Is it a Malay word?", "zh": "这是马来语的词吗？", "note": "Malay = 马来语。Singlish 里有很多马来语，比如 makan（吃饭）"},
+    {"id": "u26.d05", "word": "auntie", "scene": "在 hawker centre 买完饭，你跟摊主阿姨道谢。", "en": "Thank you, auntie!", "zh": "谢谢阿姨！", "note": "auntie = 新加坡人对年长女士的礼貌叫法，不一定是亲戚"},
+    {"id": "u26.d06", "word": "packed", "scene": "晚上六点的 MRT 上，朋友打电话问你在哪里。", "en": "The MRT is packed.", "zh": "地铁上挤满了人。", "note": "packed = 挤满了人，本地人常说 so packed"},
+    {"id": "u26.d07", "word": "chat", "scene": "朋友打电话来，可是你正在 NTUC 排队付钱。", "en": "Can we chat later?", "zh": "我们晚点再聊好吗？", "note": "chat = 聊天"},
+    {"id": "u26.d08", "word": "funny", "scene": "朋友问你新邻居 uncle 人怎么样。", "en": "He is very funny.", "zh": "他很风趣。"},
+    {"id": "u26.d09", "word": "joke", "scene": "朋友一本正经地说了一句话，然后笑了起来。", "en": "Is it a joke?", "zh": "是开玩笑的吗？", "note": "joke = 玩笑"},
+    {"id": "u26.d10", "word": "polite", "scene": "在巴士上，一个年轻人给老人让座，朋友夸了他一句。", "en": "He is very polite.", "zh": "他很有礼貌。"},
+    {"id": "u26.d11", "word": "thirsty", "scene": "周末走了很久的路，看到一家饮料摊。", "en": "I'm thirsty. Let's get a drink.", "zh": "我渴了，我们去买杯喝的吧。", "accept": ["I am thirsty. Let's get a drink."]},
+    {"id": "u26.d12", "word": "language", "scene": "在公园认识了一位新邻居，你想知道她在家说什么话。", "en": "What language do you speak at home?", "zh": "你在家说什么语言？"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 和本地朋友去吃饭",
+      "lines": [
+        {"en": "On Saturday, I meet my local friend.", "zh": "星期六，我和本地朋友见面。"},
+        {"en": "We take the MRT. It's packed!", "zh": "我们坐地铁，好挤！"},
+        {"en": "We eat at a hawker centre.", "zh": "我们在 hawker centre 吃饭。"},
+        {"en": "It's very crowded and very loud.", "zh": "人很多，也很吵。"},
+        {"en": "\"Is this seat taken?\" I ask an uncle.", "zh": "\"这个位子有人吗？\"我问一位 uncle。"},
+        {"en": "\"Can, can!\" The uncle is very funny.", "zh": "\"可以，可以！\"这位 uncle 很风趣。"},
+        {"en": "We have local food.", "zh": "我们吃本地菜。"},
+        {"en": "It's spicy. I like it!", "zh": "有点辣，我喜欢！"},
+        {"en": "I learn a new Malay word today.", "zh": "今天我学了一个新的马来语词。"},
+        {"en": "I'm thirsty. I get a kopi.", "zh": "我渴了，买了一杯咖啡。"},
+        {"en": "It's a fun day with my friend.", "zh": "和朋友过了开心的一天。"}
+      ]
+    },
+    "dialogue": {
+      "title": "鸡饭摊",
+      "setting": "中午，Amy 在楼下的 hawker centre 买鸡饭。摊主 uncle 说话很有新加坡味道，买完她去找位子。",
+      "cast": [
+        {"name": "Uncle", "voice": "bm_lewis"},
+        {"name": "Auntie", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Uncle", "en": "Yes, what you want?", "zh": "要什么？"},
+        {"speaker": "Amy", "en": "One chicken rice, please. Is it spicy?", "zh": "一份鸡饭，谢谢。辣吗？"},
+        {"speaker": "Uncle", "en": "Not spicy one. You want spicy or not?", "zh": "不辣的。你要辣的吗？"},
+        {"speaker": "Amy", "en": "No, thank you.", "zh": "不用，谢谢。"},
+        {"speaker": "Uncle", "en": "Eat here or take away?", "zh": "在这里吃还是带走？"},
+        {"speaker": "Amy", "en": "Eat here, please.", "zh": "在这里吃。"},
+        {"speaker": "Uncle", "en": "OK, $4.", "zh": "好，四块钱。"},
+        {"speaker": "Amy", "en": "Is it OK to pay by PayNow?", "zh": "可以用 PayNow 付吗？"},
+        {"speaker": "Uncle", "en": "Can, can! No problem.", "zh": "可以，可以！没问题。"},
+        {"speaker": "Amy", "en": "Excuse me, is this seat taken?", "zh": "不好意思，这个位子有人吗？"},
+        {"speaker": "Auntie", "en": "No, you can sit here.", "zh": "没有，你可以坐这里。"},
+        {"speaker": "Amy", "en": "Thank you. It's very crowded today.", "zh": "谢谢。今天人好多。"},
+        {"speaker": "Auntie", "en": "Yes, very packed today.", "zh": "是啊，今天挤满了人。"},
+        {"speaker": "Amy", "en": "The chicken rice is very good!", "zh": "这个鸡饭很好吃！"}
+      ]
+    }
+  },
+  "phonics": "p24",
+  "dialogue": {
+    "title": "和本地同事去吃饭",
+    "setting": "同事 Ah Hock 说话很有新加坡味道，试着听懂他，用你学过的英语回答。",
+    "npcName": "Ah Hock",
+    "npcVoice": "bm_lewis",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Amy, the attendance list, you finish already or not?", "zh": "Amy，那个点名表，你做完了没有？"},
+        "replies": [
+          {"en": "Yes, I have finished already.", "zh": "做完了，我已经做完了。", "next": "n2"},
+          {"en": "Not yet. Sorry.", "zh": "还没有，不好意思。", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "OK, can lah. Eh, got pen or not? Mine no more ink.", "zh": "好，没事啦。诶，有笔吗？我的没水了。"},
+        "replies": [
+          {"en": "Yes, I have a pen.", "zh": "有，我有笔。", "next": "n3"},
+          {"en": "Yes. Is this pen OK?", "zh": "有。这支笔可以吗？", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Thanks ah. Lunch time already. Let's go makan!", "zh": "谢啦。到午饭时间了，走，去吃饭！"},
+        "replies": [
+          {"en": "OK! Let's go and eat.", "zh": "好！我们去吃饭吧。", "next": "n4"},
+          {"en": "OK! Is it far?", "zh": "好！远不远？", "next": "n3b"}
+        ]
+      },
+      {
+        "id": "n3b",
+        "npc": {"en": "Not far lah, the hawker centre downstairs only.", "zh": "不远啦，就楼下的小贩中心。"},
+        "replies": [
+          {"en": "OK! Let's go and eat.", "zh": "好！我们去吃饭吧。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "Wah, so packed today. That table people chope already.", "zh": "哇，今天好多人。那张桌子已经有人占了。"},
+        "replies": [
+          {"en": "It's very crowded.", "zh": "人好多啊。", "next": "end"},
+          {"en": "Is this seat taken?", "zh": "（问旁边的人）这个位子有人吗？", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Never mind, we try the other side lah.", "zh": "没关系，我们去那边看看啦。"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天留意身边新加坡人说话，听到 lah、can、already、makan、chope 中的任何一个，就在心里给自己加一分！"
+}

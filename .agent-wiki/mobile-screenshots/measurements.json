@@ -1,0 +1,226 @@
+[
+  {
+    "page": "今天",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "课程",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "📄 汇总",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": true,
+    "shellHeight": 926
+  },
+  {
+    "page": "← 返回",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "复习",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "我的",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "设置 →",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": true,
+    "shellHeight": 926
+  },
+  {
+    "page": "← 返回",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "速查 →",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "课程",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "开始上课",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926,
+    "actionTop": 852.328125,
+    "lastContentBottom": 403.21875
+  },
+  {
+    "page": "下一步 →",
+    "width": 428,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926,
+    "actionTop": 852.328125,
+    "lastContentBottom": 649.46875
+  },
+  {
+    "page": "今天",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "课程",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "📄 汇总",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": true,
+    "shellHeight": 926
+  },
+  {
+    "page": "← 返回",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "复习",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "我的",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "设置 →",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": true,
+    "shellHeight": 926
+  },
+  {
+    "page": "← 返回",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "速查 →",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "课程",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926
+  },
+  {
+    "page": "开始上课",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926,
+    "actionTop": 852.328125,
+    "lastContentBottom": 403.21875
+  },
+  {
+    "page": "下一步 →",
+    "width": 320,
+    "height": 926,
+    "horizontalOverflow": false,
+    "mainOverflow": false,
+    "scrollable": false,
+    "shellHeight": 926,
+    "actionTop": 852.328125,
+    "lastContentBottom": 721.71875
+  }
+]

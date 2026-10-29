@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./resources/web-reports/desktop-node.tsbuildinfo",
+    "lib": ["ES2023"],
+    "types": ["node"]
+  },
+  "include": [
+    "electron.vite.config.ts",
+    "vitest.config.ts",
+    "src/main/**/*",
+    "src/preload/**/*",
+    "src/shared/**/*",
+    "src/web/assets/types.ts",
+    "src/web/assets/manifest.ts",
+    "src/web/pwa/range.ts",
+    "scripts/**/*",
+    "tests/**/*"
+  ]
+}

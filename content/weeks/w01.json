@@ -1,0 +1,43 @@
+{
+  "week": 1,
+  "stories": {
+    "narrative": {
+      "title": "Amy 学英语的第一周",
+      "lines": [
+        {"en": "Hi, I'm Amy. I'm from China.", "zh": "你好，我是 Amy，我来自中国。"},
+        {"en": "I live near the MRT with my husband.", "zh": "我和老公住在 MRT 站附近。"},
+        {"en": "I work at a learning centre.", "zh": "我在一家补习中心工作。"},
+        {"en": "My English is not very good.", "zh": "我的英语不太好。"},
+        {"en": "English is not easy.", "zh": "英语不容易。"},
+        {"en": "I speak a little English.", "zh": "可是我会说一点英语。"},
+        {"en": "Today I see my new neighbour.", "zh": "今天我遇到了新邻居。"},
+        {"en": "She speaks very fast.", "zh": "她说得好快。"},
+        {"en": "\"Sorry, I don't understand. Slowly, please.\"", "zh": "\"不好意思，我听不懂。请说慢一点。\""},
+        {"en": "She can speak Chinese!", "zh": "原来她会说华语！"},
+        {"en": "\"Nice to meet you!\"", "zh": "\"很高兴认识你！\""},
+        {"en": "I'm still learning English.", "zh": "我还在学英语呢。"}
+      ]
+    },
+    "dialogue": {
+      "title": "朋友的新家在哪里？",
+      "setting": "星期五晚上，朋友 Lily 打电话给 Amy，请她周末去新家玩。",
+      "cast": [
+        {"name": "Lily", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Lily", "en": "Hi Amy! How are you?", "zh": "嗨，Amy！你好吗？"},
+        {"speaker": "Amy", "en": "Hi Lily! I'm fine, thank you.", "zh": "嗨，Lily！我很好，谢谢。"},
+        {"speaker": "Lily", "en": "I have a new home. Come this weekend!", "zh": "我搬新家了，这个周末来玩吧！"},
+        {"speaker": "Amy", "en": "Nice! What is your address?", "zh": "好啊！你的地址是什么？"},
+        {"speaker": "Lily", "en": "It's near the MRT.", "zh": "在 MRT 站附近。"},
+        {"speaker": "Amy", "en": "Sorry, I can't hear you. Can you say that again?", "zh": "不好意思，我听不到。可以再说一遍吗？"},
+        {"speaker": "Lily", "en": "It's near the MRT.", "zh": "在 MRT 站附近。"},
+        {"speaker": "Amy", "en": "Sorry, I don't understand. Can you write it down?", "zh": "不好意思，我不太明白。你可以写下来吗？"},
+        {"speaker": "Lily", "en": "Sure!", "zh": "好的！"},
+        {"speaker": "Amy", "en": "Thank you. Can you show me on the map?", "zh": "谢谢。你可以在地图上指给我看吗？"},
+        {"speaker": "Lily", "en": "Sure! See you on the weekend.", "zh": "没问题！周末见。"},
+        {"speaker": "Amy", "en": "See you! Have a nice day!", "zh": "再见！祝你今天愉快！"}
+      ]
+    }
+  }
+}

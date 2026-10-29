@@ -1,0 +1,161 @@
+{
+  "id": "u05",
+  "kind": "work",
+  "title": "前台②：课程咨询",
+  "titleEn": "We have a free trial class",
+  "goal": "家长来问课程时，能问孩子的年龄和年级，介绍试听课、上课时间和学费。",
+  "chunks": [
+    {"id": "u05.c01", "en": "How old is your child?", "zh": "你的孩子几岁？"},
+    {"id": "u05.c02", "en": "Which level is she in?", "zh": "她读几年级？", "note": "新加坡说 Primary 1（小一）、P1。男孩就说 Which level is he in?"},
+    {"id": "u05.c03", "en": "We have a free trial class.", "zh": "我们有免费试听课。", "note": "trial class = 试听课，free = 免费。"},
+    {"id": "u05.c04", "en": "The class is on Saturday at 10am.", "zh": "课在星期六早上十点。"},
+    {"id": "u05.c05", "en": "Each class is 90 minutes.", "zh": "每节课 90 分钟。"},
+    {"id": "u05.c06", "en": "The fee is $280 a month.", "zh": "学费每个月 280 块。", "note": "$280 读作 two hundred and eighty dollars。"},
+    {"id": "u05.c07", "en": "Do you want to try?", "zh": "你想试一下吗？"},
+    {"id": "u05.c08", "en": "Can I have your phone number?", "zh": "可以给我你的电话号码吗？"},
+    {"id": "u05.c09", "en": "I will WhatsApp you.", "zh": "我会发 WhatsApp 给你。", "note": "新加坡人常常把 WhatsApp 当动词用，意思是\"发 WhatsApp 消息\"。"}
+  ],
+  "words": ["old", "level", "free", "trial", "each", "minutes", "fee", "month", "want", "try"],
+  "patterns": {
+    "frames": [
+      {"frame": "Do you want to ___?", "zh": "你想……吗？/ 要不要……？", "usage": "问对方想不想做一件事，也可以用来客气地邀请。框不变，把要做的事放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u05.e01", "scene": "家长听完试听课的介绍，看起来有点兴趣。", "en": "Do you want to try?", "zh": "你想试一下吗？"},
+      {"id": "u05.e02", "scene": "下班后你要去 hawker centre 吃晚饭，问一起住的朋友。", "en": "Do you want to come?", "zh": "你要一起来吗？"},
+      {"id": "u05.e03", "scene": "在 MRT 上，一位老人家站在你旁边，你站起来让座。", "en": "Do you want to sit here?", "zh": "你要坐这里吗？"},
+      {"id": "u05.e04", "scene": "家长报完名，你问他是不是现在交学费。", "en": "Do you want to pay now?", "zh": "你要现在付钱吗？"},
+      {"id": "u05.e05", "scene": "周末你和朋友们在公园野餐，看到住楼上的邻居路过。", "en": "Do you want to join us?", "zh": "要不要和我们一起？", "note": "join us = 加入我们、和我们一起"},
+      {"id": "u05.e06", "scene": "刚搬了新家，朋友在电话里问你新家怎么样。", "en": "Do you want to see my new home?", "zh": "你想来看看我的新家吗？", "accept": ["Do you want to come and see my new home?"]},
+      {"id": "u05.e07", "scene": "家里来了客人，大热天刚进门。", "en": "Do you want to drink some water?", "zh": "要喝点水吗？", "accept": ["Do you want to drink water?"]},
+      {"id": "u05.e08", "scene": "家长想知道孩子上课的情况，老师刚好下课出来。", "en": "Do you want to speak to the teacher?", "zh": "你想和老师说一下吗？", "note": "speak to = 和……说话", "accept": ["Do you want to talk to the teacher?"]},
+      {"id": "u05.e09", "scene": "家长在电话里问试听课，你问他要不要先约一节。", "en": "Do you want to book a trial class?", "zh": "你要预约一节试听课吗？", "note": "book = 预约（这里不是\"书\"）"},
+      {"id": "u05.e10", "scene": "周末早上你要去巴刹买菜，问家里人要不要一起去。", "en": "Do you want to go to the market with me?", "zh": "你要和我一起去巴刹吗？", "note": "market = 菜市场、巴刹"}
+    ]
+  },
+  "daily": [
+    {"id": "u05.d01", "word": "son", "scene": "在 HDB 楼下，邻居问你儿子几岁了。", "en": "My son is 8 years old.", "zh": "我儿子 8 岁了。", "accept": ["My son is 8."]},
+    {"id": "u05.d02", "word": "daughter", "scene": "白天朋友打电话来，问你女儿在不在家。", "en": "My daughter is at school now.", "zh": "我女儿现在在学校。", "note": "at school = 在学校（上学）"},
+    {"id": "u05.d03", "word": "school", "scene": "新搬来的邻居问附近有没有小学。", "en": "The school is near my home.", "zh": "学校就在我家附近。"},
+    {"id": "u05.d04", "word": "young", "scene": "邻居的女儿说她才十八岁，已经在打工了。", "en": "You are very young!", "zh": "你好年轻啊！", "accept": ["You're very young!"]},
+    {"id": "u05.d05", "word": "learn", "scene": "朋友问你为什么每天晚上都戴着耳机听东西。", "en": "I want to learn English.", "zh": "我想学英语。"},
+    {"id": "u05.d06", "word": "swimming", "scene": "周末天气很热，你问朋友想不想去游泳。", "en": "Do you want to go swimming?", "zh": "你想去游泳吗？", "note": "go swimming = 去游泳"},
+    {"id": "u05.d07", "word": "cook", "scene": "新认识的朋友问你会不会做饭。", "en": "Sorry, I can't cook.", "zh": "不好意思，我不会做饭。", "accept": ["I can't cook."]},
+    {"id": "u05.d08", "word": "together", "scene": "早上出门，邻居说她也要去 MRT 站。", "en": "We can go together.", "zh": "我们可以一起走。", "note": "together = 一起"},
+    {"id": "u05.d09", "word": "park", "scene": "朋友问你周末一般去哪里散步。", "en": "The park is near my home.", "zh": "公园就在我家附近。"},
+    {"id": "u05.d10", "word": "parents", "scene": "新认识的朋友问你爸爸妈妈是不是也在新加坡。", "en": "My parents are in China.", "zh": "我爸妈在中国。", "note": "parents = 父母、爸妈"},
+    {"id": "u05.d11", "word": "teach", "scene": "邻居阿姨很会包粽子，你也想学。", "en": "Can you teach me?", "zh": "你可以教我吗？"},
+    {"id": "u05.d12", "word": "first", "scene": "朋友第一次和你来 hawker centre，看起来什么都很新鲜。", "en": "Is it your first time?", "zh": "这是你第一次来吗？", "note": "first time = 第一次"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 第一次游泳",
+      "lines": [
+        {"en": "It's Saturday. I'm not busy today.", "zh": "今天是星期六，我不忙。"},
+        {"en": "I call my friend.", "zh": "我给朋友打电话。"},
+        {"en": "\"Do you want to go swimming?\"", "zh": "\"你想去游泳吗？\""},
+        {"en": "We go swimming together at noon.", "zh": "中午我们一起去游泳。"},
+        {"en": "The weather is very hot.", "zh": "天气很热。"},
+        {"en": "I'm not very good at swimming.", "zh": "我游泳游得不太好。"},
+        {"en": "It's my first time.", "zh": "这是我第一次游泳。"},
+        {"en": "My friend can teach me.", "zh": "朋友可以教我。"},
+        {"en": "Now we are very hungry.", "zh": "游完以后，我们都很饿。"},
+        {"en": "We have chicken rice near the park.", "zh": "我们在公园附近吃鸡饭。"},
+        {"en": "\"Do you want to come again on Sunday?\"", "zh": "\"星期天还想再来吗？\""},
+        {"en": "Yes! I want to learn swimming.", "zh": "想！我想学会游泳。"}
+      ]
+    },
+    "dialogue": {
+      "title": "奶奶来问课",
+      "setting": "星期三下午，一位奶奶走进补习中心，想给孙子报华文课。",
+      "cast": [
+        {"name": "Mrs Tan", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Tan", "en": "Hi! Do you have a Chinese class?", "zh": "你好！你们有华文课吗？"},
+        {"speaker": "Amy", "en": "Yes, we have. How old is your child?", "zh": "有的。孩子几岁？"},
+        {"speaker": "Mrs Tan", "en": "He is 6. I'm his grandma.", "zh": "他 6 岁。我是他奶奶。"},
+        {"speaker": "Amy", "en": "Which level is he in?", "zh": "他读几年级？"},
+        {"speaker": "Mrs Tan", "en": "Sorry, can you say that again?", "zh": "不好意思，可以再说一遍吗？"},
+        {"speaker": "Amy", "en": "Which level is he in? Is he in school?", "zh": "他读几年级？上学了吗？"},
+        {"speaker": "Mrs Tan", "en": "No. He is very young.", "zh": "还没有，他还很小。"},
+        {"speaker": "Amy", "en": "We have a free trial class. Do you want to try?", "zh": "我们有免费试听课。想试一下吗？"},
+        {"speaker": "Mrs Tan", "en": "Yes. What time is the class?", "zh": "好啊。几点上课？"},
+        {"speaker": "Amy", "en": "The class is on Saturday at 10am.", "zh": "课在星期六早上十点。"},
+        {"speaker": "Mrs Tan", "en": "How much is the fee?", "zh": "学费多少？"},
+        {"speaker": "Amy", "en": "The fee is $280 a month.", "zh": "学费每个月 280 块。"},
+        {"speaker": "Mrs Tan", "en": "It's very expensive!", "zh": "好贵啊！"},
+        {"speaker": "Amy", "en": "The first class is free!", "zh": "第一节课是免费的！"}
+      ]
+    }
+  },
+  "grammar": {
+    "title": "$280 a month 就是\"每个月 280\"",
+    "body": "价格或者次数后面加 a month / a week，意思是\"每个月 / 每星期\"。这里的 a 不是\"一个\"，而是\"每\"。",
+    "examples": [
+      {"en": "The fee is $280 a month.", "zh": "学费每个月 280 块。"},
+      {"en": "Two classes a week.", "zh": "每星期两节课。"}
+    ]
+  },
+  "phonics": "p03",
+  "dialogue": {
+    "title": "家长来问华文课",
+    "setting": "一位妈妈走进补习中心，想给女儿报华文课。",
+    "npcName": "Mrs Wong",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Hi, I want to ask about Chinese classes for my daughter.", "zh": "你好，我想问一下我女儿的华文课。"},
+        "replies": [
+          {"en": "How old is your child?", "zh": "你的孩子几岁？", "next": "n2"},
+          {"en": "Which level is she in?", "zh": "她读几年级？", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "She's seven. Primary 1 this year.", "zh": "她七岁，今年小一。"},
+        "replies": [
+          {"en": "We have a free trial class.", "zh": "我们有免费试听课。", "next": "n3"},
+          {"en": "We have a free trial class. Do you want to try?", "zh": "我们有免费试听课。你想试一下吗？", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Oh good. When is the class?", "zh": "哦，太好了。什么时候上课？"},
+        "replies": [
+          {"en": "The class is on Saturday at 10am.", "zh": "课在星期六早上十点。", "next": "n4"},
+          {"en": "It's on Saturday at 10am. Do you want to see the classroom?", "zh": "星期六早上十点。你想看看教室吗？", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "How much is the fee?", "zh": "学费多少？"},
+        "replies": [
+          {"en": "The fee is $280 a month.", "zh": "学费每个月 280 块。", "next": "n5"}
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {"en": "Okay, I think we can try.", "zh": "好，我想我们可以试试。"},
+        "replies": [
+          {"en": "Can I have your phone number?", "zh": "可以给我你的电话号码吗？", "next": "n6"}
+        ]
+      },
+      {
+        "id": "n6",
+        "npc": {"en": "Sure, it's 9876 5432.", "zh": "好的，9876 5432。"},
+        "replies": [
+          {"en": "Thank you. I will WhatsApp you.", "zh": "谢谢，我会发 WhatsApp 给你。", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Thank you, see you on Saturday!", "zh": "谢谢，星期六见！"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天有家长来问课程时，试着用英语说一句 We have a free trial class."
+}

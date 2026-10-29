@@ -1,0 +1,11 @@
+[
+  {"text": "answer", "zh": "回答；接（电话）", "hint": {"grade": "yellow", "hanzi": "安瑟", "pinyin": "ān-sè", "note": "w 不发音；英式读法 a 嘴巴张大，像\"昂\"的开头"}},
+  {"text": "make", "zh": "做；制作", "hint": {"grade": "yellow", "hanzi": "妹", "pinyin": "mèi(k)", "note": "k 轻轻收住，不要念成\"妹克\""}},
+  {"text": "friend", "zh": "朋友", "hint": {"grade": "yellow", "hanzi": "弗伦", "pinyin": "f-rèn(d)", "note": "f 和 r 连在一起读；r 嘴唇收圆、舌头不碰上颚；d 只做口型"}},
+  {"text": "near", "zh": "近；在……附近", "hint": {"grade": "yellow", "hanzi": "尼呃", "pinyin": "nī-e", "note": "英式读法结尾不卷舌，\"尼\"后面轻轻带一个\"呃\""}},
+  {"text": "weather", "zh": "天气", "hint": {"grade": "yellow", "hanzi": "威则", "pinyin": "wē-zə", "note": "中间的 th：舌尖轻放在上下牙之间振动，不要读成 z；结尾不卷舌"}},
+  {"text": "rain", "zh": "雨；下雨", "hint": {"grade": "yellow", "hanzi": "瑞", "pinyin": "ruèi(n)", "note": "r 嘴唇先收圆、舌头不碰上颚，不要读成 l；n 收住"}},
+  {"text": "husband", "zh": "丈夫；老公", "hint": {"grade": "yellow", "hanzi": "哈兹本", "pinyin": "hǎ(z)-bèn(d)", "note": "z 轻轻带过；结尾 d 只做口型"}},
+  {"text": "sleep", "zh": "睡觉", "hint": {"grade": "yellow", "hanzi": "斯利", "pinyin": "s-lī(p)", "note": "s 后面直接接 l；ee 拉长；p 只做口型"}},
+  {"text": "Tan", "zh": "陈（新加坡常见姓）", "hint": {"grade": "green", "hanzi": "坦", "pinyin": "tān"}}
+]

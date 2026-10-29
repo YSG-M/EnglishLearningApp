@@ -1,0 +1,42 @@
+{
+  "week": 6,
+  "stories": {
+    "narrative": {
+      "title": "Amy 请病假的一天",
+      "lines": [
+        {"en": "It's Monday. I'm not feeling well.", "zh": "今天是星期一，我不太舒服。"},
+        {"en": "I have a headache and a cough.", "zh": "我头痛，还咳嗽。"},
+        {"en": "\"Sorry, I need to see a doctor today.\"", "zh": "\"不好意思，我今天要去看医生。\""},
+        {"en": "There is a long queue at the clinic.", "zh": "诊所里排着很长的队。"},
+        {"en": "The nurse is very kind.", "zh": "护士人很好。"},
+        {"en": "\"Is it serious?\"", "zh": "\"严重吗？\""},
+        {"en": "\"I need an MC, please.\"", "zh": "\"我需要病假单。\""},
+        {"en": "I take a taxi home. I need to rest.", "zh": "我坐的士回家，要好好休息。"},
+        {"en": "I have a message from my friend.", "zh": "朋友发来了信息。"},
+        {"en": "\"Get well soon!\"", "zh": "\"早日康复！\""},
+        {"en": "\"Thank you! I will drink more water.\"", "zh": "\"谢谢！我会多喝水的。\""}
+      ]
+    },
+    "dialogue": {
+      "title": "周末约不成了",
+      "setting": "星期六早上，朋友 Mei 打电话约 Amy 星期天出去，可是 Amy 生病了。",
+      "cast": [
+        {"name": "Mei", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Mei", "en": "Hi Amy! What is your plan for Sunday?", "zh": "嗨 Amy！你星期天有什么安排？"},
+        {"speaker": "Amy", "en": "Sorry, I'm sick.", "zh": "不好意思，我生病了。"},
+        {"speaker": "Mei", "en": "Oh no! Are you okay?", "zh": "哎呀！你还好吗？"},
+        {"speaker": "Amy", "en": "I have a fever and a sore throat.", "zh": "我发烧了，喉咙也痛。"},
+        {"speaker": "Mei", "en": "Do you need medicine?", "zh": "你需要药吗？"},
+        {"speaker": "Amy", "en": "No, thank you. I have medicine.", "zh": "不用了，谢谢。我有药。"},
+        {"speaker": "Mei", "en": "You need to rest.", "zh": "你要好好休息。"},
+        {"speaker": "Amy", "en": "Yes. Can we meet next Sunday?", "zh": "嗯。我们下个星期天见面好吗？"},
+        {"speaker": "Mei", "en": "Sure! I will send you the location.", "zh": "好啊！我把地点发给你。"},
+        {"speaker": "Amy", "en": "Thank you, Mei.", "zh": "谢谢你，Mei。"},
+        {"speaker": "Mei", "en": "Get well soon!", "zh": "早日康复！"},
+        {"speaker": "Amy", "en": "Thank you. I will text you later.", "zh": "谢谢。我晚点发信息给你。"}
+      ]
+    }
+  }
+}

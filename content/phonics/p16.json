@@ -1,0 +1,21 @@
+{
+  "id": "p16",
+  "title": "sh、ch、tch：两个字母读一个音",
+  "rule": "sh 读一个音 /ʃ/，像拼音 sh 但嘴唇往前嘟：shop、she、wash。ch 和 tch 都读 /tʃ/，像拼音 ch 但嘴唇往前嘟：chair、lunch、watch。tch 里的 t 不单独发音。",
+  "mouth": "嘴唇向前嘟成小喇叭，舌头在拼音 sh / ch 的位置。",
+  "examples": [
+    { "en": "she", "zh": "她" },
+    { "en": "shop", "zh": "商店" },
+    { "en": "wash", "zh": "洗" },
+    { "en": "chair", "zh": "椅子" },
+    { "en": "lunch", "zh": "午饭" },
+    { "en": "watch", "zh": "手表；看" },
+    { "en": "kitchen", "zh": "厨房" }
+  ],
+  "pairs": [
+    { "id": "p16.m01", "a": { "en": "share", "zh": "分享" }, "b": { "en": "chair", "zh": "椅子" } },
+    { "id": "p16.m02", "a": { "en": "wash", "zh": "洗" }, "b": { "en": "watch", "zh": "手表；看" } },
+    { "id": "p16.m03", "a": { "en": "sheep", "zh": "羊" }, "b": { "en": "cheap", "zh": "便宜" } },
+    { "id": "p16.m04", "a": { "en": "shoes", "zh": "鞋" }, "b": { "en": "choose", "zh": "选择" } }
+  ]
+}

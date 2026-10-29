@@ -1,0 +1,44 @@
+{
+  "week": 5,
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期六",
+      "lines": [
+        {"en": "It's Saturday. The fridge is empty.", "zh": "今天是星期六，冰箱空了。"},
+        {"en": "I go out. I take a trolley.", "zh": "我出门去买东西，推了一辆推车。"},
+        {"en": "I see my neighbour and her son.", "zh": "我看到了邻居和她儿子。"},
+        {"en": "\"Is he your son? He is very tall!\"", "zh": "\"他是你儿子吗？好高啊！\""},
+        {"en": "He is a bit naughty.", "zh": "他有点调皮。"},
+        {"en": "\"Don't worry. He is very cute.\"", "zh": "\"别担心，他很可爱。\""},
+        {"en": "I buy apples, bananas and tofu.", "zh": "我买了苹果、香蕉和豆腐。"},
+        {"en": "\"Excuse me, do you have eggs?\"", "zh": "\"请问，你们有鸡蛋吗？\""},
+        {"en": "\"Can I pay by card? I don't need a bag.\"", "zh": "\"可以刷卡吗？我不要袋子。\""},
+        {"en": "At night, I call my mum.", "zh": "晚上，我给妈妈打电话。"},
+        {"en": "\"Mum, I will cook tonight!\"", "zh": "\"妈，我今晚自己做饭！\""}
+      ]
+    },
+    "dialogue": {
+      "title": "陈太太打电话问女儿",
+      "setting": "星期五下午，陈太太打电话到补习中心，想问问女儿上课的情况。",
+      "cast": [
+        {"name": "Mrs Tan", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Tan", "en": "Hello, this is Mrs Tan.", "zh": "你好，我是陈太太。"},
+        {"speaker": "Amy", "en": "Hello, Mrs Tan. How are you?", "zh": "陈太太您好。您好吗？"},
+        {"speaker": "Mrs Tan", "en": "I'm fine. How is my daughter in class?", "zh": "我很好。我女儿上课怎么样？"},
+        {"speaker": "Amy", "en": "She is very smart.", "zh": "她很聪明。"},
+        {"speaker": "Amy", "en": "Her reading is getting better.", "zh": "她的阅读越来越好了。"},
+        {"speaker": "Mrs Tan", "en": "Good. Is she shy in class?", "zh": "太好了。她上课害羞吗？"},
+        {"speaker": "Amy", "en": "Yes, she is a bit shy.", "zh": "是的，她有点害羞。"},
+        {"speaker": "Mrs Tan", "en": "Can I speak to her teacher?", "zh": "我可以和她的老师说话吗？"},
+        {"speaker": "Amy", "en": "Sorry, she is in class now.", "zh": "不好意思，她现在在上课。"},
+        {"speaker": "Amy", "en": "I will ask her to call you back.", "zh": "我会让她回电话给您。"},
+        {"speaker": "Mrs Tan", "en": "Thank you. I worry about her.", "zh": "谢谢。我有点担心她。"},
+        {"speaker": "Amy", "en": "Don't worry. Let's work together.", "zh": "别担心，我们一起努力。"},
+        {"speaker": "Mrs Tan", "en": "Thank you very much. Bye!", "zh": "太谢谢你了。再见！"},
+        {"speaker": "Amy", "en": "Thank you for calling. Bye!", "zh": "谢谢您的来电。再见！"}
+      ]
+    }
+  }
+}

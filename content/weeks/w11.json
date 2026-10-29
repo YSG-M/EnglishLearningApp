@@ -1,0 +1,45 @@
+{
+  "week": 11,
+  "stories": {
+    "narrative": {
+      "title": "Amy 和邻居过中秋",
+      "lines": [
+        {"en": "Tonight is a fun festival.", "zh": "今晚是一个好玩的节日。"},
+        {"en": "There is a lantern event in the park.", "zh": "公园里有一个灯笼活动。"},
+        {"en": "I invite my neighbour and her family.", "zh": "我邀请了邻居一家人。"},
+        {"en": "She has flowers and cake for me.", "zh": "她给我带了花和蛋糕。"},
+        {"en": "We walk to the park after dinner.", "zh": "晚饭后我们走路去公园。"},
+        {"en": "The lantern is very nice.", "zh": "灯笼很漂亮。"},
+        {"en": "The children sing and dance.", "zh": "孩子们在唱歌跳舞。"},
+        {"en": "\"I love this song!\"", "zh": "邻居说：\"我好喜欢这首歌！\""},
+        {"en": "I can't sing well, but I dance.", "zh": "我唱得不好，可是我跳舞了。"},
+        {"en": "We eat cake together.", "zh": "我们一起吃蛋糕。"},
+        {"en": "I think it's my favourite festival.", "zh": "我觉得这是我最喜欢的节日。"},
+        {"en": "It's a very happy night.", "zh": "这是一个很开心的晚上。"}
+      ]
+    },
+    "dialogue": {
+      "title": "中心的新年活动",
+      "setting": "新年活动那天，家长 Mr Tan 带儿子来补习中心，Amy 在门口接待。",
+      "cast": [
+        {"name": "Mr Tan", "voice": "bm_george"}
+      ],
+      "lines": [
+        {"speaker": "Mr Tan", "en": "Hi, Amy! Is this the New Year event?", "zh": "你好，Amy！这里是新年活动吗？"},
+        {"speaker": "Amy", "en": "Yes! Welcome. Would you like to come in?", "zh": "是的！欢迎。请进来吧。"},
+        {"speaker": "Mr Tan", "en": "Thank you. Parents are welcome, right?", "zh": "谢谢。家长也可以来，对吧？"},
+        {"speaker": "Amy", "en": "Yes! Would you like some cake?", "zh": "对！要不要吃点蛋糕？"},
+        {"speaker": "Mr Tan", "en": "Yes, please. I love cake!", "zh": "好的，谢谢。我超爱吃蛋糕！"},
+        {"speaker": "Amy", "en": "Would you like tea or kopi?", "zh": "您要喝茶还是 kopi？"},
+        {"speaker": "Mr Tan", "en": "I prefer kopi.", "zh": "我比较喜欢 kopi。"},
+        {"speaker": "Amy", "en": "Here you go. Do you like the music?", "zh": "给您。您喜欢这个音乐吗？"},
+        {"speaker": "Mr Tan", "en": "Yes, I think it's very nice.", "zh": "喜欢，我觉得很好听。"},
+        {"speaker": "Amy", "en": "The children sing at 3pm.", "zh": "孩子们下午 3 点唱歌。"},
+        {"speaker": "Mr Tan", "en": "Great! Is registration open now?", "zh": "太好了！现在可以报名了吗？"},
+        {"speaker": "Amy", "en": "Yes. There is a 10% discount for early sign-up.", "zh": "可以。早报名打九折。"},
+        {"speaker": "Mr Tan", "en": "Can my child sign up today?", "zh": "我孩子今天可以报名吗？"},
+        {"speaker": "Amy", "en": "Sure. Please fill in this form.", "zh": "当然可以。请填一下这张表。"}
+      ]
+    }
+  }
+}

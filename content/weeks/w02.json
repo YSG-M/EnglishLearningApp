@@ -1,0 +1,45 @@
+{
+  "week": 2,
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期六上午",
+      "lines": [
+        {"en": "It's Saturday. It's 10 o'clock.", "zh": "今天是星期六，十点了。"},
+        {"en": "I'm downstairs. My friend is early.", "zh": "我在楼下。我的朋友早到了。"},
+        {"en": "We take the MRT.", "zh": "我们坐 MRT。"},
+        {"en": "It's half price today!", "zh": "今天半价！"},
+        {"en": "We see a nice chair.", "zh": "我们看到一把很好看的椅子。"},
+        {"en": "\"How much is this?\"", "zh": "\"这个多少钱？\""},
+        {"en": "It's 50 dollars. Not expensive!", "zh": "五十块，不贵！"},
+        {"en": "\"Can I pay by card?\"", "zh": "\"可以刷卡吗？\""},
+        {"en": "At noon, it's very hot.", "zh": "中午很热。"},
+        {"en": "We have chicken rice. It's $5.", "zh": "我们吃鸡饭，五块钱。"},
+        {"en": "Now it's 3pm. I'm home.", "zh": "现在下午三点，我到家了。"},
+        {"en": "My husband is in the kitchen. Dinner is at 7pm.", "zh": "我老公在厨房。晚饭七点吃。"}
+      ]
+    },
+    "dialogue": {
+      "title": "家长来早了",
+      "setting": "星期五下午四点，林太太来补习中心接孩子，她第一次来。",
+      "cast": [
+        {"name": "Mrs Lim", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Amy", "en": "Good afternoon! How can I help you?", "zh": "下午好！有什么可以帮你？"},
+        {"speaker": "Mrs Lim", "en": "Hi. I'm downstairs. Which floor is it?", "zh": "你好，我在楼下。在几楼？"},
+        {"speaker": "Amy", "en": "The class is upstairs. Please take the lift.", "zh": "教室在楼上。请坐电梯上来。"},
+        {"speaker": "Mrs Lim", "en": "Thank you. I'm early today.", "zh": "谢谢。我今天来早了。"},
+        {"speaker": "Amy", "en": "The class ends at 5pm. Please take a seat.", "zh": "课下午五点结束。请坐。"},
+        {"speaker": "Mrs Lim", "en": "What time is it now?", "zh": "现在几点？"},
+        {"speaker": "Amy", "en": "It's 4 o'clock.", "zh": "四点。"},
+        {"speaker": "Mrs Lim", "en": "Okay. Where is the toilet?", "zh": "好的。洗手间在哪里？"},
+        {"speaker": "Amy", "en": "The toilet is near the lift.", "zh": "洗手间在电梯旁边。"},
+        {"speaker": "Mrs Lim", "en": "Thank you. How much is the book?", "zh": "谢谢。这本书多少钱？"},
+        {"speaker": "Amy", "en": "It's 20 dollars. Please sign here.", "zh": "二十块。请在这里签名。"},
+        {"speaker": "Mrs Lim", "en": "Can I pay by card?", "zh": "可以刷卡吗？"},
+        {"speaker": "Amy", "en": "Yes. Please wait a moment.", "zh": "可以。请稍等一下。"},
+        {"speaker": "Mrs Lim", "en": "Thank you!", "zh": "谢谢！"}
+      ]
+    }
+  }
+}

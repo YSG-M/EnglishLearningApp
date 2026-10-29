@@ -1,0 +1,17 @@
+[
+  {"text": "carry", "zh": "拿着；提着", "hint": {"grade": "yellow", "hanzi": "开瑞", "pinyin": "kāi-ri", "note": "ca 嘴巴张大、短促，不要拖长；r 舌尖往后卷一下，不碰上颚"}},
+  {"text": "show", "zh": "给……看；带（路）", "hint": {"grade": "green", "hanzi": "收", "pinyin": "shōu"}},
+  {"text": "computer", "zh": "电脑", "hint": {"grade": "yellow", "hanzi": "肯皮优特", "pinyin": "kəm-piú-te", "note": "\"肯\"只轻轻带过，嘴巴闭上收成 m；\"皮优\"快速连成一个音，重音在这里"}},
+  {"text": "mic", "zh": "麦克风", "hint": {"grade": "yellow", "hanzi": "麦", "pinyin": "mài(k)", "note": "k 只做口型，不要读成\"麦克\""}},
+  {"text": "Wi-Fi", "zh": "无线网络", "hint": {"grade": "yellow", "hanzi": "外发", "pinyin": "wài-fài", "note": "\"发\"后面要快速滑到\"一\"（fai），两个音一样重"}},
+  {"text": "heater", "zh": "加热器", "hint": {"grade": "yellow", "hanzi": "希特", "pinyin": "hī-te", "note": "开头 h 只是轻轻哈一口气，不是\"希\"的 x 音；ea 拉长"}},
+  {"text": "break", "zh": "休息；打破", "hint": {"grade": "yellow", "hanzi": "布瑞", "pinyin": "b-rèi(k)", "note": "b 和 r 连读，中间不要加\"乌\"；k 只做口型，不要念成\"布雷克\""}},
+  {"text": "order", "zh": "点（菜）；订购", "hint": {"grade": "yellow", "hanzi": "奥的", "pinyin": "ào-de", "note": "or 拉长、不卷舌；de 轻轻带过"}},
+  {"text": "rest", "zh": "休息", "hint": {"grade": "yellow", "hanzi": "瑞", "pinyin": "rè(st)", "note": "r 嘴巴先圆一点，舌头不碰上颚；结尾 st 只吹气，不要念成\"瑞斯特\""}},
+  {"text": "tap", "zh": "轻碰；刷（卡）；水龙头", "hint": {"grade": "yellow", "hanzi": "太", "pinyin": "tài(p)", "note": "a 嘴巴张大；结尾 p 只闭嘴不出声，不要念成\"太普\""}},
+  {"text": "cancel", "zh": "取消", "hint": {"grade": "yellow", "hanzi": "坎叟", "pinyin": "kǎn-sō(l)", "note": "重音在开头，a 嘴巴张大；结尾 l 舌尖抵住上牙床收住，不要念成\"坎叟尔\""}},
+  {"text": "learn", "zh": "学", "hint": {"grade": "yellow", "hanzi": "了", "pinyin": "lē(n)", "note": "ear 读成长长的\"呃\"；结尾 n 舌尖抵住上牙床收住"}},
+  {"text": "money", "zh": "钱", "hint": {"grade": "green", "hanzi": "嘛尼", "pinyin": "mà-ni"}},
+  {"text": "SIM", "zh": "手机卡（SIM card）", "hint": {"grade": "yellow", "hanzi": "西", "pinyin": "sì(m)", "note": "开头 s 不是 x，i 短促；结尾闭上嘴巴收 m，不要念成\"西姆\""}},
+  {"text": "start", "zh": "开始", "hint": {"grade": "yellow", "hanzi": "斯达", "pinyin": "s-dā(t)", "note": "s 和 t 连读，t 不送气像 d；ar 拉长、不卷舌；结尾 t 只做口型"}}
+]

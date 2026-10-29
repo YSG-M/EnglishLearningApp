@@ -1,0 +1,39 @@
+node_modules/
+out/
+dist/
+release/
+coverage/
+*.log
+
+# Downloaded speech models (fetched by `npm run models:download`)
+.models/
+resources/models/
+
+# Generated build artefacts (rebuilt by `npm run content:build` / `npm run content:audio`)
+resources/content/
+resources/audio/
+
+# Never commit learner data
+userdata/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+.env
+.DS_Store
+Thumbs.db
+
+# Agent wiki is tracked by the user's project decision.
+
+# Generated PWA assets and local HTTPS secrets
+resources/web-reports/
+resources/web-models/
+dist-web/
+.certs/
+**/.validation/
+*.key
+*.pfx
+*.pem
+
+# Personal publish checklist for the user, not shared
+.agent-wiki/tasks/user-steps.md

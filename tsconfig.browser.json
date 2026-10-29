@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"]
+  },
+  "include": ["src/web/**/*", "src/renderer/src/**/*", "src/shared/**/*", "src/preload/*.d.ts"],
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "src/web/pwa/service-worker.ts",
+    "src/web/storage/worker.ts",
+    "src/web/speech/worker.ts"
+  ]
+}

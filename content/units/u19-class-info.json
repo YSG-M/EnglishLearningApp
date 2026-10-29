@@ -1,0 +1,161 @@
+{
+  "id": "u19",
+  "kind": "work",
+  "title": "解释课程安排、教材、作业",
+  "titleEn": "Class is every Saturday",
+  "goal": "能向新家长说清楚上课时间、每节课多长、要带什么书、作业怎么做。",
+  "chunks": [
+    {"id": "u19.c01", "en": "Class is every Saturday at 10am.", "zh": "每周六上午 10 点上课。", "note": "10am 读 ten a.m.，下午用 pm。"},
+    {"id": "u19.c02", "en": "Each class is one and a half hours.", "zh": "每节课一个半小时。", "note": "one and a half hours = 一个半小时；one hour = 一小时。"},
+    {"id": "u19.c03", "en": "Please bring this book to class.", "zh": "请带这本书来上课。"},
+    {"id": "u19.c04", "en": "The book costs 25 dollars.", "zh": "这本书 25 块。"},
+    {"id": "u19.c05", "en": "The homework is on page 12.", "zh": "作业在第 12 页。"},
+    {"id": "u19.c06", "en": "Your child needs to practise at home.", "zh": "您的孩子需要在家练习。", "note": "practise 是英式拼写（做动词时），读音和 practice 一样。"},
+    {"id": "u19.c07", "en": "We have a test at the end of the term.", "zh": "学期末有一次测验。"},
+    {"id": "u19.c08", "en": "Do you have any questions?", "zh": "您还有什么问题吗？", "note": "说明完以后问这一句，很专业。"}
+  ],
+  "words": ["every", "class", "each", "hours", "bring", "book", "homework", "page", "practise", "test", "term", "questions"],
+  "patterns": {
+    "frames": [
+      {"frame": "You need to ___.", "zh": "你需要……／你要……", "usage": "告诉别人必须做什么：交表、签名、带东西、早点到。直接说有点硬，前面加 Sorry 或者用温和的语气，对方就不会觉得你在命令他。框不变，只把对方要做的事放进 ___。"}
+    ],
+    "examples": [
+      {"id": "u19.e01", "scene": "家人感冒了，还想熬夜看电视。", "en": "You need to rest.", "zh": "你要好好休息。"},
+      {"id": "u19.e02", "scene": "家长交了学费，收据上还要签名。", "en": "You need to sign here.", "zh": "您需要在这里签名。", "accept": ["You need to sign here, please."]},
+      {"id": "u19.e03", "scene": "明天有测验，你提醒学生。", "en": "You need to bring a pen.", "zh": "你要带一支笔来。"},
+      {"id": "u19.e04", "scene": "家人一直咳嗽，你给他倒了一杯水。", "en": "You need to drink more water.", "zh": "你要多喝水。", "note": "drink more water = 多喝水"},
+      {"id": "u19.e05", "scene": "在诊所，一位老人家不知道要先拿号码牌。", "en": "You need to take a number.", "zh": "您需要先拿一个号码。", "note": "take a number = 拿号码牌"},
+      {"id": "u19.e06", "scene": "家里的水电费账单到了，老公问什么时候要交。", "en": "You need to pay by Friday.", "zh": "您需要在星期五之前交。", "note": "by Friday = 星期五之前（最晚星期五）"},
+      {"id": "u19.e07", "scene": "带新同事坐巴士，她上车忘了刷卡。", "en": "You need to tap your card.", "zh": "你要刷一下卡。", "note": "tap your card = 刷卡（把卡轻轻碰一下机器）"},
+      {"id": "u19.e08", "scene": "学生问今天的作业是什么。", "en": "You need to do page 12 at home.", "zh": "你回家要做第 12 页。", "note": "do page 12 = 做第 12 页的练习"},
+      {"id": "u19.e09", "scene": "朋友第一次去你家附近的诊所看牙，你提醒她要先填表。", "en": "You need to come 10 minutes early.", "zh": "您需要提早 10 分钟来。", "note": "10 minutes early = 早 10 分钟"},
+      {"id": "u19.e10", "scene": "新家长想直接让孩子上课，可是还没填报名表。", "en": "You need to fill in this form before the class.", "zh": "上课前您需要先填这张表。", "note": "fill in = 填写（表格）", "accept": ["You need to fill in this form first."]}
+    ]
+  },
+  "daily": [
+    {"id": "u19.d01", "word": "library", "scene": "邻居问你星期天一般带孩子去哪里。", "en": "I go to the library on Sunday.", "zh": "我星期天去图书馆。", "note": "library = 图书馆"},
+    {"id": "u19.d02", "word": "read", "scene": "朋友问你晚上睡觉前做什么。", "en": "I read before I sleep.", "zh": "我睡觉前看书。", "note": "read = 看（书）、读"},
+    {"id": "u19.d03", "word": "story", "scene": "在图书馆，朋友看到你借的书，问好不好看。", "en": "It's a nice story.", "zh": "这个故事很好看。", "accept": ["It is a nice story."]},
+    {"id": "u19.d04", "word": "swim", "scene": "邻居问你周末做不做运动。", "en": "I swim on Saturday morning.", "zh": "我星期六早上去游泳。"},
+    {"id": "u19.d05", "word": "exercise", "scene": "早上在楼下公园遇到邻居 uncle，他也在运动。", "en": "I exercise in the park.", "zh": "我在公园锻炼身体。", "note": "exercise = 运动、锻炼"},
+    {"id": "u19.d06", "word": "minute", "scene": "邻居在门口按门铃，你还在换衣服。", "en": "Please wait a minute.", "zh": "请稍等一下。", "note": "wait a minute = 等一下（不一定是真的一分钟）", "accept": ["Wait a minute, please."]},
+    {"id": "u19.d07", "word": "forget", "scene": "家人要出门了，手机还放在桌子上。", "en": "Don't forget your phone!", "zh": "别忘了带手机！", "accept": ["Don't forget your phone."]},
+    {"id": "u19.d08", "word": "hour", "scene": "在诊所拿了号码，前面人很多，你告诉老公。", "en": "We need to wait one hour.", "zh": "我们要等一个小时。", "note": "one hour = 一个小时；两个以上用 hours"},
+    {"id": "u19.d09", "word": "usually", "scene": "朋友问你晚饭在外面吃还是在家吃。", "en": "I usually cook at home.", "zh": "我一般在家做饭。", "note": "usually = 一般、通常"},
+    {"id": "u19.d10", "word": "always", "scene": "朋友问你早上喝什么。", "en": "I always drink kopi in the morning.", "zh": "我早上总是喝 kopi。", "note": "always = 总是、每次都"},
+    {"id": "u19.d11", "word": "sometimes", "scene": "邻居问你中午是不是都自己做饭。", "en": "Sometimes I eat at the hawker centre.", "zh": "有时候我在 hawker centre 吃。", "note": "sometimes = 有时候", "accept": ["I sometimes eat at the hawker centre."]},
+    {"id": "u19.d12", "word": "wake", "scene": "朋友约你星期天早上八点去喝早茶，问你起不起得来。", "en": "I wake up early.", "zh": "我起得很早。", "note": "wake up = 醒来、起床"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期天",
+      "lines": [
+        {"en": "I usually wake up early on Sunday.", "zh": "星期天我一般起得很早。"},
+        {"en": "I exercise in the park with my husband.", "zh": "我和老公在公园锻炼身体。"},
+        {"en": "After that, we eat at the hawker centre.", "zh": "然后我们去 hawker centre 吃东西。"},
+        {"en": "I always drink kopi in the morning.", "zh": "我早上总是喝 kopi。"},
+        {"en": "At 10am, I go to the library.", "zh": "上午 10 点，我去图书馆。"},
+        {"en": "I read a nice story there.", "zh": "我在那里看了一个很好看的故事。"},
+        {"en": "In the afternoon, I swim for one hour.", "zh": "下午，我游泳游了一个小时。"},
+        {"en": "I get a message from my friend.", "zh": "我收到朋友的一条信息。"},
+        {"en": "Dinner is at 7pm, near the MRT station.", "zh": "晚饭是晚上 7 点，在 MRT 站附近。"},
+        {"en": "\"Don't forget your phone, Amy!\"", "zh": "老公说：\"Amy，别忘了带手机！\""},
+        {"en": "Sometimes I forget it at home.", "zh": "我有时候会把手机忘在家里。"},
+        {"en": "It's a nice Sunday.", "zh": "真是一个不错的星期天。"}
+      ]
+    },
+    "dialogue": {
+      "title": "新爸爸问第一节课",
+      "setting": "星期五下午，一位新爸爸 Mr Lim 来前台，问他儿子星期六的第一节课。",
+      "cast": [
+        {"name": "Mr Lim", "voice": "bm_lewis"}
+      ],
+      "lines": [
+        {"speaker": "Mr Lim", "en": "Hi, my son is new here. When is his class?", "zh": "你好，我儿子是新来的。他什么时候上课？"},
+        {"speaker": "Amy", "en": "Class is every Saturday at 10am.", "zh": "每周六上午 10 点上课。"},
+        {"speaker": "Mr Lim", "en": "How long is each class?", "zh": "每节课多长时间？"},
+        {"speaker": "Amy", "en": "Each class is one and a half hours.", "zh": "每节课一个半小时。"},
+        {"speaker": "Mr Lim", "en": "Does he need a book?", "zh": "他需要书吗？"},
+        {"speaker": "Amy", "en": "Yes. Please bring this book to class.", "zh": "需要。请带这本书来上课。"},
+        {"speaker": "Mr Lim", "en": "OK. Can I pay by PayNow?", "zh": "好的。可以用 PayNow 付吗？"},
+        {"speaker": "Amy", "en": "Sure. You need to sign here, please.", "zh": "可以。麻烦您在这里签名。"},
+        {"speaker": "Mr Lim", "en": "What about homework?", "zh": "那作业呢？"},
+        {"speaker": "Amy", "en": "The homework is on page 12. He needs to practise at home.", "zh": "作业在第 12 页。他需要在家练习。"},
+        {"speaker": "Mr Lim", "en": "OK. I always forget!", "zh": "好的。我老是忘记！"},
+        {"speaker": "Amy", "en": "Don't worry. I can send you a reminder on WhatsApp.", "zh": "别担心，我可以在 WhatsApp 上提醒您。"},
+        {"speaker": "Mr Lim", "en": "Thank you very much!", "zh": "非常感谢！"},
+        {"speaker": "Amy", "en": "Please come 10 minutes early. See you on Saturday!", "zh": "请提早 10 分钟来。星期六见！"}
+      ]
+    }
+  },
+  "phonics": "p17",
+  "dialogue": {
+    "title": "新家长问课程",
+    "setting": "一位新家长的女儿刚报了二年级的班，她来前台问课程安排。",
+    "npcName": "Mrs Wong",
+    "npcVoice": "af_sarah",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Hi, my daughter just joined the P2 class. When is the class?", "zh": "你好，我女儿刚报了二年级的班。什么时候上课？"},
+        "replies": [
+          {"en": "Class is every Saturday at 10am.", "zh": "每周六上午 10 点上课。", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "How long is each class?", "zh": "每节课多长时间？"},
+        "replies": [
+          {"en": "Each class is one and a half hours.", "zh": "每节课一个半小时。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Does she need any books?", "zh": "她需要买书吗？"},
+        "replies": [
+          {"en": "Yes, please bring this book to class.", "zh": "需要，请带这本书来上课。", "next": "n4"},
+          {"en": "Yes. The book costs 25 dollars.", "zh": "需要。这本书 25 块。", "next": "n4"},
+          {"en": "Yes, you need to bring this book to class.", "zh": "需要，您要让她带这本书来上课。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "What about homework?", "zh": "那作业呢？"},
+        "replies": [
+          {"en": "The homework is on page 12.", "zh": "作业在第 12 页。", "next": "n5"},
+          {"en": "Your child needs to practise at home.", "zh": "您的孩子需要在家练习。", "next": "n5"}
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {"en": "OK, I see.", "zh": "好的，我明白了。"},
+        "replies": [
+          {"en": "Do you have any questions?", "zh": "您还有什么问题吗？", "next": "end"},
+          {"en": "You need to fill in this form, please.", "zh": "麻烦您填一下这张表。", "next": "n6"}
+        ]
+      },
+      {
+        "id": "n6",
+        "npc": {"en": "Sure. Here you go.", "zh": "好的，给你。"},
+        "replies": [
+          {"en": "Thank you. You need to come 10 minutes early on Saturday.", "zh": "谢谢。星期六请提早 10 分钟来。", "next": "n7"},
+          {"en": "Thank you. Do you have any questions?", "zh": "谢谢。您还有什么问题吗？", "next": "end"}
+        ]
+      },
+      {
+        "id": "n7",
+        "npc": {"en": "OK, no problem.", "zh": "好的，没问题。"},
+        "replies": [
+          {"en": "Do you have any questions?", "zh": "您还有什么问题吗？", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "No, that's all. Thank you so much!", "zh": "没有了，就这些。非常感谢！"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "用英语把你们中心一个班的上课时间读三遍：Class is every ___ at ___."
+}

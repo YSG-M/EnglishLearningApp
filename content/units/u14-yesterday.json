@@ -1,0 +1,156 @@
+{
+  "id": "u14",
+  "kind": "life",
+  "title": "说说昨天做了什么",
+  "titleEn": "What did you do yesterday?",
+  "goal": "能用几句简单的话说出昨天或者周末做了什么。",
+  "chunks": [
+    {"id": "u14.c01", "en": "What did you do yesterday?", "zh": "你昨天做了什么？", "note": "问过去的事用 did。回答时动词要换成\"过去的样子\"。"},
+    {"id": "u14.c02", "en": "I went to the market.", "zh": "我去了菜市场。", "note": "go（去）的过去是 went。"},
+    {"id": "u14.c03", "en": "I had dinner with my family.", "zh": "我和家人吃了晚饭。", "note": "have（吃、有）的过去是 had。"},
+    {"id": "u14.c04", "en": "I stayed at home.", "zh": "我待在家里。", "note": "很多动词后面加 ed 就是过去：stay → stayed。"},
+    {"id": "u14.c05", "en": "I watched TV.", "zh": "我看了电视。"},
+    {"id": "u14.c06", "en": "I cooked dinner.", "zh": "我做了晚饭。"},
+    {"id": "u14.c07", "en": "I was very tired.", "zh": "我很累。", "note": "am / is 的过去是 was。", "accept": ["I was so tired."]},
+    {"id": "u14.c08", "en": "It was a busy day.", "zh": "那天很忙。"},
+    {"id": "u14.c09", "en": "Last weekend, I went to the park.", "zh": "上周末，我去了公园。", "note": "last weekend = 上周末，last night = 昨晚。"}
+  ],
+  "words": ["yesterday", "went", "had", "did", "stayed", "watched", "cooked", "tired", "busy", "weekend", "last", "market"],
+  "patterns": {
+    "frames": [
+      {"frame": "What did you ___?", "zh": "你（之前）……了什么？", "usage": "问别人已经做过的事：吃了什么、买了什么、说了什么。有 did，后面的动作不用变，照常说 eat、buy、say。"},
+      {"frame": "I ___ yesterday.", "zh": "我昨天……了。", "usage": "说自己昨天做了什么。___ 里的动作要换成\"过去的样子\"：go → went，buy → bought，call → called。"}
+    ],
+    "examples": [
+      {"id": "u14.e01", "scene": "朋友说昨天去了 hawker centre，你问她吃了什么。", "en": "What did you eat?", "zh": "你吃了什么？"},
+      {"id": "u14.e02", "scene": "老公提着好几个 NTUC 袋子回到家，你好奇地问。", "en": "What did you buy?", "zh": "你买了什么？"},
+      {"id": "u14.e03", "scene": "在 hawker centre 太吵了，你没听清朋友刚才说什么。", "en": "What did you say?", "zh": "你刚才说什么？", "accept": ["Sorry, what did you say?"]},
+      {"id": "u14.e04", "scene": "家长说没收到补课通知，你告诉他昨天给他打过电话。", "en": "I called you yesterday.", "zh": "我昨天给您打过电话。", "note": "called = call（打电话）的过去"},
+      {"id": "u14.e05", "scene": "town council 打电话说你家还没交费，你说昨天已经付了。", "en": "I paid the bill yesterday.", "zh": "我昨天已经付了账单。", "note": "paid = pay（付钱）的过去"},
+      {"id": "u14.e06", "scene": "妈妈打电话来，问你昨天吃了什么。", "en": "I ate chicken rice yesterday.", "zh": "我昨天吃了鸡饭。", "note": "ate = eat（吃）的过去"},
+      {"id": "u14.e07", "scene": "学生下课出来，你在前台笑着问他今天学了什么。", "en": "What did you learn today?", "zh": "你今天学了什么？"},
+      {"id": "u14.e08", "scene": "老板问你昨天为什么没来上班。", "en": "I went to the doctor yesterday.", "zh": "我昨天去看医生了。", "note": "go to the doctor = 去看医生；went = go 的过去"},
+      {"id": "u14.e09", "scene": "邻居看到你换了手机，问你什么时候买的。", "en": "I bought a new phone yesterday.", "zh": "我昨天买了一部新手机。", "note": "bought = buy（买）的过去"},
+      {"id": "u14.e10", "scene": "星期一早上，你问刚到的同事周末做了什么。", "en": "What did you do last weekend?", "zh": "你上周末做了什么？", "note": "last weekend = 上周末"}
+    ]
+  },
+  "daily": [
+    {"id": "u14.d01", "word": "slept", "scene": "早上在电梯里，邻居问你昨晚睡得好不好。", "en": "I slept very well.", "zh": "我睡得很好。", "note": "slept = sleep（睡觉）的过去"},
+    {"id": "u14.d02", "word": "night", "scene": "早上家人说你看起来很累。", "en": "I slept late last night.", "zh": "我昨晚睡得很晚。", "note": "last night = 昨晚"},
+    {"id": "u14.d03", "word": "saw", "scene": "回到家，你跟老公说在巴刹遇到了陈太太。", "en": "I saw Mrs Tan at the market.", "zh": "我在巴刹看到陈太太了。", "note": "saw = see（看见）的过去"},
+    {"id": "u14.d04", "word": "met", "scene": "家人问你怎么这么久才上来，你说在电梯里遇到了邻居。", "en": "I met my neighbour in the lift.", "zh": "我在电梯里遇到了邻居。", "note": "met = meet（遇见）的过去"},
+    {"id": "u14.d05", "word": "cleaned", "scene": "星期天晚上，朋友打电话问你今天做了什么。", "en": "I cleaned the house today.", "zh": "我今天打扫了房子。", "note": "cleaned = clean（打扫）的过去"},
+    {"id": "u14.d06", "word": "washed", "scene": "老公问车怎么这么干净。", "en": "I washed the car yesterday.", "zh": "我昨天洗了车。"},
+    {"id": "u14.d07", "word": "clothes", "scene": "朋友看到你提着商场的袋子。", "en": "I bought some new clothes.", "zh": "我买了一些新衣服。"},
+    {"id": "u14.d08", "word": "took", "scene": "昨天下大雨，朋友问你是怎么回家的。", "en": "I took the MRT home.", "zh": "我坐地铁回家的。", "note": "took = take 的过去；take the MRT = 坐地铁"},
+    {"id": "u14.d09", "word": "played", "scene": "邻居问你周末带孩子去哪里了。", "en": "My son played at the park.", "zh": "我儿子在公园玩了。"},
+    {"id": "u14.d10", "word": "ago", "scene": "朋友夸你的手机很新。", "en": "I bought it a week ago.", "zh": "我一个星期前买的。", "note": "a week ago = 一个星期前"},
+    {"id": "u14.d11", "word": "shopping", "scene": "邻居问你星期六去哪里了。", "en": "I went shopping with my friend.", "zh": "我和朋友去逛街了。", "note": "go shopping = 去逛街、去买东西"},
+    {"id": "u14.d12", "word": "rained", "scene": "朋友问你周末为什么没去公园。", "en": "It rained all day yesterday.", "zh": "昨天下了一整天的雨。", "note": "all day = 一整天"}
+  ],
+  "stories": {
+    "narrative": {
+      "title": "Amy 的星期天",
+      "lines": [
+        {"en": "Last Sunday was a busy day.", "zh": "上个星期天很忙。"},
+        {"en": "I cleaned the house in the morning.", "zh": "早上我打扫了房子。"},
+        {"en": "After that, I went to the market.", "zh": "然后我去了巴刹。"},
+        {"en": "I saw Mrs Tan at the market.", "zh": "我在巴刹看到了陈太太。"},
+        {"en": "I bought some fish and eggs.", "zh": "我买了一些鱼和鸡蛋。"},
+        {"en": "It rained all afternoon.", "zh": "下午一直在下雨。"},
+        {"en": "I stayed at home and watched TV.", "zh": "我待在家里看电视。"},
+        {"en": "My husband washed the car.", "zh": "我老公洗了车。"},
+        {"en": "I cooked dinner for my family.", "zh": "我给家人做了晚饭。"},
+        {"en": "We had dinner together.", "zh": "我们一起吃了晚饭。"},
+        {"en": "I was very tired.", "zh": "我很累。"},
+        {"en": "I slept very well that night.", "zh": "那天晚上我睡得很好。"}
+      ]
+    },
+    "dialogue": {
+      "title": "星期一早上的电梯",
+      "setting": "星期一早上，Amy 在 HDB 电梯里遇到邻居陈太太。",
+      "cast": [
+        {"name": "Mrs Tan", "voice": "bf_isabella"}
+      ],
+      "lines": [
+        {"speaker": "Mrs Tan", "en": "Morning, Amy! How was your weekend?", "zh": "早上好，Amy！周末过得怎么样？"},
+        {"speaker": "Amy", "en": "It was good, thank you.", "zh": "很好，谢谢。"},
+        {"speaker": "Mrs Tan", "en": "What did you do?", "zh": "你做了什么？"},
+        {"speaker": "Amy", "en": "I went shopping with my friend.", "zh": "我和朋友去逛街了。"},
+        {"speaker": "Amy", "en": "I bought some new clothes.", "zh": "我买了一些新衣服。"},
+        {"speaker": "Mrs Tan", "en": "Nice! I saw you at the market yesterday.", "zh": "真好！我昨天在巴刹看到你了。"},
+        {"speaker": "Amy", "en": "Yes! What did you buy?", "zh": "对！你买了什么？"},
+        {"speaker": "Mrs Tan", "en": "I bought some fish. What did you cook?", "zh": "我买了一些鱼。你做了什么菜？"},
+        {"speaker": "Amy", "en": "I cooked chicken rice for my family.", "zh": "我给家人做了鸡饭。"},
+        {"speaker": "Mrs Tan", "en": "Very good! Are you tired today?", "zh": "真棒！你今天累吗？"},
+        {"speaker": "Amy", "en": "Yes, I slept late last night.", "zh": "是啊，我昨晚睡得很晚。"},
+        {"speaker": "Mrs Tan", "en": "Sleep early tonight!", "zh": "今晚早点睡！"},
+        {"speaker": "Amy", "en": "I will. Have a nice day, Mrs Tan!", "zh": "会的。祝你今天愉快，陈太太！"}
+      ]
+    }
+  },
+  "grammar": {
+    "title": "说过去的事，动词要变",
+    "body": "中文说\"昨天去\"\"今天去\"，\"去\"字不变；英语说过去的事，动词要换成过去的样子。大多数动词后面加 ed（cook → cooked）。最常用的几个要单独记：go → went，have → had，do → did，am / is → was。",
+    "examples": [
+      {"en": "Today I go to work. Yesterday I went to work.", "zh": "今天我去上班。昨天我去上班了。"},
+      {"en": "Today I cook. Yesterday I cooked.", "zh": "今天我做饭。昨天我做了饭。"},
+      {"en": "I am tired. I was tired yesterday.", "zh": "我很累。我昨天很累。"}
+    ]
+  },
+  "phonics": "p12",
+  "dialogue": {
+    "title": "周一早上聊周末",
+    "setting": "星期一早上，同事 Mei Ling 问你周末过得怎么样。",
+    "npcName": "Mei Ling",
+    "npcVoice": "bf_isabella",
+    "start": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {"en": "Morning, Amy! How was your weekend?", "zh": "早上好，Amy！周末过得怎么样？"},
+        "replies": [
+          {"en": "It was good, thank you.", "zh": "很好，谢谢。", "next": "n2"},
+          {"en": "I was very tired.", "zh": "我很累。", "next": "n2"}
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {"en": "What did you do?", "zh": "你做了什么？"},
+        "replies": [
+          {"en": "I went to the park yesterday.", "zh": "我昨天去了公园。", "next": "n3"},
+          {"en": "I stayed at home and watched TV.", "zh": "我待在家里看电视。", "next": "n3"}
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {"en": "Sounds nice. Did you cook?", "zh": "听起来不错。你做饭了吗？"},
+        "replies": [
+          {"en": "Yes, I cooked dinner yesterday.", "zh": "做了，我昨天做了晚饭。", "next": "n4"},
+          {"en": "No, I didn't.", "zh": "没有。", "next": "n4"}
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {"en": "Me, I was so busy on Saturday!", "zh": "我呢，星期六忙死了！"},
+        "replies": [
+          {"en": "Oh, really?", "zh": "哦，真的吗？", "next": "end"},
+          {"en": "Oh, really? What did you do?", "zh": "哦，真的吗？你做了什么？", "next": "n5"}
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {"en": "I took my son to his swimming class, then I went shopping.", "zh": "我带儿子去上游泳课，然后又去逛街。"},
+        "replies": [
+          {"en": "Oh, it was a busy day!", "zh": "哦，那天真忙啊！", "next": "end"}
+        ]
+      },
+      {
+        "id": "end",
+        "npc": {"en": "Yes! OK, let's start work. Have a good day!", "zh": "是啊！好了，开始干活吧。祝你今天顺利！"},
+        "replies": []
+      }
+    ]
+  },
+  "task": "今天用英语说三句昨天做了什么，比如 Yesterday, I went to work. 说给自己或者家人听。"
+}

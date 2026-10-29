@@ -1,0 +1,44 @@
+{
+  "week": 7,
+  "stories": {
+    "narrative": {
+      "title": "Amy 忙碌的一个星期",
+      "lines": [
+        {"en": "Last week was a busy week.", "zh": "上个星期很忙。"},
+        {"en": "On Monday, a parent called me.", "zh": "星期一，一位家长给我打电话。"},
+        {"en": "Her child had a fever.", "zh": "她的孩子发烧了。"},
+        {"en": "We can arrange a make-up class.", "zh": "我们可以安排补课。"},
+        {"en": "The make-up class was on Wednesday.", "zh": "补课安排在星期三。"},
+        {"en": "On Friday, I went to the dentist.", "zh": "星期五，我去看了牙医。"},
+        {"en": "On Saturday, I went to a wedding.", "zh": "星期六，我去参加了婚礼。"},
+        {"en": "It rained all day.", "zh": "那天下了一整天的雨。"},
+        {"en": "On Sunday, my parents had dinner with me.", "zh": "星期天，我父母来和我一起吃晚饭。"},
+        {"en": "It was my birthday!", "zh": "那天是我的生日！"},
+        {"en": "I cooked chicken rice, and we watched a movie.", "zh": "我做了鸡饭，我们还看了一部电影。"},
+        {"en": "It was a good week.", "zh": "这是很好的一个星期。"}
+      ]
+    },
+    "dialogue": {
+      "title": "约朋友吃晚饭",
+      "setting": "星期四晚上，朋友 Lily 打电话给 Amy，想约她周末见面吃饭。",
+      "cast": [
+        {"name": "Lily", "voice": "af_sarah"}
+      ],
+      "lines": [
+        {"speaker": "Lily", "en": "Hi Amy! Are you free on Saturday?", "zh": "嗨 Amy！你星期六有空吗？"},
+        {"speaker": "Amy", "en": "Sorry, I have a wedding on Saturday.", "zh": "不好意思，我星期六要去参加婚礼。"},
+        {"speaker": "Lily", "en": "Can we meet on Sunday?", "zh": "我们星期天见面可以吗？"},
+        {"speaker": "Amy", "en": "Let me check my calendar.", "zh": "我看一下我的日历。"},
+        {"speaker": "Amy", "en": "Sunday is okay. What time is good for you?", "zh": "星期天可以。你什么时间方便？"},
+        {"speaker": "Lily", "en": "Is 6pm okay for you?", "zh": "下午六点你方便吗？"},
+        {"speaker": "Amy", "en": "No problem. Can we have dinner together?", "zh": "没问题。我们一起吃晚饭好吗？"},
+        {"speaker": "Lily", "en": "Sure! What did you do last weekend?", "zh": "好啊！你上周末做了什么？"},
+        {"speaker": "Amy", "en": "I stayed at home. It rained all day.", "zh": "我待在家里。下了一整天的雨。"},
+        {"speaker": "Lily", "en": "I went shopping with my sister.", "zh": "我和我妹妹去逛街了。"},
+        {"speaker": "Amy", "en": "Nice! What did you buy?", "zh": "真好！你买了什么？"},
+        {"speaker": "Lily", "en": "I bought some new clothes.", "zh": "我买了一些新衣服。"},
+        {"speaker": "Amy", "en": "Very nice! See you on Sunday!", "zh": "真好看！星期天见！"}
+      ]
+    }
+  }
+}

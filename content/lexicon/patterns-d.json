@@ -1,0 +1,9 @@
+[
+  {"text": "our", "zh": "我们的", "hint": {"grade": "yellow", "hanzi": "奥", "pinyin": "ào-e", "note": "说完\"奥\"再轻轻带一点\"呃\"，不卷舌；和 hour（小时）读音一样"}},
+  {"text": "teaching", "zh": "教（书）", "hint": {"grade": "yellow", "hanzi": "踢清", "pinyin": "tī-ching", "note": "ea 拉长；ch 像拼音 ch；ng 鼻音收住"}},
+  {"text": "sit", "zh": "坐", "hint": {"grade": "yellow", "hanzi": "西", "pinyin": "sì(t)", "note": "开头 s 不是 x，i 短促；t 轻轻收住。别和 seat（座位，ee 拉长）读成一样"}},
+  {"text": "use", "zh": "用；使用", "hint": {"grade": "yellow", "hanzi": "优", "pinyin": "yōu(z)", "note": "结尾 s 读成振动的 z，像蜜蜂嗡嗡"}},
+  {"text": "big", "zh": "大的", "hint": {"grade": "yellow", "hanzi": "必", "pinyin": "bì(g)", "note": "i 短促；结尾 g 轻轻收住，不要念成\"必格\""}},
+  {"text": "hot", "zh": "热的；烫的；辣的", "hint": {"grade": "yellow", "hanzi": "霍", "pinyin": "huò(t)", "note": "h 只是轻轻哈一口气，喉咙不要摩擦；o 嘴巴张圆、短促；t 轻轻收住"}},
+  {"text": "cold", "zh": "冷的", "hint": {"grade": "yellow", "hanzi": "扣", "pinyin": "kòu(ld)", "note": "结尾 l 舌尖顶住上牙床，d 轻轻收住"}}
+]

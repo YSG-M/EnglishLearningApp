@@ -1,0 +1,54 @@
+# Windows installer for KaikouEnglish. Build with: npm run dist
+# Prerequisites: npm run content:build, npm run content:audio, npm run models:download
+# (see docs/dev-setup.md §打包). No code signing, no auto-update: to upgrade, install the new
+# version over the old one. Learner data lives in %APPDATA%\KaikouEnglish and is kept.
+appId: com.ysgm.kaikou-english
+productName: KaikouEnglish
+copyright: Copyright © 2026 YSG-M
+
+directories:
+  output: release/${version}
+  buildResources: build
+
+files:
+  - out/**
+  - package.json
+  - '!**/*.map'
+
+# Native speech engine: .node addons and their DLLs cannot be loaded from inside app.asar.
+asarUnpack:
+  - node_modules/sherpa-onnx-node/**
+  - node_modules/sherpa-onnx-win-x64/**
+
+# Read at runtime from process.resourcesPath (docs/02-architecture.md §3.3).
+extraResources:
+  - from: resources/content
+    to: content
+    filter: ['bundle.json']
+  - from: resources/audio
+    to: audio
+    filter: ['*.wav']
+  - from: resources/models/whisper-base.en
+    to: models/whisper-base.en
+    filter: ['encoder.int8.onnx', 'decoder.int8.onnx', 'tokens.txt', 'manifest.json']
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  forceCodeSigning: false
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: 开口说英语
+  installerLanguages: [zh_CN, en_US]
+  multiLanguageInstaller: true
+  # Keep her progress and recordings if the app is uninstalled and reinstalled.
+  deleteAppDataOnUninstall: false
+  artifactName: KaikouEnglish-Setup-${version}.${ext}
+
+publish: null
